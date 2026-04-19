@@ -6,11 +6,12 @@
     "Williams System 11B",
     "2022-12     : added _char_map for mapping intials (Tom Collins)",
     "2025-03 v0.2: Tom Collins added audits",
-    "2025-09 v0.4: Tom Collins added to game_state"
+    "2025-09 v0.4: Tom Collins added to game_state",
+    "2026-04 v5  : Tom Collins fixed game_state"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -77,7 +78,7 @@
     "player_count": {
       "label": "Player Count",
       "short_label": "Players",
-      "start": 157,
+      "start": 166,
       "encoding": "int",
       "offset": 1,
       "special_values": {
@@ -87,28 +88,28 @@
     "current_player": {
       "label": "Current Player",
       "short_label": "P#",
-      "start": 158,
+      "start": 167,
       "encoding": "int",
       "offset": 1
     },
     "tilted": {
       "label": "Tilted",
-      "start": 153,
+      "start": 162,
       "encoding": "bool"
     },
     "game_over": {
       "label": "Game Over",
-      "start": 154,
+      "start": 163,
       "encoding": "bool"
     },
     "extra_balls": {
       "label": "Extra Balls",
-      "start": 161,
+      "start": 170,
       "encoding": "int"
     },
     "tilt_warnings": {
       "label": "Tilt Warnings",
-      "start": 164,
+      "start": 173,
       "encoding": "int"
     },
     "free_play": {
