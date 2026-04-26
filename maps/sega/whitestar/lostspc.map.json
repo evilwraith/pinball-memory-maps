@@ -183,6 +183,62 @@
         "length": 5,
         "start": "0x14A9"
       }
+    },
+    {
+      "label": "Seventh",
+      "short_label": "#7",
+      "initials": {
+        "start": "0x151E",
+        "encoding": "ch",
+        "length": 10
+      },
+      "score": {
+        "encoding": "bcd",
+        "length": 5,
+        "start": "0x14AE"
+      }
+    },
+    {
+      "label": "Eighth",
+      "short_label": "#8",
+      "initials": {
+        "start": "0x1528",
+        "encoding": "ch",
+        "length": 10
+      },
+      "score": {
+        "encoding": "bcd",
+        "length": 5,
+        "start": "0x14B3"
+      }
+    },
+    {
+      "label": "Ninth",
+      "short_label": "#9",
+      "initials": {
+        "start": "0x1532",
+        "encoding": "ch",
+        "length": 10
+      },
+      "score": {
+        "encoding": "bcd",
+        "length": 5,
+        "start": "0x14B8"
+      }
+    },
+    {
+      "label": "Tenth",
+      "short_label": "#10",
+      "initials": {
+        "start": "0x153C",
+        "encoding": "ch",
+        "length": 10
+      },
+      "score": {
+        "encoding": "bcd",
+        "length": 5,
+        "start": "0x14BD"
+      }
     }
   ]
 }
