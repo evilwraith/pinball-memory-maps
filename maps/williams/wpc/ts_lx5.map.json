@@ -2,12 +2,15 @@
   "_notes": [
     "2022-12-22 v0.1 Compiled by Horsepin",
     "2024-12-13 v0.2 High score locations updated by Tom Collins",
-    "WPC 50032, SYS 3.41 REV 0.5",
+    "WPC 50032, SYS 3.30 REV 13.1 (ts_pa1)",
+    "WPC 50032, SYS 3.36 REV 0.4 (ts_la4)",
+    "WPC 50032, SYS 3.41 REV 0.5 (ts_lx5)",
+    "WPC 50032, SYS 3.41 REV 0.6 (ts_lh6)",
     "2025-07-07 Tom Collins added automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -16,7 +19,10 @@
     "platform": "williams-wpc-12K",
     "roms": [
       "ts_dx5",
-      "ts_lx5"
+      "ts_la4",
+      "ts_lh6",
+      "ts_lx5",
+      "ts_pa1"
     ]
   },
   "game_state": {

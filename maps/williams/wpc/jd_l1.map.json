@@ -11,7 +11,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
@@ -21,9 +21,15 @@
       "jd_d5",
       "jd_d6",
       "jd_l1",
+      "jd_l1at",
+      "jd_l1d",
       "jd_l4",
       "jd_l5",
       "jd_l6"
+    ],
+    "free_only": [
+      "jd_l1at",
+      "jd_l1d"
     ]
   },
   "last_played": {

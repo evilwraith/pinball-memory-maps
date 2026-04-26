@@ -1,12 +1,14 @@
 {
   "_notes": [
     "Compiled by Horsepin.",
-    "WPC 50001, SYS 2.51 REV 0.1",
+    "WPC 50001, SYS 2.50 REV 14.1 (drac_p11)",
+    "WPC 50001, SYS 2.50 REV 14.2 (drac_p12)",
+    "WPC 50001, SYS 2.51 REV 0.1 (drac_l1)",
     "2025-07-07 Tom Collins added automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -15,7 +17,9 @@
     "platform": "williams-wpc-8K",
     "roms": [
       "drac_d1",
-      "drac_l1"
+      "drac_l1",
+      "drac_p11",
+      "drac_p12"
     ]
   },
   "game_state": {
@@ -117,7 +121,7 @@
       "short_label": "GVP",
       "initials": {
         "encoding": "ch",
-        "length": 2,
+        "length": 3,
         "start": 8061
       },
       "score": {
