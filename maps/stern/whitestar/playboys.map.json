@@ -11,16 +11,16 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "whitestar",
     "roms": [
-      "term3",
-      "term3_3",
-      "term3f",
-      "term3f_3",
-      "term3g",
-      "term3g_3",
-      "term3i",
-      "term3i_3",
-      "term3l",
-      "term3l_3"
+      "play401",
+      "play401f",
+      "play401g",
+      "play401i",
+      "play401l",
+      "playboyf",
+      "playboyg",
+      "playboyi",
+      "playboyl",
+      "playboys"
     ]
   },
   "game_state": {
@@ -29,139 +29,139 @@
         "label": "Player 1",
         "encoding": "bcd",
         "length": 5,
-        "start": "0x16BE"
+        "start": "0x170A"
       },
       {
         "label": "Player 2",
         "encoding": "bcd",
         "length": 5,
-        "start": "0x16C3"
+        "start": "0x170F"
       },
       {
         "label": "Player 3",
         "encoding": "bcd",
         "length": 5,
-        "start": "0x16C8"
+        "start": "0x1714"
       },
       {
         "label": "Player 4",
         "encoding": "bcd",
         "length": 5,
-        "start": "0x16CD"
+        "start": "0x1719"
       }
     ],
     "credits": {
       "label": "Credits",
-      "start": "0x16B7",
+      "start": "0x1703",
       "encoding": "bcd"
     },
     "free_play": {
       "label": "Free Play",
-      "start": "0x1E05",
+      "start": "0x1E3B",
       "encoding": "bool"
     },
     "max_credits": {
       "label": "Max Credits",
-      "start": "0x1E0F",
+      "start": "0x1E18",
       "encoding": "bcd"
     },
     "player_count": {
       "label": "Player Count",
-      "start": "0x0306",
+      "start": "0x02BD",
       "encoding": "int"
     },
     "ball_count": {
       "label": "Ball Count",
-      "start": "0x1E0D",
+      "start": "0x1E15",
       "encoding": "bcd"
     },
     "current_player": {
       "label": "Player",
-      "start": "0x0304",
+      "start": "0x02BB",
       "encoding": "int"
     },
     "current_ball": {
       "label": "Ball",
-      "start": "0x0305",
+      "start": "0x02BC",
       "encoding": "int"
     },
     "game_over": {
       "_notes": "game is over if current player/ball is 0",
       "label": "Game Over",
-      "start": "0x0304",
+      "start": "0x02BB",
       "encoding": "bool",
       "invert": true
     }
   },
   "high_scores": [
     {
-      "label": "Grand Champion",
-      "short_label": "GC",
-      "initials": {
-        "start": "0x1685",
-        "encoding": "ch",
-        "length": 10
-      },
-      "score": {
-        "start": "0x1644",
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "First Place",
+      "label": "First",
       "short_label": "#1",
       "initials": {
-        "start": "0x168F",
+        "start": "0x16D1",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x1649",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x1690"
       }
     },
     {
-      "label": "Second Place",
+      "label": "Second",
       "short_label": "#2",
       "initials": {
-        "start": "0x1699",
+        "start": "0x16DB",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x164E",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x1695"
       }
     },
     {
-      "label": "Third Place",
+      "label": "Third",
       "short_label": "#3",
       "initials": {
-        "start": "0x16A3",
+        "start": "0x16E5",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x1653",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x169A"
       }
     },
     {
-      "label": "Fourth Place",
+      "label": "Fourth",
       "short_label": "#4",
       "initials": {
-        "start": "0x16AD",
+        "start": "0x16EF",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x1658",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x169F"
+      }
+    },
+    {
+      "label": "Fifth",
+      "short_label": "#5",
+      "initials": {
+        "start": "0x16F9",
+        "encoding": "ch",
+        "length": 10
+      },
+      "score": {
+        "encoding": "bcd",
+        "length": 5,
+        "start": "0x16A4"
       }
     }
   ]

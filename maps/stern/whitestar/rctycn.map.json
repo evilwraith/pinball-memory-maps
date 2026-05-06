@@ -11,16 +11,11 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "whitestar",
     "roms": [
-      "term3",
-      "term3_3",
-      "term3f",
-      "term3f_3",
-      "term3g",
-      "term3g_3",
-      "term3i",
-      "term3i_3",
-      "term3l",
-      "term3l_3"
+      "rctycn",
+      "rctycnf",
+      "rctycng",
+      "rctycni",
+      "rctycnl"
     ]
   },
   "game_state": {
@@ -57,111 +52,111 @@
     },
     "free_play": {
       "label": "Free Play",
-      "start": "0x1E05",
+      "start": "0x1E3B",
       "encoding": "bool"
     },
     "max_credits": {
       "label": "Max Credits",
-      "start": "0x1E0F",
+      "start": "0x1E18",
       "encoding": "bcd"
     },
     "player_count": {
       "label": "Player Count",
-      "start": "0x0306",
+      "start": "0x02DC",
       "encoding": "int"
     },
     "ball_count": {
       "label": "Ball Count",
-      "start": "0x1E0D",
+      "start": "0x1E15",
       "encoding": "bcd"
     },
     "current_player": {
       "label": "Player",
-      "start": "0x0304",
+      "start": "0x02DA",
       "encoding": "int"
     },
     "current_ball": {
       "label": "Ball",
-      "start": "0x0305",
+      "start": "0x02DB",
       "encoding": "int"
     },
     "game_over": {
       "_notes": "game is over if current player/ball is 0",
       "label": "Game Over",
-      "start": "0x0304",
+      "start": "0x02DA",
       "encoding": "bool",
       "invert": true
     }
   },
   "high_scores": [
     {
-      "label": "Grand Champion",
-      "short_label": "GC",
+      "label": "First",
+      "short_label": "#1",
       "initials": {
         "start": "0x1685",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x1644",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x1644"
       }
     },
     {
-      "label": "First Place",
-      "short_label": "#1",
+      "label": "Second",
+      "short_label": "#2",
       "initials": {
         "start": "0x168F",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x1649",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x1649"
       }
     },
     {
-      "label": "Second Place",
-      "short_label": "#2",
+      "label": "Third",
+      "short_label": "#3",
       "initials": {
         "start": "0x1699",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x164E",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x164E"
       }
     },
     {
-      "label": "Third Place",
-      "short_label": "#3",
+      "label": "Fourth",
+      "short_label": "#4",
       "initials": {
         "start": "0x16A3",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x1653",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x1653"
       }
     },
     {
-      "label": "Fourth Place",
-      "short_label": "#4",
+      "label": "Fifth",
+      "short_label": "#5",
       "initials": {
         "start": "0x16AD",
         "encoding": "ch",
         "length": 10
       },
       "score": {
-        "start": "0x1658",
         "encoding": "bcd",
-        "length": 5
+        "length": 5,
+        "start": "0x1658"
       }
     }
   ]
