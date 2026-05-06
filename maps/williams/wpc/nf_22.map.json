@@ -4,7 +4,7 @@
     "WPC 50025, SYS 3.48 REV 2.3 (nf_23)",
     "v0.2: changed score lengths from 5 to 6",
     "2025-07-07 Tom Collins added automated audits",
-    "2026-05-06 Tom Collins split off from earlier ROM versions"
+    "2026-05-06 Tom Collins updated automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
@@ -16,9 +16,10 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
-      "nf_23",
-      "nf_23f",
-      "nf_23x"
+      "nf_101",
+      "nf_10f",
+      "nf_20",
+      "nf_22"
     ]
   },
   "game_state": {
@@ -798,79 +799,79 @@
     },
     "B.5 HISTOGRAMS": {
       "01": {
-        "label": "0-39 M. SCORE",
+        "label": "0-1.9 M. SCORE",
         "start": 6431,
         "encoding": "int",
         "length": 3
       },
       "02": {
-        "label": "40-59 M. SCORE",
+        "label": "2-4.9 M. SCORE",
         "start": 6437,
         "encoding": "int",
         "length": 3
       },
       "03": {
-        "label": "60-79 M. SCORE",
+        "label": "5-9.9 M. SCORE",
         "start": 6443,
         "encoding": "int",
         "length": 3
       },
       "04": {
-        "label": "80-99 M. SCORE",
+        "label": "10-19 M. SCORE",
         "start": 6449,
         "encoding": "int",
         "length": 3
       },
       "05": {
-        "label": "100-149 M. SCORE",
+        "label": "20-29 M. SCORE",
         "start": 6455,
         "encoding": "int",
         "length": 3
       },
       "06": {
-        "label": "150-249 M. SCORE",
+        "label": "30-39 M. SCORE",
         "start": 6461,
         "encoding": "int",
         "length": 3
       },
       "07": {
-        "label": "250-399 M. SCORE",
+        "label": "40-49 M. SCORE",
         "start": 6467,
         "encoding": "int",
         "length": 3
       },
       "08": {
-        "label": "400-599 M. SCORE",
+        "label": "50-69 M. SCORE",
         "start": 6473,
         "encoding": "int",
         "length": 3
       },
       "09": {
-        "label": "600-999 M. SCORE",
+        "label": "70-99 M. SCORE",
         "start": 6479,
         "encoding": "int",
         "length": 3
       },
       "10": {
-        "label": "1-1.49 B. SCORE",
+        "label": "100-149 M. SCORE",
         "start": 6485,
         "encoding": "int",
         "length": 3
       },
       "11": {
-        "label": "1.5-1.9 B. SCORE",
+        "label": "150-199 M. SCORE",
         "start": 6491,
         "encoding": "int",
         "length": 3
       },
       "12": {
-        "label": "2-2.9 B. SCORE",
+        "label": "200-299 M. SCORE",
         "start": 6497,
         "encoding": "int",
         "length": 3
       },
       "13": {
-        "label": "OVER 3 BILLION",
+        "label": "OVER 300 MILLION",
         "start": 6503,
         "encoding": "int",
         "length": 3
