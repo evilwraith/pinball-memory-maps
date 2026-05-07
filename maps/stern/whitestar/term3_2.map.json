@@ -4,27 +4,17 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
     "license": "GNU Lesser General Public License v3.0",
     "platform": "whitestar",
     "roms": [
-      "rct600",
-      "rct600f",
-      "rct600i",
-      "rct600l",
-      "rct701",
-      "rct701f",
-      "rct701g",
-      "rct701i",
-      "rct701l",
-      "rctycn",
-      "rctycnf",
-      "rctycng",
-      "rctycni",
-      "rctycnl"
+      "term3_2",
+      "term3f_2",
+      "term3i_2",
+      "term3l_2"
     ]
   },
   "game_state": {
@@ -61,38 +51,38 @@
     },
     "free_play": {
       "label": "Free Play",
-      "start": "0x1E3B",
+      "start": "0x1E05",
       "encoding": "bool"
     },
     "max_credits": {
       "label": "Max Credits",
-      "start": "0x1E18",
+      "start": "0x1E0F",
       "encoding": "bcd"
     },
     "player_count": {
       "label": "Player Count",
-      "start": "0x02DC",
+      "start": "0x0300",
       "encoding": "int"
     },
     "ball_count": {
       "label": "Ball Count",
-      "start": "0x1E15",
+      "start": "0x1E0D",
       "encoding": "bcd"
     },
     "current_player": {
       "label": "Player",
-      "start": "0x02DA",
+      "start": "0x02FE",
       "encoding": "int"
     },
     "current_ball": {
       "label": "Ball",
-      "start": "0x02DB",
+      "start": "0x02FF",
       "encoding": "int"
     },
     "game_over": {
       "_notes": "game is over if current player/ball is 0",
       "label": "Game Over",
-      "start": "0x02DA",
+      "start": "0x02FE",
       "encoding": "bool",
       "invert": true
     }
