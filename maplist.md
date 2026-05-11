@@ -693,6 +693,12 @@
 * [Raven (rev. 1 Free Play)][212] _ravenafp_
 * [Red and Ted's Road Show (L-6)][213] _rs_l6_
 * [Red and Ted's Road Show (L-6C Competition MOD)][213] _rs_l6c_
+* [Red and Ted's Road Show (LA-4)][213] _rs_la4_
+* [Red and Ted's Road Show (LA-5)][213] _rs_la5_
+* [Red and Ted's Road Show (LX-2)][213] _rs_lx2_
+* [Red and Ted's Road Show (LX-3)][213] _rs_lx3_
+* [Red and Ted's Road Show (LX-4)][213] _rs_lx4_
+* [Red and Ted's Road Show (LX-5)][213] _rs_lx5_
 * [Red and Ted's Road Show (PA-2 Prototype)][214] _rs_pa2_
 * [Rescue 911 (rev. 1)][215] _rescu911_
 * [Ripley's Believe It or Not! (3.00 French)][216] _rip300f_
