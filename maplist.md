@@ -1,11 +1,11 @@
 * [AC/DC (V1.70.0)][1] _acd_170_
 * [AC/DC Limited Edition (V1.70.0)][2] _acd_170h_
 * [Aaron Spelling (1.01)][3] _aar_101_
-* [Addams Family Special Collectors Edition Gold, The (LX-3)][4] _tafg_lx3_
-* [Addams Family Special Collectors Edition, The (DX-3 LED Ghost Fix)][4] _tafg_dx3_
-* [Addams Family Special Collectors Edition, The (H-3)][5] _tafg_h3_
-* [Addams Family Special Collectors Edition, The (LA-2)][6] _tafg_la2_
-* [Addams Family Special Collectors Edition, The (LA-3)][4] _tafg_la3_
+* [Addams Family Special Collectors Edition / Gold, The (DX-3 LED Ghost Fix)][4] _tafg_dx3_
+* [Addams Family Special Collectors Edition / Gold, The (H-3)][5] _tafg_h3_
+* [Addams Family Special Collectors Edition / Gold, The (LA-2)][6] _tafg_la2_
+* [Addams Family Special Collectors Edition / Gold, The (LA-3)][4] _tafg_la3_
+* [Addams Family Special Collectors Edition / Gold, The (LX-3)][4] _tafg_lx3_
 * [Addams Family, The (D-5 LED Ghost Fix)][7] _taf_d5_
 * [Addams Family, The (D-6 LED Ghost Fix)][7] _taf_d6_
 * [Addams Family, The (H-4)][7] _taf_h4_
@@ -309,10 +309,10 @@
 * [Funhouse (9.05H)][118] _fh_905h_
 * [Funhouse (9.06H Coin Play)][118] _fh_906h_
 * [Funhouse (D-3 LED Ghost Fix)][119] _fh_d3_
-* [Funhouse (D-9, SL-3 German LED Ghost Fix)][120] _fh_d9b_
+* [Funhouse (D-9, SL-3 Improved German translation MOD LED Ghost Fix)][120] _fh_d9b_
 * [Funhouse (D-9, SL-3 LED Ghost Fix)][120] _fh_d9_
 * [Funhouse (L-3)][119] _fh_l3_
-* [Funhouse (L-9, SL-3 Improved German translation patch)][120] _fh_l9b_
+* [Funhouse (L-9, SL-3 Improved German translation MOD)][120] _fh_l9b_
 * [Funhouse (L-9, SL-3)][120] _fh_l9_
 * [Future Spa][87] _futurspa_
 * [Future Spa (7-digit conversion)][88] _futurspb_
