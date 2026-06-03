@@ -6,8 +6,11 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
-    "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
+    "version": 4,
+    "copyright": [
+      "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
+      "Copyright (C) 2026 by Andre Santana <herrmirto@proton.me>"
+    ],
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
@@ -199,6 +202,14 @@
       "_notes": "Two more mode champs (at 5931 and 5945) not displayed in attract.",
       "initials": {
         "start": 5956,
+        "encoding": "ch",
+        "length": 3
+      }
+    },
+    {
+      "label": "Midnight Champ",
+      "initials": {
+        "start": 5931,
         "encoding": "ch",
         "length": 3
       }
