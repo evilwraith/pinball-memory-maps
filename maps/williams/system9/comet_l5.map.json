@@ -2,8 +2,9 @@
   "_notes": [
     "Compiled by HorsePin",
     "2025-02: Tested on all three System 9 games by Tom Collins",
-    "2025-07: Split off from system9.map.json (12K ROM vs 16K ROM)",
-    "2025-09: Add game_state, audits, adjustments."
+    "2025-07: Split sorcr to separate file (12K ROM vs 16K ROM)",
+    "2025-09: Add game_state, audits, adjustments.",
+    "Split sshtl_l7 to separate file: Space Shuttle's Match adjustment has a third setting (Fancy Match) that Comet does not."
   ],
   "_fileformat": 0.8,
   "_metadata": {
@@ -13,10 +14,10 @@
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
     ],
     "license": "GNU Lesser General Public License v3.0",
-    "platform": "williams-system9-12K",
+    "platform": "williams-system9-16K",
     "roms": [
-      "sorcr_l2",
-      "sorcr_l1"
+      "comet_l4",
+      "comet_l5"
     ]
   },
   "game_state": {
@@ -240,49 +241,49 @@
     },
     "Game Audits": {
       "42": {
-        "label": "Multiball Achieved",
+        "label": "Game Audit #1",
         "start": "0x718",
         "length": 2,
         "encoding": "bcd"
       },
       "43": {
-        "label": "3X's in Multiball",
+        "label": "Game Audit #2",
         "start": "0x71A",
         "length": 2,
         "encoding": "bcd"
       },
       "44": {
-        "label": "5X's in Multiball",
+        "label": "Game Audit #3",
         "start": "0x71C",
         "length": 2,
         "encoding": "bcd"
       },
       "45": {
-        "label": "Ramps over 5X",
+        "label": "Game Audit #4",
         "start": "0x71E",
         "length": 2,
         "encoding": "bcd"
       },
       "46": {
-        "label": "Bonus Holdovers",
+        "label": "Game Audit #5",
         "start": "0x720",
         "length": 2,
         "encoding": "bcd"
       },
       "47": {
-        "label": "Playfield Specials",
+        "label": "Game Audit #6",
         "start": "0x722",
         "length": 2,
         "encoding": "bcd"
       },
       "48": {
-        "label": "A-B-C-D Completed",
+        "label": "Game Audit #7",
         "start": "0x724",
         "length": 2,
         "encoding": "bcd"
       },
       "49": {
-        "label": "Game Audit #8 (unused)",
+        "label": "Game Audit #8",
         "start": "0x726",
         "length": 2,
         "encoding": "bcd"
@@ -460,85 +461,47 @@
     },
     "Game Adjustments": {
       "31": {
-        "label": "Extra Ball Lamp Memory",
+        "label": "Game Adjustment #1",
         "start": "0x78F",
-        "encoding": "enum",
-        "default": 0,
-        "values": [
-          "conservative (no)",
-          "liberal (yes)"
-        ]
+        "encoding": "bcd"
       },
       "32": {
-        "label": "Drop Target Reset",
-        "_notes": "0=fast, 9=slow",
+        "label": "Game Adjustment #2",
         "start": "0x790",
-        "min": 0,
-        "max": 9,
-        "default": 5,
         "encoding": "bcd"
       },
       "33": {
-        "label": "Bell",
+        "label": "Game Adjustment #3",
         "start": "0x791",
-        "encoding": "enum",
-        "default": 1,
-        "values": [
-          "OFF",
-          "ON"
-        ]
+        "encoding": "bcd"
       },
       "34": {
-        "label": "Drop Target Blink Interval",
-        "_notes": "0=fast, 9=slow",
+        "label": "Game Adjustment #4",
         "start": "0x792",
-        "encoding": "bcd",
-        "min": 0,
-        "max": 9,
-        "default": 5
+        "encoding": "bcd"
       },
       "35": {
-        "label": "Background Sounds",
+        "label": "Game Adjustment #5",
         "start": "0x793",
-        "encoding": "enum",
-        "default": 1,
-        "values": [
-          "OFF",
-          "ON"
-        ]
+        "encoding": "bcd"
       },
       "36": {
-        "label": "Attract Mode Sounds",
+        "label": "Game Adjustment #6",
         "start": "0x794",
-        "encoding": "enum",
-        "default": 1,
-        "values": [
-          "OFF",
-          "ON"
-        ]
+        "encoding": "bcd"
       },
       "37": {
-        "label": "Bonus Holdover in Memory",
+        "label": "Game Adjustment #7",
         "start": "0x795",
-        "encoding": "enum",
-        "default": 0,
-        "values": [
-          "OFF",
-          "ON"
-        ]
+        "encoding": "bcd"
       },
       "38": {
-        "label": "S-O-R-C-E-R-E-R Target Memory",
+        "label": "Game Adjustment #8",
         "start": "0x796",
-        "encoding": "enum",
-        "default": 0,
-        "values": [
-          "conservative (no)",
-          "liberal (yes)"
-        ]
+        "encoding": "bcd"
       },
       "39": {
-        "label": "Game Adjustment (unused)",
+        "label": "Game Adjustment #9",
         "start": "0x797",
         "encoding": "bcd"
       }
