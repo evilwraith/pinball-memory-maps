@@ -4,7 +4,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-system4",
@@ -220,7 +220,7 @@
           "n/a",
           "no extra ball (1 & 2 together)"
         ],
-        "min": 2,
+        "min": 1,
         "max": 4
       },
       "08": {
