@@ -695,6 +695,7 @@
 * [Raven (Free Play)][214] _ravenfp_
 * [Raven (German Free Play)][214] _ravengfp_
 * [Raven (rev. 1 Free Play)][214] _ravenafp_
+* [Red and Ted's Road Show (7.0)][215] _rs_70_
 * [Red and Ted's Road Show (L-6)][215] _rs_l6_
 * [Red and Ted's Road Show (L-6C Competition MOD)][215] _rs_l6c_
 * [Red and Ted's Road Show (LA-4)][215] _rs_la4_
