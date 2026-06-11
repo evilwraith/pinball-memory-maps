@@ -1,15 +1,12 @@
 {
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
-    "WPC 50044, SYS 3.49 REV 0.4 (wd_048r)",
-    "WPC 50044, SYS 3.49 REV 1.0 (wd_10f, wd_10g, wd_10r)",
-    "WPC 50044, SYS 3.49 REV 1.1 (wd_11)",
-    "WPC 50044, SYS 3.49 REV 1.2 (wd_12, wd_12g, wd_12gp, wd_12p)",
-    "2025-07-07 Tom Collins added automated audits"
+    "WPC 50044, SYS 3.49 REV 0.3 (wd_03r)",
+    "2026-06-11 Tom Collins added automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2026 by Andre Santana <herrmirto@proton.me>"
@@ -17,15 +14,7 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
-      "wd_048r",
-      "wd_10f",
-      "wd_10g",
-      "wd_10r",
-      "wd_11",
-      "wd_12",
-      "wd_12g",
-      "wd_12gp",
-      "wd_12p"
+      "wd_03r"
     ]
   },
   "last_played": {
@@ -207,17 +196,8 @@
   "mode_champions": [
     {
       "label": "The Roof Champion",
-      "_notes": "Two more mode champs (at 5931 and 5945) not displayed in attract.",
       "initials": {
-        "start": 5956,
-        "encoding": "ch",
-        "length": 3
-      }
-    },
-    {
-      "label": "Midnight Champ",
-      "initials": {
-        "start": 5931,
+        "start": 5959,
         "encoding": "ch",
         "length": 3
       }
@@ -320,6 +300,12 @@
       "05": {
         "label": "REPLAY AWARDS",
         "start": 6293,
+        "encoding": "int",
+        "length": 3
+      },
+      "07": {
+        "label": "SPECIAL AWARDS",
+        "start": 6299,
         "encoding": "int",
         "length": 3
       },
@@ -463,360 +449,342 @@
     },
     "B.4 FEATURE AUDS.": {
       "01": {
-        "label": "NOVICE MODES",
-        "start": 6713,
-        "encoding": "int",
-        "length": 3
-      },
-      "02": {
-        "label": "TOTAL MULTIBALLS",
-        "start": 6941,
-        "encoding": "int",
-        "length": 3
-      },
-      "03": {
-        "label": "EXTRA BALLS",
-        "start": 6323,
-        "encoding": "int",
-        "length": 3
-      },
-      "04": {
-        "label": "ROOF MULTIBALLS",
-        "start": 6773,
-        "encoding": "int",
-        "length": 3
-      },
-      "06": {
         "label": "BUY-IN EX. BALLS",
         "start": 6677,
         "encoding": "int",
         "length": 3
       },
-      "07": {
+      "03": {
         "label": "1 BUY-IN GAMES",
         "start": 6683,
         "encoding": "int",
         "length": 3
       },
-      "08": {
+      "04": {
         "label": "2 BUY-IN GAMES",
         "start": 6689,
         "encoding": "int",
         "length": 3
       },
-      "09": {
+      "05": {
         "label": "3 BUY-IN GAMES",
         "start": 6695,
         "encoding": "int",
         "length": 3
       },
-      "10": {
+      "06": {
         "label": ">=4 BUY-IN GAMES",
         "start": 6701,
         "encoding": "int",
         "length": 3
       },
-      "11": {
+      "07": {
         "label": "BALL SAVES",
         "start": 6707,
         "encoding": "int",
         "length": 3
       },
-      "12": {
+      "08": {
+        "label": "NOVICE MODES",
+        "start": 6713,
+        "encoding": "int",
+        "length": 3
+      },
+      "09": {
         "label": "SUPER SKILL",
         "start": 6719,
         "encoding": "int",
         "length": 3
       },
-      "13": {
+      "10": {
         "label": "SKILL SHOT MADE",
         "start": 6725,
         "encoding": "int",
         "length": 3
       },
-      "14": {
+      "11": {
         "label": "CLUE AWARDED",
         "start": 6731,
         "encoding": "int",
         "length": 3
       },
-      "15": {
+      "12": {
         "label": "ALL CLUES",
         "start": 6737,
         "encoding": "int",
         "length": 3
       },
-      "16": {
+      "13": {
         "label": "NEW PHONE LIT",
         "start": 6743,
         "encoding": "int",
         "length": 3
       },
-      "17": {
+      "14": {
         "label": "PHONE ANSWERED",
         "start": 6749,
         "encoding": "int",
         "length": 3
       },
-      "18": {
+      "15": {
         "label": "WHO DUNNITS",
         "start": 6755,
         "encoding": "int",
         "length": 3
       },
-      "19": {
+      "16": {
         "label": "WHO DUNNIT ROOF",
         "start": 6761,
         "encoding": "int",
         "length": 3
       },
-      "20": {
+      "17": {
         "label": "TOTAL ROOFS",
         "start": 6767,
         "encoding": "int",
         "length": 3
       },
-      "21": {
+      "18": {
         "label": "ROOF MULTIBALLS",
         "start": 6773,
         "encoding": "int",
         "length": 3
       },
-      "22": {
+      "19": {
         "label": "TOTAL SLOT SPINS",
         "start": 6779,
         "encoding": "int",
         "length": 3
       },
-      "23": {
+      "20": {
         "label": "NUGE SLOTS AWRDS",
         "start": 6785,
         "encoding": "int",
         "length": 3
       },
-      "24": {
+      "21": {
         "label": "FREE SPINS",
         "start": 6791,
         "encoding": "int",
         "length": 3
       },
-      "25": {
+      "22": {
         "label": "SLOT MULTIBALL",
         "start": 6797,
         "encoding": "int",
         "length": 3
       },
-      "26": {
+      "23": {
         "label": "SLOT EXTRA BALL",
         "start": 6803,
         "encoding": "int",
         "length": 3
       },
-      "27": {
+      "24": {
         "label": "SLOT BAR",
         "start": 6809,
         "encoding": "int",
         "length": 3
       },
-      "28": {
+      "25": {
         "label": "SLOT MADNESS",
         "start": 6815,
         "encoding": "int",
         "length": 3
       },
-      "29": {
+      "26": {
         "label": "SLOT JACKPOT",
         "start": 6821,
         "encoding": "int",
         "length": 3
       },
-      "30": {
+      "27": {
         "label": "SLOT EQUIPMENT",
         "start": 6827,
         "encoding": "int",
         "length": 3
       },
-      "31": {
+      "28": {
         "label": "SLOT CLUE",
         "start": 6833,
         "encoding": "int",
         "length": 3
       },
-      "32": {
+      "29": {
         "label": "SLOT ROOF",
         "start": 6839,
         "encoding": "int",
         "length": 3
       },
-      "33": {
+      "30": {
         "label": "SLOT CHOICE",
         "start": 6845,
         "encoding": "int",
         "length": 3
       },
-      "34": {
+      "31": {
         "label": "SLOT SEC. CHANCE",
         "start": 6851,
         "encoding": "int",
         "length": 3
       },
-      "35": {
+      "32": {
         "label": "SLOT NOTHING",
         "start": 6857,
         "encoding": "int",
         "length": 3
       },
-      "36": {
+      "33": {
         "label": "SEC. CHANCE COMP.",
         "start": 6863,
         "encoding": "int",
         "length": 3
       },
-      "37": {
+      "34": {
         "label": "EXIT BASEMENT",
         "start": 6869,
         "encoding": "int",
         "length": 3
       },
-      "38": {
+      "35": {
         "label": "EXIT MAIN",
         "start": 6875,
         "encoding": "int",
         "length": 3
       },
-      "39": {
+      "36": {
         "label": "EXIT 2ND",
         "start": 6881,
         "encoding": "int",
         "length": 3
       },
-      "40": {
+      "37": {
         "label": "EXIT 3RD",
         "start": 6887,
         "encoding": "int",
         "length": 3
       },
-      "41": {
+      "38": {
         "label": "EXIT 4TH",
         "start": 6893,
         "encoding": "int",
         "length": 3
       },
-      "42": {
+      "39": {
         "label": "EXIT 5TH",
         "start": 6899,
         "encoding": "int",
         "length": 3
       },
-      "43": {
+      "40": {
         "label": "EXIT 6TH",
         "start": 6905,
         "encoding": "int",
         "length": 3
       },
-      "44": {
+      "41": {
         "label": "EXIT 7TH",
         "start": 6911,
         "encoding": "int",
         "length": 3
       },
-      "45": {
+      "42": {
         "label": "EXIT 8TH",
         "start": 6917,
         "encoding": "int",
         "length": 3
       },
-      "46": {
+      "43": {
         "label": "EXIT PENTHOUSE",
         "start": 6923,
         "encoding": "int",
         "length": 3
       },
-      "47": {
+      "44": {
         "label": "EXIT ROOF",
         "start": 6929,
         "encoding": "int",
         "length": 3
       },
-      "48": {
+      "45": {
         "label": "EQUIMPENT AWARDS",
         "start": 6935,
         "encoding": "int",
         "length": 3
       },
-      "49": {
+      "46": {
         "label": "TOTAL MULTIBALLS",
         "start": 6941,
         "encoding": "int",
         "length": 3
       },
-      "50": {
+      "47": {
         "label": "TOTAL JACKPOTS",
         "start": 6947,
         "encoding": "int",
         "length": 3
       },
-      "51": {
+      "48": {
         "label": "ROULETTE LIT",
         "start": 6953,
         "encoding": "int",
         "length": 3
       },
-      "52": {
+      "49": {
         "label": "ROULETTE ASK",
         "start": 6959,
         "encoding": "int",
         "length": 3
       },
-      "53": {
+      "50": {
         "label": "ROULETTE SPINS",
         "start": 6965,
         "encoding": "int",
         "length": 3
       },
-      "54": {
+      "51": {
         "label": "ROULETTE WINS",
         "start": 6971,
         "encoding": "int",
         "length": 3
       },
-      "55": {
+      "52": {
         "label": "TRAIN COMBO LIT",
         "start": 6977,
         "encoding": "int",
         "length": 3
       },
-      "56": {
+      "53": {
         "label": "TRAIN COMBO L1",
         "start": 6983,
         "encoding": "int",
         "length": 3
       },
-      "57": {
+      "54": {
         "label": "TRAIN COMBO L2",
         "start": 6989,
         "encoding": "int",
         "length": 3
       },
-      "58": {
+      "55": {
         "label": "TRAIN COMBO L3",
         "start": 6995,
         "encoding": "int",
         "length": 3
       },
-      "59": {
+      "56": {
         "label": "TRAIN COMBO L4",
         "start": 7001,
         "encoding": "int",
         "length": 3
       },
-      "60": {
+      "57": {
         "label": "NEW LOOP CHAMP",
         "start": 7007,
         "encoding": "int",
         "length": 3
       },
-      "61": {
+      "58": {
         "label": "SPECIAL MODES",
         "start": 7013,
         "encoding": "int",
@@ -1060,8 +1028,8 @@
   ],
   "checksum16": [
     {
-      "start": 5956,
-      "end": 5960,
+      "start": 5959,
+      "end": 5964,
       "label": "The Roof Champion"
     },
     {

@@ -1048,39 +1048,57 @@
 * [Voltan Escapes Cosmic Doom (/10 Scoring Free Play)][204] _voltand_
 * [Voltan Escapes Cosmic Doom (7-digit conversion rev. 20)][167] _voltanb_
 * [Voltan Escapes Cosmic Doom (Free Play rev. 3)][204] _voltanc_
-* [WHO Dunnit (1.2 Elevator text fix)][305] _wd_12p_
-* [WHO Dunnit (1.2 German Sound / Elevator text fix)][305] _wd_12gp_
-* [WHO Dunnit (1.2 German Sound)][305] _wd_12g_
-* [WHO Dunnit (1.2)][305] _wd_12_
-* [WWF Royal Rumble (1.03)][306] _wwfr_103_
-* [WWF Royal Rumble (1.06)][306] _wwfr_106_
-* [Walking Dead, The (V1.56)][307] _twd_156_
-* [Walking Dead, The Limited Edition (V1.60.0)][308] _twd_160h_
+* [WHO Dunnit (0.3R Prototype)][305] _wd_03r_
+* [WHO Dunnit (0.48R Prototype)][306] _wd_048r_
+* [WHO Dunnit (1.0 French)][306] _wd_10f_
+* [WHO Dunnit (1.0 German Sound)][306] _wd_10g_
+* [WHO Dunnit (1.0R)][306] _wd_10r_
+* [WHO Dunnit (1.1)][306] _wd_11_
+* [WHO Dunnit (1.2 Elevator text fix)][306] _wd_12p_
+* [WHO Dunnit (1.2 German Sound / Elevator text fix)][306] _wd_12gp_
+* [WHO Dunnit (1.2 German Sound)][306] _wd_12g_
+* [WHO Dunnit (1.2)][306] _wd_12_
+* [WWF Royal Rumble (1.03)][307] _wwfr_103_
+* [WWF Royal Rumble (1.06)][307] _wwfr_106_
+* [Walking Dead, The (V1.56)][308] _twd_156_
+* [Walking Dead, The Limited Edition (V1.60.0)][309] _twd_160h_
 * [Warlok (L-3)][35] _wrlok_l3_
-* [Waterworld (rev. 2)][309] _waterwl2_
-* [Waterworld (rev. 3)][309] _waterwld_
-* [Waterworld (rev. 5)][309] _waterwl5_
-* [Whirlwind (LA-3)][310] _whirl_l3_
-* [White Water (D-5 LED Ghost Fix)][311] _ww_d5_
-* [White Water (L-5)][311] _ww_l5_
-* [White Water (LH-6 Coin Play)][312] _ww_lh6c_
-* [White Water (LH-6)][312] _ww_lh6_
+* [Waterworld (rev. 2)][310] _waterwl2_
+* [Waterworld (rev. 3)][310] _waterwld_
+* [Waterworld (rev. 5)][310] _waterwl5_
+* [Whirlwind (LA-3)][311] _whirl_l3_
+* [White Water (D-2 LED Ghost Fix)][312] _ww_d2_
+* [White Water (D-3 LED Ghost Fix)][312] _ww_d3_
+* [White Water (D-4 LED Ghost Fix)][312] _ww_d4_
+* [White Water (D-5 LED Ghost Fix)][312] _ww_d5_
+* [White Water (L-2)][312] _ww_l2_
+* [White Water (L-3)][312] _ww_l3_
+* [White Water (L-4)][312] _ww_l4_
+* [White Water (L-5)][312] _ww_l5_
+* [White Water (LH-5)][313] _ww_lh5_
+* [White Water (LH-6 Coin Play)][313] _ww_lh6c_
+* [White Water (LH-6)][313] _ww_lh6_
+* [White Water (P-8 Prototype)][312] _ww_p8_
 * [Wild Fyre][77] _wildfyre_
 * [Wild Fyre (Free Play)][78] _wildfyfp_
-* [World Cup (L-1)][313] _wldcp_l1_
-* [World Cup Soccer (DX-2 LED Ghost Fix)][314] _wcs_d2_
-* [World Cup Soccer (LX-2)][314] _wcs_l2_
-* [World Cup Soccer (LX-3C Competition MOD)][314] _wcs_l3c_
+* [World Cup (L-1)][314] _wldcp_l1_
+* [World Cup Soccer (DX-2 LED Ghost Fix)][315] _wcs_d2_
+* [World Cup Soccer (LA-2)][315] _wcs_la2_
+* [World Cup Soccer (LX-1)][315] _wcs_l1_
+* [World Cup Soccer (LX-2)][315] _wcs_l2_
+* [World Cup Soccer (LX-3C Competition MOD)][315] _wcs_l3c_
+* [World Cup Soccer (PA-2 Prototype)][315] _wcs_p2_
+* [World Cup Soccer (PX-3 Prototype)][315] _wcs_p3_
 * [X's & O's][27] _xsandos_
 * [X's & O's (Free Play)][28] _xsandosa_
-* [X-Files, The (2.04)][315] _xfiles2_
-* [X-Files, The (3.03 French)][315] _xfilesf_
-* [X-Files, The (3.03)][315] _xfiles_
-* [X-Files, The (3.04 unofficial MOD)][315] _xfiles304_
-* [Xenon][316] _xenon_
-* [Xenon (Free Play)][317] _xenona_
-* [Xenon (French Free Play)][317] _xenonfa_
-* [Xenon (French)][316] _xenonf_
+* [X-Files, The (2.04)][316] _xfiles2_
+* [X-Files, The (3.03 French)][316] _xfilesf_
+* [X-Files, The (3.03)][316] _xfiles_
+* [X-Files, The (3.04 unofficial MOD)][316] _xfiles304_
+* [Xenon][317] _xenon_
+* [Xenon (Free Play)][318] _xenona_
+* [Xenon (French Free Play)][318] _xenonfa_
+* [Xenon (French)][317] _xenonf_
 
 [1]: maps/stern/sam/acd_170.map.json
 [2]: maps/stern/sam/acd_170h.map.json
@@ -1386,16 +1404,17 @@
 [302]: maps/gottlieb/system80b/victory.map.json
 [303]: maps/sega/whitestar/viprsega.map.json
 [304]: maps/gottlieb/system80/generic.map.json
-[305]: maps/williams/wpc/wd_12.map.json
-[306]: maps/dataeast/version3/wwfr_106.map.json
-[307]: maps/stern/sam/twd_156.map.json
-[308]: maps/stern/sam/twd_160h.map.json
-[309]: maps/gottlieb/system3/waterwld.map.json
-[310]: maps/williams/system11/whirl_l3.map.json
-[311]: maps/williams/wpc/ww_l5.map.json
-[312]: maps/williams/wpc/ww_lh6.map.json
-[313]: maps/williams/system3/wldcp_l1.map.json
-[314]: maps/williams/wpc/wcs_l2.map.json
-[315]: maps/sega/whitestar/xfiles.map.json
-[316]: maps/bally/as-2518-35/xenon.map.json
-[317]: maps/bally/as-2518-35/xenon-freeplay.map.json
+[305]: maps/williams/wpc/wd_03r.map.json
+[306]: maps/williams/wpc/wd_12.map.json
+[307]: maps/dataeast/version3/wwfr_106.map.json
+[308]: maps/stern/sam/twd_156.map.json
+[309]: maps/stern/sam/twd_160h.map.json
+[310]: maps/gottlieb/system3/waterwld.map.json
+[311]: maps/williams/system11/whirl_l3.map.json
+[312]: maps/williams/wpc/ww_l5.map.json
+[313]: maps/williams/wpc/ww_lh6.map.json
+[314]: maps/williams/system3/wldcp_l1.map.json
+[315]: maps/williams/wpc/wcs_l2.map.json
+[316]: maps/sega/whitestar/xfiles.map.json
+[317]: maps/bally/as-2518-35/xenon.map.json
+[318]: maps/bally/as-2518-35/xenon-freeplay.map.json
