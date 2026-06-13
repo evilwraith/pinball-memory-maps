@@ -1083,6 +1083,7 @@
 * [Wild Fyre (Free Play)][78] _wildfyfp_
 * [World Cup (L-1)][314] _wldcp_l1_
 * [World Cup Soccer (DX-2 LED Ghost Fix)][315] _wcs_d2_
+* [World Cup Soccer (LA-1)][315] _wcs_la1_
 * [World Cup Soccer (LA-2)][315] _wcs_la2_
 * [World Cup Soccer (LX-1)][315] _wcs_l1_
 * [World Cup Soccer (LX-2)][315] _wcs_l2_

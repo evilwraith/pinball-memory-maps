@@ -1059,6 +1059,7 @@
   "wcs_l1": "maps/williams/wpc/wcs_l2.map.json",
   "wcs_l2": "maps/williams/wpc/wcs_l2.map.json",
   "wcs_l3c": "maps/williams/wpc/wcs_l2.map.json",
+  "wcs_la1": "maps/williams/wpc/wcs_l2.map.json",
   "wcs_la2": "maps/williams/wpc/wcs_l2.map.json",
   "wcs_p2": "maps/williams/wpc/wcs_l2.map.json",
   "wcs_p3": "maps/williams/wpc/wcs_l2.map.json",
