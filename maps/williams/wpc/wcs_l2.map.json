@@ -10,7 +10,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
@@ -22,7 +22,9 @@
       "wcs_la1",
       "wcs_la2",
       "wcs_p2",
-      "wcs_p3"
+      "wcs_p3",
+      "wcs_p5",
+      "wcs_p6"
     ]
   },
   "last_played": {

@@ -1,21 +1,25 @@
 * [AC/DC (V1.70.0)][1] _acd_170_
 * [AC/DC Limited Edition (V1.70.0)][2] _acd_170h_
 * [Aaron Spelling (1.01)][3] _aar_101_
-* [Addams Family Special Collectors Edition / Gold, The (DX-3 LED Ghost Fix)][4] _tafg_dx3_
-* [Addams Family Special Collectors Edition / Gold, The (H-3)][5] _tafg_h3_
-* [Addams Family Special Collectors Edition / Gold, The (LA-2)][6] _tafg_la2_
-* [Addams Family Special Collectors Edition / Gold, The (LA-3)][4] _tafg_la3_
-* [Addams Family Special Collectors Edition / Gold, The (LX-3)][4] _tafg_lx3_
-* [Addams Family, The (D-5 LED Ghost Fix)][7] _taf_d5_
-* [Addams Family, The (D-6 LED Ghost Fix)][8] _taf_d6_
-* [Addams Family, The (H-4)][8] _taf_h4_
-* [Addams Family, The (I-4 LED Ghost Fix)][8] _taf_i4_
-* [Addams Family, The (L-4)][9] _taf_l4_
-* [Addams Family, The (L-5 Prototype D-7 LED Ghost Fix)][7] _taf_d7_
-* [Addams Family, The (L-5 Prototype L-7)][7] _taf_l7_
-* [Addams Family, The (L-5)][8] _taf_l5_
-* [Addams Family, The (L-5C Competition + LED Ghost MOD)][8] _taf_l5c_
-* [Addams Family, The (L-6)][8] _taf_l6_
+* [Addams Family Special Collectors Edition / Gold, The (DA-2 LED Ghost Fix)][4] _tafg_da2_
+* [Addams Family Special Collectors Edition / Gold, The (DA-3 LED Ghost Fix)][5] _tafg_da3_
+* [Addams Family Special Collectors Edition / Gold, The (DX-3 LED Ghost Fix)][5] _tafg_dx3_
+* [Addams Family Special Collectors Edition / Gold, The (H-3)][6] _tafg_h3_
+* [Addams Family Special Collectors Edition / Gold, The (I-3 LED Ghost Fix)][6] _tafg_i3_
+* [Addams Family Special Collectors Edition / Gold, The (LA-2)][4] _tafg_la2_
+* [Addams Family Special Collectors Edition / Gold, The (LA-3)][5] _tafg_la3_
+* [Addams Family Special Collectors Edition / Gold, The (LX-3)][5] _tafg_lx3_
+* [Addams Family, The (D-4 LED Ghost Fix)][7] _taf_d4_
+* [Addams Family, The (D-5 LED Ghost Fix)][8] _taf_d5_
+* [Addams Family, The (D-6 LED Ghost Fix)][9] _taf_d6_
+* [Addams Family, The (H-4)][9] _taf_h4_
+* [Addams Family, The (I-4 LED Ghost Fix)][9] _taf_i4_
+* [Addams Family, The (L-4)][7] _taf_l4_
+* [Addams Family, The (L-5 Prototype D-7 LED Ghost Fix)][8] _taf_d7_
+* [Addams Family, The (L-5 Prototype L-7)][8] _taf_l7_
+* [Addams Family, The (L-5)][9] _taf_l5_
+* [Addams Family, The (L-5C Competition + LED Ghost MOD)][9] _taf_l5c_
+* [Addams Family, The (L-6)][9] _taf_l6_
 * [Adventures of Rocky and Bullwinkle and Friends, The (1.30)][10] _rab_130_
 * [Adventures of Rocky and Bullwinkle and Friends, The (3.20)][11] _rab_320_
 * [Airborne (1.5)][12] _abv105_
@@ -46,6 +50,8 @@
 * [Arena (rev. 1 Free Play)][22] _arenaafp_
 * [Arena (rev. 1)][22] _arenaa_
 * [Attack From Mars (1.1 / S1.0)][23] _afm_11_
+* [Attack From Mars (1.1 Pinball FX / S1.1)][23] _afm_11pfx_
+* [Attack From Mars (1.1 Ultrapin / S1.1)][23] _afm_11u_
 * [Attack From Mars (1.13 / S1.1)][24] _afm_113_
 * [Attack From Mars (1.13b / S1.1)][24] _afm_113b_
 * [Austin Powers (2.01)][25] _aust201_
@@ -113,6 +119,7 @@
 * [Black Knight 2000 (L-4)][48] _bk2k_l4_
 * [Black Pyramid][49] _blakpyra_
 * [Black Pyramid (Free Play)][50] _blakpyrb_
+* [Black Rose (D-3 LED Ghost Fix)][51] _br_d3_
 * [Black Rose (D-4 LED Ghost Fix)][51] _br_d4_
 * [Black Rose (L-3)][51] _br_l3_
 * [Black Rose (L-4)][51] _br_l4_
@@ -131,6 +138,7 @@
 * [Bounty Hunter (German Free Play)][53] _bountgfp_
 * [Bram Stoker's Dracula (D-1 LED Ghost Fix)][54] _drac_d1_
 * [Bram Stoker's Dracula (L-1)][54] _drac_l1_
+* [Bram Stoker's Dracula (L-2C Competition MOD)][54] _drac_l2c_
 * [Bram Stoker's Dracula (P-11 Prototype)][54] _drac_p11_
 * [Bram Stoker's Dracula (P-12 LED Ghost Fix)][54] _drac_p12_
 * [Breakshot (1.2)][55] _bsv102_
@@ -138,6 +146,10 @@
 * [Breakshot (Redemption 1.0)][57] _bsv100r_
 * [Breakshot (Redemption 1.2)][58] _bsv102r_
 * [Bugs Bunny's Birthday Ball (L-2)][59] _bbnny_l2_
+* [Cactus Canyon (1.0)][60] _cc_10_
+* [Cactus Canyon (1.04 Test 0.2)][60] _cc_104_
+* [Cactus Canyon (1.2)][60] _cc_12_
+* [Cactus Canyon (1.3 Real Knocker patch)][60] _cc_13k_
 * [Cactus Canyon (1.3)][60] _cc_13_
 * [Cactus Jack's][61] _cactjack_
 * [Car Hop][62] _carhop_
@@ -146,6 +158,8 @@
 * [Centaur][65] _centaur_
 * [Centaur (Free Play rev. 27)][66] _centaurb_
 * [Centaur (Free Play)][66] _centaura_
+* [Champion Pub, The (1.5)][67] _cp_15_
+* [Champion Pub, The (1.6 Pinball FX)][67] _cp_16pfx_
 * [Champion Pub, The (1.6)][67] _cp_16_
 * [Checkpoint (1.7)][68] _ckpt_a17_
 * [Cheech & Chong: Road-Trip'pin (Harley-Davidson unofficial MOD)][69] _che_cho_
@@ -157,12 +171,15 @@
 * [Chicago Cubs Triple Play (Free Play)][53] _triplyfp_
 * [Chicago Cubs Triple Play (German Free Play)][53] _triplgfp_
 * [Chicago Cubs Triple Play (rev. 1 Free Play)][53] _triplyf1_
+* [Cirqus Voltaire (1.3)][70] _cv_13_
 * [Cirqus Voltaire (1.4)][70] _cv_14_
 * [Cirqus Voltaire (2.0H Coin Play)][71] _cv_20hc_
 * [Cirqus Voltaire (2.0H)][71] _cv_20h_
 * [Class of 1812][72] _clas1812_
 * [Comet (L-4)][73] _comet_l4_
 * [Comet (L-5)][73] _comet_l5_
+* [Congo (1.1, DCS95 S1.1)][74] _congo_11_
+* [Congo (1.3, DCS95 S1.1)][74] _congo_13_
 * [Congo (2.0, DCS95 S1.1)][74] _congo_20_
 * [Congo (2.0, WPC-S S1.0-kit)][74] _congo_20s10k_
 * [Congo (2.1, DCS95 S1.1)][74] _congo_21_
@@ -171,9 +188,13 @@
 * [Cosmic Gunfight (L-1)][35] _csmic_l1_
 * [Cosmic Princess][77] _princess_
 * [Cosmic Princess (Free Play)][78] _princefp_
+* [Creature from the Black Lagoon (D-2 LED Ghost Fix)][79] _cftbl_d2_
+* [Creature from the Black Lagoon (D-3 LED Ghost Fix)][79] _cftbl_d3_
 * [Creature from the Black Lagoon (D-4 LED Ghost Fix)][79] _cftbl_d4_
+* [Creature from the Black Lagoon (L-2)][79] _cftbl_l2_
 * [Creature from the Black Lagoon (L-3)][79] _cftbl_l3_
 * [Creature from the Black Lagoon (L-4)][79] _cftbl_l4_
+* [Creature from the Black Lagoon (L-4C Competition + LED Ghost MOD)][79] _cftbl_l4c_
 * [Cue Ball Wizard][80] _cueball_
 * [Cue Ball Wizard (older display rev.)][80] _cueball1_
 * [Cue Ball Wizard (rev. 2)][80] _cueball2_
@@ -184,15 +205,25 @@
 * [Dale Jr. (5.00)][82] _dalejr_
 * [Deadly Weapon][83] _deadweap_
 * [Defender (L-4)][84] _dfndr_l4_
+* [Demolition Man (DA-1 LED Ghost Fix)][85] _dm_da1_
+* [Demolition Man (DH-5 LED Ghost Fix)][86] _dm_dh5_
+* [Demolition Man (DH-5B Coin Play LED Ghost Fix)][86] _dm_dh5b_
+* [Demolition Man (DX-3 LED Ghost Fix)][85] _dm_dx3_
 * [Demolition Man (DX-4 LED Ghost Fix)][85] _dm_dx4_
-* [Demolition Man (FreeWPC/Demolition Time 1.01)][86] _dm_dt101_
-* [Demolition Man (H-6)][87] _dm_h6_
-* [Demolition Man (H-6B Coin Play)][87] _dm_h6b_
-* [Demolition Man (H-6C Competition MOD)][87] _dm_h6c_
+* [Demolition Man (FreeWPC/Demolition Time 1.01)][87] _dm_dt101_
+* [Demolition Man (H-5)][86] _dm_h5_
+* [Demolition Man (H-5B Coin Play)][86] _dm_h5b_
+* [Demolition Man (H-6)][86] _dm_h6_
+* [Demolition Man (H-6B Coin Play)][86] _dm_h6b_
+* [Demolition Man (H-6C Competition MOD)][86] _dm_h6c_
+* [Demolition Man (LA-1)][85] _dm_la1_
+* [Demolition Man (LX-3)][85] _dm_lx3_
 * [Demolition Man (LX-4)][85] _dm_lx4_
 * [Demolition Man (LX-4C Competition + LED Ghost MOD)][85] _dm_lx4c_
 * [Demolition Man (PA-2 Prototype)][88] _dm_pa2_
+* [Demolition Man (PA-3 LED Ghost Fix)][88] _dm_pa3_
 * [Demolition Man (PX-5 Prototype)][88] _dm_px5_
+* [Demolition Man (PX-6 LED Ghost Fix)][88] _dm_px6_
 * [Devil Riders][89] _dvlrider_
 * [Diamond Lady][22] _diamond_
 * [Diamond Lady (Free Play)][22] _diamonfp_
@@ -200,9 +231,12 @@
 * [Diamond Lady (German Free Play)][22] _diamngfp_
 * [Diner (LA-4)][90] _diner_l4_
 * [Dirty Harry (DX-2 LED Ghost Fix)][91] _dh_dx2_
+* [Dirty Harry (LF-2 French)][91] _dh_lf2_
 * [Dirty Harry (LX-2)][91] _dh_lx2_
 * [Disco Fever (L-1)][92] _disco_l1_
+* [Doctor Who (D-1 LED Ghost Fix)][93] _dw_d1_
 * [Doctor Who (D-2 LED Ghost Fix)][93] _dw_d2_
+* [Doctor Who (L-1)][93] _dw_l1_
 * [Doctor Who (L-2)][93] _dw_l2_
 * [Dolly Parton][94] _dollyptn_
 * [Dolly Parton (7-digit conversion)][95] _dollyptb_
@@ -282,6 +316,7 @@
 * [Fish Tales (L-5)][112] _ft_l5_
 * [Fish Tales (P-2 Prototype)][114] _ft_p2_
 * [Fish Tales (P-4 Prototype)][114] _ft_p4_
+* [Fish Tales (P-5 LED Ghost Fix)][114] _ft_p5_
 * [Flash (Sys.4 L-2)][115] _flash_l2_
 * [Flash (Sys.6 L-1 Free Play Fix)][116] _flash_l1ff_
 * [Flash (Sys.6 L-1)][116] _flash_l1_
@@ -299,6 +334,7 @@
 * [Flight 2000 (modified rules rev. 3335)][117] _flight2m_
 * [Flintstones, The (DX-5 LED Ghost Fix)][118] _fs_dx5_
 * [Flintstones, The (DX-5, SP-2 LED Ghost Fix)][118] _fs_sp2d_
+* [Flintstones, The (LA-5)][118] _fs_la5_
 * [Flintstones, The (LX-5)][118] _fs_lx5_
 * [Flintstones, The (LX-5, SP-2)][118] _fs_sp2_
 * [Frankenstein, Mary Shelley's][119] _frankst_
@@ -318,6 +354,8 @@
 * [Funhouse (D-3 LED Ghost Fix)][126] _fh_d3_
 * [Funhouse (D-9, SL-3 Improved German translation MOD LED Ghost Fix)][127] _fh_d9b_
 * [Funhouse (D-9, SL-3 LED Ghost Fix)][127] _fh_d9_
+* [Funhouse (L-2)][126] _fh_l2_
+* [Funhouse (L-2, Prototype PA-1 system 11 sound)][126] _fh_pa1_
 * [Funhouse (L-3)][126] _fh_l3_
 * [Funhouse (L-9, SL-3 Improved German translation MOD)][127] _fh_l9b_
 * [Funhouse (L-9, SL-3)][127] _fh_l9_
@@ -330,10 +368,13 @@
 * [Genesis (Free Play)][129] _genesifp_
 * [Genesis (French Free Play)][129] _genesffp_
 * [Genesis (German Free Play)][129] _genesgfp_
-* [Getaway: High Speed II, The (D-5 LED Ghost Fix)][130] _gw_d5_
-* [Getaway: High Speed II, The (L-2)][131] _gw_l2_
-* [Getaway: High Speed II, The (L-5)][130] _gw_l5_
-* [Getaway: High Speed II, The (L-5C Competition MOD)][130] _gw_l5c_
+* [Getaway: High Speed II, The (D-2 LED Ghost Fix)][130] _gw_d2_
+* [Getaway: High Speed II, The (D-3 LED Ghost Fix)][131] _gw_d3_
+* [Getaway: High Speed II, The (D-5 LED Ghost Fix)][131] _gw_d5_
+* [Getaway: High Speed II, The (L-2)][130] _gw_l2_
+* [Getaway: High Speed II, The (L-3)][131] _gw_l3_
+* [Getaway: High Speed II, The (L-5)][131] _gw_l5_
+* [Getaway: High Speed II, The (L-5C Competition MOD)][131] _gw_l5c_
 * [Gilligan's Island (D-9 LED Ghost Fix)][132] _gi_d9_
 * [Gilligan's Island (L-9)][132] _gi_l9_
 * [Gladiators][133] _gladiatr_
@@ -454,12 +495,30 @@
 * [HyperBall (L-6 MOD High score save)][84] _hypbl_l6_
 * [ID4: Independence Day (2.02 French)][152] _id4f_
 * [ID4: Independence Day (2.02)][152] _id4_
+* [Indiana Jones: The Pinball Adventure (D-3 LED Ghost Fix)][153] _ij_d3_
+* [Indiana Jones: The Pinball Adventure (D-4 LED Ghost Fix)][153] _ij_d4_
+* [Indiana Jones: The Pinball Adventure (D-5 LED Ghost Fix)][153] _ij_d5_
+* [Indiana Jones: The Pinball Adventure (D-6 LED Ghost Fix)][153] _ij_d6_
 * [Indiana Jones: The Pinball Adventure (D-7 LED Ghost Fix)][153] _ij_d7_
+* [Indiana Jones: The Pinball Adventure (DG-7 LED Ghost Fix)][153] _ij_dg7_
+* [Indiana Jones: The Pinball Adventure (HK-1 No Hate Speech)][153] _ij_h1_
+* [Indiana Jones: The Pinball Adventure (I-1 No Hate Speech LED Ghost Fix)][153] _ij_i1_
+* [Indiana Jones: The Pinball Adventure (L-3)][153] _ij_l3_
+* [Indiana Jones: The Pinball Adventure (L-4)][153] _ij_l4_
+* [Indiana Jones: The Pinball Adventure (L-5)][153] _ij_l5_
+* [Indiana Jones: The Pinball Adventure (L-6)][153] _ij_l6_
 * [Indiana Jones: The Pinball Adventure (L-7)][153] _ij_l7_
+* [Indiana Jones: The Pinball Adventure (LG-7 German)][153] _ij_lg7_
+* [Indianapolis 500 (1.0R)][154] _i500_10r_
+* [Indianapolis 500 (1.1 Belgian)][154] _i500_11b_
 * [Indianapolis 500 (1.1R)][154] _i500_11r_
 * [Iron Maiden][97] _ironmaid_
+* [Jack*Bot (1.01B Belgian/Canadian LED Ghost Fix)][155] _jb_101b_
 * [Jack*Bot (1.01R LED Ghost Fix)][155] _jb_101r_
+* [Jack*Bot (1.0B Belgian/Canadian)][155] _jb_10b_
 * [Jack*Bot (1.0R)][155] _jb_10r_
+* [Johnny Mnemonic (0.5R Prototype)][156] _jm_05r_
+* [Johnny Mnemonic (1.2B Belgian)][156] _jm_12b_
 * [Johnny Mnemonic (1.2R)][156] _jm_12r_
 * [Jokerz (L-6)][157] _jokrz_l6_
 * [Joust (L-2)][35] _jst_l2_
@@ -476,6 +535,8 @@
 * [Judge Dredd (L-6)][158] _jd_l6_
 * [Judge Dredd (L-7)][159] _jd_l7_
 * [Jungle Lord (L-2)][35] _jngld_l2_
+* [Junk Yard (0.3 Prototype)][160] _jy_03_
+* [Junk Yard (1.1)][160] _jy_11_
 * [Junk Yard (1.2)][160] _jy_12_
 * [Junk Yard (1.2C Competition MOD)][160] _jy_12c_
 * [Jurassic Park (3.05)][161] _jupk_305_
@@ -558,6 +619,8 @@
 * [Maverick, The Movie (4.00)][184] _mav_400_
 * [Maverick, The Movie (4.04, Display 4.01)][184] _mav_401_
 * [Maverick, The Movie (4.04, Display 4.02)][184] _mav_402_
+* [Medieval Madness (1.0 Pinball FX)][185] _mm_10pfx_
+* [Medieval Madness (1.0 Ultrapin)][185] _mm_10u_
 * [Medieval Madness (1.0)][185] _mm_10_
 * [Medieval Madness (1.09)][186] _mm_109_
 * [Medieval Madness (1.09B)][186] _mm_109b_
@@ -624,8 +687,10 @@
 * [Nine Ball][198] _nineball_
 * [Nitro Ground Shaker][94] _ngndshkr_
 * [Nitro Ground Shaker (7-digit conversion)][95] _ngndshkb_
+* [No Fear: Dangerous Sports (0.8X Export Prototype / S1.0)][199] _nf_08x_
 * [No Fear: Dangerous Sports (1.01F LED Ghost Fix / S1.0)][199] _nf_101_
 * [No Fear: Dangerous Sports (1.0F French / S1.0)][199] _nf_10f_
+* [No Fear: Dangerous Sports (1.1X Export / S1.1)][199] _nf_11x_
 * [No Fear: Dangerous Sports (2.0 / S1.1)][199] _nf_20_
 * [No Fear: Dangerous Sports (2.2 / S1.1)][199] _nf_22_
 * [No Fear: Dangerous Sports (2.3 / S1.1)][200] _nf_23_
@@ -640,8 +705,10 @@
 * [Paragon (/10 Scoring Free Play)][204] _paragond_
 * [Paragon (7-digit conversion rev. 20)][167] _paragonb_
 * [Paragon (Free Play rev. 3)][204] _paragonc_
+* [Party Zone, The (D-2 LED Ghost Fix)][205] _pz_d2_
 * [Party Zone, The (D-3 LED Ghost Fix)][205] _pz_d3_
 * [Party Zone, The (F-4 Fliptronic)][206] _pz_f4_
+* [Party Zone, The (F-4 Pinball FX)][206] _pz_f4pfx_
 * [Party Zone, The (F-5 LED Ghost Fix)][206] _pz_f5_
 * [Party Zone, The (L-1)][207] _pz_l1_
 * [Party Zone, The (L-2)][205] _pz_l2_
@@ -691,6 +758,8 @@
 * [Police Force (LA-4)][217] _polic_l4_
 * [Pool Sharks (LA-7)][218] _pool_l7_
 * [Popeye Saves The Earth (DX-5 LED Ghost Fix)][219] _pop_dx5_
+* [Popeye Saves The Earth (LA-4)][219] _pop_la4_
+* [Popeye Saves The Earth (LX-4)][219] _pop_lx4_
 * [Popeye Saves The Earth (LX-5)][219] _pop_lx5_
 * [Power Play][45] _pwerplay_
 * [Power Play (Free Play)][46] _pwerplab_
@@ -704,6 +773,12 @@
 * [Raven (German Free Play)][222] _ravengfp_
 * [Raven (rev. 1 Free Play)][222] _ravenafp_
 * [Red and Ted's Road Show (7.0)][223] _rs_70_
+* [Red and Ted's Road Show (DA-4 LED Ghost Fix)][223] _rs_da4_
+* [Red and Ted's Road Show (DA-5 LED Ghost Fix)][223] _rs_da5_
+* [Red and Ted's Road Show (DX-2 LED Ghost Fix)][223] _rs_dx2_
+* [Red and Ted's Road Show (DX-3 LED Ghost Fix)][223] _rs_dx3_
+* [Red and Ted's Road Show (DX-4 LED Ghost Fix)][223] _rs_dx4_
+* [Red and Ted's Road Show (DX-5 LED Ghost Fix)][223] _rs_dx5_
 * [Red and Ted's Road Show (L-6)][223] _rs_l6_
 * [Red and Ted's Road Show (L-6C Competition MOD)][223] _rs_l6c_
 * [Red and Ted's Road Show (LA-4)][223] _rs_la4_
@@ -777,10 +852,15 @@
 * [Rolling Stones (V17)][94] _rollston_
 * [Rolling Stones (V17, 7-digit conversion)][95] _rollstob_
 * [Safe Cracker (0.91 Prototype / S1.0)][237] _sc_091_
+* [Safe Cracker (1.4 / S1.0)][238] _sc_14_
 * [Safe Cracker (1.7 / S1.0)][238] _sc_17_
+* [Safe Cracker (1.7 No Percentaging / S1.0)][238] _sc_17n_
 * [Safe Cracker (1.8 / S1.1)][238] _sc_18s11_
 * [Safe Cracker (1.8 / S2.4 German)][238] _sc_18s2_
+* [Safe Cracker (1.8 No Percentaging / S1.1)][238] _sc_18n11_
+* [Safe Cracker (1.8 No Percentaging / S2.4 German)][238] _sc_18ns2_
 * [Safe Cracker (1.8 Pinball FX / S1.0)][238] _sc_18pfx_
+* [Scared Stiff (1.4)][239] _ss_14_
 * [Scared Stiff (1.5)][239] _ss_15_
 * [Scorpion (L-1 Free Play Fix)][52] _scrpn_l1ff_
 * [Scorpion (L-1)][52] _scrpn_l1_
@@ -792,11 +872,26 @@
 * [Secret Service (4.0 Europe)][240] _ssvc_e40_
 * [Secret Service (4.2, alternate sound)][240] _ssvc_a42_
 * [Sexy Girl][165] _sexygirl_
+* [Shadow, The (DA-2 LED Ghost Fix)][241] _ts_da2_
+* [Shadow, The (DA-4 LED Ghost Fix)][241] _ts_da4_
+* [Shadow, The (DA-6 LED Ghost Fix)][241] _ts_da6_
+* [Shadow, The (DF-6 French LED Ghost Fix)][241] _ts_df6_
+* [Shadow, The (DH-6 LED Ghost Fix)][241] _ts_dh6_
+* [Shadow, The (DM-6 Mild LED Ghost Fix)][241] _ts_dm6_
+* [Shadow, The (DX-4 LED Ghost Fix)][241] _ts_dx4_
 * [Shadow, The (DX-5 LED Ghost Fix)][241] _ts_dx5_
+* [Shadow, The (LA-2)][241] _ts_la2_
 * [Shadow, The (LA-4)][241] _ts_la4_
+* [Shadow, The (LA-6)][241] _ts_la6_
+* [Shadow, The (LF-4 French)][241] _ts_lf4_
+* [Shadow, The (LF-6 French)][241] _ts_lf6_
+* [Shadow, The (LH-6 Text index patch)][241] _ts_lh6p_
 * [Shadow, The (LH-6)][241] _ts_lh6_
+* [Shadow, The (LM-6 Mild)][241] _ts_lm6_
+* [Shadow, The (LX-4)][241] _ts_lx4_
 * [Shadow, The (LX-5)][241] _ts_lx5_
 * [Shadow, The (PA-1 Prototype)][241] _ts_pa1_
+* [Shadow, The (PA-2 LED Ghost Fix)][241] _ts_pa2_
 * [Sharkey's Shootout (2.07)][242] _shrky207_
 * [Sharkey's Shootout (2.11 French)][242] _shrky_fr_
 * [Sharkey's Shootout (2.11 German)][242] _shrky_gr_
@@ -901,11 +996,22 @@
 * [Star Trek 25th Anniversary (2.00)][268] _trek_200_
 * [Star Trek 25th Anniversary (2.01)][268] _trek_201_
 * [Star Trek 25th Anniversary (3.00 unofficial MOD)][268] _trek_300_
+* [Star Trek: The Next Generation (DX-1 LED Ghost Fix)][269] _sttng_d1_
 * [Star Trek: The Next Generation (DX-7 LED Ghost Fix, Sound L-1)][269] _sttng_d7_
 * [Star Trek: The Next Generation (DX-7 LED Ghost Fix, Special Sound L-1)][269] _sttng_dx_
+* [Star Trek: The Next Generation (HG-7 LED Ghost Fix)][269] _sttng_h7_
+* [Star Trek: The Next Generation (LG-7 German)][269] _sttng_g7_
+* [Star Trek: The Next Generation (LX-1)][269] _sttng_l1_
+* [Star Trek: The Next Generation (LX-2)][269] _sttng_l2_
+* [Star Trek: The Next Generation (LX-3)][269] _sttng_l3_
+* [Star Trek: The Next Generation (LX-5)][269] _sttng_l5_
 * [Star Trek: The Next Generation (LX-7, Sound L-1)][269] _sttng_l7_
 * [Star Trek: The Next Generation (LX-7, Special Sound L-1)][269] _sttng_x7_
 * [Star Trek: The Next Generation (LX-7C Competition MOD)][269] _sttng_l7c_
+* [Star Trek: The Next Generation (LX-8 MOD, Special Sound L-1)][269] _sttng_x8_
+* [Star Trek: The Next Generation (P-5 Prototype)][269] _sttng_p5_
+* [Star Trek: The Next Generation (P-6 LED Ghost Fix)][269] _sttng_p6_
+* [Star Trek: The Next Generation (P-8 Prototype)][269] _sttng_p8_
 * [Star Wars (1.01)][270] _stwr_101_
 * [Star Wars (1.02)][271] _stwr_102_
 * [Star Wars (1.03, Display 1.04)][271] _stwr_a14_
@@ -957,7 +1063,11 @@
 * [Tales from the Crypt (3.02 Dutch)][284] _tftc_302_
 * [Tales from the Crypt (3.03)][284] _tftc_303_
 * [Tales from the Crypt (4.00 unofficial MOD)][284] _tftc_400_
+* [Tales of the Arabian Nights (0.4 Prototype / S1.0)][285] _totan_04_
+* [Tales of the Arabian Nights (1.2 / S1.0)][285] _totan_12_
+* [Tales of the Arabian Nights (1.3 / S1.0)][285] _totan_13_
 * [Tales of the Arabian Nights (1.4 / S1.1)][285] _totan_14_
+* [Tales of the Arabian Nights (1.5C Competition MOD / S1.1)][285] _totan_15c_
 * [Taxi (Lola) (L-4)][286] _taxi_l4_
 * [Teenage Mutant Ninja Turtles (1.01)][287] _tmnt_101_
 * [Teenage Mutant Ninja Turtles (1.03)][287] _tmnt_103_
@@ -986,7 +1096,14 @@
 * [Terminator 3: Rise of the Machines (4.00 Italian)][291] _term3i_
 * [Terminator 3: Rise of the Machines (4.00 Spanish)][291] _term3l_
 * [Terminator 3: Rise of the Machines (4.00)][291] _term3_
+* [Theatre of Magic (0.61A LED Ghost Fix)][292] _tom_061_
+* [Theatre of Magic (0.6A Prototype)][292] _tom_06_
+* [Theatre of Magic (1.0 French)][292] _tom_10f_
+* [Theatre of Magic (1.01 French LED Ghost Fix)][292] _tom_101f_
+* [Theatre of Magic (1.21X LED Ghost Fix)][292] _tom_121_
+* [Theatre of Magic (1.2A)][292] _tom_12a_
 * [Theatre of Magic (1.2X)][292] _tom_12_
+* [Theatre of Magic (1.3 French)][292] _tom_13f_
 * [Theatre of Magic (1.3X)][292] _tom_13_
 * [Theatre of Magic (1.3XC Competition MOD)][292] _tom_13c_
 * [Theatre of Magic (1.4H Coin Play)][292] _tom_14hb_
@@ -1026,6 +1143,11 @@
 * [Twilight Zone (9.3 LED Ghost Fix)][298] _tz_93_
 * [Twilight Zone (9.4CH Coin Play)][299] _tz_94ch_
 * [Twilight Zone (9.4H)][299] _tz_94h_
+* [Twilight Zone (H-7)][298] _tz_h7_
+* [Twilight Zone (H-8)][298] _tz_h8_
+* [Twilight Zone (I-7 LED Ghost Fix)][298] _tz_i7_
+* [Twilight Zone (I-8 LED Ghost Fix)][298] _tz_i8_
+* [Twilight Zone (LA-9 PAPA Tournament Version 9.0)][298] _tz_la9_
 * [Twister (4.05)][300] _twst_405_
 * [Varkon (L-1)][35] _vrkon_l1_
 * [Vector][27] _vector_
@@ -1079,6 +1201,7 @@
 * [White Water (LH-6 Coin Play)][313] _ww_lh6c_
 * [White Water (LH-6)][313] _ww_lh6_
 * [White Water (P-8 Prototype)][312] _ww_p8_
+* [White Water (P-9 Prototype LED Ghost Fix)][312] _ww_p9_
 * [Wild Fyre][77] _wildfyre_
 * [Wild Fyre (Free Play)][78] _wildfyfp_
 * [World Cup (L-1)][314] _wldcp_l1_
@@ -1089,7 +1212,9 @@
 * [World Cup Soccer (LX-2)][315] _wcs_l2_
 * [World Cup Soccer (LX-3C Competition MOD)][315] _wcs_l3c_
 * [World Cup Soccer (PA-2 Prototype)][315] _wcs_p2_
+* [World Cup Soccer (PA-5 LED Ghost Fix)][315] _wcs_p5_
 * [World Cup Soccer (PX-3 Prototype)][315] _wcs_p3_
+* [World Cup Soccer (PX-6 LED Ghost Fix)][315] _wcs_p6_
 * [X's & O's][27] _xsandos_
 * [X's & O's (Free Play)][28] _xsandosa_
 * [X-Files, The (2.04)][316] _xfiles2_
@@ -1104,12 +1229,12 @@
 [1]: maps/stern/sam/acd_170.map.json
 [2]: maps/stern/sam/acd_170h.map.json
 [3]: maps/dataeast/version3/lw3_208.map.json
-[4]: maps/williams/wpc/tafg_lx3.map.json
-[5]: maps/williams/wpc/tafg_h3.map.json
-[6]: maps/williams/wpc/tafg_la2.map.json
-[7]: maps/williams/wpc/taf_l7.map.json
-[8]: maps/williams/wpc/taf_l5.map.json
-[9]: maps/williams/wpc/taf_l4.map.json
+[4]: maps/williams/wpc/tafg_la2.map.json
+[5]: maps/williams/wpc/tafg_lx3.map.json
+[6]: maps/williams/wpc/tafg_h3.map.json
+[7]: maps/williams/wpc/taf_l4.map.json
+[8]: maps/williams/wpc/taf_l7.map.json
+[9]: maps/williams/wpc/taf_l5.map.json
 [10]: maps/dataeast/version3/rab_130.map.json
 [11]: maps/dataeast/version3/rab_320.map.json
 [12]: maps/capcom/abv105.map.json
@@ -1186,8 +1311,8 @@
 [83]: maps/gottlieb/system3/deadweap.map.json
 [84]: maps/williams/system7/generic-12KB.map.json
 [85]: maps/williams/wpc/dm_lx4.map.json
-[86]: maps/williams/wpc/dm_dt101.map.json
-[87]: maps/williams/wpc/dm_h6.map.json
+[86]: maps/williams/wpc/dm_h6.map.json
+[87]: maps/williams/wpc/dm_dt101.map.json
 [88]: maps/williams/wpc/dm_pa2.map.json
 [89]: maps/zaccaria/gen2/dvlrider.map.json
 [90]: maps/williams/system11/diner_l4.map.json
@@ -1230,8 +1355,8 @@
 [127]: maps/williams/wpc/fh_l9.map.json
 [128]: maps/williams/system11/gs_lu4.map.json
 [129]: maps/gottlieb/system80b/80b-8digit-A-10KB.map.json
-[130]: maps/williams/wpc/gw_l5.map.json
-[131]: maps/williams/wpc/gw_l2.map.json
+[130]: maps/williams/wpc/gw_l2.map.json
+[131]: maps/williams/wpc/gw_l5.map.json
 [132]: maps/williams/wpc/gi_l9.map.json
 [133]: maps/gottlieb/system3/gladiatr.map.json
 [134]: maps/sega/whitestar/godzilla.map.json

@@ -10,7 +10,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -18,11 +18,26 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "ts_da2",
+      "ts_da4",
+      "ts_da6",
+      "ts_df6",
+      "ts_dh6",
+      "ts_dm6",
+      "ts_dx4",
       "ts_dx5",
+      "ts_la2",
       "ts_la4",
+      "ts_la6",
+      "ts_lf4",
+      "ts_lf6",
       "ts_lh6",
+      "ts_lh6p",
+      "ts_lm6",
+      "ts_lx4",
       "ts_lx5",
-      "ts_pa1"
+      "ts_pa1",
+      "ts_pa2"
     ]
   },
   "game_state": {

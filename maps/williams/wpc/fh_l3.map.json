@@ -6,13 +6,15 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-8K",
     "roms": [
       "fh_d3",
-      "fh_l3"
+      "fh_l2",
+      "fh_l3",
+      "fh_pa1"
     ]
   },
   "last_played": {

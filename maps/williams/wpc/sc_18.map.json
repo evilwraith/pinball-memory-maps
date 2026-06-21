@@ -8,12 +8,16 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "sc_14",
       "sc_17",
+      "sc_17n",
+      "sc_18n11",
+      "sc_18ns2",
       "sc_18pfx",
       "sc_18s11",
       "sc_18s2"

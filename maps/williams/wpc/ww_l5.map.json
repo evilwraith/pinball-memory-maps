@@ -10,7 +10,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2017 by Mike Metzger <mike@flexiblecreations.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -26,7 +26,8 @@
       "ww_l3",
       "ww_l4",
       "ww_l5",
-      "ww_p8"
+      "ww_p8",
+      "ww_p9"
     ]
   },
   "game_state": {

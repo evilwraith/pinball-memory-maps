@@ -6,14 +6,16 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
-      "afm_11"
+      "afm_11",
+      "afm_11pfx",
+      "afm_11u"
     ]
   },
   "last_played": {

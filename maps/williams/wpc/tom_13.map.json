@@ -12,7 +12,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2017 by Mike Metzger <mike@flexiblecreations.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -20,9 +20,16 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "tom_06",
+      "tom_061",
+      "tom_101f",
+      "tom_10f",
       "tom_12",
+      "tom_121",
+      "tom_12a",
       "tom_13",
       "tom_13c",
+      "tom_13f",
       "tom_14h",
       "tom_14hb",
       "tom_20"

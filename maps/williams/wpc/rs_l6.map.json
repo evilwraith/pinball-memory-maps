@@ -13,20 +13,26 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "rs_70",
+      "rs_da4",
+      "rs_da5",
+      "rs_dx2",
+      "rs_dx3",
+      "rs_dx4",
+      "rs_dx5",
+      "rs_l6",
+      "rs_l6c",
       "rs_la4",
       "rs_la5",
       "rs_lx2",
       "rs_lx3",
       "rs_lx4",
-      "rs_lx5",
-      "rs_l6",
-      "rs_l6c",
-      "rs_70"
+      "rs_lx5"
     ]
   },
   "last_played": {

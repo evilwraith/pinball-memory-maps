@@ -7,7 +7,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -15,7 +15,8 @@
     "platform": "williams-wpc-8K",
     "roms": [
       "ft_p2",
-      "ft_p4"
+      "ft_p4",
+      "ft_p5"
     ]
   },
   "last_played": {
