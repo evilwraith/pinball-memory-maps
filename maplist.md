@@ -7,15 +7,15 @@
 * [Addams Family Special Collectors Edition / Gold, The (LA-3)][4] _tafg_la3_
 * [Addams Family Special Collectors Edition / Gold, The (LX-3)][4] _tafg_lx3_
 * [Addams Family, The (D-5 LED Ghost Fix)][7] _taf_d5_
-* [Addams Family, The (D-6 LED Ghost Fix)][7] _taf_d6_
-* [Addams Family, The (H-4)][7] _taf_h4_
-* [Addams Family, The (I-4 LED Ghost Fix)][7] _taf_i4_
-* [Addams Family, The (L-4)][8] _taf_l4_
-* [Addams Family, The (L-5 Prototype D-7 LED Ghost Fix)][9] _taf_d7_
-* [Addams Family, The (L-5 Prototype L-7)][9] _taf_l7_
-* [Addams Family, The (L-5)][7] _taf_l5_
-* [Addams Family, The (L-5C Competition + LED Ghost MOD)][7] _taf_l5c_
-* [Addams Family, The (L-6)][7] _taf_l6_
+* [Addams Family, The (D-6 LED Ghost Fix)][8] _taf_d6_
+* [Addams Family, The (H-4)][8] _taf_h4_
+* [Addams Family, The (I-4 LED Ghost Fix)][8] _taf_i4_
+* [Addams Family, The (L-4)][9] _taf_l4_
+* [Addams Family, The (L-5 Prototype D-7 LED Ghost Fix)][7] _taf_d7_
+* [Addams Family, The (L-5 Prototype L-7)][7] _taf_l7_
+* [Addams Family, The (L-5)][8] _taf_l5_
+* [Addams Family, The (L-5C Competition + LED Ghost MOD)][8] _taf_l5c_
+* [Addams Family, The (L-6)][8] _taf_l6_
 * [Adventures of Rocky and Bullwinkle and Friends, The (1.30)][10] _rab_130_
 * [Adventures of Rocky and Bullwinkle and Friends, The (3.20)][11] _rab_320_
 * [Airborne (1.5)][12] _abv105_
@@ -1107,9 +1107,9 @@
 [4]: maps/williams/wpc/tafg_lx3.map.json
 [5]: maps/williams/wpc/tafg_h3.map.json
 [6]: maps/williams/wpc/tafg_la2.map.json
-[7]: maps/williams/wpc/taf_l5.map.json
-[8]: maps/williams/wpc/taf_l4.map.json
-[9]: maps/williams/wpc/taf_l7.map.json
+[7]: maps/williams/wpc/taf_l7.map.json
+[8]: maps/williams/wpc/taf_l5.map.json
+[9]: maps/williams/wpc/taf_l4.map.json
 [10]: maps/dataeast/version3/rab_130.map.json
 [11]: maps/dataeast/version3/rab_320.map.json
 [12]: maps/capcom/abv105.map.json
