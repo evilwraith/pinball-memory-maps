@@ -10,7 +10,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -38,6 +38,10 @@
       "ts_lx5",
       "ts_pa1",
       "ts_pa2"
+    ],
+    "free_only": [
+      "ts_dm6",
+      "ts_lm6"
     ]
   },
   "game_state": {

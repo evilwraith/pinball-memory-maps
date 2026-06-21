@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2016 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -17,6 +17,9 @@
       "mm_109",
       "mm_109b",
       "mm_109c"
+    ],
+    "free_only": [
+      "mm_109"
     ]
   },
   "last_played": {
