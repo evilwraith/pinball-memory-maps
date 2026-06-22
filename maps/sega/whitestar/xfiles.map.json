@@ -4,7 +4,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -13,6 +13,7 @@
     "roms": [
       "xfiles",
       "xfiles2",
+      "xfiles20",
       "xfiles304",
       "xfilesf"
     ]

@@ -4,13 +4,15 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
     "license": "GNU Lesser General Public License v3.0",
     "platform": "whitestar",
     "roms": [
+      "twst_300",
+      "twst_404",
       "twst_405"
     ]
   },

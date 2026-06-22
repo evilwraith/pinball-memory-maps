@@ -5,13 +5,14 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
     "license": "GNU Lesser General Public License v3.0",
     "platform": "whitestar",
     "roms": [
+      "monop301",
       "monopole",
       "monopolf",
       "monopolg",

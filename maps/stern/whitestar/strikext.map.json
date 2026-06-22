@@ -5,7 +5,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
     ],
@@ -17,6 +17,8 @@
       "strxt_fr",
       "strxt_gr",
       "strxt_it",
+      "strxt_it_100",
+      "strxt_it_101",
       "strxt_sp",
       "strxt_uk"
     ]

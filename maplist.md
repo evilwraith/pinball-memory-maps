@@ -260,6 +260,7 @@
 * [Elektra (Free Play)][28] _elektraa_
 * [Elvira and the Party Monsters (LA-2)][102] _eatpm_l2_
 * [Elvira and the Party Monsters (LA-4)][102] _eatpm_l4_
+* [Elvis (1.00)][103] _elv100_
 * [Elvis (3.02 French)][103] _elv302f_
 * [Elvis (3.02 German)][103] _elv302g_
 * [Elvis (3.02 Italian)][103] _elv302i_
@@ -378,6 +379,8 @@
 * [Gilligan's Island (D-9 LED Ghost Fix)][132] _gi_d9_
 * [Gilligan's Island (L-9)][132] _gi_l9_
 * [Gladiators][133] _gladiatr_
+* [Godzilla (0.90 Prototype)][134] _godz_090_
+* [Godzilla (1.00)][134] _godz_100_
 * [Godzilla (2.05)][134] _godzilla_
 * [Gold Ball][135] _goldball_
 * [Gold Ball (alternate set)][135] _goldbaln_
@@ -493,6 +496,8 @@
 * [Hurricane (D-2 LED Ghost Fix)][151] _hurr_d2_
 * [Hurricane (L-2)][151] _hurr_l2_
 * [HyperBall (L-6 MOD High score save)][84] _hypbl_l6_
+* [ID4: Independence Day (2.01 French)][152] _id4_201f_
+* [ID4: Independence Day (2.01)][152] _id4_201_
 * [ID4: Independence Day (2.02 French)][152] _id4f_
 * [ID4: Independence Day (2.02)][152] _id4_
 * [Indiana Jones: The Pinball Adventure (D-3 LED Ghost Fix)][153] _ij_d3_
@@ -638,6 +643,7 @@
 * [Millionaire (L-3)][188] _milln_l3_
 * [Monday Night Football (2.7, 50cts)][189] _mnfb_c27_
 * [Monday Night Football (2.9, 50cts)][189] _mnfb_c29_
+* [Monopoly (3.01)][190] _monop301_
 * [Monopoly (3.03)][190] _monopole_
 * [Monopoly (3.20 French)][190] _monopolf_
 * [Monopoly (3.20 German)][190] _monopolg_
@@ -954,9 +960,12 @@
 * [Sopranos, The (5.00)][252] _sopranos_
 * [Sorcerer (L-1)][253] _sorcr_l1_
 * [Sorcerer (L-2)][253] _sorcr_l2_
+* [South Park (0.90 Prototype)][254] _sprk_090_
+* [South Park (0.96 Prototype)][254] _sprk_096_
 * [South Park (1.03)][254] _sprk_103_
 * [Space Invaders][94] _spaceinv_
 * [Space Invaders (7-digit conversion)][95] _spaceinb_
+* [Space Jam (2.00)][255] _spacejm2_
 * [Space Jam (3.00 French)][255] _spacejmf_
 * [Space Jam (3.00 German)][255] _spacejmg_
 * [Space Jam (3.00 Italian)][255] _spacejmi_
@@ -1031,7 +1040,9 @@
 * [Stingray (Free Play)][78] _stingrfp_
 * [Street Fighter II][276] _sfight2_
 * [Strike][277] _strike_
+* [Striker Xtreme (1.00 Italian)][196] _strxt_it_100_
 * [Striker Xtreme (1.01 English)][196] _strxt_uk_
+* [Striker Xtreme (1.01 Italian)][196] _strxt_it_101_
 * [Striker Xtreme (1.02 French)][196] _strxt_fr_
 * [Striker Xtreme (1.02 Italian)][196] _strxt_it_
 * [Striker Xtreme (1.02 Spanish)][196] _strxt_sp_
@@ -1148,6 +1159,8 @@
 * [Twilight Zone (I-7 LED Ghost Fix)][298] _tz_i7_
 * [Twilight Zone (I-8 LED Ghost Fix)][298] _tz_i8_
 * [Twilight Zone (LA-9 PAPA Tournament Version 9.0)][298] _tz_la9_
+* [Twister (3.00)][300] _twst_300_
+* [Twister (4.04)][300] _twst_404_
 * [Twister (4.05)][300] _twst_405_
 * [Varkon (L-1)][35] _vrkon_l1_
 * [Vector][27] _vector_
@@ -1164,6 +1177,7 @@
 * [Viking][94] _viking_
 * [Viking (7-digit conversion)][95] _vikingb_
 * [Viper][97] _viper_
+* [Viper Night Drivin' (1.02)][303] _vipr_102_
 * [Viper Night Drivin' (2.01)][303] _viprsega_
 * [Volcano][304] _vlcno_ax_
 * [Voltan Escapes Cosmic Doom][165] _voltan_
@@ -1217,6 +1231,7 @@
 * [World Cup Soccer (PX-6 LED Ghost Fix)][315] _wcs_p6_
 * [X's & O's][27] _xsandos_
 * [X's & O's (Free Play)][28] _xsandosa_
+* [X-Files, The (2.00)][316] _xfiles20_
 * [X-Files, The (2.04)][316] _xfiles2_
 * [X-Files, The (3.03 French)][316] _xfilesf_
 * [X-Files, The (3.03)][316] _xfiles_
