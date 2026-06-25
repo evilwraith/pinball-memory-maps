@@ -77,6 +77,8 @@
 * [Banzai Run (L-3)][33] _bnzai_l3_
 * [Barb Wire][34] _barbwire_
 * [Barracora (L-1)][35] _barra_l1_
+* [Batman (1.03 French)][36] _btmn_f13_
+* [Batman (1.03 German)][36] _btmn_g13_
 * [Batman (1.03)][36] _btmn_103_
 * [Batman (1.06)][36] _btmn_106_
 * [Batman Forever (4.0 Austrian)][37] _bmf_at_
@@ -473,6 +475,7 @@
 * [Hollywood Heat (Free Play)][129] _hlywdhfp_
 * [Hollywood Heat (French Free Play)][129] _hlywhffp_
 * [Hollywood Heat (German Free Play)][129] _hlywhgfp_
+* [Hook (4.01 with Prototype Sound)][146] _hook_401p_
 * [Hook (4.01)][146] _hook_401_
 * [Hook (4.01, Display 4.00)][146] _hook_400_
 * [Hook (4.01, French Display 4.01)][146] _hook_f401_
@@ -570,6 +573,10 @@
 * [Laser War (8.1)][169] _lwar_a81_
 * [Laser War (8.3)][169] _lwar_a83_
 * [Laser War (9.0 Europe)][169] _lwar_e90_
+* [Last Action Hero (1.04 French)][170] _lah_f104_
+* [Last Action Hero (1.04 Spanish)][170] _lah_l104_
+* [Last Action Hero (1.06 Canadian)][170] _lah_c106_
+* [Last Action Hero (1.08 Spanish, Display 1.04)][170] _lah_l108_
 * [Last Action Hero (1.10)][170] _lah_110_
 * [Last Action Hero (1.12)][170] _lah_112_
 * [Last Action Hero (1.13 unofficial MOD)][170] _lah_113_
@@ -577,8 +584,11 @@
 * [Lectronamo (Free Play)][78] _lectrofp_
 * [Lethal Weapon 3 (2.00)][171] _lw3_200_
 * [Lethal Weapon 3 (2.03)][171] _lw3_203_
+* [Lethal Weapon 3 (2.04 English)][171] _lw3_e204_
 * [Lethal Weapon 3 (2.05)][171] _lw3_205_
 * [Lethal Weapon 3 (2.08)][3] _lw3_208_
+* [Lethal Weapon 3 (2.08p, Voices Mod)][3] _lw3_208p_
+* [Lethal Weapon 3 (3.00 unofficial MOD)][3] _lw3_300_
 * [Lethal Weapon 3 (3.01 unofficial MOD)][3] _lw3_301_
 * [Lightning][97] _lightnin_
 * [Lights, Camera, Action][172] _lca_
@@ -640,6 +650,7 @@
 * [Meteor (Bonus Count Fix)][16] _meteorbf_
 * [Meteor (Bonus Count Offical Fix)][16] _meteora_
 * [Meteor (Bonus Count and Sound Fix)][16] _meteora2_
+* [Michael Jordan (1.30)][3] _mj_130_
 * [Millionaire (L-3)][188] _milln_l3_
 * [Monday Night Football (2.7, 50cts)][189] _mnfb_c27_
 * [Monday Night Football (2.9, 50cts)][189] _mnfb_c29_
@@ -1021,13 +1032,17 @@
 * [Star Trek: The Next Generation (P-5 Prototype)][269] _sttng_p5_
 * [Star Trek: The Next Generation (P-6 LED Ghost Fix)][269] _sttng_p6_
 * [Star Trek: The Next Generation (P-8 Prototype)][269] _sttng_p8_
+* [Star Wars (1.01 German)][270] _stwr_g11_
 * [Star Wars (1.01)][270] _stwr_101_
+* [Star Wars (1.02 English)][271] _stwr_e12_
 * [Star Wars (1.02)][271] _stwr_102_
 * [Star Wars (1.03, Display 1.04)][271] _stwr_a14_
 * [Star Wars (1.03, Display 1.05)][271] _stwr_103_
+* [Star Wars (1.03, Display A0.46)][271] _stwr_a046_
 * [Star Wars (1.04 20th Anniversary)][271] _stwr_104_
 * [Star Wars (1.06 20th Anniversary)][271] _stwr_106_
 * [Star Wars (1.07 20th Anniversary)][271] _stwr_107_
+* [Star Wars (1.07 20th Anniversary, Spanish)][271] _stwr_107s_
 * [Star Wars Trilogy Special Edition, The (3.00)][272] _swtril30_
 * [Star Wars Trilogy Special Edition, The (4.01)][273] _swtril41_
 * [Star Wars Trilogy Special Edition, The (4.03)][273] _swtril43_
@@ -1069,6 +1084,7 @@
 * [Tag-Team Pinball (German Free Play)][283] _tagtmgfp_
 * [Tag-Team Pinball (rev. 2 Free Play)][283] _tagtem2f_
 * [Tag-Team Pinball (rev. 2)][283] _tagteam2_
+* [Tales from the Crypt (1.04 Spanish)][284] _tftc_104_
 * [Tales from the Crypt (2.00)][284] _tftc_200_
 * [Tales from the Crypt (3.00)][284] _tftc_300_
 * [Tales from the Crypt (3.02 Dutch)][284] _tftc_302_
@@ -1136,6 +1152,8 @@
 * [Title Fight][294] _tfight_
 * [Tommy Pinball Wizard, The Who's (1.02 Belgian)][295] _tomy_102be_
 * [Tommy Pinball Wizard, The Who's (1.02)][295] _tomy_102_
+* [Tommy Pinball Wizard, The Who's (2.01 Dutch)][295] _tomy_201d_
+* [Tommy Pinball Wizard, The Who's (3.00 Dutch)][295] _tomy_h30_
 * [Tommy Pinball Wizard, The Who's (3.01 German)][295] _tomy_301g_
 * [Tommy Pinball Wizard, The Who's (4.00)][295] _tomy_400_
 * [Tommy Pinball Wizard, The Who's (5.00 unofficial MOD)][295] _tomy_500_

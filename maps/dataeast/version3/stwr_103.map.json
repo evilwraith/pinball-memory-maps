@@ -5,7 +5,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -17,7 +17,10 @@
       "stwr_104",
       "stwr_106",
       "stwr_107",
-      "stwr_a14"
+      "stwr_107s",
+      "stwr_a046",
+      "stwr_a14",
+      "stwr_e12"
     ]
   },
   "game_state": {

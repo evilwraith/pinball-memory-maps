@@ -5,7 +5,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -14,7 +14,8 @@
     "roms": [
       "lw3_200",
       "lw3_203",
-      "lw3_205"
+      "lw3_205",
+      "lw3_e204"
     ]
   },
   "game_state": {

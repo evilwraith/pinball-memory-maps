@@ -5,13 +5,14 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
     "license": "GNU Lesser General Public License v3.0",
     "platform": "dataeast",
     "roms": [
+      "tftc_104",
       "tftc_200",
       "tftc_300",
       "tftc_302",
