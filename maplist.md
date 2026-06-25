@@ -722,14 +722,15 @@
 * [Paragon (/10 Scoring Free Play)][204] _paragond_
 * [Paragon (7-digit conversion rev. 20)][167] _paragonb_
 * [Paragon (Free Play rev. 3)][204] _paragonc_
-* [Party Zone, The (D-2 LED Ghost Fix)][205] _pz_d2_
-* [Party Zone, The (D-3 LED Ghost Fix)][205] _pz_d3_
-* [Party Zone, The (F-4 Fliptronic)][206] _pz_f4_
-* [Party Zone, The (F-4 Pinball FX)][206] _pz_f4pfx_
-* [Party Zone, The (F-5 LED Ghost Fix)][206] _pz_f5_
-* [Party Zone, The (L-1)][207] _pz_l1_
-* [Party Zone, The (L-2)][205] _pz_l2_
-* [Party Zone, The (L-3)][205] _pz_l3_
+* [Party Zone, The (D-1 LED Ghost Fix)][205] _pz_d1_
+* [Party Zone, The (D-2 LED Ghost Fix)][206] _pz_d2_
+* [Party Zone, The (D-3 LED Ghost Fix)][206] _pz_d3_
+* [Party Zone, The (F-4 Fliptronic)][207] _pz_f4_
+* [Party Zone, The (F-4 Pinball FX)][207] _pz_f4pfx_
+* [Party Zone, The (F-5 LED Ghost Fix)][207] _pz_f5_
+* [Party Zone, The (L-1)][205] _pz_l1_
+* [Party Zone, The (L-2)][206] _pz_l2_
+* [Party Zone, The (L-3)][206] _pz_l3_
 * [Phantom of the Opera, The (2.9)][208] _poto_a29_
 * [Phantom of the Opera, The (3.1)][208] _poto_a31_
 * [Phantom of the Opera, The (3.2)][208] _poto_a32_
@@ -1102,13 +1103,14 @@
 * [Teenage Mutant Ninja Turtles (1.04)][287] _tmnt_104_
 * [Teenage Mutant Ninja Turtles (2.00 unofficial MOD)][287] _tmnt_200_
 * [Teenage Mutant Ninja Turtles (A 0.7 VUK Prototype)][287] _tmnt_a07_
-* [Terminator 2: Judgment Day (D-8 LED Ghost Fix)][288] _t2_d8_
-* [Terminator 2: Judgment Day (L-2)][289] _t2_l2_
-* [Terminator 2: Judgment Day (L-8)][288] _t2_l8_
-* [Terminator 2: Judgment Day (L-81 Attract Sound patch)][288] _t2_l81_
-* [Terminator 2: Judgment Day (L-82 Attract Score patch)][288] _t2_l82_
-* [Terminator 2: Judgment Day (L-83 Profanity, bugfix/MOD, LED Ghost Fix)][288] _t2_l83_
-* [Terminator 2: Judgment Day (L-84 Profanity, bugfix/MOD, LED Ghost Fix)][288] _t2_l84_
+* [Terminator 2: Judgment Day (D-2 LED Ghost Fix)][288] _t2_d2_
+* [Terminator 2: Judgment Day (D-8 LED Ghost Fix)][289] _t2_d8_
+* [Terminator 2: Judgment Day (L-2)][288] _t2_l2_
+* [Terminator 2: Judgment Day (L-8)][289] _t2_l8_
+* [Terminator 2: Judgment Day (L-81 Attract Sound patch)][289] _t2_l81_
+* [Terminator 2: Judgment Day (L-82 Attract Score patch)][289] _t2_l82_
+* [Terminator 2: Judgment Day (L-83 Profanity, bugfix/MOD, LED Ghost Fix)][289] _t2_l83_
+* [Terminator 2: Judgment Day (L-84 Profanity, bugfix/MOD, LED Ghost Fix)][289] _t2_l84_
 * [Terminator 3: Rise of the Machines (2.05 French)][290] _term3f_2_
 * [Terminator 3: Rise of the Machines (2.05 Italian)][290] _term3i_2_
 * [Terminator 3: Rise of the Machines (2.05 Spanish)][290] _term3l_2_
@@ -1463,9 +1465,9 @@
 [202]: maps/gottlieb/system3/opthund.map.json
 [203]: maps/stern/m200/orbitor1.map.json
 [204]: maps/bally/as-2518-35/system-rom-30-freeplay.map.json
-[205]: maps/williams/wpc/pz_l3.map.json
-[206]: maps/williams/wpc/pz_f4.map.json
-[207]: maps/williams/wpc/pz_l1.map.json
+[205]: maps/williams/wpc/pz_l1.map.json
+[206]: maps/williams/wpc/pz_l3.map.json
+[207]: maps/williams/wpc/pz_f4.map.json
 [208]: maps/dataeast/version2/poto_a32.map.json
 [209]: maps/williams/system4/phnix_l1.map.json
 [210]: maps/williams/system11/pb_l5.map.json
@@ -1546,8 +1548,8 @@
 [285]: maps/williams/wpc/totan_14.map.json
 [286]: maps/williams/system11/taxi_l4.map.json
 [287]: maps/dataeast/version3/tmnt_104.map.json
-[288]: maps/williams/wpc/t2_l8.map.json
-[289]: maps/williams/wpc/t2_l2.map.json
+[288]: maps/williams/wpc/t2_l2.map.json
+[289]: maps/williams/wpc/t2_l8.map.json
 [290]: maps/stern/whitestar/term3_2.map.json
 [291]: maps/stern/whitestar/term3.map.json
 [292]: maps/williams/wpc/tom_13.map.json
