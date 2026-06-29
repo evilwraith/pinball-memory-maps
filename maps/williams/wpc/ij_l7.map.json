@@ -6,13 +6,25 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "ij_d3",
+      "ij_d4",
+      "ij_d5",
+      "ij_d6",
       "ij_d7",
-      "ij_l7"
+      "ij_dg7",
+      "ij_h1",
+      "ij_i1",
+      "ij_l3",
+      "ij_l4",
+      "ij_l5",
+      "ij_l6",
+      "ij_l7",
+      "ij_lg7"
     ]
   },
   "last_played": {

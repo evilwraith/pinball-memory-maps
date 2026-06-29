@@ -1,12 +1,13 @@
 {
   "_notes": [
     "Compiled by Francis De Brabandere.",
-    "WPC 50018, SYS 3.76 REV 0.6",
+    "WPC 50018, SYS 3.76 REV 0.5 (ww_lh5)",
+    "WPC 50018, SYS 3.76 REV 0.6 (ww_lh6)",
     "2025-07-07 Tom Collins added automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2024 by Francis De Brabandere <francisdb@gmail.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -14,10 +15,12 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-8K",
     "roms": [
+      "ww_lh5",
       "ww_lh6",
       "ww_lh6c"
     ],
     "free_only": [
+      "ww_lh5",
       "ww_lh6"
     ]
   },
@@ -985,7 +988,7 @@
       "label": "HSTD Reset"
     },
     {
-      "_notes": "this checksum fails for ww_lh6, but is necessary for ww_lh6c",
+      "_notes": "this checksum fails for ww_lh5/ww_lh6, but is necessary for ww_lh6c",
       "start": 7375,
       "end": 7383,
       "label": "Credits"

@@ -1,12 +1,15 @@
 {
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
-    "WPC 50044, SYS 3.49 REV 1.2",
+    "WPC 50044, SYS 3.49 REV 0.4 (wd_048r)",
+    "WPC 50044, SYS 3.49 REV 1.0 (wd_10f, wd_10g, wd_10r)",
+    "WPC 50044, SYS 3.49 REV 1.1 (wd_11)",
+    "WPC 50044, SYS 3.49 REV 1.2 (wd_12, wd_12g, wd_12gp, wd_12p)",
     "2025-07-07 Tom Collins added automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2026 by Andre Santana <herrmirto@proton.me>"
@@ -14,10 +17,15 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "wd_048r",
+      "wd_10f",
+      "wd_10g",
+      "wd_10r",
+      "wd_11",
       "wd_12",
-      "wd_12p",
       "wd_12g",
-      "wd_12gp"
+      "wd_12gp",
+      "wd_12p"
     ]
   },
   "last_played": {
@@ -363,7 +371,8 @@
         "label": "MINUTES ON",
         "start": 6335,
         "encoding": "int",
-        "length": 3
+        "length": 3,
+        "units": "minutes"
       },
       "23": {
         "label": "BALLS PLAYED",

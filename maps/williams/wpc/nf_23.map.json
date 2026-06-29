@@ -1,13 +1,14 @@
 {
   "_notes": [
     "Compiled by Horsepin.",
-    "WPC 50025, SYS 3.48 REV 2.3",
+    "WPC 50025, SYS 3.48 REV 2.3 (nf_23)",
     "v0.2: changed score lengths from 5 to 6",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "2026-05-06 Tom Collins split off from earlier ROM versions"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2016 by Dave Horsepin <horse@horsesoft.uk>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -15,8 +16,6 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
-      "nf_20",
-      "nf_22",
       "nf_23",
       "nf_23f",
       "nf_23x"
@@ -399,7 +398,8 @@
         "label": "MINUTES ON",
         "start": 6335,
         "encoding": "int",
-        "length": 3
+        "length": 3,
+        "units": "minutes"
       },
       "23": {
         "label": "BALLS PLAYED",

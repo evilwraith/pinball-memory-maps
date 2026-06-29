@@ -6,16 +6,28 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 5,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "sttng_d1",
+      "sttng_d2",
       "sttng_d7",
       "sttng_dx",
+      "sttng_g7",
+      "sttng_h7",
+      "sttng_l1",
+      "sttng_l2",
+      "sttng_l3",
+      "sttng_l5",
       "sttng_l7",
       "sttng_l7c",
-      "sttng_x7"
+      "sttng_p5",
+      "sttng_p6",
+      "sttng_p8",
+      "sttng_x7",
+      "sttng_x8"
     ]
   },
   "last_played": {

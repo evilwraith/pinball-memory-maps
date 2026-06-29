@@ -1,19 +1,38 @@
 {
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
-    "WPC 50024, SYS 3.49 REV 0.6",
+    "WPC 50024, SYS 3.29 REV 0.2 (rs_lx2)",
+    "WPC 50024, SYS 3.29 REV 0.3 (rs_lx3)",
+    "WPC 50024, SYS 3.30 REV 0.4 (rs_la4, rs_lx4)",
+    "WPC 50024, SYS 3.34 REV 0.5 (rs_la5, rs_lx5)",
+    "WPC 50024, SYS 3.49 REV 0.6 (rs_l6)",
+    "WPC 50024, SYS 3.49 REV 0.7 (rs_l6c)",
+    "WPC 50024, SYS 3.49 REV 7.0 (rs_70)",
     "2025-07-07 Tom Collins added automated audits",
     "unknown location for audit 'B.4 30 BLAST FOR E.B.', single-byte value"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 7,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "rs_70",
+      "rs_da4",
+      "rs_da5",
+      "rs_dx2",
+      "rs_dx3",
+      "rs_dx4",
+      "rs_dx5",
       "rs_l6",
-      "rs_l6c"
+      "rs_l6c",
+      "rs_la4",
+      "rs_la5",
+      "rs_lx2",
+      "rs_lx3",
+      "rs_lx4",
+      "rs_lx5"
     ]
   },
   "last_played": {
@@ -400,7 +419,8 @@
         "label": "MINUTES ON",
         "start": 6335,
         "encoding": "int",
-        "length": 3
+        "length": 3,
+        "units": "minutes"
       },
       "23": {
         "label": "BALLS PLAYED",

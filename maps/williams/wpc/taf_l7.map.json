@@ -1,16 +1,19 @@
 {
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
-    "WPC 20017, SYS 2.43 REV 0.7",
+    "WPC 20017, SYS 2.43 REV 0.5 (taf_d5)",
+    "WPC 20017, SYS 2.43 REV 0.7 (taf_l7)",
+    "WPC 20017, SYS 2.43 REV 7.6 (taf_d7)",
     "2025-07-07 Tom Collins added automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-8K",
     "roms": [
+      "taf_d5",
       "taf_d7",
       "taf_l7"
     ]

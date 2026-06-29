@@ -1,14 +1,18 @@
 {
   "_notes": [
     "Compiled by Mike Metzger.",
-    "WPC 50039, SYS 3.48 REV 1.3",
+    "WPC 50039, SYS 3.40 REV 1.2 (tom_12)",
+    "WPC 50039, SYS 3.48 REV 1.3 (tom_13)",
+    "WPC 50039, SYS 3.48 REV 1.4 (tom_14h, tom_14hb)",
+    "WPC 50039, SYS 3.48 REV 1.5 (tom_13c)",
+    "WPC 50039, SYS 3.48 REV 2.0 (tom_20)",
     "v0.1 by Mike Metzger; last_game, high_scores, mode_champions",
     "v0.2 (2018-03) by Tom Collins; added adjustments, audits, checksums",
     "2025-07-07 Tom Collins added automated audits (B.2, B.6)"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2017 by Mike Metzger <mike@flexiblecreations.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -16,8 +20,16 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
     "roms": [
+      "tom_06",
+      "tom_061",
+      "tom_101f",
+      "tom_10f",
+      "tom_12",
+      "tom_121",
+      "tom_12a",
       "tom_13",
       "tom_13c",
+      "tom_13f",
       "tom_14h",
       "tom_14hb",
       "tom_20"

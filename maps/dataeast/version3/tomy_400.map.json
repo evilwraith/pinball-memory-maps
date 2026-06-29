@@ -5,7 +5,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2016 by Horsepin>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -15,9 +15,11 @@
     "roms": [
       "tomy_102",
       "tomy_102be",
+      "tomy_201d",
       "tomy_301g",
       "tomy_400",
-      "tomy_500"
+      "tomy_500",
+      "tomy_h30"
     ]
   },
   "game_state": {

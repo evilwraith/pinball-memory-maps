@@ -5,7 +5,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -14,7 +14,10 @@
     "roms": [
       "aar_101",
       "lw3_208",
-      "lw3_301"
+      "lw3_208p",
+      "lw3_300",
+      "lw3_301",
+      "mj_130"
     ]
   },
   "game_state": {

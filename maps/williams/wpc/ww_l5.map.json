@@ -1,12 +1,16 @@
 {
   "_notes": [
-    "Compiled by Mike Metzger.",
-    "WPC 50018, SYS 2.62 REV 0.5",
+    "Original map compiled by Mike Metzger.",
+    "WPC 50018, SYS 2.43 REV 13.8 (ww_p8)",
+    "WPC 50018, SYS 2.48 REV 0.2 (ww_l2)",
+    "WPC 50018, SYS 2.50 REV 0.3 (ww_l3)",
+    "WPC 50018, SYS 2.50 REV 0.4 (ww_l4)",
+    "WPC 50018, SYS 2.62 REV 0.5 (ww_l5)",
     "2025-07-07 Tom Collins added automated audits"
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2017 by Mike Metzger <mike@flexiblecreations.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -14,8 +18,16 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-8K",
     "roms": [
+      "ww_d2",
+      "ww_d3",
+      "ww_d4",
       "ww_d5",
-      "ww_l5"
+      "ww_l2",
+      "ww_l3",
+      "ww_l4",
+      "ww_l5",
+      "ww_p8",
+      "ww_p9"
     ]
   },
   "game_state": {
@@ -354,7 +366,8 @@
         "label": "MINUTES ON",
         "start": 6335,
         "encoding": "int",
-        "length": 3
+        "length": 3,
+        "units": "minutes"
       },
       "23": {
         "label": "BALLS PLAYED",

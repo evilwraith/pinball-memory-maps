@@ -5,7 +5,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2016 by Dave horsepin <horse@horsesoft.uk>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -14,7 +14,9 @@
     "platform": "dataeast",
     "roms": [
       "btmn_103",
-      "btmn_106"
+      "btmn_106",
+      "btmn_f13",
+      "btmn_g13"
     ]
   },
   "game_state": {

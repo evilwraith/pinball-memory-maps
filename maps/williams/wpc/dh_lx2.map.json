@@ -7,7 +7,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -16,6 +16,7 @@
     "platform": "williams-wpc-12K",
     "roms": [
       "dh_dx2",
+      "dh_lf2",
       "dh_lx2"
     ]
   },
