@@ -12,7 +12,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": [
       "Copyright (C) 2017 by Mike Metzger <mike@flexiblecreations.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -97,7 +97,10 @@
       "start": 7325,
       "encoding": "int",
       "min": 0,
-      "max": 31
+      "max": 31,
+      "special_values": {
+        "255": "n/a"
+      }
     },
     "replay": {
       "label": "Replay",

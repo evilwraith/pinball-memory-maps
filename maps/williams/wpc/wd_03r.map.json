@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2026 by Andre Santana <herrmirto@proton.me>"
@@ -71,7 +71,10 @@
       "start": 7450,
       "encoding": "int",
       "min": 0,
-      "max": 31
+      "max": 31,
+      "special_values": {
+        "255": "n/a"
+      }
     },
     "replay": {
       "label": "Replay",

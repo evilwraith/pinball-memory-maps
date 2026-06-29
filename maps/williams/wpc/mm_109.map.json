@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2016 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -70,7 +70,10 @@
       "start": 7525,
       "encoding": "int",
       "min": 0,
-      "max": 31
+      "max": 31,
+      "special_values": {
+        "255": "n/a"
+      }
     },
     "replay": {
       "label": "Replay",

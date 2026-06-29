@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-wpc-12K",
@@ -76,7 +76,10 @@
       "start": 7615,
       "encoding": "int",
       "min": 0,
-      "max": 31
+      "max": 31,
+      "special_values": {
+        "255": "n/a"
+      }
     },
     "game_over": {
       "label": "Game Over",
