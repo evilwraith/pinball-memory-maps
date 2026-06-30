@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -15,6 +15,7 @@
     "roms": [
       "corv_dx1",
       "corv_la1",
+      "corv_la2",
       "corv_lx1",
       "corv_lx2",
       "corv_px4",

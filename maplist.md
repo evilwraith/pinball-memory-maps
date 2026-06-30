@@ -206,6 +206,7 @@
 * [Corvette (2.1)][85] _corv_21_
 * [Corvette (DX-1 LED Ghost Fix)][86] _corv_dx1_
 * [Corvette (LA-1)][86] _corv_la1_
+* [Corvette (LA-2)][86] _corv_la2_
 * [Corvette (LX-1)][86] _corv_lx1_
 * [Corvette (LX-2)][86] _corv_lx2_
 * [Corvette (PX-3 Prototype)][87] _corv_px3_
