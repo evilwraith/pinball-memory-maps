@@ -6,9 +6,9 @@
 
 
 CHANGED_MAPS=`git diff --name-only --staged | grep '\.map\.json' | wc -l`
-NEW_VERSION=`git diff --staged | grep '^+    "version":' | wc -l`
+MODIFIED_VERSION=`git diff --staged | grep '^[+-]    "version":' | wc -l`
 
-if [[ "${CHANGED_MAPS}" != "${NEW_VERSION}" ]]; then
+if [[ "${CHANGED_MAPS}" != "${MODIFIED_VERSION}" ]]; then
 	echo "Only ${NEW_VERSION}/${CHANGED_MAPS} modified maps include _metadata.version update."
 	git diff --staged | grep -E '^(\+    "version":)|(\+\+\+.*\.map\.json)'
 
