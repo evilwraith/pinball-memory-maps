@@ -1,6 +1,6 @@
 {
   "_notes": [
-    "Generic Gottlieb System 80 map.",
+    "Generic Gottlieb System 80 map for single game PROM games.",
     "NVRAM: 256x4-bit chip (nibble:low) at CPU address 0x1800.",
     "NVRAM: 85-byte regions stored in triplicate at 0x1800, 0x1855, and 0x18AA.",
     "All games share the same bookkeeping/audit and high score layout.",
@@ -8,7 +8,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -83,6 +83,76 @@
       "start": "0x184E",
       "length": 2,
       "encoding": "bcd"
+    },
+    "scores": [
+      {
+        "_notes": "When any score is flashing, backup stored at 0x75",
+        "label": "Player 1",
+        "start": "0x00D2",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 2",
+        "start": "0x00D5",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 3",
+        "start": "0x00D8",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 4",
+        "start": "0x00DB",
+        "length": 3,
+        "encoding": "bcd"
+      }
+    ],
+    "player_count": {
+      "_notes": "set to 0 when game over",
+      "label": "Player Count",
+      "short_label": "Players",
+      "start": "0x19",
+      "encoding": "int"
+    },
+    "current_player": {
+      "_notes": "0-3; bit 7 (0x80) sometimes set.  Also 0x9A w/o 0x80 set?",
+      "label": "Current Player",
+      "short_label": "P#",
+      "start": "0x1D",
+      "encoding": "int",
+      "mask": "0x0F",
+      "offset": 1
+    },
+    "current_ball": {
+      "_notes": "display memory",
+      "label": "Ball",
+      "start": "0xE4",
+      "encoding": "bcd",
+      "mask": "0x0F"
+    },
+    "ball_count": {
+      "_notes": "set at startup from DIP switches; always F3 or F5",
+      "label": "Balls Per Game",
+      "start": "0x43",
+      "encoding": "bcd",
+      "mask": "0x0F"
+    },
+    "max_credits": {
+      "_notes": "set at startup from DIP switches",
+      "label": "Maximum Credits",
+      "start": "0x27",
+      "encoding": "bcd"
+    },
+    "game_over": {
+      "_notes": "player_count == 0; maybe 0x1C or 0x72",
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x19",
+      "invert": true
     }
   },
   "high_scores": [
