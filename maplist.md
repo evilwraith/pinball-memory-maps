@@ -1250,7 +1250,6 @@
 * [Supersonic (Free Play rev. 3)][243] _sstc_
 * [Surf 'n Safari][325] _surfnsaf_
 * [Swords of Fury (L-2)][326] _swrds_l2_
-* [System 80 Test Fixture][52] _s80tst_
 * [TRON: Legacy Limited Edition (V1.74)][327] _trn_174h_
 * [TX-Sector][27] _txsector_
 * [TX-Sector (Free Play)][27] _txsectfp_
