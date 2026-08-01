@@ -12,7 +12,12 @@
     "license": "GNU Lesser General Public License v3.0",
     "platform": "gottlieb-system3",
     "roms": [
-      "barbwire"
+      "stargat1",
+      "stargat2",
+      "stargat3",
+      "stargat4",
+      "stargat5",
+      "stargate"
     ]
   },
   "game_state": {
@@ -154,22 +159,6 @@
       },
       "score": {
         "start": "0x0D39",
-        "encoding": "bcd",
-        "length": 5
-      }
-    }
-  ],
-  "mode_champions": [
-    {
-      "label": "Highest Ball Score",
-      "short_label": "HBS",
-      "initials": {
-        "start": 1460,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 1463,
         "encoding": "bcd",
         "length": 5
       }
