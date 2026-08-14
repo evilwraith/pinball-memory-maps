@@ -1,27 +1,49 @@
 {
   "_notes": [
-    "Compiled by Tom Collins, based on map for System 80B games with 8-digit scores.",
-    "Game uses a 4-bit nvram (256x4), so only uses the low nibble of each byte.",
-    "Game stores 62 bytes of data in triplicate at offsets 0, 62 and 124.",
-    "If a value in one location doesn't match the other two, it's replaced by the other value.",
-    "If a value differs in all three locations, it's replaced with a default value.",
-    "Note that offsets 246 through 250 are 4-bit checksums of each of the high scores.",
-    "80b-7digit-{8KB,10KB}.map.json are identical other than platform (8K vs. 10K ROM)."
+    "Generic Gottlieb System 80A map.",
+    "NVRAM: 256x4-bit chip (nibble:low) at CPU address 0x1800.",
+    "NVRAM: 85-byte regions stored in triplicate at 0x1800, 0x1855, and 0x18AA.",
+    "All games share the same bookkeeping/audit and high score layout."
   ],
   "_fileformat": 0.8,
   "_metadata": {
     "version": 5,
     "copyright": [
-      "Copyright (C) 2024 by Tom Collins <tom@tomlogic.com>",
-      "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
+      "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
     "license": "GNU Lesser General Public License v3.0",
-    "platform": "gottlieb-system80b-10K",
+    "platform": "gottlieb-system80-1prom",
     "roms": [
-      "raven",
-      "ravenfp",
-      "ravengfp",
-      "ravenafp"
+      "alienstr",
+      "amazonh",
+      "amazonha",
+      "dvlsdre",
+      "dvlsdre2",
+      "dvlsdrea",
+      "eldorado",
+      "goinnuts",
+      "icefever",
+      "jack2opn",
+      "krull",
+      "punk",
+      "qbquest",
+      "rackemup",
+      "raimfire",
+      "rflshdlx",
+      "rflshdlx1",
+      "rocky",
+      "rockyf",
+      "sorbit",
+      "spirit",
+      "spirit0",
+      "spirit3",
+      "striker",
+      "strikerf",
+      "strikerg",
+      "thegames",
+      "thegamsb",
+      "thegamsc",
+      "touchdn"
     ],
     "values": {
       "off_on": [
@@ -70,180 +92,93 @@
   "game_state": {
     "credits": {
       "label": "Credits",
-      "start": "0x183C",
-      "encoding": "bcd",
-      "length": 2
+      "start": "0x184E",
+      "length": 2,
+      "encoding": "bcd"
     },
     "scores": [
       {
-        "_notes": [
-          "Scores hack: need to ignore top bit (comma) and convert 0x4F ('O') to zero.",
-          "Bytes are: 0x31 to 0x39, 0x20 (' '), and 0x4F ('O'); top bit set for comma.",
-          "By setting nibble=low, we get 0x1 to 0x9, 0x0 and 0xF for those three bytes,",
-          "which treats space and 'O' as zero."
-        ],
+        "_notes": "When any score is flashing, backup stored at 0x75",
         "label": "Player 1",
-        "start": "0x0000",
-        "length": 7,
-        "nibble": "low",
-        "encoding": "bcd"
+        "start": "0x00D2",
+        "length": 3,
+        "encoding": "bcd",
+        "scale": 10
       },
       {
         "label": "Player 2",
-        "start": "0x000D",
-        "length": 7,
-        "nibble": "low",
-        "encoding": "bcd"
+        "start": "0x00D5",
+        "length": 3,
+        "encoding": "bcd",
+        "scale": 10
       },
       {
         "label": "Player 3",
-        "start": "0x0014",
-        "length": 7,
-        "nibble": "low",
-        "encoding": "bcd"
+        "start": "0x00D8",
+        "length": 3,
+        "encoding": "bcd",
+        "scale": 10
       },
       {
         "label": "Player 4",
-        "start": "0x0021",
-        "length": 7,
-        "nibble": "low",
-        "encoding": "bcd"
+        "start": "0x00DB",
+        "length": 3,
+        "encoding": "bcd",
+        "scale": 10
       }
     ],
     "player_count": {
       "_notes": "set to 0 when game over",
       "label": "Player Count",
       "short_label": "Players",
-      "start": "0xBF",
+      "start": "0x19",
       "encoding": "int"
     },
     "current_player": {
-      "_notes": "0-3; bit 7 (0x80) sometimes set",
+      "_notes": "0-3; bit 7 (0x80) sometimes set.  Also 0x9A w/o 0x80 set?",
       "label": "Current Player",
       "short_label": "P#",
-      "start": "0xC0",
+      "start": "0x1D",
       "encoding": "int",
       "mask": "0x0F",
       "offset": 1
     },
     "current_ball": {
-      "_notes": "stored as 0x31 to 0x35 ('1' to '5')",
+      "_notes": "display memory",
       "label": "Ball",
-      "start": "0x0A",
+      "start": "0xE4",
       "encoding": "bcd",
       "mask": "0x0F"
     },
     "ball_count": {
-      "_notes": "set at startup from DIP switches; always 3 or 5",
+      "_notes": "set at startup from DIP switches; always F3 or F5",
       "label": "Balls Per Game",
-      "start": "0xDF",
-      "encoding": "bcd"
-    },
-    "extra_balls": {
-      "_notes": "either 0 or 1, no stacking",
-      "label": "Extra Balls",
-      "start": "0xC9",
-      "encoding": "int"
+      "start": "0x43",
+      "encoding": "bcd",
+      "mask": "0x0F"
     },
     "max_credits": {
       "_notes": "set at startup from DIP switches",
       "label": "Maximum Credits",
-      "start": "0xDE",
+      "start": "0x27",
       "encoding": "bcd"
     },
     "game_over": {
-      "_notes": "0x01 when in game, 0x00 when game over",
+      "_notes": "player_count == 0; maybe 0x1C or 0x72",
       "label": "Game Over",
       "encoding": "bool",
-      "start": "0x57",
+      "start": "0x19",
       "invert": true
-    },
-    "tilted": {
-      "_notes": "0xF0 when tilted, 0x00 otherwise",
-      "label": "Tilted",
-      "encoding": "bool",
-      "start": "0x58"
     }
   },
   "high_scores": [
     {
-      "label": "High Score #1",
-      "short_label": "1st",
-      "initials": {
-        "start": "0x18BA",
-        "encoding": "ch",
-        "default": "\u0000\u0000\u0000",
-        "length": 6
-      },
+      "label": "High Score",
       "score": {
-        "start": "0x18C0",
+        "start": "0x18F2",
         "encoding": "bcd",
-        "length": 6,
-        "scale": 10
-      }
-    },
-    {
-      "label": "High Score #2",
-      "short_label": "2nd",
-      "initials": {
-        "start": "0x18C6",
-        "encoding": "ch",
-        "default": "\u0000\u0000\u0000",
+        "scale": 10,
         "length": 6
-      },
-      "score": {
-        "start": "0x18CC",
-        "encoding": "bcd",
-        "length": 6,
-        "scale": 10
-      }
-    },
-    {
-      "label": "High Score #3",
-      "short_label": "3rd",
-      "initials": {
-        "start": "0x18D2",
-        "encoding": "ch",
-        "default": "\u0000\u0000\u0000",
-        "length": 6
-      },
-      "score": {
-        "start": "0x18D8",
-        "encoding": "bcd",
-        "length": 6,
-        "scale": 10
-      }
-    },
-    {
-      "label": "High Score #4",
-      "short_label": "4th",
-      "initials": {
-        "start": "0x18DE",
-        "encoding": "ch",
-        "default": "\u0000\u0000\u0000",
-        "length": 6
-      },
-      "score": {
-        "start": "0x18E4",
-        "encoding": "bcd",
-        "length": 6,
-        "scale": 10
-      }
-    },
-    {
-      "label": "High Score #5",
-      "short_label": "5th",
-      "initials": {
-        "start": "0x18EA",
-        "encoding": "ch",
-        "default": "\u0000\u0000\u0000",
-        "length": 6
-      },
-      "score": {
-        "start": "0x18F0",
-        "encoding": "bcd",
-        "length": 6,
-        "scale": 10
       }
     }
   ],
@@ -253,76 +188,69 @@
         "label": "Left Chute Coins",
         "start": "0x1800",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "02": {
         "label": "Right Chute Coins",
-        "start": "0x1804",
+        "start": "0x1806",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "03": {
         "label": "Center Chute Coins",
-        "start": "0x1808",
+        "start": "0x180C",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "04": {
         "label": "Total Plays",
-        "start": "0x180C",
+        "start": "0x1812",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "05": {
         "label": "Total Replays",
-        "start": "0x1810",
+        "start": "0x1818",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "07": {
         "label": "Extra Balls",
-        "start": "0x1814",
+        "start": "0x181E",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "08": {
         "label": "Tilts",
-        "start": "0x1818",
+        "start": "0x1824",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "09": {
         "label": "Specials",
-        "start": "0x181C",
+        "start": "0x182A",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "10": {
         "label": "Times HGTD Awarded",
-        "start": "0x1820",
+        "start": "0x1830",
         "encoding": "bcd",
-        "length": 4
+        "length": 6
       },
       "14": {
         "label": "Highest Game To Date",
-        "start": "0x1830",
+        "start": "0x1848",
         "encoding": "bcd",
-        "length": 6,
-        "scale": 10
-      },
-      "14a": {
-        "label": "HGTD Initials",
-        "start": "0x182A",
-        "encoding": "ch",
-        "null": "truncate",
+        "scale": 10,
         "length": 6
       },
       "15": {
-        "label": "Game Time",
-        "suffix": " seconds",
-        "start": "0x1824",
+        "label": "Total Game Time",
+        "start": "0x1850",
         "encoding": "bcd",
-        "length": 6,
+        "units": "seconds",
+        "length": 4,
         "scale": 10
       }
     }
@@ -330,25 +258,25 @@
   "adjustments": {
     "Standard Adjustments": {
       "11": {
-        "label": "First High Score",
+        "label": "First Replay Score",
         "start": "0x1836",
         "encoding": "bcd",
-        "length": 2,
-        "scale": 100000
+        "scale": 10,
+        "length": 6
       },
       "12": {
-        "label": "Second High Score",
-        "start": "0x1838",
+        "label": "Second Replay Score",
+        "start": "0x183C",
         "encoding": "bcd",
-        "length": 2,
-        "scale": 100000
+        "scale": 10,
+        "length": 6
       },
       "13": {
-        "label": "Third High Score",
-        "start": "0x183A",
+        "label": "Third Replay Score",
+        "start": "0x1842",
         "encoding": "bcd",
-        "length": 2,
-        "scale": 100000
+        "scale": 10,
+        "length": 6
       }
     }
   },

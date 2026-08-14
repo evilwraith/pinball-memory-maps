@@ -1,7 +1,7 @@
 {
-  "_notes": "Williams System 3/4, 6800 CPU at 895kHz, 256 byte RAM, 256 4-bit NVRAM, 3x2KB ROM",
+  "_notes": "Atari Generation 2.  DIP switches 0x2000-0x2003.",
   "cpu": "6800",
-  "endian": "big",
+  "endian": "little",
   "memory_layout": [
     {
       "label": "RAM",
@@ -11,26 +11,26 @@
     },
     {
       "label": "NVRAM",
-      "address": "0x0100",
+      "address": "0x0800",
       "size": "0x100",
-      "type": "nvram",
-      "nibble": "low"
+      "nibble": "low",
+      "type": "nvram"
     },
     {
-      "label": "ROM (IC14)",
-      "address": "0x6000",
+      "label": "ROM2",
+      "address": "0x3000",
       "size": "0x800",
       "type": "rom"
     },
     {
-      "label": "ROM (IC20)",
-      "address": "0x7000",
+      "label": "ROM3",
+      "address": "0x3800",
       "size": "0x800",
       "type": "rom"
     },
     {
-      "label": "ROM (IC17)",
-      "address": "0x7800",
+      "label": "ROM1",
+      "address": "0xA800",
       "size": "0x800",
       "type": "rom"
     }

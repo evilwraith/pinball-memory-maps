@@ -44,7 +44,10 @@ The script `tools/reformat-json.sh` can reformat one (or all) of the JSON
 files using `jq`.  The script `tools/normalize-map.py` uses Python to do
 the same formatting as `jq`, but also normalizes maps to the latest format.
 
-[Project home](https://github.com/tomlogic/pinmame-nvram-maps)
+[Project home](https://github.com/tomlogic/pinball-memory-maps)
+
+_Note that this project was renamed to pinball-memory-maps from 
+pinmame-nvram-maps in August 2026._
 
 ## License
 

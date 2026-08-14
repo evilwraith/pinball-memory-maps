@@ -1,7 +1,7 @@
 {
-  "_notes": "Placeholder for Gottlieb System 80/80A games (missing ROM areas).",
+  "_notes": "Gottlieb System 80/80A games with one 2KB game PROM.",
   "cpu": "6502",
-  "endian": "big",
+  "endian": "little",
   "memory_layout": [
     {
       "label": "RIOT1",
@@ -22,11 +22,29 @@
       "type": "ram"
     },
     {
+      "label": "Game PROM",
+      "address": "0x1000",
+      "size": "0x800",
+      "type": "rom"
+    },
+    {
       "label": "NVRAM",
       "address": "0x1800",
       "size": "0x100",
       "type": "nvram",
       "nibble": "low"
+    },
+    {
+      "label": "ROM U2",
+      "address": "0x2000",
+      "size": "0x1000",
+      "type": "rom"
+    },
+    {
+      "label": "ROM U3",
+      "address": "0x3000",
+      "size": "0x1000",
+      "type": "rom"
     }
   ]
 }
