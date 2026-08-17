@@ -1515,10 +1515,11 @@
 * [X-Files, The (3.03 French)][381] _xfilesf_
 * [X-Files, The (3.03)][381] _xfiles_
 * [X-Files, The (3.04 unofficial MOD)][381] _xfiles304_
-* [Xenon][382] _xenon_
-* [Xenon (Free Play)][383] _xenona_
-* [Xenon (French Free Play)][383] _xenonfa_
-* [Xenon (French)][382] _xenonf_
+* [X-Men Limited Edition (V1.51)][382] _xmn_151h_
+* [Xenon][383] _xenon_
+* [Xenon (Free Play)][384] _xenona_
+* [Xenon (French Free Play)][384] _xenonfa_
+* [Xenon (French)][383] _xenonf_
 
 [1]: maps/stern/sam/acd_170.map.json
 [2]: maps/stern/sam/acd_170h.map.json
@@ -1901,5 +1902,6 @@
 [379]: maps/williams/system3/wldcp_l1.map.json
 [380]: maps/williams/wpc/wcs_l2.map.json
 [381]: maps/sega/whitestar/xfiles.map.json
-[382]: maps/bally/as-2518-35/xenon.map.json
-[383]: maps/bally/as-2518-35/xenon-freeplay.map.json
+[382]: maps/stern/sam/xmn_151h.map.json
+[383]: maps/bally/as-2518-35/xenon.map.json
+[384]: maps/bally/as-2518-35/xenon-freeplay.map.json

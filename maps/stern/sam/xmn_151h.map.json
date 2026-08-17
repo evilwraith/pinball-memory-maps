@@ -1,0 +1,99 @@
+{
+  "_notes": [
+    "Locally added -- upstream pinmame-nvram-maps has no X-Men map as of index rev 1406.",
+    "Derived from a real xmn_151h.nv: records are 0x20 apart, NUL-terminated initials at +0x00 and a",
+    "4-byte little-endian score at +0x18, the same record shape the other Stern SAM maps use.",
+    "The five entries decode to Stern's factory default ladder (75M/55M/40M/30M/25M) with the stock",
+    "'G S'/'L R'/'J R'/'D T'/'P P' initials, which is what confirms the addresses.",
+    "Only xmn_151h is claimed: the other X-Men revisions were not checked and SAM high score",
+    "addresses move between ROM revisions.",
+    "A sixth record at 0x021030A0 ('YAN', 15) looks like a mode champion, but its meaning was not",
+    "identified, so it is left out."
+  ],
+  "_fileformat": 0.7,
+  "_metadata": {
+    "version": 1,
+    "license": "GNU Lesser General Public License v3.0",
+    "platform": "stern-sam",
+    "roms": [
+      "xmn_151h"
+    ]
+  },
+  "high_scores": [
+    {
+      "label": "Grand Champion",
+      "short_label": "GC",
+      "initials": {
+        "start": "0x02103000",
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11
+      },
+      "score": {
+        "start": "0x02103018",
+        "encoding": "int",
+        "length": 4
+      }
+    },
+    {
+      "label": "High Score #1",
+      "short_label": "HS1",
+      "initials": {
+        "start": "0x02103020",
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11
+      },
+      "score": {
+        "start": "0x02103038",
+        "encoding": "int",
+        "length": 4
+      }
+    },
+    {
+      "label": "High Score #2",
+      "short_label": "HS2",
+      "initials": {
+        "start": "0x02103040",
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11
+      },
+      "score": {
+        "start": "0x02103058",
+        "encoding": "int",
+        "length": 4
+      }
+    },
+    {
+      "label": "High Score #3",
+      "short_label": "HS3",
+      "initials": {
+        "start": "0x02103060",
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11
+      },
+      "score": {
+        "start": "0x02103078",
+        "encoding": "int",
+        "length": 4
+      }
+    },
+    {
+      "label": "High Score #4",
+      "short_label": "HS4",
+      "initials": {
+        "start": "0x02103080",
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11
+      },
+      "score": {
+        "start": "0x02103098",
+        "encoding": "int",
+        "length": 4
+      }
+    }
+  ]
+}
