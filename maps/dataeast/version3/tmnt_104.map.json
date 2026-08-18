@@ -5,7 +5,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -43,13 +43,8 @@
       {
         "label": "Player 4",
         "encoding": "bcd",
-        "offsets": [
-          "0x0023",
-          "0x001C",
-          "0x001D",
-          "0x001E",
-          "0x001F"
-        ]
+        "start": "0x001C",
+        "length": 4
       }
     ],
     "credits": {

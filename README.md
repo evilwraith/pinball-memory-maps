@@ -1,5 +1,10 @@
 # Pinball Memory Maps
 
+### Sponsorship
+A special thanks to [Scorbit](https://scorbit.io/) for sponsoring Tom
+Collins to work on this project starting in June 2025.
+
+### Description
 The initial goal of this project was to document the contents of the `.nv`
 files PinMAME (the solid state pinball machine ROM emulator) uses to store
 the contents of a game's non-volatile RAM.  At a  basic level, it's useful
@@ -51,17 +56,22 @@ pinmame-nvram-maps in August 2026._
 
 ## License
 
-This project is licensed under the GNU Lesser General Public License
-v3.0 (LGPL).  LGPL requires that derived works be licensed under the
-same license, but works that only link to it do not fall under this
-restriction.
+As of August 2026, these Pinball Memory Maps are made available under the
+[Open Database License](http://opendatacommons.org/licenses/odbl/1.0/).
+Any rights in individual contents of the database are licensed under the
+[Database Contents License](http://opendatacommons.org/licenses/dbcl/1.0/).
+
+This project was previously licensed under the GNU Lesser General Public 
+License v3.0 (LGPL).  Since that license is more appropriate for code than
+data, it now applies to code in the `tools/` directory.  LGPL requires that
+derived works be licensed under the same license, but works that only link
+to it do not fall under this restriction.
 
 My intent is for the map files (`.map.json`) to remain open and for
 everyone to benefit from updates, yet allow for their use in
 closed-source projects with attribution.  Please include a GitHub link
-to the original project (or your fork of it), along with the
-description, "This program makes use of content from the Pinball Memory
-Maps project."
+to the original project (or your fork of it), along with the description,
+"This program makes use of content from the Pinball Memory Maps project."
 
 ## Sample Code
 
