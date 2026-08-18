@@ -1,5 +1,10 @@
 # Pinball Memory Maps
 
+### Sponsorship
+A special thanks to [Scorbit](https://scorbit.io/) for sponsoring Tom
+Collins to work on this project starting in June 2025.
+
+### Description
 The initial goal of this project was to document the contents of the `.nv`
 files PinMAME (the solid state pinball machine ROM emulator) uses to store
 the contents of a game's non-volatile RAM.  At a  basic level, it's useful
