@@ -7,11 +7,11 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
     ],
-    "license": "GNU Lesser General Public License v3.0",
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "dataeast",
     "roms": [
       "gnr_300",
