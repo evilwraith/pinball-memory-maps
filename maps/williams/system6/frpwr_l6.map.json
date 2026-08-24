@@ -8,7 +8,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "GNU Lesser General Public License v3.0",
     "platform": "williams-system6-7.5K",
@@ -60,29 +60,25 @@
         "label": "Player 1",
         "start": "0x00",
         "length": 3,
-        "encoding": "bcd",
-        "scale": 10
+        "encoding": "bcd"
       },
       {
         "label": "Player 2",
         "start": "0x04",
         "length": 3,
-        "encoding": "bcd",
-        "scale": 10
+        "encoding": "bcd"
       },
       {
         "label": "Player 3",
         "start": "0x08",
         "length": 3,
-        "encoding": "bcd",
-        "scale": 10
+        "encoding": "bcd"
       },
       {
         "label": "Player 4",
         "start": "0x0C",
         "length": 3,
-        "encoding": "bcd",
-        "scale": 10
+        "encoding": "bcd"
       }
     ],
     "current_player": {
@@ -100,7 +96,8 @@
     "current_ball": {
       "label": "Ball",
       "start": "0x03",
-      "encoding": "bcd"
+      "encoding": "bcd",
+      "mask": "0x0F"
     },
     "ball_count": {
       "label": "Ball Count",
