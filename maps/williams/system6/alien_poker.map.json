@@ -51,14 +51,8 @@
     "game_over": {
       "label": "Game Over",
       "start": "0x78",
-      "mask": "0x03",
-      "encoding": "enum",
-      "values": [
-        false,
-        true,
-        false,
-        false
-      ]
+      "mask": "0x01",
+      "encoding": "bool"
     },
     "scores": [
       {
