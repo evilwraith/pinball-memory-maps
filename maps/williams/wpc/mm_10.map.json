@@ -8,7 +8,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2016 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -313,7 +313,7 @@
         "encoding": "bcd",
         "length": 3
       },
-      "nth time": {
+      "nth_time": {
         "start": 8141,
         "encoding": "bcd",
         "length": 2
@@ -337,7 +337,7 @@
         "encoding": "bcd",
         "length": 3
       },
-      "nth time": {
+      "nth_time": {
         "start": 8149,
         "encoding": "bcd",
         "length": 2
@@ -361,7 +361,7 @@
         "encoding": "bcd",
         "length": 3
       },
-      "nth time": {
+      "nth_time": {
         "start": 8157,
         "encoding": "bcd",
         "length": 2
@@ -385,7 +385,7 @@
         "encoding": "bcd",
         "length": 3
       },
-      "nth time": {
+      "nth_time": {
         "start": 8165,
         "encoding": "bcd",
         "length": 2
