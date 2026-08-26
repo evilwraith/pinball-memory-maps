@@ -40,7 +40,70 @@
       "slbmanid",
       "spaceinv",
       "viking"
-    ]
+    ],
+    "values": {
+      "_notes": [
+        "DIP switch settings verified against the Bally Viking (#1198), Space Invaders and Harlem Globetrotters On Tour manuals.",
+        "Switches 8, 14-16, 23, 24 and 32 are game-specific features and are not included here; see the game's manual.",
+        "incentive: X@Y means X credits paid on the Yth coin"
+      ],
+      "off_on": [
+        "off",
+        "on"
+      ],
+      "pricing": [
+        "incentive: 1@1, 2@2 (3/2)",
+        "incentive: 1@1, 2@2 (3/2)",
+        "1 credit/coin",
+        "1 credit/2 coins",
+        "2 credits/coin",
+        "2 credits/2 coins",
+        "3 credits/coin",
+        "3 credits/2 coins",
+        "4 credits/coin",
+        "4 credits/2 coins",
+        "5 credits/coin",
+        "5 credits/2 coins",
+        "6 credits/coin",
+        "6 credits/2 coins",
+        "7 credits/coin",
+        "7 credits/2 coins",
+        "8 credits/coin",
+        "8 credits/2 coins",
+        "9 credits/coin",
+        "9 credits/2 coins",
+        "10 credits/coin",
+        "10 credits/2 coins",
+        "11 credits/coin",
+        "11 credits/2 coins",
+        "12 credits/coin",
+        "12 credits/2 coins",
+        "13 credits/coin",
+        "13 credits/2 coins",
+        "14 credits/coin",
+        "14 credits/2 coins",
+        "15 credits/coin",
+        "15 credits/2 coins"
+      ],
+      "pricing_chute2": [
+        "same as chute 1",
+        "1 credit/coin",
+        "2 credits/coin",
+        "3 credits/coin",
+        "4 credits/coin",
+        "5 credits/coin",
+        "6 credits/coin",
+        "7 credits/coin",
+        "8 credits/coin",
+        "9 credits/coin",
+        "10 credits/coin",
+        "11 credits/coin",
+        "12 credits/coin",
+        "13 credits/coin",
+        "14 credits/coin",
+        "15 credits/coin"
+      ]
+    }
   },
   "game_state": {
     "credits": {
@@ -302,6 +365,129 @@
         "min": 0,
         "max": 999000
       }
+    }
+  },
+  "dip_switches": {
+    "1-5": {
+      "_notes": "Full pricing table from the manuals; X/2 coins settings pay all credits on the 2nd coin. The 3/2 incentive pays 1 credit on the 1st coin and 2 on the 2nd if no scoring occurred in between (1 otherwise). Space Invaders' 720-37 U6 ROM ignores switches 1 and 9 (always treated as off) and replaces the two 15 credits settings with a 3/4 coins incentive.",
+      "label": "Coin Chute #1 (hinge side) Credits/Coin",
+      "encoding": "dipsw",
+      "offsets": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "values": "pricing"
+    },
+    "6-7": {
+      "_notes": "Both switches off is not documented in the manuals.",
+      "label": "High Score / Special Award Mode",
+      "encoding": "dipsw",
+      "offsets": [
+        7,
+        6
+      ],
+      "values": [
+        "?",
+        "novelty (specials award points, no threshold award)",
+        "extra ball",
+        "replay"
+      ]
+    },
+    "9-13": {
+      "_notes": "Full pricing table from the manuals; X/2 coins settings pay all credits on the 2nd coin. The 3/2 incentive pays 1 credit on the 1st coin and 2 on the 2nd if no scoring occurred in between (1 otherwise). Space Invaders' 720-37 U6 ROM ignores switches 1 and 9 (always treated as off) and replaces the two 15 credits settings with a 3/4 coins incentive.",
+      "label": "Coin Chute #3 Credits/Coin",
+      "encoding": "dipsw",
+      "offsets": [
+        13,
+        12,
+        11,
+        10,
+        9
+      ],
+      "values": "pricing"
+    },
+    "17-20": {
+      "label": "Coin Chute #2 Credits/Coin",
+      "encoding": "dipsw",
+      "offsets": [
+        20,
+        19,
+        18,
+        17
+      ],
+      "values": "pricing_chute2"
+    },
+    "21-22": {
+      "label": "High Score to Date Award",
+      "encoding": "dipsw",
+      "offsets": [
+        22,
+        21
+      ],
+      "values": [
+        "no award",
+        "1 credit",
+        "2 credits",
+        "3 credits"
+      ]
+    },
+    "25-26": {
+      "label": "Maximum Credits",
+      "encoding": "dipsw",
+      "offsets": [
+        26,
+        25
+      ],
+      "values": [
+        10,
+        15,
+        25,
+        40
+      ]
+    },
+    "27": {
+      "label": "Credits Displayed",
+      "encoding": "dipsw",
+      "offsets": [
+        27
+      ],
+      "values": "off_on"
+    },
+    "28": {
+      "label": "Match Feature",
+      "encoding": "dipsw",
+      "offsets": [
+        28
+      ],
+      "values": "off_on"
+    },
+    "29-30": {
+      "label": "Sound Option",
+      "encoding": "dipsw",
+      "offsets": [
+        30,
+        29
+      ],
+      "values": [
+        "chimes on most scoring",
+        "playfield noises without background",
+        "noise effects on most scoring",
+        "playfield noises with background"
+      ]
+    },
+    "31": {
+      "label": "Balls per Game",
+      "encoding": "dipsw",
+      "offsets": [
+        31
+      ],
+      "values": [
+        3,
+        5
+      ]
     }
   }
 }

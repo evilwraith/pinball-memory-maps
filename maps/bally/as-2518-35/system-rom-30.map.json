@@ -30,7 +30,70 @@
       "sst",
       "startrek",
       "voltan"
-    ]
+    ],
+    "values": {
+      "_notes": [
+        "DIP switch settings verified against the Bally Kiss (#1152-E), Star Trek (#1148-E) and Paragon manuals.",
+        "Switches 22-24 and 29-31 are game-specific features and are not included here; see the game's manual.",
+        "incentive: X@Y means X credits paid on the Yth coin"
+      ],
+      "off_on": [
+        "off",
+        "on"
+      ],
+      "pricing": [
+        "incentive: 1@1, 2@2 (3/2)",
+        "incentive: 1@1, 2@2 (3/2)",
+        "1 credit/coin",
+        "1 credit/2 coins",
+        "2 credits/coin",
+        "2 credits/2 coins",
+        "3 credits/coin",
+        "3 credits/2 coins",
+        "4 credits/coin",
+        "4 credits/2 coins",
+        "5 credits/coin",
+        "5 credits/2 coins",
+        "6 credits/coin",
+        "6 credits/2 coins",
+        "7 credits/coin",
+        "7 credits/2 coins",
+        "8 credits/coin",
+        "8 credits/2 coins",
+        "9 credits/coin",
+        "9 credits/2 coins",
+        "10 credits/coin",
+        "10 credits/2 coins",
+        "11 credits/coin",
+        "11 credits/2 coins",
+        "12 credits/coin",
+        "12 credits/2 coins",
+        "13 credits/coin",
+        "13 credits/2 coins",
+        "14 credits/coin",
+        "14 credits/2 coins",
+        "15 credits/coin",
+        "15 credits/2 coins"
+      ],
+      "pricing_chute2": [
+        "same as chute 1",
+        "1 credit/coin",
+        "2 credits/coin",
+        "3 credits/coin",
+        "4 credits/coin",
+        "5 credits/coin",
+        "6 credits/coin",
+        "7 credits/coin",
+        "8 credits/coin",
+        "9 credits/coin",
+        "10 credits/coin",
+        "11 credits/coin",
+        "12 credits/coin",
+        "13 credits/coin",
+        "14 credits/coin",
+        "15 credits/coin"
+      ]
+    }
   },
   "game_state": {
     "credits": {
@@ -273,6 +336,134 @@
         "min": 0,
         "max": 999000
       }
+    }
+  },
+  "dip_switches": {
+    "1-5": {
+      "_notes": "Full pricing table from the manuals; X/2 coins settings pay all credits on the 2nd coin. The 3/2 incentive pays 1 credit on the 1st coin and 2 on the 2nd if no scoring occurred in between (1 otherwise).",
+      "label": "Coin Chute #1 (hinge side) Credits/Coin",
+      "encoding": "dipsw",
+      "offsets": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "values": "pricing"
+    },
+    "6-7": {
+      "label": "High Score to Date Award",
+      "encoding": "dipsw",
+      "offsets": [
+        7,
+        6
+      ],
+      "values": [
+        "no award",
+        "1 credit",
+        "2 credits",
+        "3 credits"
+      ]
+    },
+    "8,32": {
+      "_notes": "Switches 8 and 32 select one of four melody/noise/chime sets; which sounds map to which setting is game-specific, see the game's manual.",
+      "label": "Sound Option",
+      "encoding": "dipsw",
+      "offsets": [
+        8,
+        32
+      ],
+      "values": [
+        "sound setting 1",
+        "sound setting 2",
+        "sound setting 3",
+        "sound setting 4"
+      ]
+    },
+    "9-13": {
+      "_notes": "Full pricing table from the manuals; X/2 coins settings pay all credits on the 2nd coin. The 3/2 incentive pays 1 credit on the 1st coin and 2 on the 2nd if no scoring occurred in between (1 otherwise).",
+      "label": "Coin Chute #3 Credits/Coin",
+      "encoding": "dipsw",
+      "offsets": [
+        13,
+        12,
+        11,
+        10,
+        9
+      ],
+      "values": "pricing"
+    },
+    "14-15": {
+      "label": "High Score / Special Award Mode",
+      "encoding": "dipsw",
+      "offsets": [
+        15,
+        14
+      ],
+      "values": [
+        "no award",
+        "novelty (points)",
+        "extra ball",
+        "replay"
+      ]
+    },
+    "16": {
+      "label": "Balls per Game",
+      "encoding": "dipsw",
+      "offsets": [
+        16
+      ],
+      "values": [
+        3,
+        5
+      ]
+    },
+    "17-19": {
+      "label": "Maximum Credits",
+      "encoding": "dipsw",
+      "offsets": [
+        19,
+        18,
+        17
+      ],
+      "values": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40
+      ]
+    },
+    "20": {
+      "label": "Credits Displayed",
+      "encoding": "dipsw",
+      "offsets": [
+        20
+      ],
+      "values": "off_on"
+    },
+    "21": {
+      "label": "Match Feature",
+      "encoding": "dipsw",
+      "offsets": [
+        21
+      ],
+      "values": "off_on"
+    },
+    "25-28": {
+      "label": "Coin Chute #2 Credits/Coin",
+      "encoding": "dipsw",
+      "offsets": [
+        28,
+        27,
+        26,
+        25
+      ],
+      "values": "pricing_chute2"
     }
   }
 }
