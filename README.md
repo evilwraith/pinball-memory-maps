@@ -63,9 +63,7 @@ Any rights in individual contents of the database are licensed under the
 
 This project was previously licensed under the GNU Lesser General Public 
 License v3.0 (LGPL).  Since that license is more appropriate for code than
-data, it now applies to code in the `tools/` directory.  LGPL requires that
-derived works be licensed under the same license, but works that only link
-to it do not fall under this restriction.
+data, it now applies to code in the `tools/` directory.
 
 My intent is for the map files (`.map.json`) to remain open and for
 everyone to benefit from updates, yet allow for their use in
@@ -206,9 +204,10 @@ describe the map itself and provide defaults for later entries.
   don't make sense in this context.
 - **copyright**: Original author of the map, possibly a list of people
   who have contributed to the map.
-- **license**: All files from this project are covered by the LGPL license.
+- **license**: All files from this project are covered by the ODbL license.
   Modified map files, or maps created using an existing map as a starting
-  point are also covered by that license.
+  point are also covered by that license.  Please use "Open Data Commons Open
+  Database License (ODbL) v1.0" for any new maps.
 - **platform**: Identifies the hardware platform (e.g., Williams WPC) for 
   the ROMs covered by this map.  This is a string that corresponds to a
   JSON file in the top-level `platforms/` directory.  See the Platform 
@@ -356,14 +355,17 @@ interpret them.  They're comprised of the following key/value pairs:
 - The `null` property only applies to `ch` encoding.
 - The `values` property is a list of values, starting with an index of 0.
 - The `special_values` property is a dictionary of integers (as strings)
-  and a string to override display of a specific integer.  A common example
-  would be replacing a 0 with the word OFF (represented as
-  `"special_values": { "0": "OFF" }}`).
+  and a number or string to override display of a specific integer.  A common 
+  example would be replacing a 0 with the word OFF (represented as 
+  `"special_values": { "0": "OFF" }}`).  Another example is Atari games that
+  start up with 888,888 in the score displays.  Using `"special_values":
+  { "888888": 0 }` treats that as a 0.
 
 ### File Map
 
 Keys that don't start with an underscore typically have groups of
-**descriptors** as their values.
+**descriptors** as their values.  All sections are optional.  For example,
+early Atari games don't have high scores!
 
 - **last_played**: A descriptor (likely with a `wpc_rtc` encoding) with a
   date stamp of when PinMAME last saved the `.nv` file.
@@ -371,11 +373,11 @@ Keys that don't start with an underscore typically have groups of
   start with the Grand Champion and then proceed through First Place to
   Fourth Place.  An array of objects with the following key/value pairs:
   - **label**: A label describing the score (e.g., `"Grand Champion"`).
-  - **short_label**: An abbreviated label (e.g., `"GC"`).
-  - **initials**: Descriptor of where the high score's initials are stored
-    in memory.
+  - **short_label**: Optional abbreviated label (e.g., `"GC"`).
   - **score**: Descriptor of where the high score's score is stored in
     memory.
+  - **initials**: Optional descriptor of where the high score's initials are 
+    stored in memory.
 - **mode_champions**: Another array of descriptors with recognition of
   other in-game accomplishments.
 - **adjustments**: An object of key/value pairs for groupings of
@@ -536,18 +538,42 @@ has a checksum that appears in a non-adjacent address.)
   subtracting all prior bytes in the range from `0xFFFF`.
 
 ### Version History
-- v0.1: Initial Version
-- v0.2: Deprecate `packed` attribute in favor of `nibble`.
-- v0.3: Deprecate usage of hex strings for `start`, `end` and `offsets`.
-        Add the `null` attribute for entries with `ch` encoding.
-- v0.4: Add global `_nibble` to apply to all entries.
-- v0.5: Add `dipsw` encoding and `_values` metadata.
-- v0.6: Move all top-level metadata attributes other than `_notes` and
-        `_fileformat` into a new `_metadata` attribute with the leading
-        underscore removed.
-        Deprecate `last_game` attribute in favor of `game_state.scores`.
-- v0.7: Add `platform` metadata property.
-- v0.8: Add `checksum` property to checksum8/checksum16 objects to allow
-        for non-adjacent checksums (needed for Credits on System 11).
-        Add `bool` encoding and `invert` property.  Rename `attract` to 
-        `game_over`; add `final_scores` to `game_state`.
+#### v0.1
+- Initial Version
+
+#### v0.2
+- Deprecate `packed` attribute in favor of `nibble`.
+
+#### v0.3
+- Deprecate usage of hex strings for `start`, `end` and `offsets`.
+- Add the `null` attribute for entries with `ch` encoding.
+
+#### v0.4
+- Add global `_nibble` to apply to all entries.
+
+#### v0.5
+- Add `dipsw` encoding and `_values` metadata.
+
+#### v0.6
+- Move all top-level metadata attributes other than `_notes` and
+  `_fileformat` into a new `_metadata` attribute with the leading
+  underscore removed.
+- Deprecate `last_game` attribute in favor of `game_state.scores`.
+
+#### v0.7
+- Add `platform` metadata property.
+
+#### v0.8
+- Add `checksum` property to checksum8/checksum16 objects to allow for
+  non-adjacent checksums (needed for Credits on System 11).
+- Add `bool` encoding and `invert` property.  
+- Rename `attract` to `game_over`.
+- Add `final_scores` to `game_state`.
+- `special_values` can use integer values in addition to string values.
+  (Note that dictionary keys are still always strings.)
+- First generation Atari games don't have nvram, so the platform file
+  has a 0-byte nvram placeholder entry.
+- All sections other than `_fileformat` and `_metadata` are optional (no
+  high scores on first generation Atari).
+- Although not previously mentioned, hex string usage is no longer
+  deprecated.  In the majority of cases it's easier to use hex notation.
