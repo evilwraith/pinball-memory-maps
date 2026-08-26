@@ -1,8 +1,8 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
-    "license": "GNU Lesser General Public License v3.0",
+    "version": 3,
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
       "avs_170",
