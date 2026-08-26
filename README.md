@@ -49,6 +49,18 @@ The script `tools/reformat-json.sh` can reformat one (or all) of the JSON
 files using `jq`.  The script `tools/normalize-map.py` uses Python to do
 the same formatting as `jq`, but also normalizes maps to the latest format.
 
+The `schema/` directory holds [JSON Schemas](https://json-schema.org) for
+the map files, platform files, `index.json` and `romnames.json`.  A GitHub
+action validates all JSON files against them, and you can run the same
+check locally with [check-jsonschema](https://check-jsonschema.readthedocs.io):
+
+```
+    check-jsonschema --schemafile schema/map.schema.json maps/**/*.map.json
+```
+
+The schemas describe the structure of the files; this README remains the
+documentation for how to interpret them.
+
 [Project home](https://github.com/tomlogic/pinball-memory-maps)
 
 _Note that this project was renamed to pinball-memory-maps from 

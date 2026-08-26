@@ -29,3 +29,11 @@ jobs:
               echo "The index.json file is outdated."
               exit 1
           fi
+      - name: Validate JSON files against the schemas
+        run: |
+          shopt -s globstar
+          pipx install check-jsonschema
+          check-jsonschema --schemafile schema/map.schema.json maps/**/*.map.json
+          check-jsonschema --schemafile schema/platform.schema.json platforms/*.json
+          check-jsonschema --schemafile schema/index.schema.json index.json
+          check-jsonschema --schemafile schema/romnames.schema.json romnames.json

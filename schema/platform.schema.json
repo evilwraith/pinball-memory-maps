@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tomlogic/pinball-memory-maps/main/schema/platform.schema.json",
+  "title": "Pinball Platform",
+  "description": "Schema for the platforms/*.json files describing hardware memory layout.",
+  "type": "object",
+  "properties": {
+    "_notes": {
+      "$ref": "#/$defs/notes"
+    },
+    "cpu": {
+      "type": "string"
+    },
+    "endian": {
+      "enum": [
+        "big",
+        "little"
+      ]
+    },
+    "memory_layout": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/memoryArea"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "endian",
+    "memory_layout"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "intOrHex": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string",
+          "pattern": "^0x[0-9A-Fa-f]+$"
+        }
+      ]
+    },
+    "memoryArea": {
+      "type": "object",
+      "properties": {
+        "_notes": {
+          "$ref": "#/$defs/notes"
+        },
+        "label": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/$defs/intOrHex"
+        },
+        "size": {
+          "$ref": "#/$defs/intOrHex"
+        },
+        "type": {
+          "enum": [
+            "ram",
+            "nvram",
+            "rom",
+            "banked"
+          ]
+        },
+        "nibble": {
+          "enum": [
+            "low",
+            "high",
+            "both"
+          ]
+        }
+      },
+      "required": [
+        "address",
+        "size",
+        "type"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
