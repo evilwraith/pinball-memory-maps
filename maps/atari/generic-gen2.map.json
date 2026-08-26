@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -87,9 +87,11 @@
     {
       "_notes": "0x8F7 is xor of these nibbles",
       "label": "High Score",
-      "start": "0x08DE",
-      "length": 7,
-      "encoding": "bcd"
+      "score": {
+        "start": "0x08DE",
+        "length": 7,
+        "encoding": "bcd"
+      }
     }
   ],
   "audits": {
