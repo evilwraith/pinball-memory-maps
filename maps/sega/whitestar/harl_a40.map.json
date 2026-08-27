@@ -4,7 +4,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -38,7 +38,7 @@
   "checksum8_sum": [
     {
       "start": "0x1E00",
-      "end": "0x1E65",
+      "end": "0x1E7F",
       "checksum": "0x1FBD"
     }
   ],
