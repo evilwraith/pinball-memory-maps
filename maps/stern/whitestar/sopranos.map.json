@@ -4,7 +4,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
     ],
@@ -34,12 +34,11 @@
       "sopr107i"
     ]
   },
-  "checksum8": [
+  "checksum8_sum": [
     {
       "start": "0x1E00",
       "end": "0x1E65",
-      "checksum": "0x1FBD",
-      "mode": "sum"
+      "checksum": "0x1FBD"
     }
   ],
   "game_state": {
