@@ -98,6 +98,13 @@
         "$ref": "#/$defs/checksum"
       }
     },
+    "checksum8_sum": {
+      "description": "Regions whose checksum byte stores the low byte of the sum itself rather than its complement.  Requires \"checksum\", as the byte lies outside the range it covers.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/checksum"
+      }
+    },
     "player_state": {
       "description": "Per-player state; structure is still free-form.",
       "type": "object"

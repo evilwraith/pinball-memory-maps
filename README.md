@@ -548,6 +548,20 @@ has a checksum that appears in a non-adjacent address.)
 - **checksum16**: An array of memory regions protected by a 16-bit
   checksum.  The last two bytes of the range are the 16-bit result of
   subtracting all prior bytes in the range from `0xFFFF`.
+- **checksum8_sum**: An array of memory regions protected by an 8-bit
+  checksum that stores the sum itself rather than its complement: the
+  checksum byte holds the low byte of the sum of all bytes in the range.
+  Requires the `checksum` field, as the byte lives outside the range it
+  covers.  Repairing such a region additively -- by the delta of the bytes
+  written -- is exact without depending on where the range ends.
+
+(For example, Sega/Stern Whitestar games protect their adjustments block
+this way, with the checksum byte held well past the end of the range.)
+
+This is a separate key rather than a property on `checksum8` so that a reader
+which does not implement it skips the region entirely.  Spelled as a property,
+a reader that ignored the property would still recognise the region and write
+`0xFF - sum` -- a checksum the game rejects.
 
 ### Version History
 #### v0.1
@@ -589,3 +603,5 @@ has a checksum that appears in a non-adjacent address.)
   high scores on first generation Atari).
 - Although not previously mentioned, hex string usage is no longer
   deprecated.  In the majority of cases it's easier to use hex notation.
+- Add `checksum8_sum` for regions whose checksum byte stores the sum itself
+  instead of its complement (needed for Whitestar adjustments).
