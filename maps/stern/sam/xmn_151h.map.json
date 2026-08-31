@@ -1,22 +1,60 @@
 {
   "_notes": [
     "Locally added -- upstream pinmame-nvram-maps has no X-Men map as of index rev 1406.",
-    "Derived from a real xmn_151h.nv: records are 0x20 apart, NUL-terminated initials at +0x00 and a",
-    "4-byte little-endian score at +0x18, the same record shape the other Stern SAM maps use.",
-    "The five entries decode to Stern's factory default ladder (75M/55M/40M/30M/25M) with the stock",
-    "'G S'/'L R'/'J R'/'D T'/'P P' initials, which is what confirms the addresses.",
+    "Records are 0x20 apart, NUL-terminated initials at +0x00, a 4-byte little-endian score at",
+    "+0x18, and a 16-bit checksum in the last two bytes of the first 30 -- the same record shape",
+    "the other Stern SAM maps use. The checksum verifies on all six records and fails on the",
+    "seventh, which is what bounds the block.",
+    "Confirmed against two cabinets: one still on Stern's factory ladder (75M/55M/40M/30M/25M",
+    "with 'G S'/'L R'/'J R'/'D T'/'P P'), the other with real play on it.",
+    "The sixth record is the Combo Champion, read off the machine's own champion display.",
+    "game on 24 (same platform), where a 4-byte stride reads player 2 as zero and player 3's",
+    "score as player 2's.",
+    "In-progress scores are 8 bytes each on 8-byte centres, not 4 on 4. That layout was verified",
+    "directly on 24 (same platform) with a 4-player game; a 4-byte stride there reads player 2 as zero",
+    "and player 3's score as player 2's.",
+    "On X-Men itself only player 1 has been observed, matching on two cabinets. Players 2-4 are carried",
+    "over from the verified 24 layout: no 3- or 4-player game has been played on either machine, and",
+    "the bytes for those slots still sit inside a 1540-byte 0xFF fill that the firmware has never",
+    "written. A single multiplayer game would confirm them.",
     "Only xmn_151h is claimed: the other X-Men revisions were not checked and SAM high score",
-    "addresses move between ROM revisions.",
-    "A sixth record at 0x021030A0 ('YAN', 15) looks like a mode champion, but its meaning was not",
-    "identified, so it is left out."
+    "addresses move between ROM revisions."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
       "xmn_151h"
+    ]
+  },
+  "game_state": {
+    "scores": [
+      {
+        "label": "Player 1",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109E4"
+      },
+      {
+        "label": "Player 2",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109EC"
+      },
+      {
+        "label": "Player 3",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109F4"
+      },
+      {
+        "label": "Player 4",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109FC"
+      }
     ]
   },
   "high_scores": [
@@ -94,6 +132,55 @@
         "encoding": "int",
         "length": 4
       }
+    }
+  ],
+  "mode_champions": [
+    {
+      "label": "Combo Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x021030A0"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021030B8",
+        "suffix": " Combos"
+      }
+    }
+  ],
+  "checksum16": [
+    {
+      "start": "0x02103000",
+      "length": 30,
+      "label": "Grand Champion"
+    },
+    {
+      "start": "0x02103020",
+      "length": 30,
+      "label": "High Score #1"
+    },
+    {
+      "start": "0x02103040",
+      "length": 30,
+      "label": "High Score #2"
+    },
+    {
+      "start": "0x02103060",
+      "length": 30,
+      "label": "High Score #3"
+    },
+    {
+      "start": "0x02103080",
+      "length": 30,
+      "label": "High Score #4"
+    },
+    {
+      "start": "0x021030A0",
+      "length": 30,
+      "label": "Combo Champion"
     }
   ]
 }

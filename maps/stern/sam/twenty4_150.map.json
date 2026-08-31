@@ -1,0 +1,158 @@
+{
+  "_notes": [
+    "Locally added -- upstream pinmame-nvram-maps has no map for 24 as of index rev 1406.",
+    "Derived from a real twenty4_150.nv plus a 4-player game on an ALP4K cabinet.",
+    "Same Stern SAM record shape as the X-Men and Star Trek maps: records 0x20 apart, NUL-terminated",
+    "initials at +0x00, a 4-byte little-endian score at +0x18, and a 16-bit checksum in the last two",
+    "bytes of the first 30. The checksum verifies on all five records and fails on the sixth, which is",
+    "what bounds the block.",
+    "The five entries were still on Stern's factory default ladder (75M/55M/40M/30M/25M with",
+    "'G S'/'L R'/'J R'/'D T'/'P P'), which is what confirms the addresses.",
+    "Whether this game has mode champions is unknown: the block was untouched and the test game's best",
+    "score did not reach the 25M floor, so no champion record was written.",
+    "In-progress scores verified directly -- a 4-player game ending 1,778,630 / 3,103,030 / 4,960,820 /",
+    "18,483,350 landed at 0x021109E4 on 8-byte centres.",
+    "Only twenty4_150 is claimed: other revisions were not checked and SAM addresses move between them."
+  ],
+  "_fileformat": 0.7,
+  "_metadata": {
+    "version": 1,
+    "license": "GNU Lesser General Public License v3.0",
+    "platform": "stern-sam",
+    "roms": [
+      "twenty4_150"
+    ]
+  },
+  "game_state": {
+    "scores": [
+      {
+        "label": "Player 1",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109E4"
+      },
+      {
+        "label": "Player 2",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109EC"
+      },
+      {
+        "label": "Player 3",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109F4"
+      },
+      {
+        "label": "Player 4",
+        "encoding": "int",
+        "length": 8,
+        "start": "0x021109FC"
+      }
+    ]
+  },
+  "high_scores": [
+    {
+      "label": "Grand Champion",
+      "short_label": "GC",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02102E38"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02102E50"
+      }
+    },
+    {
+      "label": "High Score #1",
+      "short_label": "HS1",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02102E58"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02102E70"
+      }
+    },
+    {
+      "label": "High Score #2",
+      "short_label": "HS2",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02102E78"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02102E90"
+      }
+    },
+    {
+      "label": "High Score #3",
+      "short_label": "HS3",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02102E98"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02102EB0"
+      }
+    },
+    {
+      "label": "High Score #4",
+      "short_label": "HS4",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02102EB8"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02102ED0"
+      }
+    }
+  ],
+  "checksum16": [
+    {
+      "start": "0x02102E38",
+      "length": 30,
+      "label": "Grand Champion"
+    },
+    {
+      "start": "0x02102E58",
+      "length": 30,
+      "label": "High Score #1"
+    },
+    {
+      "start": "0x02102E78",
+      "length": 30,
+      "label": "High Score #2"
+    },
+    {
+      "start": "0x02102E98",
+      "length": 30,
+      "label": "High Score #3"
+    },
+    {
+      "start": "0x02102EB8",
+      "length": 30,
+      "label": "High Score #4"
+    }
+  ]
+}
