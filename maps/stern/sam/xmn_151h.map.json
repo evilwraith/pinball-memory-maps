@@ -15,12 +15,18 @@
     "3,119,500 and 4,467,600 at 0x021109E4 and 0x021109E8. Players 3 and 4 have not been observed:",
     "no 3- or 4-player game has been played, and those bytes still sit inside a 0xFF fill the",
     "firmware has never written.",
+    "player_count at 0x02110900 is verified on this ROM: it reads 1 after a 1-player game and 2 after",
+    "a 2-player one, and 24 uses the same address, so that field at least is shared across SAM games.",
+    "current_ball is deliberately absent. It sits at 0x02111BA8 on 24, verified there, but this ROM",
+    "reads 0 at that address in both post-game captures where 24 retains the last ball played -- so it",
+    "is not safe to assume, and no mid-game capture has been taken on X-Men. Until it is, consumers",
+    "that gate live scores on ball > 0 will not report them for this game.",
     "Only xmn_151h is claimed: the other X-Men revisions were not checked and SAM high score",
     "addresses move between ROM revisions."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -28,6 +34,11 @@
     ]
   },
   "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "encoding": "int",
+      "start": "0x02110900"
+    },
     "scores": [
       {
         "label": "Player 1",

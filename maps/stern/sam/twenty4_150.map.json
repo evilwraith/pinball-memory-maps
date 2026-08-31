@@ -14,11 +14,17 @@
     "a 4-player game ending 1,778,630 / 3,103,030 / 4,960,820 / 18,483,350 put those at 0x021109E4,",
     "0x021109EC, 0x021109F4 and 0x021109FC. The score itself is still 4 bytes; the 4 bytes after each",
     "were zero throughout and are left undeclared. The spacing is per-ROM, so do not carry it across.",
+    "player_count and current_ball were isolated by capturing NVRAM at known game states and diffing.",
+    "0x02110900 is the only byte in the 128K that reads 1/4/1 across a 1-player game, a 4-player game",
+    "and a 1-player game in progress; 0x02111BA8 is the only byte that reads 2 while sitting on ball 2",
+    "and 3 while sitting on ball 3.",
+    "There is no game_over flag: no byte reads set in every post-game capture and clear mid-game, so",
+    "SAM appears not to keep one in NVRAM. Consumers that gate on ball > 0 do not need it.",
     "Only twenty4_150 is claimed: other revisions were not checked and SAM addresses move between them."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -26,6 +32,16 @@
     ]
   },
   "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "encoding": "int",
+      "start": "0x02110900"
+    },
+    "current_ball": {
+      "label": "Ball",
+      "encoding": "int",
+      "start": "0x02111BA8"
+    },
     "scores": [
       {
         "label": "Player 1",
