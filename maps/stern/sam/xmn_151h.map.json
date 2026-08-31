@@ -10,19 +10,17 @@
     "The sixth record is the Combo Champion, read off the machine's own champion display.",
     "game on 24 (same platform), where a 4-byte stride reads player 2 as zero and player 3's",
     "score as player 2's.",
-    "In-progress scores are 8 bytes each on 8-byte centres, not 4 on 4. That layout was verified",
-    "directly on 24 (same platform) with a 4-player game; a 4-byte stride there reads player 2 as zero",
-    "and player 3's score as player 2's.",
-    "On X-Men itself only player 1 has been observed, matching on two cabinets. Players 2-4 are carried",
     "over from the verified 24 layout: no 3- or 4-player game has been played on either machine, and",
-    "the bytes for those slots still sit inside a 1540-byte 0xFF fill that the firmware has never",
-    "written. A single multiplayer game would confirm them.",
+    "In-progress scores are 4 bytes on 4-byte centres, verified by a 2-player game reading",
+    "3,119,500 and 4,467,600 at 0x021109E4 and 0x021109E8. Players 3 and 4 have not been observed:",
+    "no 3- or 4-player game has been played, and those bytes still sit inside a 0xFF fill the",
+    "firmware has never written.",
     "Only xmn_151h is claimed: the other X-Men revisions were not checked and SAM high score",
     "addresses move between ROM revisions."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -34,26 +32,26 @@
       {
         "label": "Player 1",
         "encoding": "int",
-        "length": 8,
+        "length": 4,
         "start": "0x021109E4"
       },
       {
         "label": "Player 2",
         "encoding": "int",
-        "length": 8,
-        "start": "0x021109EC"
+        "length": 4,
+        "start": "0x021109E8"
       },
       {
         "label": "Player 3",
         "encoding": "int",
-        "length": 8,
-        "start": "0x021109F4"
+        "length": 4,
+        "start": "0x021109EC"
       },
       {
         "label": "Player 4",
         "encoding": "int",
-        "length": 8,
-        "start": "0x021109FC"
+        "length": 4,
+        "start": "0x021109F0"
       }
     ]
   },

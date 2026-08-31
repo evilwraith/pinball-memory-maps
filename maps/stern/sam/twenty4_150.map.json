@@ -10,13 +10,15 @@
     "'G S'/'L R'/'J R'/'D T'/'P P'), which is what confirms the addresses.",
     "Whether this game has mode champions is unknown: the block was untouched and the test game's best",
     "score did not reach the 25M floor, so no champion record was written.",
-    "In-progress scores verified directly -- a 4-player game ending 1,778,630 / 3,103,030 / 4,960,820 /",
-    "18,483,350 landed at 0x021109E4 on 8-byte centres.",
+    "In-progress scores are on 8-byte centres here, not the 4-byte centres X-Men and Star Trek use:",
+    "a 4-player game ending 1,778,630 / 3,103,030 / 4,960,820 / 18,483,350 put those at 0x021109E4,",
+    "0x021109EC, 0x021109F4 and 0x021109FC. The score itself is still 4 bytes; the 4 bytes after each",
+    "were zero throughout and are left undeclared. The spacing is per-ROM, so do not carry it across.",
     "Only twenty4_150 is claimed: other revisions were not checked and SAM addresses move between them."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -28,25 +30,25 @@
       {
         "label": "Player 1",
         "encoding": "int",
-        "length": 8,
+        "length": 4,
         "start": "0x021109E4"
       },
       {
         "label": "Player 2",
         "encoding": "int",
-        "length": 8,
+        "length": 4,
         "start": "0x021109EC"
       },
       {
         "label": "Player 3",
         "encoding": "int",
-        "length": 8,
+        "length": 4,
         "start": "0x021109F4"
       },
       {
         "label": "Player 4",
         "encoding": "int",
-        "length": 8,
+        "length": 4,
         "start": "0x021109FC"
       }
     ]
