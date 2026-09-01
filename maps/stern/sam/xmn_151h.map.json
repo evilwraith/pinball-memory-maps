@@ -17,16 +17,18 @@
     "firmware has never written.",
     "player_count at 0x02110900 is verified on this ROM: it reads 1 after a 1-player game and 2 after",
     "a 2-player one, and 24 uses the same address, so that field at least is shared across SAM games.",
-    "current_ball is deliberately absent. It sits at 0x02111BA8 on 24, verified there, but this ROM",
-    "reads 0 at that address in both post-game captures where 24 retains the last ball played -- so it",
-    "is not safe to assume, and no mid-game capture has been taken on X-Men. Until it is, consumers",
-    "that gate live scores on ball > 0 will not report them for this game.",
+    "current_ball is at 0x00030AE5, in CPU RAM rather than NVRAM, identified by how it moves rather",
+    "than what it reads: across a whole game it stepped 1->2->3 and nothing else, with the score",
+    "climbing between the steps. Five exit snapshots had failed to find it, and the one other address",
+    "that survived those (0x0002FB20) turned out to cycle 0,1,2,5,4,3,2,1,4 -- a display value.",
+    "It is not the address 24 uses, which reads 16 here, nor does it mean anything on LUCI, which",
+    "reads 0. Like the score base and stride, the ball counter is per-ROM on SAM.",
     "Only xmn_151h is claimed: the other X-Men revisions were not checked and SAM high score",
     "addresses move between ROM revisions."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -38,6 +40,11 @@
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "current_ball": {
+      "label": "Ball",
+      "encoding": "int",
+      "start": "0x00030AE5"
     },
     "scores": [
       {
