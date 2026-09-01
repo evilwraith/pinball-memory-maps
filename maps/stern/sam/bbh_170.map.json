@@ -15,11 +15,13 @@
     "validating: six records pass, the seventh does not. The first five hold Stern's factory ladder.",
     "The sixth is the Open Season Champion, read off the machine's DMD after game over -- 'LON' at",
     "50,000,000, which is what the record decodes to.",
-    "Only bbh_170 is claimed; SAM addresses move between revisions."
+    "Only bbh_170 is claimed; SAM addresses move between revisions.",
+    "Confirmed after the table exited: the map decodes that game as 4 players scoring 952,010 /",
+    "871,510 / 1,118,200 / 929,680."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
