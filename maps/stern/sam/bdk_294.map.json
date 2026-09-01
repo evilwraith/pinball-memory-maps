@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -178,6 +178,9 @@
     "twd_156c and Avatar, 0x02110A0C on Star Trek, 0x02110A24 on LUCI, 0x02110A9C on twd_160h.",
     "player_count at 0x02110900, the one address every SAM game shares.",
     "The DMD confirms this map's champion labels: after game over it cycled BATMOBILE HURRY-UP",
-    "CHAMPION with 'K O' 10,000,000, matching the mode_champions entry already declared here."
+    "Confirmed after the table exited: the map decodes that game as 2,108,050 / 2,064,720 /",
+    "1,217,240 / 1,793,870, exactly what the DMD showed, with player_count 4. All three champion",
+    "entries decode as the machine displays them -- 'K O' 10,000,000, 'M R' 25,000,000 and 'JLS'",
+    "75,000,000 -- so the labels this map already carried are right."
   ]
 }
