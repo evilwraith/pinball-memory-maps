@@ -16,9 +16,9 @@
     "4-byte score at +0x18 and a 16-bit checksum in the last two bytes of the first 30. Six records",
     "pass that check and the seventh does not, which is what bounds the block.",
     "The first five hold Stern's factory ladder (75M/55M/40M/30M/25M with 'G S'/'L R'/'J R'/'D T'/",
-    "'P P'). The sixth, 'LFS' at 25,000,000 and 0x02102AD8, is real -- its checksum validates -- but",
-    "what the machine calls it has not been read off its champion display, so it is left out of",
-    "mode_champions rather than guessed at. Its checksum region is still declared.",
+    "'P P'). The sixth is the Final Battle Champion, read off the machine's own DMD: after game over",
+    "it cycles every champion entry, which is where a record's name comes from -- no amount of NVRAM",
+    "analysis will give it.",
     "Only avr_200 is claimed; SAM addresses move between revisions.",
     "Confirmed after the fact: exiting the table wrote the .nv, and the map decodes that 4-player",
     "game as 4 players scoring 1,767,130 / 1,360,920 / 976,890 / 1,006,410, with all six checksum",
@@ -26,7 +26,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -153,6 +153,22 @@
       }
     }
   ],
+  "mode_champions": [
+    {
+      "label": "Final Battle Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02102AD8"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02102AF0"
+      }
+    }
+  ],
   "checksum16": [
     {
       "start": "0x02102A38",
@@ -182,7 +198,7 @@
     {
       "start": "0x02102AD8",
       "length": 30,
-      "label": "Unidentified Champion"
+      "label": "Final Battle Champion"
     }
   ]
 }
