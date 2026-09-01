@@ -11,15 +11,22 @@
     "title, one revision apart, and every layout detail differs.",
     "Fifteen records from 0x021036D8 on a 32-byte stride, bounded by where the checksum stops",
     "validating. The first five are the high score ladder. The remaining ten are the per-song mode",
-    "champions the machine keeps, but they are deliberately left out of mode_champions: their factory",
-    "defaults (20, 25M, 25M, 25M, 25M, 5M, 2.5M, 15M, 50M, 15M) do not line up with mtl_180h's in",
-    "address order, so that map's labels cannot be carried across, and nothing here has read the names",
-    "off this revision's DMD. Their checksum regions are declared.",
+    "champions. Four of the ten are declared, the four whose factory default is unique so the DMD's",
+    "name can be tied to a record with certainty: Combo (20), Fuel (5,000,000), Lady Justice",
+    "(2,500,000) and The End Of The Line (50,000,000).",
+    "The other six are not, and cannot be from this evidence. Four records hold 25,000,000 -- For Whom",
+    "The Bell Tolls, Fade To Black, Enter Sandman and Battery all display that -- and two hold",
+    "15,000,000, shared by Blackened and Seek & Destroy. The DMD names them but its cycle order does",
+    "not follow record order, so there is nothing to break the tie. Their checksum regions are still",
+    "declared.",
+    "Worth noting for anyone who wants to finish it: 170h's default sequence matches mtl_180h's for",
+    "nine of ten positions if Blackened is moved from second place to last. That is suggestive of a",
+    "shared order, and it is not proof, so the labels are not assigned on it.",
     "Only mtl_170h is claimed."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -143,6 +150,64 @@
         "encoding": "int",
         "length": 4,
         "start": "0x02103770"
+      }
+    }
+  ],
+  "mode_champions": [
+    {
+      "label": "Combo Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103778"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103790"
+      }
+    },
+    {
+      "label": "Fuel Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103818"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103830"
+      }
+    },
+    {
+      "label": "Lady Justice Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103838"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103850"
+      }
+    },
+    {
+      "label": "The End Of The Line Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103878"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103890"
       }
     }
   ],
