@@ -12,11 +12,13 @@
     "Five high score records from 0x02102B98, bounded by where the 16-bit checksum stops validating.",
     "This game has no mode champions: the block ends at five and the machine's post-game DMD cycle",
     "shows no champion entries, unlike Avatar, Dark Knight and Big Buck Hunter.",
-    "Only csi_240 is claimed; SAM addresses move between revisions."
+    "Only csi_240 is claimed; SAM addresses move between revisions.",
+    "Confirmed after the table exited: the map decodes that game as 4 players scoring 945,250 /",
+    "1,062,000 / 1,013,750 / 1,014,000."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
