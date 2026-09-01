@@ -1,0 +1,226 @@
+{
+  "_notes": [
+    "Locally added -- upstream pinmame-nvram-maps has no map for this revision.",
+    "Built from a 4-player game driven through the cabinet's own streamer.",
+    "current_player and current_ball are adjacent in CPU RAM at 0x00035A4C and 0x00035A4D, player low",
+    "and ball high. Scores are 4 bytes on 4-byte centres from 0x021109E4.",
+    "player_count at 0x02110900, the one address every SAM game shares.",
+    "Nothing here is shared with mtl_180h, the next revision up, and that is the point worth carrying:",
+    "its scores are 8 bytes apart from 0x02110A24 where these are 4 apart from 0x021109E4, and its",
+    "records are 36 bytes with the checksum at +32 where these are 32 bytes with it at +28. Same",
+    "title, one revision apart, and every layout detail differs.",
+    "Fifteen records from 0x021036D8 on a 32-byte stride, bounded by where the checksum stops",
+    "validating. The first five are the high score ladder. The remaining ten are the per-song mode",
+    "champions the machine keeps, but they are deliberately left out of mode_champions: their factory",
+    "defaults (20, 25M, 25M, 25M, 25M, 5M, 2.5M, 15M, 50M, 15M) do not line up with mtl_180h's in",
+    "address order, so that map's labels cannot be carried across, and nothing here has read the names",
+    "off this revision's DMD. Their checksum regions are declared.",
+    "Only mtl_170h is claimed."
+  ],
+  "_fileformat": 0.7,
+  "_metadata": {
+    "version": 1,
+    "license": "GNU Lesser General Public License v3.0",
+    "platform": "stern-sam",
+    "roms": [
+      "mtl_170h"
+    ]
+  },
+  "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "encoding": "int",
+      "start": "0x02110900"
+    },
+    "current_player": {
+      "label": "Player",
+      "encoding": "int",
+      "start": "0x00035A4C"
+    },
+    "current_ball": {
+      "label": "Ball",
+      "encoding": "int",
+      "start": "0x00035A4D"
+    },
+    "scores": [
+      {
+        "label": "Player 1",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109E4"
+      },
+      {
+        "label": "Player 2",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109E8"
+      },
+      {
+        "label": "Player 3",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109EC"
+      },
+      {
+        "label": "Player 4",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109F0"
+      }
+    ]
+  },
+  "high_scores": [
+    {
+      "label": "Grand Champion",
+      "short_label": "GC",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x021036D8"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021036F0"
+      }
+    },
+    {
+      "label": "High Score #1",
+      "short_label": "HS1",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x021036F8"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103710"
+      }
+    },
+    {
+      "label": "High Score #2",
+      "short_label": "HS2",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103718"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103730"
+      }
+    },
+    {
+      "label": "High Score #3",
+      "short_label": "HS3",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103738"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103750"
+      }
+    },
+    {
+      "label": "High Score #4",
+      "short_label": "HS4",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103758"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103770"
+      }
+    }
+  ],
+  "checksum16": [
+    {
+      "start": "0x021036D8",
+      "length": 30,
+      "label": "Grand Champion"
+    },
+    {
+      "start": "0x021036F8",
+      "length": 30,
+      "label": "High Score #1"
+    },
+    {
+      "start": "0x02103718",
+      "length": 30,
+      "label": "High Score #2"
+    },
+    {
+      "start": "0x02103738",
+      "length": 30,
+      "label": "High Score #3"
+    },
+    {
+      "start": "0x02103758",
+      "length": 30,
+      "label": "High Score #4"
+    },
+    {
+      "start": "0x02103778",
+      "length": 30,
+      "label": "Mode Champion 1"
+    },
+    {
+      "start": "0x02103798",
+      "length": 30,
+      "label": "Mode Champion 2"
+    },
+    {
+      "start": "0x021037B8",
+      "length": 30,
+      "label": "Mode Champion 3"
+    },
+    {
+      "start": "0x021037D8",
+      "length": 30,
+      "label": "Mode Champion 4"
+    },
+    {
+      "start": "0x021037F8",
+      "length": 30,
+      "label": "Mode Champion 5"
+    },
+    {
+      "start": "0x02103818",
+      "length": 30,
+      "label": "Mode Champion 6"
+    },
+    {
+      "start": "0x02103838",
+      "length": 30,
+      "label": "Mode Champion 7"
+    },
+    {
+      "start": "0x02103858",
+      "length": 30,
+      "label": "Mode Champion 8"
+    },
+    {
+      "start": "0x02103878",
+      "length": 30,
+      "label": "Mode Champion 9"
+    },
+    {
+      "start": "0x02103898",
+      "length": 30,
+      "label": "Mode Champion 10"
+    }
+  ]
+}
