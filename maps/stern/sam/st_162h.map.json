@@ -1,10 +1,17 @@
 {
   "_notes": [
-    "Compiled by Tom Collins, based on st_162h by HorsePin"
+    "Compiled by Tom Collins, based on st_162h by HorsePin",
+    "player_count added at 0x02110900, the one address shared across every Stern SAM game checked --",
+    "24, X-Men, LUCI and both Star Trek revisions, over ten captures at one, two and four players.",
+    "The declared score slots were confirmed on hardware rather than assumed: a 4-player game ending",
+    "1,236,620 / 2,197,850 / 1,137,910 / 1,714,440 read back exactly at 0x02110A0C on a 4-byte stride.",
+    "current_player and current_ball are still unmapped. Neither is retained in NVRAM after a game,",
+    "and a sweep of 0x0-0x3FFFF did not produce the adjacent pair that identified them on X-Men and",
+    "LUCI, so they are somewhere else in CPU RAM."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -17,6 +24,11 @@
     ]
   },
   "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "encoding": "int",
+      "start": "0x02110900"
+    },
     "scores": [
       {
         "label": "Player 1",
