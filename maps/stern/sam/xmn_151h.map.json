@@ -26,12 +26,18 @@
     "volume at 0x02110250 read 60 across four earlier captures and 40 after the operator set it to 40",
     "on a 0-63 scale -- the only byte in the 128K that changed that way, so no second capture was",
     "needed to confirm it.",
+    "current_player is the byte immediately below the ball, at 0x00030AE4. In a 4-player game it",
+    "completed 1->2->3 three times -- once per ball, as player-up rotating through four players does --",
+    "against one completion for the ball, and the two interlock: the ball stepped at the same scores",
+    "the player cycles finished at.",
+    "The four scores of that game read 721,760 / 1,099,300 / 853,880 / 1,302,140 exactly where this map",
+    "declares them, so the 4-byte stride is measured here rather than carried over from another ROM.",
     "Only xmn_151h is claimed: the other X-Men revisions were not checked and SAM high score",
     "addresses move between ROM revisions."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -43,6 +49,11 @@
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "current_player": {
+      "label": "Player",
+      "encoding": "int",
+      "start": "0x00030AE4"
     },
     "current_ball": {
       "label": "Ball",
