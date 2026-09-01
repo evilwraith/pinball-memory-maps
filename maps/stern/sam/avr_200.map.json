@@ -19,11 +19,14 @@
     "'P P'). The sixth, 'LFS' at 25,000,000 and 0x02102AD8, is real -- its checksum validates -- but",
     "what the machine calls it has not been read off its champion display, so it is left out of",
     "mode_champions rather than guessed at. Its checksum region is still declared.",
-    "Only avr_200 is claimed; SAM addresses move between revisions."
+    "Only avr_200 is claimed; SAM addresses move between revisions.",
+    "Confirmed after the fact: exiting the table wrote the .nv, and the map decodes that 4-player",
+    "game as 4 players scoring 1,767,130 / 1,360,920 / 976,890 / 1,006,410, with all six checksum",
+    "regions valid. Every address here was found by behaviour and then checked against the result."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
