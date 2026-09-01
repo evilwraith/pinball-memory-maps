@@ -14,6 +14,13 @@
       "type": "ram"
     },
     {
+      "_notes": "Games don't have non-volatile RAM.  This 0-byte entry points to an unused memory area.",
+      "label": "NVRAM placeholder",
+      "address": "0x1000",
+      "size": 0,
+      "type": "nvram"
+    },
+    {
       "label": "ROM E00",
       "address": "0x7000",
       "size": "0x800",
