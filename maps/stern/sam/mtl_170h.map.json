@@ -11,22 +11,21 @@
     "title, one revision apart, and every layout detail differs.",
     "Fifteen records from 0x021036D8 on a 32-byte stride, bounded by where the checksum stops",
     "validating. The first five are the high score ladder. The remaining ten are the per-song mode",
-    "champions. Four of the ten are declared, the four whose factory default is unique so the DMD's",
-    "name can be tied to a record with certainty: Combo (20), Fuel (5,000,000), Lady Justice",
-    "(2,500,000) and The End Of The Line (50,000,000).",
-    "The other six are not, and cannot be from this evidence. Four records hold 25,000,000 -- For Whom",
-    "The Bell Tolls, Fade To Black, Enter Sandman and Battery all display that -- and two hold",
-    "15,000,000, shared by Blackened and Seek & Destroy. The DMD names them but its cycle order does",
-    "not follow record order, so there is nothing to break the tie. Their checksum regions are still",
-    "declared.",
-    "Worth noting for anyone who wants to finish it: 170h's default sequence matches mtl_180h's for",
     "nine of ten positions if Blackened is moved from second place to last. That is suggestive of a",
-    "shared order, and it is not proof, so the labels are not assigned on it.",
+    "champions, all ten named. Their factory defaults collide -- four records hold 25,000,000 and two",
+    "hold 15,000,000 -- so the DMD alone could only pin down the four with unique values.",
+    "What resolves the rest is a second table at 0x02102510 on a 0x18 stride holding the same ten",
+    "values in the same order: the operator-settable champion thresholds. Setting five of them to",
+    "distinct figures (Battery 22M, Enter Sandman 24M, Fade To Black 27M, For Whom 26M, Blackened 16M)",
+    "named each slot in that table, and the five positions left alone still match the champion records",
+    "value for value, which is what shows the two tables share an order rather than assuming it.",
+    "That also settles the mtl_180h comparison: Blackened really is last here where it is second there,",
+    "the shift that was visible in the defaults but not provable from them.",
     "Only mtl_170h is claimed."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -169,6 +168,62 @@
       }
     },
     {
+      "label": "Battery Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103798"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021037B0"
+      }
+    },
+    {
+      "label": "Enter Sandman Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x021037B8"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021037D0"
+      }
+    },
+    {
+      "label": "Fade To Black Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x021037D8"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021037F0"
+      }
+    },
+    {
+      "label": "For Whom The Bell Tolls Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x021037F8"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103810"
+      }
+    },
+    {
       "label": "Fuel Champion",
       "initials": {
         "encoding": "ch",
@@ -197,6 +252,20 @@
       }
     },
     {
+      "label": "Seek & Destroy Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103858"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103870"
+      }
+    },
+    {
       "label": "The End Of The Line Champion",
       "initials": {
         "encoding": "ch",
@@ -208,6 +277,20 @@
         "encoding": "int",
         "length": 4,
         "start": "0x02103890"
+      }
+    },
+    {
+      "label": "Blackened Champion",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103898"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021038B0"
       }
     }
   ],
@@ -240,52 +323,52 @@
     {
       "start": "0x02103778",
       "length": 30,
-      "label": "Mode Champion 1"
+      "label": "Combo Champion"
     },
     {
       "start": "0x02103798",
       "length": 30,
-      "label": "Mode Champion 2"
+      "label": "Battery Champion"
     },
     {
       "start": "0x021037B8",
       "length": 30,
-      "label": "Mode Champion 3"
+      "label": "Enter Sandman Champion"
     },
     {
       "start": "0x021037D8",
       "length": 30,
-      "label": "Mode Champion 4"
+      "label": "Fade To Black Champion"
     },
     {
       "start": "0x021037F8",
       "length": 30,
-      "label": "Mode Champion 5"
+      "label": "For Whom The Bell Tolls Champion"
     },
     {
       "start": "0x02103818",
       "length": 30,
-      "label": "Mode Champion 6"
+      "label": "Fuel Champion"
     },
     {
       "start": "0x02103838",
       "length": 30,
-      "label": "Mode Champion 7"
+      "label": "Lady Justice Champion"
     },
     {
       "start": "0x02103858",
       "length": 30,
-      "label": "Mode Champion 8"
+      "label": "Seek & Destroy Champion"
     },
     {
       "start": "0x02103878",
       "length": 30,
-      "label": "Mode Champion 9"
+      "label": "The End Of The Line Champion"
     },
     {
       "start": "0x02103898",
       "length": 30,
-      "label": "Mode Champion 10"
+      "label": "Blackened Champion"
     }
   ]
 }
