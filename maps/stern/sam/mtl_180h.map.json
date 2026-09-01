@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -275,6 +275,8 @@
     "player_count at 0x02110900, the one address every SAM game shares.",
     "Applies to mtl_180h only. mtl_170h is a different revision and needs its own measurement -- SAM",
     "addresses move between revisions, and twd_156c and twd_160h differ in both score base and stride",
-    "despite being the same title."
+    "despite being the same title.",
+    "Confirmed after the table exited: 4 players scoring 1,198,400 / 1,175,420 / 1,237,780 /",
+    "1,680,350."
   ]
 }
