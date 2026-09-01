@@ -9,14 +9,19 @@
     "does not pass. Five are the high score ladder; four are champions, named off the machine's",
     "post-game DMD cycle and each pinned by a distinct factory default: Free Throws 2 in a row,",
     "2-Pointers 4, 3-Pointers 3, NBA Finals 25,000,000.",
-    "The machine also displays a Basketball Points champion sitting at 0, which has no record in this",
-    "block -- the block ends at nine and record ten fails its checksum. It is presumably not written",
-    "until first earned, so it is left unmapped rather than guessed at.",
+    "The machine displays a Basketball Points champion, and it is deliberately not mapped: it does not",
+    "appear to be stored as a champion record at all. Earning it (6 points) and exiting changed nothing",
+    "in the record block, put no 6 anywhere in the persistent region, and left record ten still failing",
+    "its checksum. Every persistent byte that did change has the audit shape -- a value written twice",
+    "followed by a checksum byte -- and the only 6s are in the volatile working area at 0x02111Axx,",
+    "among values that move by millions between captures. It reads as a per-game statistic the",
+    "game-over summary shows, not a persisted champion.",
+    "Score slots confirmed on that game: 1,336,840 for player 1 at 0x021109E4.",
     "Only nba_802 is claimed; SAM addresses move between revisions."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
