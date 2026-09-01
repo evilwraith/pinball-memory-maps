@@ -1,11 +1,57 @@
 {
+  "_notes": [
+    "game_state added locally from NVRAM captured on an ALP4K cabinet either side of a 2-player game.",
+    "Scores are 4 bytes on 8-byte centres from 0x02110A24: the game ended 9,116,750 / 8,923,670 and",
+    "those landed at 0x02110A24 and 0x02110A2C, with players 3 and 4 zero and the high word of each",
+    "slot zero throughout.",
+    "This is not where the other Stern SAM maps put them -- 24 and X-Men both use 0x021109E4, which",
+    "stayed zero here through a real game. The score address is per-ROM; do not carry it across.",
+    "player_count at 0x02110900 read 1 before and 2 after, the same address 24 and X-Men use. That",
+    "field does appear to be shared across SAM.",
+    "current_ball is not mapped. It was not looked for on this ROM, and 24's address holds 0xFF here,",
+    "inside a 232-byte run the firmware has never written. Consumers that gate live scores on ball > 0",
+    "will not report them until it is found."
+  ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
       "acd_170h"
+    ]
+  },
+  "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "encoding": "int",
+      "start": "0x02110900"
+    },
+    "scores": [
+      {
+        "label": "Player 1",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A24"
+      },
+      {
+        "label": "Player 2",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A2C"
+      },
+      {
+        "label": "Player 3",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A34"
+      },
+      {
+        "label": "Player 4",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A3C"
+      }
     ]
   },
   "high_scores": [
