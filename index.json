@@ -212,6 +212,7 @@
   "cp_15": "maps/williams/wpc/cp_16.map.json",
   "cp_16": "maps/williams/wpc/cp_16.map.json",
   "cp_16pfx": "maps/williams/wpc/cp_16.map.json",
+  "csi_240": "maps/stern/sam/csi_240.map.json",
   "csmic_l1": "maps/williams/system7/generic-10KB.map.json",
   "cueball": "maps/gottlieb/system3/cueball.map.json",
   "cueball1": "maps/gottlieb/system3/cueball.map.json",
