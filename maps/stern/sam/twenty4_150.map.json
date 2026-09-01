@@ -20,11 +20,19 @@
     "and 3 while sitting on ball 3.",
     "There is no game_over flag: no byte reads set in every post-game capture and clear mid-game, so",
     "SAM appears not to keep one in NVRAM. Consumers that gate on ball > 0 do not need it.",
-    "Only twenty4_150 is claimed: other revisions were not checked and SAM addresses move between them."
+    "Only twenty4_150 is claimed: other revisions were not checked and SAM addresses move between them.",
+    "current_player is at 0x00033400 in CPU RAM, the byte below a second copy of the ball at",
+    "0x00033401. Over a 4-player game it completed 1->2->3 three times, once per ball, at 558,940 /",
+    "1,251,860 / 2,177,650 -- the last being player 1's final score -- while the ball copy completed",
+    "once, on the player's second cycle.",
+    "current_ball stays at 0x02111BA8 in NVRAM: that one is already proven to drive live scores here,",
+    "and this game confirms the same structure exists in RAM as on the other SAM ROMs.",
+    "Score slots re-confirmed: 2,177,650 / 2,357,180 / 1,762,430 / 3,117,850 read back at 0x021109E4",
+    "on the declared 8-byte stride."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -36,6 +44,11 @@
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "current_player": {
+      "label": "Player",
+      "encoding": "int",
+      "start": "0x00033400"
     },
     "current_ball": {
       "label": "Ball",
