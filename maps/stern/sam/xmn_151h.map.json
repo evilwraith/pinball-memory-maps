@@ -33,22 +33,44 @@
     "The four scores of that game read 721,760 / 1,099,300 / 853,880 / 1,302,140 exactly where this map",
     "declares them, so the 4-byte stride is measured here rather than carried over from another ROM.",
     "Only xmn_151h is claimed: the other X-Men revisions were not checked and SAM high score",
-    "addresses move between ROM revisions."
+    "addresses move between ROM revisions.",
+    "Free Play was not toggled on this game. Its address is derived, and the derivation is worth",
+    "stating because it is testable rather than assumed. Machine adjustments are an array of 8-byte",
+    "records from 0x02102008 -- a 32-bit little-endian value, then a byte holding 0xFF minus the sum",
+    "of the value's four bytes, padded 0xFF above. Every record in every image checked satisfies it.",
+    "Aligning this game's array against a game where Free Play was measured puts it at one of only",
+    "two positions across all twenty SAM games examined, and the value there reads 1 on a cabinet",
+    "that is in free play. The alignment was validated prospectively: on nba_802 and smanve_101 --",
+    "the two games where alignment agreement was weakest -- the address was predicted first, then",
+    "confirmed by toggling, and both were exact.",
+    "Writing this field requires updating its check byte, or the game discards the change on reload."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
       "xmn_151h"
     ]
   },
+  "checksum8": [
+    {
+      "label": "Free Play adjustment",
+      "start": "0x02102110",
+      "end": "0x02102113"
+    }
+  ],
   "game_state": {
     "player_count": {
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102110"
     },
     "current_player": {
       "label": "Player",

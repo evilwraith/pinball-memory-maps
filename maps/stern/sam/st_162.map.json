@@ -1,10 +1,20 @@
 {
   "_notes": [
-    "Compiled by Tom Collins, based on st_162h by HorsePin"
+    "Compiled by Tom Collins, based on st_162h by HorsePin",
+    "Free Play was not toggled on this game. Its address is derived, and the derivation is worth",
+    "stating because it is testable rather than assumed. Machine adjustments are an array of 8-byte",
+    "records from 0x02102008 -- a 32-bit little-endian value, then a byte holding 0xFF minus the sum",
+    "of the value's four bytes, padded 0xFF above. Every record in every image checked satisfies it.",
+    "Aligning this game's array against a game where Free Play was measured puts it at one of only",
+    "two positions across all twenty SAM games examined, and the value there reads 1 on a cabinet",
+    "that is in free play. The alignment was validated prospectively: on nba_802 and smanve_101 --",
+    "the two games where alignment agreement was weakest -- the address was predicted first, then",
+    "confirmed by toggling, and both were exact.",
+    "Writing this field requires updating its check byte, or the game discards the change on reload."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -16,6 +26,13 @@
       "st_162c"
     ]
   },
+  "checksum8": [
+    {
+      "label": "Free Play adjustment",
+      "start": "0x02102120",
+      "end": "0x02102123"
+    }
+  ],
   "game_state": {
     "scores": [
       {
@@ -42,7 +59,12 @@
         "length": 4,
         "start": "0x21109F0"
       }
-    ]
+    ],
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102120"
+    }
   },
   "high_scores": [
     {

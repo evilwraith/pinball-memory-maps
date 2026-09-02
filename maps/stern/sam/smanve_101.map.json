@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -10,11 +10,28 @@
       "smanve_101c"
     ]
   },
+  "checksum8": [
+    {
+      "label": "Free Play adjustment",
+      "start": "0x02102120",
+      "end": "0x02102123"
+    },
+    {
+      "label": "Master Volume",
+      "start": "0x02110250",
+      "end": "0x02110250"
+    }
+  ],
   "game_state": {
     "player_count": {
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102120"
     },
     "current_player": {
       "label": "Player",
@@ -51,7 +68,12 @@
         "length": 4,
         "start": "0x021109F0"
       }
-    ]
+    ],
+    "volume": {
+      "label": "Master Volume",
+      "encoding": "int",
+      "start": "0x02110250"
+    }
   },
   "high_scores": [
     {
@@ -232,6 +254,11 @@
     "Scores are 4 bytes on 4-byte centres from 0x021109E4. The sweep also offered 0x00036470 in CPU",
     "RAM, reading 251,000 / 250,500 / 250,500 / 251,500 -- four plausible, evenly spaced, monotonic",
     "values, and wrong. Scores are in NVRAM on every SAM game measured, which is what rejects it.",
-    "player_count at 0x02110900, the one address every SAM game shares."
+    "player_count at 0x02110900, the one address every SAM game shares.",
+    "Free Play measured directly: toggled in the operator menu with NVRAM captured either side. The",
+    "value goes 1 -> 0 and its check byte 0xFE -> 0xFF, equal and opposite.",
+    "It is one record of the 8-byte adjustment array at 0x02102008, where each record is a 32-bit",
+    "little-endian value followed by a byte holding 0xFF minus the sum of the value's four bytes.",
+    "Writing this field requires updating that check byte, or the game discards the change on reload."
   ]
 }

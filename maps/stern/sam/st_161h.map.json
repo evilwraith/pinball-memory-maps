@@ -14,11 +14,21 @@
     "Over a 4-player game the player byte completed 1->2->3 three times at 190,100 / 421,380 / 857,000,",
     "the last being player 1's final score, and the ball byte once at 421,380, on the player's second",
     "cycle. An earlier sweep of 0x0-0x3FFFF missed both; they sit above it.",
-    "Score slots re-confirmed on that game: 857,000 / 1,775,680 / 973,300 / 728,880 at 0x02110A0C."
+    "Score slots re-confirmed on that game: 857,000 / 1,775,680 / 973,300 / 728,880 at 0x02110A0C.",
+    "Free Play was not toggled on this game. Its address is derived, and the derivation is worth",
+    "stating because it is testable rather than assumed. Machine adjustments are an array of 8-byte",
+    "records from 0x02102008 -- a 32-bit little-endian value, then a byte holding 0xFF minus the sum",
+    "of the value's four bytes, padded 0xFF above. Every record in every image checked satisfies it.",
+    "Aligning this game's array against a game where Free Play was measured puts it at one of only",
+    "two positions across all twenty SAM games examined, and the value there reads 1 on a cabinet",
+    "that is in free play. The alignment was validated prospectively: on nba_802 and smanve_101 --",
+    "the two games where alignment agreement was weakest -- the address was predicted first, then",
+    "confirmed by toggling, and both were exact.",
+    "Writing this field requires updating its check byte, or the game discards the change on reload."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -30,11 +40,23 @@
       "st_161hc"
     ]
   },
+  "checksum8": [
+    {
+      "label": "Free Play adjustment",
+      "start": "0x02102110",
+      "end": "0x02102113"
+    }
+  ],
   "game_state": {
     "player_count": {
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102110"
     },
     "current_player": {
       "label": "Player",

@@ -17,22 +17,44 @@
     "among values that move by millions between captures. It reads as a per-game statistic the",
     "game-over summary shows, not a persisted champion.",
     "Score slots confirmed on that game: 1,336,840 for player 1 at 0x021109E4.",
-    "Only nba_802 is claimed; SAM addresses move between revisions."
+    "Only nba_802 is claimed; SAM addresses move between revisions.",
+    "Free Play measured directly: toggled in the operator menu with NVRAM captured either side. The",
+    "value goes 1 -> 0 and its check byte 0xFE -> 0xFF, equal and opposite.",
+    "It is one record of the 8-byte adjustment array at 0x02102008, where each record is a 32-bit",
+    "little-endian value followed by a byte holding 0xFF minus the sum of the value's four bytes.",
+    "Writing this field requires updating that check byte, or the game discards the change on reload."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
       "nba_802"
     ]
   },
+  "checksum8": [
+    {
+      "label": "Free Play adjustment",
+      "start": "0x02102110",
+      "end": "0x02102113"
+    },
+    {
+      "label": "Master Volume",
+      "start": "0x0211024C",
+      "end": "0x0211024C"
+    }
+  ],
   "game_state": {
     "player_count": {
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102110"
     },
     "current_player": {
       "label": "Player",
@@ -69,7 +91,12 @@
         "length": 4,
         "start": "0x021109FC"
       }
-    ]
+    ],
+    "volume": {
+      "label": "Master Volume",
+      "encoding": "int",
+      "start": "0x0211024C"
+    }
   },
   "high_scores": [
     {
