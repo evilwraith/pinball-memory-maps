@@ -1478,6 +1478,7 @@
 * [WWF Royal Rumble (1.03)][376] _wwfr_103_
 * [WWF Royal Rumble (1.06)][376] _wwfr_106_
 * [Walking Dead, The (V1.56)][377] _twd_156_
+* [Walking Dead, The (V1.56) (Colored MOD)][377] _twd_156c_
 * [Walking Dead, The Limited Edition (V1.60.0)][378] _twd_160h_
 * [Warlok (L-3)][47] _wrlok_l3_
 * [Waterworld (rev. 2)][379] _waterwl2_
