@@ -8,11 +8,24 @@
     "3,360,170 / 1,651,680 / 2,391,870 / 2,237,460, matching the machine's own game-over display.",
     "The rejected CPU RAM candidate at 0x00031544 is the classic scaled-set false positive this",
     "platform produces -- 732,790 / 184,370 / 18,320 / 11,450, each roughly a quarter of the one",
-    "before. Scores live in NVRAM on every SAM game measured, which is what rejects it."
+    "before. Scores live in NVRAM on every SAM game measured, which is what rejects it.",
+    "Free Play is one entry in the machine adjustments array, which begins at 0x02102008 and runs",
+    "as 8-byte records: a 32-bit little-endian value followed by a 4-byte field whose low byte is",
+    "0xFF minus the sum of the value's four bytes, padded with 0xFF above. Every record in the",
+    "array satisfies that, so writing an adjustment without updating its check byte leaves the",
+    "game discarding the change on the next load.",
+    "The address was measured by toggling Free Play in the operator menu and diffing NVRAM either",
+    "side: the value goes 1 -> 0 and the check byte 0xFE -> 0xFF, equal and opposite.",
+    "The check byte is expressed as a checksum8 record because checksum8 is defined as",
+    "complement-to-0xFF, which is exactly this rule; it is adjacent to the value, so no separate",
+    "checksum address is needed.",
+    "Note the operator menu calls this Standard Adjustment #38 on all three games measured, but it",
+    "is not the 38th record of this array -- it lands at index 33 here and 35 on st_162h. The menu",
+    "numbering does not index the array directly, so the address is measured per game, not derived."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -23,11 +36,23 @@
       "tf_180"
     ]
   },
+  "checksum8": [
+    {
+      "label": "Free Play adjustment",
+      "start": "0x02102110",
+      "end": "0x02102113"
+    }
+  ],
   "game_state": {
     "player_count": {
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102110"
     },
     "current_player": {
       "label": "Player",

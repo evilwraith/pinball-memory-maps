@@ -28,22 +28,47 @@
     "current_ball stays at 0x02111BA8 in NVRAM: that one is already proven to drive live scores here,",
     "and this game confirms the same structure exists in RAM as on the other SAM ROMs.",
     "Score slots re-confirmed: 2,177,650 / 2,357,180 / 1,762,430 / 3,117,850 read back at 0x021109E4",
-    "on the declared 8-byte stride."
+    "on the declared 8-byte stride.",
+    "Free Play is one entry in the machine adjustments array, which begins at 0x02102008 and runs",
+    "as 8-byte records: a 32-bit little-endian value followed by a 4-byte field whose low byte is",
+    "0xFF minus the sum of the value's four bytes, padded with 0xFF above. Every record in the",
+    "array satisfies that, so writing an adjustment without updating its check byte leaves the",
+    "game discarding the change on the next load.",
+    "The address was measured by toggling Free Play in the operator menu and diffing NVRAM either",
+    "side: the value goes 1 -> 0 and the check byte 0xFE -> 0xFF, equal and opposite.",
+    "The check byte is expressed as a checksum8 record because checksum8 is defined as",
+    "complement-to-0xFF, which is exactly this rule; it is adjacent to the value, so no separate",
+    "checksum address is needed.",
+    "Note the operator menu calls this Standard Adjustment #38 on all three games measured, but it",
+    "is not the 38th record of this array -- it lands at index 33 here and 35 on st_162h. The menu",
+    "numbering does not index the array directly, so the address is measured per game, not derived."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
       "twenty4_150"
     ]
   },
+  "checksum8": [
+    {
+      "label": "Free Play adjustment",
+      "start": "0x02102110",
+      "end": "0x02102113"
+    }
+  ],
   "game_state": {
     "player_count": {
       "label": "Player Count",
       "encoding": "int",
       "start": "0x02110900"
+    },
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102110"
     },
     "current_player": {
       "label": "Player",
