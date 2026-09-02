@@ -10,11 +10,14 @@
     "that is in free play. The alignment was validated prospectively: on nba_802 and smanve_101 --",
     "the two games where alignment agreement was weakest -- the address was predicted first, then",
     "confirmed by toggling, and both were exact.",
-    "Writing this field requires updating its check byte, or the game discards the change on reload."
+    "Writing this field requires updating its check byte, or the game discards the change on reload.",
+    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
+    "record means the checksum occupies the tail of start..end, which is not this layout: here",
+    "the summed bytes and the check byte are separate fields of one record."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -30,7 +33,8 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102120",
-      "end": "0x02102123"
+      "end": "0x02102123",
+      "checksum": "0x02102124"
     }
   ],
   "game_state": {

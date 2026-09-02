@@ -27,11 +27,14 @@
     "that is in free play. The alignment was validated prospectively: on nba_802 and smanve_101 --",
     "the two games where alignment agreement was weakest -- the address was predicted first, then",
     "confirmed by toggling, and both were exact.",
-    "Writing this field requires updating its check byte, or the game discards the change on reload."
+    "Writing this field requires updating its check byte, or the game discards the change on reload.",
+    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
+    "record means the checksum occupies the tail of start..end, which is not this layout: here",
+    "the summed bytes and the check byte are separate fields of one record."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "license": "GNU Lesser General Public License v3.0",
     "platform": "stern-sam",
     "roms": [
@@ -42,7 +45,8 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102110",
-      "end": "0x02102113"
+      "end": "0x02102113",
+      "checksum": "0x02102114"
     }
   ],
   "game_state": {

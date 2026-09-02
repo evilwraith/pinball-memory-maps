@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -12,7 +12,8 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102110",
-      "end": "0x02102113"
+      "end": "0x02102113",
+      "checksum": "0x02102114"
     }
   ],
   "game_state": {
@@ -149,6 +150,9 @@
     "in free play and its check byte validates. Machine adjustments are 8-byte records from",
     "0x02102008: a 32-bit little-endian value, then a byte holding 0xFF minus the sum of the value's",
     "four bytes. All 88 records here satisfy that. Writing this field requires updating its check",
-    "byte, or the game discards the change on reload."
+    "byte, or the game discards the change on reload.",
+    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
+    "record means the checksum occupies the tail of start..end, which is not this layout: here",
+    "the summed bytes and the check byte are separate fields of one record."
   ]
 }
