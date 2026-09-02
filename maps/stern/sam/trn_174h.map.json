@@ -1,11 +1,44 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
       "trn_174h"
+    ]
+  },
+  "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "encoding": "int",
+      "start": "0x02110900"
+    },
+    "scores": [
+      {
+        "label": "Player 1",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109E4"
+      },
+      {
+        "label": "Player 2",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109E8"
+      },
+      {
+        "label": "Player 3",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109EC"
+      },
+      {
+        "label": "Player 4",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021109F0"
+      }
     ]
   },
   "high_scores": [
@@ -79,5 +112,16 @@
         "length": 4
       }
     }
+  ],
+  "_notes": [
+    "game_state is deliberately partial. Scores and player_count are measured and verified: the exit",
+    "dump reads 800,540 / 774,360 / 861,930 / 972,550 at 4-byte centres from 0x021109E4, four",
+    "plausible finals, where stride 8 yields 0 and 0xFFFFFFFF and is decisively wrong.",
+    "current_player and current_ball are NOT recorded because they were not measured. The counter",
+    "sweep's strongest candidate by far, 0x00037315, is an artifact: 0x00037314 holds a rising 32-bit",
+    "little-endian counter (106 at exit) and 0x00037315 is its second byte, which reads 1, then 2,",
+    "then 3 as that counter crosses 256, 512 and 768. Searching the static dump for an adjacent",
+    "(player=4, ball=3) byte pair returns 40 candidates and cannot separate them. Rather than guess,",
+    "these are left out until a run with the carry-aware sweep names them."
   ]
 }
