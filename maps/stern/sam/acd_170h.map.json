@@ -33,11 +33,27 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted and credits come from a 1,094-frame recording of live memory spanning an",
+    "operator-menu session and a full two-player game. The same session confirmed by measurement the",
+    "previously derived ball_count and max_credits: set to 5 and 9 in the menu, adjustment records at",
+    "indices 32 and 34 moved 3 to 5 and 30 to 9 with their check bytes.",
+    "game_over at 0x00034C7E reads 100 in attract and 0 in play, flipping at the exact frame the game",
+    "started -- the same frame credits hit zero -- and back at game over. Any non-zero value decodes",
+    "as game over, so no mask is needed.",
+    "credits at 0x0211100C, the third SAM game measured at that same address: it rose as coins were",
+    "inserted and stepped down once per player entering the two-player game.",
+    "tilted at 0x00038D24 is active-low: 1 from game start onward, 0 for exactly the eleven samples",
+    "in which player 1's scoring sat still six seconds before the ball ended -- the only such plateau",
+    "in the game -- recovering the moment the next ball began. Declared with invert. Caveat recorded",
+    "honestly: before the first game of the session the byte also reads 0, so a consumer polling it",
+    "in attract sees tilted=true; it is meaningful only while a game is running. 0x00038CDA behaves",
+    "identically but also drops at game end -- 'ball live and not tilted' -- noted here in case that",
+    "shape is ever the more useful one."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -75,6 +91,11 @@
       "encoding": "bool",
       "start": "0x02102120"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -94,6 +115,17 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x0003006D"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00034C7E"
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x00038D24",
+      "invert": true
     },
     "scores": [
       {
