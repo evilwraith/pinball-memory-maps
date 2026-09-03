@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -14,6 +14,18 @@
       "start": "0x02102120",
       "end": "0x02102123",
       "checksum": "0x02102124"
+    },
+    {
+      "label": "Balls Per Game adjustment",
+      "start": "0x02102108",
+      "end": "0x0210210B",
+      "checksum": "0x0210210C"
+    },
+    {
+      "label": "Maximum Credits adjustment",
+      "start": "0x02102118",
+      "end": "0x0210211B",
+      "checksum": "0x0210211C"
     }
   ],
   "game_state": {
@@ -26,6 +38,16 @@
       "label": "Free Play",
       "encoding": "bool",
       "start": "0x02102120"
+    },
+    "max_credits": {
+      "label": "Maximum Credits",
+      "encoding": "int",
+      "start": "0x02102118"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "encoding": "int",
+      "start": "0x02102108"
     },
     "current_player": {
       "label": "Player",
@@ -356,6 +378,11 @@
     "Writing this field requires updating its check byte, or the game discards the change on reload.",
     "The check byte is declared with an explicit checksum address. Without one, a checksum8",
     "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record."
+    "the summed bytes and the check byte are separate fields of one record.",
+    "ball_count and max_credits are derived, not measured on this game: on every Stern SAM game",
+    "measured they sit three and one records below free_play in the adjustment array, a rule",
+    "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
+    "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
+    "with valid check bytes. Writing either field requires updating its check byte."
   ]
 }

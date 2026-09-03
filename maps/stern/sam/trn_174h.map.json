@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -14,6 +14,18 @@
       "start": "0x02102110",
       "end": "0x02102113",
       "checksum": "0x02102114"
+    },
+    {
+      "label": "Balls Per Game adjustment",
+      "start": "0x021020F8",
+      "end": "0x021020FB",
+      "checksum": "0x021020FC"
+    },
+    {
+      "label": "Maximum Credits adjustment",
+      "start": "0x02102108",
+      "end": "0x0210210B",
+      "checksum": "0x0210210C"
     }
   ],
   "game_state": {
@@ -26,6 +38,21 @@
       "label": "Free Play",
       "encoding": "bool",
       "start": "0x02102110"
+    },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
+    "max_credits": {
+      "label": "Maximum Credits",
+      "encoding": "int",
+      "start": "0x02102108"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "encoding": "int",
+      "start": "0x021020F8"
     },
     "current_player": {
       "label": "Player",
@@ -43,6 +70,12 @@
       "start": "0x000381AE",
       "mask": "0x12",
       "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x000381AE",
+      "mask": "0x04"
     },
     "scores": [
       {
@@ -171,6 +204,17 @@
     "which one carries the meaning; only those two values were ever seen, so a narrower mask would",
     "be asserting more than was measured.",
     "It is not adjacent to current_ball -- it sits 0x32 bytes past it, outside the window a",
-    "neighbourhood search first covered."
+    "neighbourhood search first covered.",
+    "ball_count, max_credits, credits and tilted come from a 1,070-frame recording of live memory",
+    "spanning an operator-menu session and a full game. Balls Per Game and Maximum Credits were set",
+    "to distinctive values (5 and 9) so the changed records named themselves: adjustment index 30",
+    "went 3 to 5 and index 32 went 30 to 9, both check bytes moving with them.",
+    "credits at 0x0211100C -- the same address st_162h measured -- rose 0,1,2 as six coins were",
+    "inserted at three coins a credit, and fell to 1 when the game started.",
+    "The byte at 0x000381AE is a status bitfield, not a plain flag: it read 0x01 in attract, 0x13",
+    "during play, and 0x15 for exactly the eight samples between the tilt and the end of the tilted",
+    "ball -- during which player 1's score sat frozen at 40,360, the same corroboration that",
+    "confirmed st_162h's tilt flag. So tilted is bit 0x04 of that byte, and game_over's mask 0x12",
+    "decode stays correct in all 1,070 frames of this recording on top of the 925 that set it."
   ]
 }

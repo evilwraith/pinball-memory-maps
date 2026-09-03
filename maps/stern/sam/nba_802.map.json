@@ -25,11 +25,16 @@
     "Writing this field requires updating that check byte, or the game discards the change on reload.",
     "The check byte is declared with an explicit checksum address. Without one, a checksum8",
     "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record."
+    "the summed bytes and the check byte are separate fields of one record.",
+    "ball_count and max_credits are derived, not measured on this game: on every Stern SAM game",
+    "measured they sit three and one records below free_play in the adjustment array, a rule",
+    "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
+    "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
+    "with valid check bytes. Writing either field requires updating its check byte."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -51,6 +56,18 @@
       "start": "0x0211024C",
       "end": "0x0211024C",
       "checksum": "0x0211024D"
+    },
+    {
+      "label": "Balls Per Game adjustment",
+      "start": "0x021020F8",
+      "end": "0x021020FB",
+      "checksum": "0x021020FC"
+    },
+    {
+      "label": "Maximum Credits adjustment",
+      "start": "0x02102108",
+      "end": "0x0210210B",
+      "checksum": "0x0210210C"
     }
   ],
   "game_state": {
@@ -63,6 +80,16 @@
       "label": "Free Play",
       "encoding": "bool",
       "start": "0x02102110"
+    },
+    "max_credits": {
+      "label": "Maximum Credits",
+      "encoding": "int",
+      "start": "0x02102108"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "encoding": "int",
+      "start": "0x021020F8"
     },
     "current_player": {
       "label": "Player",
