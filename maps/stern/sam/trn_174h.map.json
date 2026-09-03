@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -36,6 +36,13 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x0003817D"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x000381AE",
+      "mask": "0x12",
+      "invert": true
     },
     "scores": [
       {
@@ -153,6 +160,17 @@
     "byte, or the game discards the change on reload.",
     "The check byte is declared with an explicit checksum address. Without one, a checksum8",
     "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record."
+    "the summed bytes and the check byte are separate fields of one record.",
+    "game_over measured from a 925-frame recording of live memory across two games, sampled about",
+    "five times a second. The byte at 0x000381AE takes exactly two values over the whole recording:",
+    "19 while a game is running and 1 in attract and after game over. Decoding it as bool with",
+    "mask 0x12 and invert gives the correct state in all 925 frames, with transitions at game start,",
+    "at game over about six seconds after the last score change (the bonus and match sequence), and",
+    "at the start of the next game.",
+    "mask 0x12 is the two bits that differ between the two observed values rather than a guess at",
+    "which one carries the meaning; only those two values were ever seen, so a narrower mask would",
+    "be asserting more than was measured.",
+    "It is not adjacent to current_ball -- it sits 0x32 bytes past it, outside the window a",
+    "neighbourhood search first covered."
   ]
 }
