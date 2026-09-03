@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -39,6 +39,11 @@
       "encoding": "bool",
       "start": "0x02102110"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -58,6 +63,19 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x000348B9"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x000348EA",
+      "mask": "0x12",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x000348EA",
+      "mask": "0x04"
     },
     "scores": [
       {
@@ -234,6 +252,17 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted and credits come from a 453-frame recording of live memory spanning an",
+    "operator-menu session and two consecutive games, the first tilted on ball 1. The session also",
+    "promoted ball_count and max_credits from derived to measured: menu values 5 and 9 landed at",
+    "adjustment indices 30 and 32 as the free_play-relative rule predicted.",
+    "0x000348EA is the status bitfield trn_174h, avr_200 and avs_170 keep at ball+0x31, in a variant",
+    "without bit 0x01 during play: 1 in attract, 18 (0x12) playing, 20 (0x14) for exactly the eight",
+    "samples between the tilt and the end of the tilted ball, during which player 1's score sat",
+    "frozen at 275,210. The same declaration as those games -- game_over mask 0x12 inverted, tilted",
+    "bit 0x04 -- decodes correctly in all 453 frames across both games.",
+    "credits at 0x0211100C, the seventh SAM game measured at that address: rose to 2 with the coins,",
+    "then fell once at each of the two game starts."
   ]
 }
