@@ -41,11 +41,26 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted, tilt_warnings and credits come from a 770-frame recording of live memory",
+    "spanning coins in, a full game with a tilt on ball 1, and attract.",
+    "game_over: 0x02102A3C holds 1 for exactly the frames a game was running and 0 through the",
+    "attract on both sides -- declared inverted. It sits in NVRAM beside the games-played audit,",
+    "which incremented at the same frame the game ended.",
+    "tilt: 0x0003893C is a warning counter. It read 1 at the first warning while scoring continued,",
+    "2 three seconds later at the exact frame player 1's scoring froze -- frozen through the six",
+    "seconds until the ball ended, the same corroboration used on every game so far -- and cleared at",
+    "ball end. tilted is declared as bit 0x02 of that counter, which is exact at the factory tilt-",
+    "warnings setting of 2; an operator raising the warning count would need this revisited, and",
+    "tilt_warnings carries the raw counter for that reason.",
+    "credits at 0x0211100C, the fourth SAM game measured at that address: rose to 2 with the coins,",
+    "fell to 1 at game start.",
+    "The session ended with settings restored through the operator menu; free_play flipping on and a",
+    "block of audits clearing at that moment are the menu's doing and were kept out of the analysis."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -86,6 +101,11 @@
       "encoding": "bool",
       "start": "0x02102110"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -105,6 +125,23 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x02111BA8"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x02102A3C",
+      "invert": true
+    },
+    "tilt_warnings": {
+      "label": "Tilt Warnings",
+      "encoding": "int",
+      "start": "0x0003893C"
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x0003893C",
+      "mask": "0x02"
     },
     "scores": [
       {
