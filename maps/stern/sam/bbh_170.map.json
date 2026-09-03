@@ -22,7 +22,10 @@
   "_fileformat": 0.7,
   "_metadata": {
     "version": 2,
-    "license": "GNU Lesser General Public License v3.0",
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
+    "copyright": [
+      "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
+    ],
     "platform": "stern-sam",
     "roms": [
       "bbh_170"
