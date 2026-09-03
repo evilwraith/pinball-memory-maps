@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -40,6 +40,11 @@
       "encoding": "bool",
       "start": "0x02102110"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -59,6 +64,19 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x000309FD"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00030A2E",
+      "mask": "0x12",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x00030A2E",
+      "mask": "0x04"
     },
     "scores": [
       {
@@ -187,6 +205,16 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted and credits come from a 900-frame recording of live memory spanning two games",
+    "with a tilt on the first game's ball 1. The scores were reset on exit and did not persist, but",
+    "the tap captures live memory during play, so the fields are unaffected.",
+    "0x00030A2E is the trn_174h/avr_200 status bitfield at ball+0x31: 1 in attract, 19 in play, 21",
+    "tilted. game_over (mask 0x12, inverted) is correct in all 900 frames across both games; tilted",
+    "(bit 0x04) marks exactly the eight samples from the tilt to the end of the tilted ball, during",
+    "which player 1's score sat frozen at 46,420. Third game to use this offset+encoding.",
+    "credits at 0x0211100C, the fifth SAM game measured at that address.",
+    "The byte briefly reads 0 late in the recording where the operator reset NVRAM; that decodes as",
+    "game over, which is correct for that moment, and does not affect the mask."
   ]
 }
