@@ -27,11 +27,27 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over and credits come from a 1,101-frame recording of live memory spanning an operator-menu",
+    "session and a full game. The session also promoted ball_count and max_credits from derived to",
+    "measured: menu values 5 and 9 landed at adjustment indices 30 and 32 as the free_play-relative",
+    "rule predicted.",
+    "game_over at 0x00032E04 reads 5 in attract and 0 in play, dropping at the exact frame the game",
+    "started -- the same frame credits fell -- and returning 24 samples after the last score, the",
+    "bonus and match sequence. Correct in all 1,101 frames. Any non-zero value is game over, so no",
+    "mask is needed. This game does NOT keep the ball+0x31 status byte its siblings use; that byte is",
+    "a constant 3 here.",
+    "credits at 0x0211100C, the tenth SAM game at that address: rose 1,2,3 with the coins, fell to 2",
+    "at game start.",
+    "tilted is deliberately absent. The game was tilted for the whole of ball 2, and no byte in the",
+    "tapped ranges (0x30000-0x3FFFF and NVRAM) holds one value through that ball and a shared other",
+    "value through balls 1, 3, 4 and 5 -- the shape every other SAM tilt flag has taken. Its tilt",
+    "state most likely lives outside those ranges; a retry would want a wider CPU window and a",
+    "mid-ball tilt so the tilt window differs from the ball window."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -72,6 +88,11 @@
       "encoding": "bool",
       "start": "0x02102110"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -91,6 +112,11 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x00033AED"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00032E04"
     },
     "scores": [
       {
