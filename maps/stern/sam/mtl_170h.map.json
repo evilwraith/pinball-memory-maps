@@ -39,11 +39,23 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted and credits come from a 1,088-frame recording of live memory spanning an",
+    "operator-menu session and a full game with a mid-ball tilt on ball 1. The session also promoted",
+    "ball_count and max_credits from derived to measured: menu values 5 and 9 landed at adjustment",
+    "indices 32 and 34 as the free_play-relative rule predicted.",
+    "0x00035A7E is the status bitfield most SAM games keep at ball+0x31, with a ball-start value the",
+    "others do not use: 1 in attract, 41 (0x29) for the first samples of each ball, 19 (0x13) in play,",
+    "21 (0x15) for the eight samples between the tilt and the end of the tilted ball, during which",
+    "player 1's score sat frozen at 341,810. The mask 0x12 that decodes game_over on trn_174h and its",
+    "siblings shares no bit with 41 and would read every ball's start as game over; mask 0x38 covers",
+    "all three in-play values and excludes attract, and is correct in every one of the 1,088 frames.",
+    "tilted is bit 0x04, which 41 does not carry, so that reading survives here.",
+    "credits at 0x0211100C, the eleventh SAM game at that address."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -84,6 +96,11 @@
       "encoding": "bool",
       "start": "0x02102120"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -103,6 +120,19 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x00035A4D"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00035A7E",
+      "mask": "0x38",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x00035A7E",
+      "mask": "0x04"
     },
     "scores": [
       {
