@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -26,6 +26,83 @@
       "start": "0x02102118",
       "end": "0x0210211B",
       "checksum": "0x0210211C"
+    }
+  ],
+  "checksum16": [
+    {
+      "label": "Grand Champion",
+      "start": "0x02103724",
+      "length": 34
+    },
+    {
+      "label": "First Place",
+      "start": "0x02103748",
+      "length": 34
+    },
+    {
+      "label": "Second Place",
+      "start": "0x0210376C",
+      "length": 34
+    },
+    {
+      "label": "Third Place",
+      "start": "0x02103790",
+      "length": 34
+    },
+    {
+      "label": "Fourth Place",
+      "start": "0x021037B4",
+      "length": 34
+    },
+    {
+      "label": "Combo Champion",
+      "start": "0x021037D8",
+      "length": 34
+    },
+    {
+      "label": "Lady Justice Champion",
+      "start": "0x021038D4",
+      "length": 34
+    },
+    {
+      "label": "Fuel Champion",
+      "start": "0x021038B0",
+      "length": 34
+    },
+    {
+      "label": "Seek & Destroy Champion",
+      "start": "0x021038F8",
+      "length": 34
+    },
+    {
+      "label": "Blackened Champion",
+      "start": "0x02103820",
+      "length": 34
+    },
+    {
+      "label": "For Whom The Bell Tolls Champion",
+      "start": "0x0210388C",
+      "length": 34
+    },
+    {
+      "label": "Fade To Black Champion",
+      "start": "0x021037FC",
+      "length": 34
+    },
+    {
+      "label": "Battery Champion",
+      "start": "0x02103868",
+      "length": 34
+    },
+    {
+      "label": "Enter Sandman Champion",
+      "start": "0x02103844",
+      "length": 34
+    },
+    {
+      "label": "The End Of The Line Champion",
+      "start": "0x0210391C",
+      "length": 34
     }
   ],
   "game_state": {
@@ -330,6 +407,10 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "checksum16 declared for all fifteen champion records: 36-byte records, initials at +0, score",
+    "at +0x18, little-endian checksum16 at +32 as 0xFFFF minus the sum of the first 32 bytes --",
+    "start..length 34 covers the summed bytes plus the checksum. All fifteen validate against a",
+    "captured NVRAM image. Without these, a writer updating a champion leaves the record invalid."
   ]
 }
