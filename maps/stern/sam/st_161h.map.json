@@ -32,11 +32,27 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted, credits and volume come from a 1,102-frame recording of live memory on",
+    "st_161hc, spanning an operator-menu session and two full games, the first with a mid-ball tilt",
+    "on ball 1. The session also promoted ball_count and max_credits from derived to measured: menu",
+    "values 5 and 9 landed at adjustment indices 30 and 32 as the free_play-relative rule predicted.",
+    "As with game_state, measured on st_161hc only.",
+    "0x000319BA is the status bitfield most SAM games keep at ball+0x31, in the richest variant seen:",
+    "1 in attract, 122 at game start, 152/139/71/80 at ball starts, 19 in play, 21 for exactly the",
+    "eight samples between the tilt and the end of the tilted ball, during which player 1's score",
+    "sat frozen at 99,270. No bit is common to every in-play value, so game_over is declared as",
+    "'any bit above 0x01' -- mask 0xFE inverted -- correct in all 1,102 frames across both games.",
+    "The tilt bit 0x04 that works on trn_174h is unusable here (the ball-start value 71 carries it),",
+    "so tilted is an enum over mask 0x1F in which only the value 21 is true; that value occurred",
+    "in exactly the tilt window and nowhere else across both games.",
+    "volume at 0x02110250, set from 40 to 42 in the operator menu with its check byte following",
+    "215, 214, 213; declared as checksum8. credits at 0x0211100C, the seventeenth SAM game at that",
+    "address, stepping down once at each of the two game starts."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -66,6 +82,12 @@
       "start": "0x02102108",
       "end": "0x0210210B",
       "checksum": "0x0210210C"
+    },
+    {
+      "label": "Master Volume",
+      "start": "0x02110250",
+      "end": "0x02110250",
+      "checksum": "0x02110251"
     }
   ],
   "game_state": {
@@ -78,6 +100,16 @@
       "label": "Free Play",
       "encoding": "bool",
       "start": "0x02102110"
+    },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
+    "volume": {
+      "label": "Master Volume",
+      "encoding": "int",
+      "start": "0x02110250"
     },
     "max_credits": {
       "label": "Maximum Credits",
@@ -98,6 +130,53 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x00031989"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x000319BA",
+      "mask": "0xFE",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "enum",
+      "start": "0x000319BA",
+      "mask": "0x1F",
+      "values": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     },
     "scores": [
       {
