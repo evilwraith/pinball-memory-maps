@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -432,8 +432,6 @@
     "Champion records are 36 bytes with initials at +0, score at +0x18 and a little-endian checksum16",
     "at +32 over the first 32 bytes, all 15 validating. The five high scores come first. The ten mode",
     "champions were named from the game-over display cycle. Eight of the ten are pinned by a unique",
-    "initials/score pair; Fade To Black and Battery both read ABC 25,000,000 and their order between",
-    "records +1 and +4 is taken from mtl_170h's ordering -- a distinct score on either will settle it.",
     "Lady Justice Champion is ABC 2,500,000 -- confirmed against the display on a second look; the",
     "first reading of 7,500,000 was the DMD font.",
     "The operator menu's champion settings do NOT write the records above. They write a default-",
@@ -443,6 +441,12 @@
     "28,000,000 and Fade To Black to 26,000,000 changed exactly those slots and their check bytes and",
     "left every record untouched; the records take the thresholds only on a champion reset. That",
     "table is also why the record order cannot be assumed from mtl_170h: the thresholds follow",
-    "mtl_170h's order and the records do not (Blackened is record +2)."
+    "mtl_170h's order and the records do not (Blackened is record +2).",
+    "All ten mode champions are pinned. Eight by a unique initials/score pair from the game-over",
+    "display cycle; the two ABC 25,000,000 records (+1 and +4) were settled by setting distinct",
+    "thresholds -- Battery 28,000,000, Fade To Black 26,000,000, For Whom The Bell Tolls 27,000,000",
+    "-- and running the operator menu's champion reset: +1 took 28,000,000 and +4 took 26,000,000,",
+    "with +5 (MDK) taking 27,000,000. The reset applied the thresholds to the scores and left the",
+    "initials in place."
   ]
 }
