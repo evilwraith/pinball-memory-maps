@@ -426,6 +426,8 @@
     "volume at 0x02110204 -- not the 0x02110250 used by twd_156 -- moving 59, 60, 58 in the operator",
     "menu with its complement check byte following; declared as checksum8. credits at 0x0211100C,",
     "the nineteenth SAM game at that address, stepping down at game start and up again at the end",
-    "of the game when the match awarded a credit."
+    "of the game when the match awarded a credit.",
+    "Adjustment index 39, four records above free play, is Ball Save Timer (5 -> 0 in the same",
+    "menu session); not a mapped field."
   ]
 }
