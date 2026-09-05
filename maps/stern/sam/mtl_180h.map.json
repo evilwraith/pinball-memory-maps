@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -116,6 +116,11 @@
       "encoding": "bool",
       "start": "0x02102120"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -135,6 +140,28 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x000366E5"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00036716",
+      "mask": "0x30",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "enum",
+      "start": "0x00036716",
+      "mask": "0x06",
+      "values": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
     },
     "scores": [
       {
@@ -411,6 +438,18 @@
     "checksum16 declared for all fifteen champion records: 36-byte records, initials at +0, score",
     "at +0x18, little-endian checksum16 at +32 as 0xFFFF minus the sum of the first 32 bytes --",
     "start..length 34 covers the summed bytes plus the checksum. All fifteen validate against a",
-    "captured NVRAM image. Without these, a writer updating a champion leaves the record invalid."
+    "captured NVRAM image. Without these, a writer updating a champion leaves the record invalid.",
+    "game_over, tilted and credits come from a 1,091-frame recording of live memory spanning an",
+    "operator-menu session and a full game with a mid-ball tilt on ball 2. The session also promoted",
+    "ball_count and max_credits from derived to measured: menu values 5 and 9 landed at adjustment",
+    "indices 32 and 34 as the free_play-relative rule predicted.",
+    "0x00036716 is the status bitfield at ball+0x31, in the same variant as the Pro (mtl_180): 1 in",
+    "attract, 42 (0x2A) at ball start, 20 (0x14) in play, 22 (0x16) for the nine samples between the",
+    "tilt and the end of the tilted ball, during which player 1's score sat frozen at 696,860. No",
+    "single bit separates play from attract or the tilt from the rest, so game_over uses mask 0x30",
+    "inverted -- correct in all 1,091 frames -- and tilted is an enum over mask 0x06 in which only",
+    "the value 6 is true, the alien_poker precedent. Same declarations as mtl_180, each verified on",
+    "its own recording.",
+    "credits at 0x0211100C, the thirteenth SAM game at that address."
   ]
 }
