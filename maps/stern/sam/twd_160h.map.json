@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -53,7 +53,10 @@
     "volume": {
       "label": "Master Volume",
       "encoding": "int",
-      "start": "0x02110204"
+      "start": "0x02110204",
+      "min": 0,
+      "max": 63,
+      "default": 40
     },
     "max_credits": {
       "label": "Maximum Credits",

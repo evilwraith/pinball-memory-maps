@@ -57,7 +57,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -113,7 +113,10 @@
     "volume": {
       "label": "Master Volume",
       "encoding": "int",
-      "start": "0x02110250"
+      "start": "0x02110250",
+      "min": 0,
+      "max": 63,
+      "default": 40
     },
     "max_credits": {
       "label": "Maximum Credits",

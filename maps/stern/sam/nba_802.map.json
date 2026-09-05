@@ -49,7 +49,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -160,7 +160,10 @@
     "volume": {
       "label": "Master Volume",
       "encoding": "int",
-      "start": "0x0211024C"
+      "start": "0x0211024C",
+      "min": 0,
+      "max": 63,
+      "default": 40
     }
   },
   "high_scores": [
