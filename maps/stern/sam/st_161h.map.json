@@ -56,10 +56,12 @@
     "the ROM's own order rather than menu order: #1-#23 mostly in sequence from record 10 (with",
     "#13/#14 and #19/#20 swapped), #38 Free Play right after Credit Limit, the ten system settings",
     "(#39-#43, #47, #54, #59-#61) in records 0-9, and the high-score group after #58.",
-    "Not swept, placed from factory defaults instead: #6-#10 (hidden unless Replay Type is DYNAMIC",
-    "or FIXED) fill records 15-19 in order; #25-#30 and #36 (hidden once Allow High Scores was",
-    "set to NO during the sweep) fill records 53-59 in menu order, with #31-#35 at 48-52. Their",
-    "defaults match the manual one for one, but the order within each run is inferred.",
+    "A second pass measured the adjustments the sweep had hidden: with Allow High Scores back at",
+    "YES, #25-#30 and #36 moved records 53-59 in menu order and #31-#35 hold 48-52; with Replay",
+    "Type at FIXED and then DYNAMIC, #7, #8 and #6 moved records 16, 17 and 15. #9 and #10 were",
+    "not reachable (Replay Levels was 2) and are placed at 18-19 from their defaults.",
+    "Replay Type codes came from that pass by elimination: FIXED=1, DYNAMIC=2, AUTO=3, so NONE=0;",
+    "note the menu lists AUTO first, so display order is not numeric order for this ROM.",
     "Multi-option settings are declared as int with the one value that was observed named in",
     "special_values; the remaining option codes were not measured. YES/NO settings are bool with",
     "NO=0, confirmed on Free Play, Allow High Scores and Replay Boost. Defaults are the values",
@@ -68,7 +70,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 11,
+    "version": 12,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -477,14 +479,14 @@
       "01": {
         "label": "Replay Type",
         "start": "0x02102058",
-        "encoding": "int",
-        "length": 4,
-        "min": 0,
-        "max": 3,
-        "default": 3,
-        "special_values": {
-          "3": "AUTO"
-        }
+        "encoding": "enum",
+        "values": [
+          "NONE",
+          "FIXED",
+          "DYNAMIC",
+          "AUTO"
+        ],
+        "default": 3
       },
       "02": {
         "label": "Replay Percentage",
