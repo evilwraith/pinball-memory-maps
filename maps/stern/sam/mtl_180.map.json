@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -434,7 +434,15 @@
     "champions were named from the game-over display cycle. Eight of the ten are pinned by a unique",
     "initials/score pair; Fade To Black and Battery both read ABC 25,000,000 and their order between",
     "records +1 and +4 is taken from mtl_170h's ordering -- a distinct score on either will settle it.",
-    "One discrepancy is recorded rather than hidden: the display cycle reported Lady Justice Champion",
-    "as ABC 7,500,000 and the record at +7 reads ABC 2,500,000."
+    "Lady Justice Champion is ABC 2,500,000 -- confirmed against the display on a second look; the",
+    "first reading of 7,500,000 was the DMD font.",
+    "The operator menu's champion settings do NOT write the records above. They write a default-",
+    "threshold table of 8-byte adjustment records at 0x021024F8, stride 0x18, nine modes in the order",
+    "Battery, Enter Sandman, Fade To Black, For Whom The Bell Tolls, Fuel, Lady Justice, Seek &",
+    "Destroy, The End Of The Line, Blackened (Combo, a count, is elsewhere). Setting Battery to",
+    "28,000,000 and Fade To Black to 26,000,000 changed exactly those slots and their check bytes and",
+    "left every record untouched; the records take the thresholds only on a champion reset. That",
+    "table is also why the record order cannot be assumed from mtl_170h: the thresholds follow",
+    "mtl_170h's order and the records do not (Blackened is record +2)."
   ]
 }
