@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -26,6 +26,12 @@
       "start": "0x02102118",
       "end": "0x0210211B",
       "checksum": "0x0210211C"
+    },
+    {
+      "label": "Master Volume",
+      "start": "0x02110204",
+      "end": "0x02110204",
+      "checksum": "0x02110205"
     }
   ],
   "game_state": {
@@ -38,6 +44,16 @@
       "label": "Free Play",
       "encoding": "bool",
       "start": "0x02102120"
+    },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
+    "volume": {
+      "label": "Master Volume",
+      "encoding": "int",
+      "start": "0x02110204"
     },
     "max_credits": {
       "label": "Maximum Credits",
@@ -58,6 +74,19 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x00036135"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00036166",
+      "mask": "0xFE",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x00036166",
+      "mask": "0x02"
     },
     "scores": [
       {
@@ -383,6 +412,20 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted, credits and volume come from a 974-frame recording of live memory spanning",
+    "an operator-menu session and one five-ball game with a mid-ball tilt on ball 1. The menu session",
+    "also promoted ball_count and max_credits from derived to measured: Balls Per Game 3 -> 5 landed",
+    "at adjustment index 32 and Max Credits 30 -> 9 at index 34, three and one records below the",
+    "free play record at index 35, as the free_play-relative rule predicted.",
+    "0x00036166 is the status bitfield SAM games keep at ball+0x31: 1 in attract, 41 at each ball",
+    "start, 20 in play, 22 for exactly the ten samples between the tilt and the end of the tilted",
+    "ball, during which player 1's score sat frozen at 191,060. 41 and 20 share no bit, so game_over",
+    "is 'any bit above 0x01' -- mask 0xFE inverted -- correct in all 974 frames. tilted is bit 0x02,",
+    "which no non-tilt value carries on this game.",
+    "volume at 0x02110204 -- not the 0x02110250 used by twd_156 -- moving 59, 60, 58 in the operator",
+    "menu with its complement check byte following; declared as checksum8. credits at 0x0211100C,",
+    "the nineteenth SAM game at that address, stepping down at game start and up again at the end",
+    "of the game when the match awarded a credit."
   ]
 }
