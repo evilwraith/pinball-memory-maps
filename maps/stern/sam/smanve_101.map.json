@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -34,6 +34,68 @@
       "start": "0x02102118",
       "end": "0x0210211B",
       "checksum": "0x0210211C"
+    }
+  ],
+  "checksum16": [
+    {
+      "label": "Grand Champion",
+      "start": "0x02102B80",
+      "length": 30
+    },
+    {
+      "label": "First Place",
+      "start": "0x02102BA0",
+      "length": 30
+    },
+    {
+      "label": "Second Place",
+      "start": "0x02102BC0",
+      "length": 30
+    },
+    {
+      "label": "Third Place",
+      "start": "0x02102BE0",
+      "length": 30
+    },
+    {
+      "label": "Fourth Place",
+      "start": "0x02102C00",
+      "length": 30
+    },
+    {
+      "label": "Combo Champion",
+      "start": "0x02102C20",
+      "length": 30
+    },
+    {
+      "label": "Best Combo Champion",
+      "start": "0x02102C40",
+      "length": 30
+    },
+    {
+      "label": "Spider Champion",
+      "start": "0x02102C60",
+      "length": 30
+    },
+    {
+      "label": "Spider Sense Champion",
+      "start": "0x02102C80",
+      "length": 30
+    },
+    {
+      "label": "Battle Royale Champion",
+      "start": "0x02102CA0",
+      "length": 30
+    },
+    {
+      "label": "Super Hero Champion",
+      "start": "0x02102CC0",
+      "length": 30
+    },
+    {
+      "label": "Best Bonus Champion",
+      "start": "0x02102CE0",
+      "length": 30
     }
   ],
   "game_state": {
@@ -291,6 +353,10 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "checksum16 declared for all twelve champion records: 32-byte records, initials at +0, score at",
+    "+0x18 (Best Combo keeps a 1-byte counter at +0x1A instead), little-endian checksum16 at +28 as",
+    "0xFFFF minus the sum of the first 28 bytes -- start..length 30 covers the summed bytes plus the",
+    "checksum. All twelve validate against a captured NVRAM image."
   ]
 }
