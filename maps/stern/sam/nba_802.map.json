@@ -30,11 +30,26 @@
     "measured they sit three and one records below free_play in the adjustment array, a rule",
     "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
     "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte."
+    "with valid check bytes. Writing either field requires updating its check byte.",
+    "game_over, tilted and credits come from a 1,099-frame recording of live memory spanning an",
+    "operator-menu session and a full game with a mid-ball tilt on ball 1. The session also promoted",
+    "ball_count and max_credits from derived to measured: menu values 5 and 9 landed at adjustment",
+    "indices 30 and 32 as the free_play-relative rule predicted.",
+    "This ROM does not keep the ball+0x31 status byte its siblings use (a constant 0 here). Its game",
+    "state lives in a block at the top of RAM, 0x0003FF00-0x0003FFFF.",
+    "game_over at 0x0003FF83 reads 1 in the attract on both sides of the game and 0 in play, dropping",
+    "at the exact frame the game started -- the same frame credits fell -- and returning on the",
+    "frame of the last score change (the end-of-ball bonus). Correct in all 1,099 frames; any",
+    "non-zero value is game over, so no mask is needed. Ten neighbouring bytes carry the same edges.",
+    "tilted at 0x0003FF6B reads 4 for exactly the sixteen samples from the tilt to the end of the",
+    "tilted ball -- during which player 1's score sat frozen at 5,250 -- and 0 everywhere else in the",
+    "recording. Any non-zero value is tilted.",
+    "credits at 0x0211100C, the fourteenth SAM game at that address: rose to 9 with the coins (capped",
+    "by the Maximum Credits just set) and fell to 8 at game start."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -81,6 +96,11 @@
       "encoding": "bool",
       "start": "0x02102110"
     },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
     "max_credits": {
       "label": "Maximum Credits",
       "encoding": "int",
@@ -100,6 +120,16 @@
       "label": "Ball",
       "encoding": "int",
       "start": "0x00033021"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x0003FF83"
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x0003FF6B"
     },
     "scores": [
       {
