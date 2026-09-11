@@ -2,16 +2,21 @@
   "_notes": [
     "Map for Atari Superman and Hercules.",
     "Free Play (DIP SW A6) not mirrored in RAM/NVRAM.",
-    "game_over was declared at RAM 0x00A0 (bool) with the author's own note that it was unsure among",
-    "0x0C, 0x2B-0x2D, 0x7D and 0xA0. On superman it is not a game-over flag: a table sat untouched",
-    "for three minutes (2026-09-11, no switch activity in the log) while 0x00A0 rose and fell",
-    "seventeen times at irregular intervals from 0.25 s to 15 s, with the ball at 0 throughout --",
-    "an attract-cycle blink. Withdrawn until one of the candidates is confirmed against a real game;",
-    "consumers fall back to the ball (0x005A) dropping to 0."
+    "game_over is 0x007D, the game-in-progress flag, read inverted: 0x00 in attract, 0x10 for every",
+    "sample of a game including between balls, 0x00 again the moment the game ends. Measured on",
+    "superman from a 389-sample recording of live RAM (2026-09-11) spanning attract, one three-ball",
+    "game and attract again; correct in every sample. 0x2B (02 attract / 03 in play) says the same",
+    "thing; 0x2C/0x2D (30/0F) drop to zero between balls, so they mark a ball in play, not a game.",
+    "The earlier candidate 0x00A0 is an attract animation: 0x80 with brief 0x00 blips every few",
+    "seconds throughout attract and 0x00 during a game. Read as a game-over flag it reported a",
+    "finished game on every blink of an untouched machine.",
+    "The ball at 0x005A does not return to 0 after a game: it steps to one past the last ball (4 on",
+    "a 3-ball game) and stays there until the next game starts, so consumers cannot rely on the",
+    "ball clearing to detect the end."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -64,6 +69,13 @@
       "label": "Ball",
       "start": "0x005A",
       "encoding": "bcd"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "start": "0x007D",
+      "encoding": "bool",
+      "mask": "0x10",
+      "invert": true
     },
     "ball_count": {
       "label": "Balls",
