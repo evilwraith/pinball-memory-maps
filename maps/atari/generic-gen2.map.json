@@ -2,11 +2,16 @@
   "_notes": [
     "Map for Atari Superman and Hercules.",
     "Free Play (DIP SW A6) not mirrored in RAM/NVRAM.",
-    "Not entirely sure of game_over location; multiple candidates."
+    "game_over was declared at RAM 0x00A0 (bool) with the author's own note that it was unsure among",
+    "0x0C, 0x2B-0x2D, 0x7D and 0xA0. On superman it is not a game-over flag: a table sat untouched",
+    "for three minutes (2026-09-11, no switch activity in the log) while 0x00A0 rose and fell",
+    "seventeen times at irregular intervals from 0.25 s to 15 s, with the ball at 0 throughout --",
+    "an attract-cycle blink. Withdrawn until one of the candidates is confirmed against a real game;",
+    "consumers fall back to the ball (0x005A) dropping to 0."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -75,12 +80,6 @@
       "label": "Players",
       "start": "0x0059",
       "encoding": "bcd"
-    },
-    "game_over": {
-      "_notes": "unsure, could be 0C (40/00), 2B-2D(020000/03300F), 7D (00/10), or A0 (80/00)",
-      "label": "Game Over",
-      "start": "0x00A0",
-      "encoding": "bool"
     }
   },
   "high_scores": [
