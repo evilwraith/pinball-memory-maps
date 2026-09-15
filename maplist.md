@@ -621,8 +621,9 @@
 * [Indianapolis 500 (1.1 Belgian)][192] _i500_11b_
 * [Indianapolis 500 (1.1R)][192] _i500_11r_
 * [Iron Maiden][122] _ironmaid_
-* [Iron Man Vault Edition (V1.85)][193] _im_185ve_
-* [Iron Man Vault Edition (V1.86)][194] _im_186ve_
+* [Iron Man (V1.86)][193] _im_186_
+* [Iron Man Vault Edition (V1.85)][194] _im_185ve_
+* [Iron Man Vault Edition (V1.86)][193] _im_186ve_
 * [Jack*Bot (0.4A Prototype)][195] _jb_04a_
 * [Jack*Bot (1.01B Belgian/Canadian LED Ghost Fix)][196] _jb_101b_
 * [Jack*Bot (1.01R LED Ghost Fix)][196] _jb_101r_
@@ -1724,8 +1725,8 @@
 [190]: maps/williams/wpc/ij_l7.map.json
 [191]: maps/williams/wpc/ij_p2.map.json
 [192]: maps/williams/wpc/i500_11r.map.json
-[193]: maps/stern/sam/im_185ve.map.json
-[194]: maps/stern/sam/im_186ve.map.json
+[193]: maps/stern/sam/im_186ve.map.json
+[194]: maps/stern/sam/im_185ve.map.json
 [195]: maps/williams/wpc/jb_04a.map.json
 [196]: maps/williams/wpc/jb_10r.map.json
 [197]: maps/williams/wpc/jm_12r.map.json
