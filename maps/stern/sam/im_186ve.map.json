@@ -1,6 +1,6 @@
 {
   "_notes": [
-    "Iron Man code 1.86, Vault Edition (im_186ve) and standard (im_186). Same board and game_state as im_185ve: every field",
+    "Iron Man Vault Edition, code 1.86 (im_186ve). Same board and game_state as im_185ve: every field",
     "below was re-measured on a 663-sample live recording (2026-09-15, HDP) spanning an operator-menu",
     "session, coins, one five-ball game with a mid-ball tilt on ball 1, and attract, and matched the",
     "1.85 map byte for byte -- ball 0x00034DB9, player 0x00034DB8, status 0x00034DEA (1/20/22, tilted",
@@ -14,20 +14,19 @@
     "Mode champion labels are the attract order (Bogey, Iron Man, War Machine, Iron Monger, Whiplash,",
     "Drones, Jericho, Do Or Die Multiball); the record order matches the threshold table (six",
     "5,000,000, then 10,000,000, then 25,000,000) as on 1.85.",
-    "im_186 (the non-Vault 1.86 ROM) was re-measured on the 4KP the same day with the short protocol",
-    "(volume nudge, one game with a ball-1 tilt, attract): every field, both checksum families and all",
-    "13 champion records validate at the same addresses, so it shares this map."
+    "The non-Vault im_186 does NOT share this map: its NVRAM side (scores, credits, volume, adjustment",
+    "records, champion records) matches, but the CPU-side ball, player and status bytes live elsewhere;",
+    "see im_186.map.json."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2026 evilwraith <evilwraith@gmail.com>"
     ],
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
-      "im_186",
       "im_186ve"
     ]
   },
