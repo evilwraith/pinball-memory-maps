@@ -20,7 +20,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 evilwraith <evilwraith@gmail.com>"
     ],
@@ -121,7 +121,8 @@
       "initials": {
         "start": "0x2102C18",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102C30",
@@ -135,7 +136,8 @@
       "initials": {
         "start": "0x2102C38",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102C50",
@@ -149,7 +151,8 @@
       "initials": {
         "start": "0x2102C58",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102C70",
@@ -163,7 +166,8 @@
       "initials": {
         "start": "0x2102C78",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102C90",
@@ -177,7 +181,8 @@
       "initials": {
         "start": "0x2102C98",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102CB0",
@@ -193,7 +198,8 @@
       "initials": {
         "start": "0x2102CB8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102CD0",
@@ -207,7 +213,8 @@
       "initials": {
         "start": "0x2102CD8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102CF0",
@@ -221,7 +228,8 @@
       "initials": {
         "start": "0x2102CF8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102D10",
@@ -235,7 +243,8 @@
       "initials": {
         "start": "0x2102D18",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102D30",
@@ -249,7 +258,8 @@
       "initials": {
         "start": "0x2102D38",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102D50",
@@ -263,7 +273,8 @@
       "initials": {
         "start": "0x2102D58",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102D70",
@@ -277,7 +288,8 @@
       "initials": {
         "start": "0x2102D78",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102D90",
@@ -291,7 +303,8 @@
       "initials": {
         "start": "0x2102D98",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102DB0",

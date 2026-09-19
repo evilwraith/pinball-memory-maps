@@ -25,7 +25,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -149,7 +149,8 @@
       "initials": {
         "start": "0x2102DC8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -163,7 +164,8 @@
       "initials": {
         "start": "0x2102DE8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -177,7 +179,8 @@
       "initials": {
         "start": "0x2102E08",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -191,7 +194,8 @@
       "initials": {
         "start": "0x2102E28",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -205,7 +209,8 @@
       "initials": {
         "start": "0x2102E48",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -219,7 +224,8 @@
       "initials": {
         "start": "0x2102E68",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -233,7 +239,8 @@
       "initials": {
         "start": "0x2102E88",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -247,7 +254,8 @@
       "initials": {
         "start": "0x2102EA8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -261,7 +269,8 @@
       "initials": {
         "start": "0x2102EC8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -275,7 +284,8 @@
       "initials": {
         "start": "0x2102EE8",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "encoding": "int",
@@ -291,7 +301,8 @@
       "initials": {
         "start": "0x2102F08",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102F20",
@@ -305,7 +316,8 @@
       "initials": {
         "start": "0x2102F28",
         "encoding": "ch",
-        "length": 3
+        "length": 11,
+        "null": "terminate"
       },
       "score": {
         "start": "0x2102F40",
