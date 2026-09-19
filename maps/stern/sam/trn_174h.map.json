@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -12,20 +12,17 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102110",
-      "end": "0x02102113",
-      "checksum": "0x02102114"
+      "end": "0x02102114"
     },
     {
       "label": "Balls Per Game adjustment",
       "start": "0x021020F8",
-      "end": "0x021020FB",
-      "checksum": "0x021020FC"
+      "end": "0x021020FC"
     },
     {
       "label": "Maximum Credits adjustment",
       "start": "0x02102108",
-      "end": "0x0210210B",
-      "checksum": "0x0210210C"
+      "end": "0x0210210C"
     }
   ],
   "game_state": {
@@ -191,9 +188,6 @@
     "0x02102008: a 32-bit little-endian value, then a byte holding 0xFF minus the sum of the value's",
     "four bytes. All 88 records here satisfy that. Writing this field requires updating its check",
     "byte, or the game discards the change on reload.",
-    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
-    "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record.",
     "game_over measured from a 925-frame recording of live memory across two games, sampled about",
     "five times a second. The byte at 0x000381AE takes exactly two values over the whole recording:",
     "19 while a game is running and 1 in attract and after game over. Decoding it as bool with",

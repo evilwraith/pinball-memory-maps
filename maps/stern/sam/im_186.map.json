@@ -18,7 +18,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "copyright": [
       "Copyright (C) 2026 evilwraith <evilwraith@gmail.com>"
     ],
@@ -369,26 +369,22 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102120",
-      "end": "0x02102123",
-      "checksum": "0x02102124"
+      "end": "0x02102124"
     },
     {
       "label": "Balls Per Game adjustment",
       "start": "0x02102108",
-      "end": "0x0210210B",
-      "checksum": "0x0210210C"
+      "end": "0x0210210C"
     },
     {
       "label": "Maximum Credits adjustment",
       "start": "0x02102118",
-      "end": "0x0210211B",
-      "checksum": "0x0210211C"
+      "end": "0x0210211C"
     },
     {
       "label": "Master Volume",
       "start": "0x02110248",
-      "end": "0x02110248",
-      "checksum": "0x02110249"
+      "end": "0x02110249"
     }
   ]
 }

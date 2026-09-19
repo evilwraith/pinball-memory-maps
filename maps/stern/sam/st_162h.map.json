@@ -17,14 +17,6 @@
     "centres from 0x02110A0C, where stride 8 runs into the 0xFFFFFFFF fill. The sweep independently",
     "reproduced this map's existing score address, and rejected a CPU RAM candidate at 0x00038D9C",
     "whose four values (~16.7M, near-identical) are the usual scaled-set false positive.",
-    "Free Play measured directly: toggled in the operator menu with NVRAM captured either side. The",
-    "value goes 1 -> 0 and its check byte 0xFE -> 0xFF, equal and opposite.",
-    "It is one record of the 8-byte adjustment array at 0x02102008, where each record is a 32-bit",
-    "little-endian value followed by a byte holding 0xFF minus the sum of the value's four bytes.",
-    "Writing this field requires updating that check byte, or the game discards the change on reload.",
-    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
-    "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record.",
     "game_over, credits, max_credits and ball_count come from a 765-frame recording of live memory",
     "spanning an operator-menu session and a full game, captured about twice a second.",
     "game_over at 0x0003BA3E holds exactly two values across the recording, 0 while a game runs and 1",
@@ -52,7 +44,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -68,20 +60,17 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102120",
-      "end": "0x02102123",
-      "checksum": "0x02102124"
+      "end": "0x02102124"
     },
     {
       "label": "Balls Per Game adjustment",
       "start": "0x02102108",
-      "end": "0x0210210B",
-      "checksum": "0x0210210C"
+      "end": "0x0210210C"
     },
     {
       "label": "Maximum Credits adjustment",
       "start": "0x02102118",
-      "end": "0x0210211B",
-      "checksum": "0x0210211C"
+      "end": "0x0210211C"
     }
   ],
   "game_state": {

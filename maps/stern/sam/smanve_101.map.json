@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 11,
+    "version": 12,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -14,26 +14,22 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102120",
-      "end": "0x02102123",
-      "checksum": "0x02102124"
+      "end": "0x02102124"
     },
     {
       "label": "Master Volume",
       "start": "0x02110250",
-      "end": "0x02110250",
-      "checksum": "0x02110251"
+      "end": "0x02110251"
     },
     {
       "label": "Balls Per Game adjustment",
       "start": "0x02102108",
-      "end": "0x0210210B",
-      "checksum": "0x0210210C"
+      "end": "0x0210210C"
     },
     {
       "label": "Maximum Credits adjustment",
       "start": "0x02102118",
-      "end": "0x0210211B",
-      "checksum": "0x0210211C"
+      "end": "0x0210211C"
     }
   ],
   "checksum16": [
@@ -357,32 +353,14 @@
   "_notes": [
     "game_state added locally, from a 4-player game driven through the cabinet's streamer.",
     "current_player and current_ball are adjacent in CPU RAM at 0x00032AB8 and 0x00032AB9, player low",
-    "and ball high, the shape every Stern SAM game measured uses.",
     "Scores are 4 bytes on 4-byte centres from 0x021109E4. The sweep also offered 0x00036470 in CPU",
     "RAM, reading 251,000 / 250,500 / 250,500 / 251,500 -- four plausible, evenly spaced, monotonic",
     "values, and wrong. Scores are in NVRAM on every SAM game measured, which is what rejects it.",
-    "player_count at 0x02110900, the one address every SAM game shares.",
-    "Free Play measured directly: toggled in the operator menu with NVRAM captured either side. The",
-    "value goes 1 -> 0 and its check byte 0xFE -> 0xFF, equal and opposite.",
-    "It is one record of the 8-byte adjustment array at 0x02102008, where each record is a 32-bit",
-    "little-endian value followed by a byte holding 0xFF minus the sum of the value's four bytes.",
-    "Writing this field requires updating that check byte, or the game discards the change on reload.",
-    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
-    "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record.",
-    "ball_count and max_credits are derived, not measured on this game: on every Stern SAM game",
-    "measured they sit three and one records below free_play in the adjustment array, a rule",
-    "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
-    "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte.",
     "checksum16 declared for all twelve champion records: 32-byte records, initials at +0, score at",
     "+0x18 (Best Combo keeps a 1-byte counter at +0x1A instead), little-endian checksum16 at +28 as",
     "0xFFFF minus the sum of the first 28 bytes -- start..length 30 covers the summed bytes plus the",
     "checksum. All twelve validate against a captured NVRAM image.",
     "game_over, tilted and credits come from a 1,099-frame recording of live memory spanning an",
-    "operator-menu session and a full game with a mid-ball tilt on ball 1. The session also promoted",
-    "ball_count and max_credits from derived to measured: menu values 5 and 9 landed at adjustment",
-    "indices 32 and 34 as the free_play-relative rule predicted.",
     "0x00032AEA is the status bitfield most SAM games keep at ball+0x31, in trn_174h's exact",
     "encoding: 1 in attract, 19 (0x13) in play, 21 (0x15) for the eighteen samples between the tilt",
     "and the end of the tilted ball, during which player 1's score sat frozen at 138,820. game_over",
