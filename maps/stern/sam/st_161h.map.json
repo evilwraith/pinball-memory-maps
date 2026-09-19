@@ -15,24 +15,6 @@
     "the last being player 1's final score, and the ball byte once at 421,380, on the player's second",
     "cycle. An earlier sweep of 0x0-0x3FFFF missed both; they sit above it.",
     "Score slots re-confirmed on that game: 857,000 / 1,775,680 / 973,300 / 728,880 at 0x02110A0C.",
-    "Free Play was not toggled on this game. Its address is derived, and the derivation is worth",
-    "stating because it is testable rather than assumed. Machine adjustments are an array of 8-byte",
-    "records from 0x02102008 -- a 32-bit little-endian value, then a byte holding 0xFF minus the sum",
-    "of the value's four bytes, padded 0xFF above. Every record in every image checked satisfies it.",
-    "Aligning this game's array against a game where Free Play was measured puts it at one of only",
-    "two positions across all twenty SAM games examined, and the value there reads 1 on a cabinet",
-    "that is in free play. The alignment was validated prospectively: on nba_802 and smanve_101 --",
-    "the two games where alignment agreement was weakest -- the address was predicted first, then",
-    "confirmed by toggling, and both were exact.",
-    "Writing this field requires updating its check byte, or the game discards the change on reload.",
-    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
-    "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record.",
-    "ball_count and max_credits are derived, not measured on this game: on every Stern SAM game",
-    "measured they sit three and one records below free_play in the adjustment array, a rule",
-    "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
-    "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte.",
     "game_over, tilted, credits and volume come from a 1,102-frame recording of live memory on",
     "st_161hc, spanning an operator-menu session and two full games, the first with a mid-ball tilt",
     "on ball 1. The session also promoted ball_count and max_credits from derived to measured: menu",
@@ -70,7 +52,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 12,
+    "version": 13,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -86,392 +68,327 @@
     {
       "label": "Master Volume",
       "start": "0x02110250",
-      "end": "0x02110250",
-      "checksum": "0x02110251"
+      "end": "0x02110251"
     },
     {
       "label": "Std Adj #01 Replay Type",
       "start": "0x02102058",
-      "end": "0x0210205B",
-      "checksum": "0x0210205C"
+      "end": "0x0210205C"
     },
     {
       "label": "Std Adj #02 Replay Percentage",
       "start": "0x02102060",
-      "end": "0x02102063",
-      "checksum": "0x02102064"
+      "end": "0x02102064"
     },
     {
       "label": "Std Adj #03 Replay Award",
       "start": "0x02102068",
-      "end": "0x0210206B",
-      "checksum": "0x0210206C"
+      "end": "0x0210206C"
     },
     {
       "label": "Std Adj #04 Replay Levels",
       "start": "0x02102070",
-      "end": "0x02102073",
-      "checksum": "0x02102074"
+      "end": "0x02102074"
     },
     {
       "label": "Std Adj #05 Auto Replay Start",
       "start": "0x02102078",
-      "end": "0x0210207B",
-      "checksum": "0x0210207C"
+      "end": "0x0210207C"
     },
     {
       "label": "Std Adj #06 Dynamic Replay Start",
       "start": "0x02102080",
-      "end": "0x02102083",
-      "checksum": "0x02102084"
+      "end": "0x02102084"
     },
     {
       "label": "Std Adj #07 Replay Level #1",
       "start": "0x02102088",
-      "end": "0x0210208B",
-      "checksum": "0x0210208C"
+      "end": "0x0210208C"
     },
     {
       "label": "Std Adj #08 Replay Level #2",
       "start": "0x02102090",
-      "end": "0x02102093",
-      "checksum": "0x02102094"
+      "end": "0x02102094"
     },
     {
       "label": "Std Adj #09 Replay Level #3",
       "start": "0x02102098",
-      "end": "0x0210209B",
-      "checksum": "0x0210209C"
+      "end": "0x0210209C"
     },
     {
       "label": "Std Adj #10 Replay Level #4",
       "start": "0x021020A0",
-      "end": "0x021020A3",
-      "checksum": "0x021020A4"
+      "end": "0x021020A4"
     },
     {
       "label": "Std Adj #11 Replay Boost",
       "start": "0x021020A8",
-      "end": "0x021020AB",
-      "checksum": "0x021020AC"
+      "end": "0x021020AC"
     },
     {
       "label": "Std Adj #12 Special Limit",
       "start": "0x021020B0",
-      "end": "0x021020B3",
-      "checksum": "0x021020B4"
+      "end": "0x021020B4"
     },
     {
       "label": "Std Adj #13 Special Percentage",
       "start": "0x021020C0",
-      "end": "0x021020C3",
-      "checksum": "0x021020C4"
+      "end": "0x021020C4"
     },
     {
       "label": "Std Adj #14 Special Award",
       "start": "0x021020B8",
-      "end": "0x021020BB",
-      "checksum": "0x021020BC"
+      "end": "0x021020BC"
     },
     {
       "label": "Std Adj #15 Free Game Limit",
       "start": "0x021020C8",
-      "end": "0x021020CB",
-      "checksum": "0x021020CC"
+      "end": "0x021020CC"
     },
     {
       "label": "Std Adj #16 Extra Ball Limit",
       "start": "0x021020D0",
-      "end": "0x021020D3",
-      "checksum": "0x021020D4"
+      "end": "0x021020D4"
     },
     {
       "label": "Std Adj #17 Extra Ball Percentage",
       "start": "0x021020D8",
-      "end": "0x021020DB",
-      "checksum": "0x021020DC"
+      "end": "0x021020DC"
     },
     {
       "label": "Std Adj #18 Game Pricing",
       "start": "0x021020E0",
-      "end": "0x021020E3",
-      "checksum": "0x021020E4"
+      "end": "0x021020E4"
     },
     {
       "label": "Std Adj #19 Match Percentage",
       "start": "0x021020F0",
-      "end": "0x021020F3",
-      "checksum": "0x021020F4"
+      "end": "0x021020F4"
     },
     {
       "label": "Std Adj #20 Match Award",
       "start": "0x021020E8",
-      "end": "0x021020EB",
-      "checksum": "0x021020EC"
+      "end": "0x021020EC"
     },
     {
       "label": "Std Adj #21 Balls Per Game",
       "start": "0x021020F8",
-      "end": "0x021020FB",
-      "checksum": "0x021020FC"
+      "end": "0x021020FC"
     },
     {
       "label": "Std Adj #22 Tilt Warnings",
       "start": "0x02102100",
-      "end": "0x02102103",
-      "checksum": "0x02102104"
+      "end": "0x02102104"
     },
     {
       "label": "Std Adj #23 Credit Limit",
       "start": "0x02102108",
-      "end": "0x0210210B",
-      "checksum": "0x0210210C"
+      "end": "0x0210210C"
     },
     {
       "label": "Std Adj #24 Allow High Scores",
       "start": "0x02102180",
-      "end": "0x02102183",
-      "checksum": "0x02102184"
+      "end": "0x02102184"
     },
     {
       "label": "Std Adj #25 High Score Award",
       "start": "0x021021B0",
-      "end": "0x021021B3",
-      "checksum": "0x021021B4"
+      "end": "0x021021B4"
     },
     {
       "label": "Std Adj #26 Grand Champion Awards",
       "start": "0x021021B8",
-      "end": "0x021021BB",
-      "checksum": "0x021021BC"
+      "end": "0x021021BC"
     },
     {
       "label": "Std Adj #27 High Score #1 Awards",
       "start": "0x021021C0",
-      "end": "0x021021C3",
-      "checksum": "0x021021C4"
+      "end": "0x021021C4"
     },
     {
       "label": "Std Adj #28 High Score #2 Awards",
       "start": "0x021021C8",
-      "end": "0x021021CB",
-      "checksum": "0x021021CC"
+      "end": "0x021021CC"
     },
     {
       "label": "Std Adj #29 High Score #3 Awards",
       "start": "0x021021D0",
-      "end": "0x021021D3",
-      "checksum": "0x021021D4"
+      "end": "0x021021D4"
     },
     {
       "label": "Std Adj #30 High Score #4 Awards",
       "start": "0x021021D8",
-      "end": "0x021021DB",
-      "checksum": "0x021021DC"
+      "end": "0x021021DC"
     },
     {
       "label": "Std Adj #31 Grand Champion Score",
       "start": "0x02102188",
-      "end": "0x0210218B",
-      "checksum": "0x0210218C"
+      "end": "0x0210218C"
     },
     {
       "label": "Std Adj #32 High Score #1",
       "start": "0x02102190",
-      "end": "0x02102193",
-      "checksum": "0x02102194"
+      "end": "0x02102194"
     },
     {
       "label": "Std Adj #33 High Score #2",
       "start": "0x02102198",
-      "end": "0x0210219B",
-      "checksum": "0x0210219C"
+      "end": "0x0210219C"
     },
     {
       "label": "Std Adj #34 High Score #3",
       "start": "0x021021A0",
-      "end": "0x021021A3",
-      "checksum": "0x021021A4"
+      "end": "0x021021A4"
     },
     {
       "label": "Std Adj #35 High Score #4",
       "start": "0x021021A8",
-      "end": "0x021021AB",
-      "checksum": "0x021021AC"
+      "end": "0x021021AC"
     },
     {
       "label": "Std Adj #36 HSTD Initials",
       "start": "0x021021E0",
-      "end": "0x021021E3",
-      "checksum": "0x021021E4"
+      "end": "0x021021E4"
     },
     {
       "label": "Std Adj #37 HSTD Reset Count",
       "start": "0x021021E8",
-      "end": "0x021021EB",
-      "checksum": "0x021021EC"
+      "end": "0x021021EC"
     },
     {
       "label": "Std Adj #38 Free Play",
       "start": "0x02102110",
-      "end": "0x02102113",
-      "checksum": "0x02102114"
+      "end": "0x02102114"
     },
     {
       "label": "Std Adj #39 Language",
       "start": "0x02102050",
-      "end": "0x02102053",
-      "checksum": "0x02102054"
+      "end": "0x02102054"
     },
     {
       "label": "Std Adj #40 Player Language Select",
       "start": "0x02102038",
-      "end": "0x0210203B",
-      "checksum": "0x0210203C"
+      "end": "0x0210203C"
     },
     {
       "label": "Std Adj #41 Custom Message",
       "start": "0x02102010",
-      "end": "0x02102013",
-      "checksum": "0x02102014"
+      "end": "0x02102014"
     },
     {
       "label": "Std Adj #42 Flash Lamp Power",
       "start": "0x02102028",
-      "end": "0x0210202B",
-      "checksum": "0x0210202C"
+      "end": "0x0210202C"
     },
     {
       "label": "Std Adj #43 Coil Pulse Power",
       "start": "0x02102008",
-      "end": "0x0210200B",
-      "checksum": "0x0210200C"
+      "end": "0x0210200C"
     },
     {
       "label": "Std Adj #44 Knocker Volume",
       "start": "0x02102118",
-      "end": "0x0210211B",
-      "checksum": "0x0210211C"
+      "end": "0x0210211C"
     },
     {
       "label": "Std Adj #45 Game Restart",
       "start": "0x02102120",
-      "end": "0x02102123",
-      "checksum": "0x02102124"
+      "end": "0x02102124"
     },
     {
       "label": "Std Adj #46 Bill Validator",
       "start": "0x02102128",
-      "end": "0x0210212B",
-      "checksum": "0x0210212C"
+      "end": "0x0210212C"
     },
     {
       "label": "Std Adj #47 Music Volume",
       "start": "0x02102048",
-      "end": "0x0210204B",
-      "checksum": "0x0210204C"
+      "end": "0x0210204C"
     },
     {
       "label": "Std Adj #48 Ball Save Time",
       "start": "0x02102130",
-      "end": "0x02102133",
-      "checksum": "0x02102134"
+      "end": "0x02102134"
     },
     {
       "label": "Std Adj #49 Timed Plunger",
       "start": "0x02102138",
-      "end": "0x0210213B",
-      "checksum": "0x0210213C"
+      "end": "0x0210213C"
     },
     {
       "label": "Std Adj #50 Flipper Ball Launch",
       "start": "0x02102140",
-      "end": "0x02102143",
-      "checksum": "0x02102144"
+      "end": "0x02102144"
     },
     {
       "label": "Std Adj #51 Coindoor Ball Saver",
       "start": "0x02102148",
-      "end": "0x0210214B",
-      "checksum": "0x0210214C"
+      "end": "0x0210214C"
     },
     {
       "label": "Std Adj #52 Competition Mode",
       "start": "0x02102150",
-      "end": "0x02102153",
-      "checksum": "0x02102154"
+      "end": "0x02102154"
     },
     {
       "label": "Std Adj #53 Consolation Ball",
       "start": "0x02102158",
-      "end": "0x0210215B",
-      "checksum": "0x0210215C"
+      "end": "0x0210215C"
     },
     {
       "label": "Std Adj #54 Fast Boot",
       "start": "0x02102020",
-      "end": "0x02102023",
-      "checksum": "0x02102024"
+      "end": "0x02102024"
     },
     {
       "label": "Std Adj #55 Q24 Option",
       "start": "0x02102160",
-      "end": "0x02102163",
-      "checksum": "0x02102164"
+      "end": "0x02102164"
     },
     {
       "label": "Std Adj #56 Ticket Dispenser",
       "start": "0x02102168",
-      "end": "0x0210216B",
-      "checksum": "0x0210216C"
+      "end": "0x0210216C"
     },
     {
       "label": "Std Adj #57 Player Competition",
       "start": "0x02102170",
-      "end": "0x02102173",
-      "checksum": "0x02102174"
+      "end": "0x02102174"
     },
     {
       "label": "Std Adj #58 Team Scores",
       "start": "0x02102178",
-      "end": "0x0210217B",
-      "checksum": "0x0210217C"
+      "end": "0x0210217C"
     },
     {
       "label": "Std Adj #59 Location ID",
       "start": "0x02102040",
-      "end": "0x02102043",
-      "checksum": "0x02102044"
+      "end": "0x02102044"
     },
     {
       "label": "Std Adj #60 Game ID",
       "start": "0x02102030",
-      "end": "0x02102033",
-      "checksum": "0x02102034"
+      "end": "0x02102034"
     },
     {
       "label": "Std Adj #61 Time Format",
       "start": "0x02102018",
-      "end": "0x0210201B",
-      "checksum": "0x0210201C"
+      "end": "0x0210201C"
     },
     {
       "label": "Std Adj #62 Coin Input Delay",
       "start": "0x021021F0",
-      "end": "0x021021F3",
-      "checksum": "0x021021F4"
+      "end": "0x021021F4"
     },
     {
       "label": "Std Adj #63 Lost Ball Recovery",
       "start": "0x021021F8",
-      "end": "0x021021FB",
-      "checksum": "0x021021FC"
+      "end": "0x021021FC"
     },
     {
       "label": "Std Adj #64 Coin Door Disable Tilt",
       "start": "0x02102200",
-      "end": "0x02102203",
-      "checksum": "0x02102204"
+      "end": "0x02102204"
     }
   ],
   "adjustments": {

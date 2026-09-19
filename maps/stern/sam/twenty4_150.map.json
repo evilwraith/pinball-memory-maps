@@ -29,19 +29,6 @@
     "and this game confirms the same structure exists in RAM as on the other SAM ROMs.",
     "Score slots re-confirmed: 2,177,650 / 2,357,180 / 1,762,430 / 3,117,850 read back at 0x021109E4",
     "on the declared 8-byte stride.",
-    "Free Play measured directly: toggled in the operator menu with NVRAM captured either side. The",
-    "value goes 1 -> 0 and its check byte 0xFE -> 0xFF, equal and opposite.",
-    "It is one record of the 8-byte adjustment array at 0x02102008, where each record is a 32-bit",
-    "little-endian value followed by a byte holding 0xFF minus the sum of the value's four bytes.",
-    "Writing this field requires updating that check byte, or the game discards the change on reload.",
-    "The check byte is declared with an explicit checksum address. Without one, a checksum8",
-    "record means the checksum occupies the tail of start..end, which is not this layout: here",
-    "the summed bytes and the check byte are separate fields of one record.",
-    "ball_count and max_credits are derived, not measured on this game: on every Stern SAM game",
-    "measured they sit three and one records below free_play in the adjustment array, a rule",
-    "confirmed by menu changes with distinctive values on both array layouts (st_162h and trn_174h).",
-    "At the derived addresses this game's image reads the factory defaults, 3 balls and 30 credits,",
-    "with valid check bytes. Writing either field requires updating its check byte.",
     "game_over, tilted, tilt_warnings and credits come from a 770-frame recording of live memory",
     "spanning coins in, a full game with a tilt on ball 1, and attract.",
     "game_over: 0x02102A3C holds 1 for exactly the frames a game was running and 0 through the",
@@ -60,7 +47,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -74,20 +61,17 @@
     {
       "label": "Free Play adjustment",
       "start": "0x02102110",
-      "end": "0x02102113",
-      "checksum": "0x02102114"
+      "end": "0x02102114"
     },
     {
       "label": "Balls Per Game adjustment",
       "start": "0x021020F8",
-      "end": "0x021020FB",
-      "checksum": "0x021020FC"
+      "end": "0x021020FC"
     },
     {
       "label": "Maximum Credits adjustment",
       "start": "0x02102108",
-      "end": "0x0210210B",
-      "checksum": "0x0210210C"
+      "end": "0x0210210C"
     }
   ],
   "game_state": {
