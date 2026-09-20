@@ -2,7 +2,7 @@
   "_notes": [
     "Teenage Mutant Ninja Turtles [Data East, 1991]",
     "2026-02-14 added by Tom Collins <tom@scorbit.io>",
-    "Adjustments 0x1E00-0x1E48 are protected by a plain 8-bit sum stored at 0x1EFE (declared under _metadata.validation with complement false,",
+    "Adjustments 0x1E00-0x1E48 are protected by a plain 8-bit sum stored at 0x1EFE (_metadata.validation with complement false,",
     "the Whitestar form: not complemented). Measured on tmnt_200 from 845 live-RAM samples across",
     "two operator-menu sessions: Free Play 0 -> 1 at 0x1E04 moved 0x1EFE by 1, Balls Per Game",
     "3 -> 5 -> 3 at 0x1E0D moved it by 2 and back. A write that changes an adjustment without",
