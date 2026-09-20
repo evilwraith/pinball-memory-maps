@@ -2,11 +2,13 @@
   "_notes": [
     "Star Trek 25th Anniversary [Data East, 1991]",
     "Created by Tom Collins, based on btmn_106 (by Dave horsepin/Tom Collins)",
-    "2026-02-06 split off from trek_201"
+    "2026-02-06 split off from trek_201",
+    "Adjustments 0x1E00-0x1E45 are protected by a plain 8-bit sum at 0x1FC0; see README.md in maps/dataeast.",
+    "Block length and check byte read from the ROM of trek_117."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2016 by Dave horsepin <horse@horsesoft.uk>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -222,6 +224,14 @@
           "0x168F"
         ]
       }
+    }
+  ],
+  "checksum8_sum": [
+    {
+      "label": "Adjustments",
+      "start": "0x1E00",
+      "end": "0x1E45",
+      "checksum": "0x1FC0"
     }
   ]
 }

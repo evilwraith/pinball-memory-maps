@@ -5,15 +5,13 @@
     "High Scores for trek_110/trek_11a: Initials -0x1F, scores -0x20",
     "Adjustments 0x1E00-0x1E45 are protected by a plain 8-bit sum (checksum8_sum, not complemented) at 0x1FC0,",
     "the byte right after the custom-message text, followed by a change counter and the 0xFF fill. This",
-    "is the scheme measured live on tmnt_200 (sum at 0x1EFE there; the text is longer on this ROM). The",
     "block runs from 0x1E00 to the byte before the 0xFF fill. Verified against saved trek_201 images (both cabinets), one",
-    "image state only: if a ROM version lays the block out differently the sum will not validate and a",
     "writer must drop the write rather than repair it.",
-    "A write that changes an adjustment without updating the sum is reset to factory at the next boot."
+    "Adjustments 0x1E00-0x1E45 are protected by a plain 8-bit sum at 0x1FC0; see README.md in maps/dataeast."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2016 by Dave horsepin <horse@horsesoft.uk>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"

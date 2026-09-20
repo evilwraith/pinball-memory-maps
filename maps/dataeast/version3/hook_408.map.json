@@ -9,11 +9,12 @@
     "there); the sum's address follows the banner text length. Hook does not reset the machine when",
     "the operator menu is exited.",
     "The eight bytes 0x1E68-0x1E6F are the leading spaces of the custom message (0x20 x 8 = 256, invisible",
-    "to an 8-bit sum), which is why a sum over 0x1E00-0x1E6F also validates; the block ends at 0x1E67."
+    "to an 8-bit sum), which is why a sum over 0x1E00-0x1E6F also validates; the block ends at 0x1E67.",
+    "Adjustments 0x1E00-0x1E67 are protected by a plain 8-bit sum at 0x1EDA; see README.md in maps/dataeast."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],

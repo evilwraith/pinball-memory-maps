@@ -11,11 +11,12 @@
     "0x1DDF is the ROM's 'free play in effect' working flag: cleared while the operator menu is",
     "open and re-derived from 0x1E04 on leaving it and at boot. Data East resets the machine when",
     "the operator menu is exited, so a change to 0x1E04 made from outside the menu takes effect at",
-    "the next boot rather than immediately."
+    "the next boot rather than immediately.",
+    "Adjustments 0x1E00-0x1E48 are protected by a plain 8-bit sum at 0x1EFE; see README.md in maps/dataeast."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],

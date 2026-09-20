@@ -1,11 +1,13 @@
 {
   "_notes": [
     "Star Wars [Data East, 1992]",
-    "2026-02-13 added by Tom Collins <tom@scorbit.io>"
+    "2026-02-13 added by Tom Collins <tom@scorbit.io>",
+    "Adjustments 0x1E00-0x1E59 are protected by a plain 8-bit sum at 0x1FC0; see README.md in maps/dataeast.",
+    "Block length and check byte read from the ROM of stwr_101 and stwr_g11."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 8,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -220,6 +222,14 @@
           "0x1693"
         ]
       }
+    }
+  ],
+  "checksum8_sum": [
+    {
+      "label": "Adjustments",
+      "start": "0x1E00",
+      "end": "0x1E59",
+      "checksum": "0x1FC0"
     }
   ]
 }

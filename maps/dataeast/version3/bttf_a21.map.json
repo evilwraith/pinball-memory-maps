@@ -1,11 +1,13 @@
 {
   "_notes": [
     "Back to the Future [Data East, 1990]",
-    "2026-02-14 added by Tom Collins <tom@scorbit.io>"
+    "2026-02-14 added by Tom Collins <tom@scorbit.io>",
+    "Adjustments 0x1E00-0x1E42 are protected by a plain 8-bit sum at 0x1EDE; see README.md in maps/dataeast.",
+    "Block length and check byte read from the ROM of bttf_a21."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 8,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -169,6 +171,14 @@
         "start": "0x1DB4",
         "length": 4
       }
+    }
+  ],
+  "checksum8_sum": [
+    {
+      "label": "Adjustments",
+      "start": "0x1E00",
+      "end": "0x1E42",
+      "checksum": "0x1EDE"
     }
   ]
 }
