@@ -2,21 +2,16 @@
   "_notes": [
     "Last Action Hero [Data East, 1993]",
     "2026-02-13 added by Tom Collins <tom@scorbit.io>",
-    "Adjustments 0x1E00-0x1E5B are protected by a plain 8-bit sum (not complemented) at 0x1FDD.",
-    "Read out of the ROM rather than guessed: Data East's checksum routine is the same in every",
     "version 3 game -- clra; ldab <count>; ldx #$1E00; loop adda 0,x / inx / decb; rts -- so the",
-    "block length is a constant the routine loads (0x5C here) and the check byte is the",
     "address the caller stores the result to. Taken from lah_112 and confirmed against saved NVRAM",
-    "from two cabinets. The same procedure reproduces the values measured live on tmnt_200 and",
     "hook_501 exactly, which is what validates it.",
-    "The check byte sits well away from the block, so a write to any adjustment that does not update",
-    "it is reset to factory at the next boot -- the symptom this fixes.",
     "Other ROM revisions listed under roms were not scanned; they are expected to match lah_112, and a",
-    "mismatch fails safe because a writer must refuse a region that does not validate."
+    "mismatch fails safe because a writer must refuse a region that does not validate.",
+    "Adjustments 0x1E00-0x1E5B are protected by a plain 8-bit sum (complement false) at 0x1FDD; see README.md in maps/dataeast."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
