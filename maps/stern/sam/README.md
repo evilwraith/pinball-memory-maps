@@ -186,30 +186,43 @@ the status byte below, and a new game is the ball wrapping down to 1.
 
 ### Status bitfield
 
-Every SAM game measured keeps a status byte 0x31 past the ball counter. It reads
-`0x01` through attract and other values through a game; the value while tilted
-differs from the value in play by one bit for exactly the samples between the tilt
-and the end of the tilted ball, during which the player's score is frozen. Values
-seen, decimal:
+On most games the byte 0x31 past the ball counter is a status bitfield: it reads 1
+through attract and other values through a game, and the value while tilted differs
+from the value in play by one bit for exactly the samples between the tilt and the end
+of the tilted ball, during which the player's score is frozen. 17 of the
+23 games with a `game_over` declaration use that byte:
 
-| games | attract | game start | ball start | in play | tilted | game_over | tilted |
-|---|---|---|---|---|---|---|---|
-| 24, Avatar, Avengers, Batman, Big Buck Hunter, X-Men, TRON, AC/DC | 1 | | | 19 | 21 | mask 0x12 inverted | 0x04 |
-| Iron Man (all three ROMs) | 1 | | | 20 | 22 | mask 0x14 inverted | 0x02 |
-| CSI | 1 | 38 | | 18 | 20 | mask 0x12 inverted | via warnings |
-| Metallica 1.70 | 1 | 41 | | 19 | 21 | mask 0x38 inverted | enum |
-| Metallica 1.80 / 1.80h | 1 | 42 | | 20 | 22 | mask 0x30 inverted | enum over 0x06 |
-| Transformers | 1 | 40 | | 19 | 21 | mask 0xFE inverted | 0x04 |
-| The Walking Dead LE | 1 | | 41 | 20 | 22 | mask 0xFE inverted | 0x02 |
-| Star Trek 1.61 | 1 | 122 | 152, 139, 71, 80 | 19 | 21 | mask 0xFE inverted | enum, 21 only |
+| games | game_over | tilted |
+|---|---|---|
+| avr_200, avs_170, bbh_170, bdk_294, smanve_101, trn_174h, xmn_151h | mask 0x12 inverted | mask 0x04 |
+| im_185ve, im_186, im_186ve | mask 0x14 inverted | mask 0x02 |
+| mtl_180, mtl_180h | mask 0x30 inverted | enum over mask 0x06 |
+| csi_240 | mask 0x12 inverted | mask 0x02 at 0x000390BC (tilt-warning counter) |
+| mtl_170h | mask 0x38 inverted | mask 0x04 |
+| st_161h | mask 0xFE inverted | enum over mask 0x1F, value 21 only |
+| tf_180 | mask 0xFE inverted | mask 0x04 |
+| twd_160h | mask 0xFE inverted | mask 0x02 |
 
-No single bit is common to every in-play value across games, and the tilt bit is
-`0x04` on some ROMs and `0x02` on others, so each map declares the narrowest
-expression that holds on every sample of its own recording: a mask where one exists,
-an enum where a value such as 71 carries the tilt bit without a tilt. Family Guy and
-The Walking Dead 1.56 show no tilt in this byte and declare none. Contributions that
-decode the individual bits are welcome; the recordings behind each row are described
-in the maps' notes.
+No single bit is common to every in-play value across games, and the tilt bit is `0x04`
+on some ROMs and `0x02` on others, so each map declares the narrowest expression that
+holds on every sample of its own recording rather than a shared decoding. The values
+actually observed for a game -- what it reads in attract, at game start, at ball start,
+in play and while tilted -- are recorded in that map's `_notes`, along with the size of
+the recording they came from.
+
+The remaining games do not use that byte and keep game over, tilt, or both elsewhere:
+
+| game | game_over | tilted |
+|---|---|---|
+| acd_170h | `0x00034C7E`, whole byte | whole byte, inverted at 0x00038D24 |
+| fg_1200af | `0x00032E04`, whole byte | not present |
+| nba_802 | `0x0003FF83`, whole byte | whole byte at 0x0003FF6B |
+| st_162h | `0x0003BA3E`, whole byte | whole byte at 0x0003310B |
+| twd_156 | `0x00035E48`, whole byte | not present |
+| twenty4_150 | `0x02102A3C`, whole byte, inverted | mask 0x02 at 0x0003893C (tilt-warning counter) |
+
+Contributions that decode the individual bits are welcome; the recordings behind each
+row are described in the maps' notes.
 
 ### Tilt warnings
 
