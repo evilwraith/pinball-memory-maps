@@ -21,11 +21,15 @@
     "tilted is bit 0x04, which no non-tilt value carries on this game.",
     "volume at 0x02110250, set from 58 to 60 in the operator menu with its complement check byte",
     "following; declared as checksum8. credits at 0x0211100C, the eighteenth SAM game at that",
-    "address, stepping down once at game start."
+    "address, stepping down once at game start.",
+    "Best Combo Champion keeps a one-byte count at +0x1A, not a score at +24. Its record holds",
+    "01 00 05 00 at +24, which read as a 4-byte score gives 327,681; Spider-Man VE stores the same",
+    "field the same way and is declared as a one-byte counter at +0x1A, which reads 5. Corrected to",
+    "match. The plain Combo Champion at +24 is a genuine 4-byte count and is unchanged."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 10,
+    "version": 11,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -319,11 +323,10 @@
         "length": 11,
         "null": "terminate"
       },
-      "score": {
-        "start": "0x2102F40",
+      "counter": {
+        "start": "0x02102F42",
         "encoding": "int",
-        "length": 4,
-        "suffix": "-WAY"
+        "length": 1
       }
     }
   ]
