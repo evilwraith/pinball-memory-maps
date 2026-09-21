@@ -25,11 +25,16 @@
     "Best Combo Champion keeps a one-byte count at +0x1A, not a score at +24. Its record holds",
     "01 00 05 00 at +24, which read as a 4-byte score gives 327,681; Spider-Man VE stores the same",
     "field the same way and is declared as a one-byte counter at +0x1A, which reads 5. Corrected to",
-    "match. The plain Combo Champion at +24 is a genuine 4-byte count and is unchanged."
+    "match. The plain Combo Champion at +24 is a genuine 4-byte count and is unchanged.",
+    "NVRAM also holds five valid champion records at 0x02102D28 on 32-byte centres, carrying Stern's",
+    "generic factory names (G S, L R, J R, D T, P P) against 75,000,000 down to 25,000,000. They are",
+    "deliberately not mapped: none of those initials appears in this game's attract, which shows only",
+    "the Autobot and Decepticon tables declared above. The records look like the generic high-score",
+    "table the ROM carries but does not use on this theme."
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 11,
+    "version": 12,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
