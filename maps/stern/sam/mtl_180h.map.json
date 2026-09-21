@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 12,
+    "version": 13,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -199,7 +199,7 @@
       "score": {
         "start": "0x0210373C",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -213,7 +213,7 @@
       "score": {
         "start": "0x02103760",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -227,7 +227,7 @@
       "score": {
         "start": "0x02103784",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -241,7 +241,7 @@
       "score": {
         "start": "0x021037A8",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -255,7 +255,7 @@
       "score": {
         "start": "0x021037CC",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     }
   ],
@@ -285,7 +285,7 @@
       "score": {
         "start": "0x021038EC",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -299,7 +299,7 @@
       "score": {
         "start": "0x021038C8",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -313,7 +313,7 @@
       "score": {
         "start": "0x02103910",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -327,7 +327,7 @@
       "score": {
         "start": "0x02103838",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -341,7 +341,7 @@
       "score": {
         "start": "0x021038A4",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -355,7 +355,7 @@
       "score": {
         "start": "0x02103814",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -369,7 +369,7 @@
       "score": {
         "start": "0x02103880",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -383,7 +383,7 @@
       "score": {
         "start": "0x0210385C",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     },
     {
@@ -397,7 +397,7 @@
       "score": {
         "start": "0x02103934",
         "encoding": "int",
-        "length": 8
+        "length": 4
       }
     }
   ],
@@ -427,10 +427,12 @@
     "the value 6 is true, the alien_poker precedent. Same declarations as mtl_180, each verified on",
     "its own recording.",
     "credits at 0x0211100C, the thirteenth SAM game at that address.",
-    "The score field of each champion record is eight bytes, not four: the record is 36 bytes and the",
-    "checksum sits at +32, so the span between the name and the checksum is +24 to +31. The games",
-    "that widen it are the same ones whose live score slots move to 8-byte spacing. The upper four",
     "bytes have read zero in every image captured, so the width is taken from the record's",
-    "structure; a score above 2^32 has not been observed. Counter fields are left at four bytes."
+    "The record is 36 bytes with the checksum at +32, so four bytes sit between the 4-byte score at",
+    "+24 and the checksum. They read zero in every image captured (163 records across five games)",
+    "and their purpose is not established: they are consistent with the upper half of a 64-bit score,",
+    "but this game's champion-threshold table at 0x021024F8 stores its thresholds as 4-byte values",
+    "with a complement check byte, which is what a 32-bit score would be compared against. The score",
+    "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled."
   ]
 }
