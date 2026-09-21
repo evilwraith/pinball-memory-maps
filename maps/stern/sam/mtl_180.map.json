@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -202,7 +202,7 @@
       "score": {
         "start": "0x021036BC",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -216,7 +216,7 @@
       "score": {
         "start": "0x021036E0",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -230,7 +230,7 @@
       "score": {
         "start": "0x02103704",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -244,7 +244,7 @@
       "score": {
         "start": "0x02103728",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -258,7 +258,7 @@
       "score": {
         "start": "0x0210374C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ],
@@ -288,7 +288,7 @@
       "score": {
         "start": "0x02103794",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -302,7 +302,7 @@
       "score": {
         "start": "0x021037B8",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -316,7 +316,7 @@
       "score": {
         "start": "0x021037DC",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -330,7 +330,7 @@
       "score": {
         "start": "0x02103800",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -344,7 +344,7 @@
       "score": {
         "start": "0x02103824",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -358,7 +358,7 @@
       "score": {
         "start": "0x02103848",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -372,7 +372,7 @@
       "score": {
         "start": "0x0210386C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -386,7 +386,7 @@
       "score": {
         "start": "0x02103890",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -400,7 +400,7 @@
       "score": {
         "start": "0x021038B4",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ],
@@ -444,6 +444,11 @@
     "thresholds -- Battery 28,000,000, Fade To Black 26,000,000, For Whom The Bell Tolls 27,000,000",
     "-- and running the operator menu's champion reset: +1 took 28,000,000 and +4 took 26,000,000,",
     "with +5 (MDK) taking 27,000,000. The reset applied the thresholds to the scores and left the",
-    "initials in place."
+    "initials in place.",
+    "The score field of each champion record is eight bytes, not four: the record is 36 bytes and the",
+    "checksum sits at +32, so the span between the name and the checksum is +24 to +31. The games",
+    "that widen it are the same ones whose live score slots move to 8-byte spacing. The upper four",
+    "bytes have read zero in every image captured, so the width is taken from the record's",
+    "structure; a score above 2^32 has not been observed. Counter fields are left at four bytes."
   ]
 }
