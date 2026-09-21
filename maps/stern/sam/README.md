@@ -59,12 +59,16 @@ order with the tap running) gave this mapping from menu number to record index:
 | #62–#64 | 61–63 |
 | system group #43, #41, #61, #54, #42, #60, #40, #59, #47, #39 | 0–9 |
 
-Two array layouts exist. On the *offset-0* family (Star Trek, Transformers, 24,
-X-Men, Iron Man, Avatar, Avengers, Batman, Big Buck Hunter, CSI, Family Guy, NBA,
-TRON…) Free Play is record 33 and the mapping above applies directly. On the *+2*
-family (Metallica, The Walking Dead, Spider-Man VE, AC/DC…) two records are inserted
-somewhere before record 30 and everything measured so far sits exactly two records
-later: Free Play 35, Balls Per Game 32, Credit Limit 34, Ball Save Time 39. On both
+Two array layouts exist, and which one a game uses is a property of the ROM revision
+rather than of the game. On the *offset-0* family Free Play is record 33 and the
+mapping above applies directly: avr_200, avs_170, bbh_170, bdk_294, csi_240,
+fg_1200af, nba_802, st_161h, tf_180, trn_174h, twd_156, twenty4_150, xmn_151h. On the
+*+2* family two records are inserted somewhere before record 30 and everything
+measured sits exactly two later -- Free Play 35, Balls Per Game 32, Credit Limit 34,
+Ball Save Time 39: acd_170h, im_185ve, im_186, im_186ve, mtl_170h, mtl_180, mtl_180h,
+smanve_101, st_162, st_162h, twd_160h. Note that Star Trek and The Walking Dead appear
+in both lists -- st_161h and twd_156 are offset-0 while st_162/st_162h and twd_160h are
++2 -- so the layout must be established per ROM and never carried across a revision. On both
 families Balls Per Game is three records below Free Play and Credit Limit one below,
 which is how `ball_count` and `max_credits` were placed on games where only Free Play
 was toggled; on every game where the menu was later exercised the rule held.
@@ -104,23 +108,54 @@ by one at each game start.
 
 ### Scores
 
-Scores are 4-byte little-endian integers in NVRAM. The slot address is per ROM:
-`0x021109E4` on 4-byte centres on many games (24, X-Men, Transformers, Iron Man), but
-`0x02110A24` on 8-byte centres on AC/DC, `0x02110A0C` on Star Trek, `0x02110A3C` on
-Metallica. A recurring false positive when searching for them is a *scaled set* in
-CPU RAM: four values each roughly a quarter of the previous one, which is display
-scratch, not the score.
+Scores are little-endian integers in NVRAM, four per game. Both the slot address and
+the spacing between players are per ROM, so neither may be carried from one map to
+another:
+
+| slot address | spacing | games |
+|---|---|---|
+| `0x021109E4` | 4 | avs_170, im_185ve, im_186, im_186ve, mtl_170h, smanve_101, st_162, tf_180, trn_174h, twd_156, xmn_151h |
+| `0x021109E4` | 8 | avr_200, bbh_170, fg_1200af, nba_802, twenty4_150 |
+| `0x021109F0` | 8 | bdk_294, csi_240 |
+| `0x02110A0C` | 4 | st_161h, st_162h |
+| `0x02110A24` | 8 | acd_170h, mtl_180, mtl_180h |
+| `0x02110A9C` | 8 | twd_160h |
+
+Eight-byte spacing does not by itself mean an eight-byte score: several of the games
+above pair it with a four-byte champion record, so the extra four bytes are padding
+there. Where the champion record also grows (see below) the score really is wider.
+
+A recurring false positive when searching for score slots is a *scaled set* in CPU
+RAM: four values each roughly a quarter of the previous one, which is display scratch,
+not the score.
 
 ### Champion records
 
 High scores and mode champions are 32-byte records (36 on some later ROMs):
 
 ```
-+0   name, null-terminated, 0xFF fill to the score
-+24  32-bit little-endian score            (+28 on 36-byte records)
-+28  checksum16: 0xFFFF minus the 16-bit sum of the preceding bytes, little-endian
-+30  two slack bytes                        (+32 / +34 on 36-byte records)
++0            name, null-terminated, 0xFF fill to the score
++24           score: 4 bytes on a 32-byte record, 8 bytes on a 36-byte record
++28  / +32    checksum16: 0xFFFF minus the 16-bit sum of the preceding bytes, little-endian
++30  / +34    two slack bytes
 ```
+
+The record begins at the *name* on every game measured, and the score is at +24 on
+every high-score and mode-champion record but one; the 36-byte form does not move the
+score, it widens it. (The exception is Spider-Man VE's Best Combo Champion, which
+keeps a one-byte combo count at +0x1A instead of a score at +24.) The checksum is what
+establishes that framing: taking the records to start at the name validates all five
+high scores on every image checked, and taking them to start at the score validates
+none. Two maps had been framed the other way and so paired each name with the
+following record's score, which reported the Grand Champion's points against the
+first-place player's initials; both are corrected.
+
+Because the checksum sits at +32 on a 36-byte record, the span between the name and
+the checksum is +24 to +31 -- eight bytes -- and those games (acd_170, acd_170h,
+mtl_180, mtl_180h, twd_160h) are the same ones whose live score slots move to 8-byte
+spacing. The upper four bytes have read zero in every image captured, so the width is
+taken from the record's structure; a score above 2^32 has not been observed. Counter
+fields (such as Walkers Killed) are left at four bytes.
 
 Declared as `checksum16` with `length` 30 (or 34). The name field takes the
 10-letter names Standard Adjustment #36 allows, so initials are declared as `ch`
