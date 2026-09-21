@@ -135,14 +135,14 @@ High scores and mode champions are 32-byte records (36 on some later ROMs):
 
 ```
 +0            name, null-terminated, 0xFF fill to the score
-+24           score: 4 bytes on a 32-byte record, 8 bytes on a 36-byte record
++24           4-byte little-endian score (36-byte records add four more bytes here; see below)
 +28  / +32    checksum16: 0xFFFF minus the 16-bit sum of the preceding bytes, little-endian
 +30  / +34    two slack bytes
 ```
 
 The record begins at the *name* on every game measured, and the score is at +24 on
 every high-score and mode-champion record but one; the 36-byte form does not move the
-score, it widens it. (The exception is Spider-Man VE's Best Combo Champion, which
+score. (The exception is Spider-Man VE's Best Combo Champion, which
 keeps a one-byte combo count at +0x1A instead of a score at +24.) The checksum is what
 establishes that framing: taking the records to start at the name validates all five
 high scores on every image checked, and taking them to start at the score validates
@@ -150,12 +150,16 @@ none. Two maps had been framed the other way and so paired each name with the
 following record's score, which reported the Grand Champion's points against the
 first-place player's initials; both are corrected.
 
-Because the checksum sits at +32 on a 36-byte record, the span between the name and
-the checksum is +24 to +31 -- eight bytes -- and those games (acd_170, acd_170h,
-mtl_180, mtl_180h, twd_160h) are the same ones whose live score slots move to 8-byte
-spacing. The upper four bytes have read zero in every image captured, so the width is
-taken from the record's structure; a score above 2^32 has not been observed. Counter
-fields (such as Walkers Killed) are left at four bytes.
+On a 36-byte record the checksum sits at +32, so four bytes sit between the 4-byte
+score at +24 and the checksum. What they are for is **not established**. They read
+zero in every image captured (163 records across acd_170, acd_170h, mtl_180, mtl_180h
+and twd_160h), and those are the same games whose live score slots move to 8-byte
+spacing, which is what a 64-bit score would look like below 2^32. Against that
+reading, the champion-threshold tables on the same games store their thresholds as
+4-byte values with a complement check byte -- the format a 32-bit score would be
+compared against. The score is declared as four bytes on every game until a value
+above 2^32 is observed or the ROM settles it; nothing in the maps depends on the
+question, since both readings decode identically for every score seen so far.
 
 Declared as `checksum16` with `length` 30 (or 34). The name field takes the
 10-letter names Standard Adjustment #36 allows, so initials are declared as `ch`
