@@ -1,10 +1,11 @@
 {
   "_notes": [
-    "2025-11: initial map created by Tom Collins, mnfb_c27 w/o mode_champions."
+    "2025-11: initial map created by Tom Collins, mnfb_c27 w/o mode_champions.",
+    "2026-09: adjustment checksum added (evilwraith). ROM potob5.3-2 sums 126 bytes from 0x1F80 into B and compares at 0x1FFE (LDAA #$7E / LDX #$1F80 / ADDB 0,X / INX / DECA / BNE / CMPB $1FFE @0x2F52); the writer stores it the same way @0x31A3. A mismatch takes the branch into the factory reset, which is why an externally written adjustment did not survive."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
     ],
@@ -151,6 +152,14 @@
         "length": 4,
         "scale": 10
       }
+    }
+  ],
+  "checksum8_sum": [
+    {
+      "label": "Adjustments",
+      "start": "0x1F80",
+      "end": "0x1FFD",
+      "checksum": "0x1FFE"
     }
   ]
 }
