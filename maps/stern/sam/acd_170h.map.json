@@ -42,7 +42,7 @@
   ],
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 11,
+    "version": 12,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -152,7 +152,7 @@
       "score": {
         "start": "0x02103814",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -166,7 +166,7 @@
       "score": {
         "start": "0x02103838",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -180,7 +180,7 @@
       "score": {
         "start": "0x0210385C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -194,7 +194,7 @@
       "score": {
         "start": "0x02103880",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -208,7 +208,7 @@
       "score": {
         "start": "0x021038A4",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ],
@@ -238,7 +238,7 @@
       "score": {
         "start": "0x021038EC",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -252,7 +252,7 @@
       "score": {
         "start": "0x02103910",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -266,7 +266,7 @@
       "score": {
         "start": "0x02103934",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -280,7 +280,7 @@
       "score": {
         "start": "0x02103958",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -294,7 +294,7 @@
       "score": {
         "start": "0x0210397C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -308,7 +308,7 @@
       "score": {
         "start": "0x021039A0",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -322,7 +322,7 @@
       "score": {
         "start": "0x021039C4",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -336,7 +336,7 @@
       "score": {
         "start": "0x021039E8",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -350,7 +350,7 @@
       "score": {
         "start": "0x02103A0C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -364,7 +364,7 @@
       "score": {
         "start": "0x02103A30",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -378,7 +378,7 @@
       "score": {
         "start": "0x02103A54",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -392,7 +392,7 @@
       "score": {
         "start": "0x02103A78",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -406,7 +406,7 @@
       "score": {
         "start": "0x02103A9C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -420,7 +420,7 @@
       "score": {
         "start": "0x02103AE4",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ]

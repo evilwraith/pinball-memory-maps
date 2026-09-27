@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 13,
+    "version": 14,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
@@ -199,7 +199,7 @@
       "score": {
         "start": "0x0210373C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -213,7 +213,7 @@
       "score": {
         "start": "0x02103760",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -227,7 +227,7 @@
       "score": {
         "start": "0x02103784",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -241,7 +241,7 @@
       "score": {
         "start": "0x021037A8",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -255,7 +255,7 @@
       "score": {
         "start": "0x021037CC",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ],
@@ -285,7 +285,7 @@
       "score": {
         "start": "0x021038EC",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -299,7 +299,7 @@
       "score": {
         "start": "0x021038C8",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -313,7 +313,7 @@
       "score": {
         "start": "0x02103910",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -327,7 +327,7 @@
       "score": {
         "start": "0x02103838",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -341,7 +341,7 @@
       "score": {
         "start": "0x021038A4",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -355,7 +355,7 @@
       "score": {
         "start": "0x02103814",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -369,7 +369,7 @@
       "score": {
         "start": "0x02103880",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -383,7 +383,7 @@
       "score": {
         "start": "0x0210385C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -397,7 +397,7 @@
       "score": {
         "start": "0x02103934",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ],

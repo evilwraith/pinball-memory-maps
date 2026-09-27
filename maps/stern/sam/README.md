@@ -122,8 +122,11 @@ another:
 | `0x02110A9C` | 8 | twd_160h |
 
 Eight-byte spacing does not by itself mean an eight-byte score: several of the games
-above pair it with a four-byte champion record, so the extra four bytes are padding
-there. Where the champion record also grows (see below) the score really is wider.
+above pair it with a 32-byte champion record, whose score cannot be wider than four
+bytes, so the extra four bytes are padding there. The games whose champion records do
+carry a 64-bit score (see below) are all in the 8-byte group, which is suggestive but
+not proof -- a live slot's width has not been measured on any game, and the slots are
+declared as four bytes throughout.
 
 A recurring false positive when searching for score slots is a *scaled set* in CPU
 RAM: four values each roughly a quarter of the previous one, which is display scratch,
@@ -135,7 +138,7 @@ High scores and mode champions are 32-byte records (36 on some later ROMs):
 
 ```
 +0            name, null-terminated, 0xFF fill to the score
-+24           4-byte little-endian score (36-byte records add four more bytes here; see below)
++24           little-endian score: 4 bytes on a 32-byte record, 8 on a 36-byte record
 +28  / +32    checksum16: 0xFFFF minus the 16-bit sum of the preceding bytes, little-endian
 +30  / +34    two slack bytes
 ```
@@ -150,16 +153,47 @@ none. Two maps had been framed the other way and so paired each name with the
 following record's score, which reported the Grand Champion's points against the
 first-place player's initials; both are corrected.
 
-On a 36-byte record the checksum sits at +32, so four bytes sit between the 4-byte
-score at +24 and the checksum. What they are for is **not established**. They read
-zero in every image captured (163 records across acd_170, acd_170h, mtl_180, mtl_180h
-and twd_160h), and those are the same games whose live score slots move to 8-byte
-spacing, which is what a 64-bit score would look like below 2^32. Against that
-reading, the champion-threshold tables on the same games store their thresholds as
-4-byte values with a complement check byte -- the format a 32-bit score would be
-compared against. The score is declared as four bytes on every game until a value
-above 2^32 is observed or the ROM settles it; nothing in the maps depends on the
-question, since both readings decode identically for every score seen so far.
+The record size is what sets the score width. On a 32-byte record the checksum16
+occupies +28 and +29, so the score physically cannot be wider than the four bytes at
++24. On a 36-byte record the checksum moves to +32, and the eight bytes from +24 to
++31 are **all score**: the champion score on those games is a 64-bit little-endian
+integer.
+
+That was settled by poking the NVRAM and reading the ROM's own attract display back,
+on mtl_180h. The Grand Champion record held `JDB` with 75,000,000. Editing a pair of
+bytes that leaves the byte sum -- and so the checksum -- unchanged avoids having to
+recompute anything:
+
+| bytes changed | attract display |
+|---|---|
+| none | 75,000,000 |
+| +27 -= 1, +28 = 1 | 4,353,190,080 |
+| +27 -= 2, +29 = 1, +31 = 1 | 72,058,693,591,001,280 |
+
+The second reading proves +28 carries 2^32; the third proves the field runs all the
+way to +31, since 72,058,693,591,001,280 is exactly the eight-byte little-endian
+value and no shorter read produces it. The ROM also wrote the record back
+byte-identical on exit, so it round-trips the wide value rather than normalising it.
+(Credit to @tomlogic, who ran the first of these independently and reported the same
+4,353,190,080.)
+
+Note that the champion-threshold tables on these same games still store their
+thresholds as 4-byte values with a complement check byte, so the widening is in the
+stored record only. That mismatch is why the extra bytes could not be settled by
+inspection: they read zero in all 163 captured records, because no score had ever
+exceeded 2^32.
+
+Only `acd_170`, `acd_170h`, `mtl_180`, `mtl_180h` and `twd_160h` have 36-byte
+records, so only those declare `length` 8; every other game keeps 4. It applies to
+mode champions as well as high scores on those games -- the records are the same
+form, and the checksum validates at +32 in all 50 mode-champion records across the
+four of them an image was available for, with `+28..+31` zero throughout. The
+handful of champions that hold a counter rather than a score (Combo Champion, The
+Walking Dead's Walkers Killed Champion) are untouched. This is a
+property of the record size, checkable per game from the checksum position, not
+something to assume for SAM generally. Whether the *live* score slots in working RAM
+widen to match is a separate question and is **not** established -- see the spacing
+table above.
 
 Declared as `checksum16` with `length` 30 (or 34). The name field takes the
 10-letter names Standard Adjustment #36 allows, so initials are declared as `ch`

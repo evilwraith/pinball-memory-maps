@@ -1,7 +1,7 @@
 {
   "_fileformat": 0.7,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
@@ -202,7 +202,7 @@
       "score": {
         "start": "0x021036BC",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -216,7 +216,7 @@
       "score": {
         "start": "0x021036E0",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -230,7 +230,7 @@
       "score": {
         "start": "0x02103704",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -244,7 +244,7 @@
       "score": {
         "start": "0x02103728",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -258,7 +258,7 @@
       "score": {
         "start": "0x0210374C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ],
@@ -288,7 +288,7 @@
       "score": {
         "start": "0x02103794",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -302,7 +302,7 @@
       "score": {
         "start": "0x021037B8",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -316,7 +316,7 @@
       "score": {
         "start": "0x021037DC",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -330,7 +330,7 @@
       "score": {
         "start": "0x02103800",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -344,7 +344,7 @@
       "score": {
         "start": "0x02103824",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -358,7 +358,7 @@
       "score": {
         "start": "0x02103848",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -372,7 +372,7 @@
       "score": {
         "start": "0x0210386C",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -386,7 +386,7 @@
       "score": {
         "start": "0x02103890",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     },
     {
@@ -400,7 +400,7 @@
       "score": {
         "start": "0x021038B4",
         "encoding": "int",
-        "length": 4
+        "length": 8
       }
     }
   ],
