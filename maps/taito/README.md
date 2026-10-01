@@ -11,7 +11,7 @@ Standalone.
 
 | map | firmware | sets | strongest evidence |
 |---|---|---|---|
-| `vortex` | 1981–85 | 28 | live games on Vortex and Mr. Black; images of sharkt, cosmic, stest |
+| `vortex` | 1981–85 | 29 | live games on Vortex and Mr. Black; images of sharkt, cosmic, stest |
 | `drakor` | 1980 | 3 | live game on Drakor; image of meteort |
 | `obaoba` | 1979 code on 1980 hardware | 2 | live game on Oba-Oba |
 | `shock` | 1979 | 2 | live game and three images of Shock |
@@ -19,7 +19,7 @@ Standalone.
 Sets listed without an image are there because their ROM references every declared address the
 same way as the measured set in their family: the ten-byte settings copy from ROM, the high-score
 compare loop, the credits-to-display copy, the replay routine and the game-over write. Each map's
-`_notes` says which sets are which. Not mapped: `gemini1` (no ROM on hand) and `football` (ROM lost).
+`_notes` says which sets are which. Not mapped: `football` (ROM lost).
 
 ## Layout (offsets into the window; the 1979 board moves the display and command areas to +00/+10)
 

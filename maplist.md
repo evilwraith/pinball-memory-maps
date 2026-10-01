@@ -447,6 +447,7 @@
 * [Games, The (rev. 1)][23] _thegamsb_
 * [Games, The (rev. 2 MOD)][23] _thegamsc_
 * [Gemini 2000][84] _gemini_
+* [Gemini 2000 (alternate set)][84] _gemini1_
 * [Genesis][160] _genesis_
 * [Genesis (Free Play)][160] _genesifp_
 * [Genesis (French Free Play)][160] _genesffp_
