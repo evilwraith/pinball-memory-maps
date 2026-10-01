@@ -10,11 +10,12 @@
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
     "restores all nine from ROM); balls per game is its first byte and the three replay levels its fifth to seventh.",
     "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
-    "marks the saved game over on load so a table starts in attract."
+    "marks the saved game over on load so a table starts in attract.",
+    "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -157,6 +158,16 @@
         "start": "0x4076",
         "encoding": "bcd",
         "scale": 10000
+      }
+    }
+  },
+  "audits": {
+    "Audits": {
+      "01": {
+        "_notes": "Increments at game start (same poll as ball 0->1 and the credit consumed) on Vortex, Mr. Black and Drakor. BCD: the firmware's counter increment is ADD M / DAA / MOV M,A (Vortex 0x0DE5); only values below 10 have been seen.",
+        "label": "Games Played",
+        "start": "0x405C",
+        "encoding": "bcd"
       }
     }
   }

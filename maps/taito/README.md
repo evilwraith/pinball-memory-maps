@@ -50,6 +50,6 @@ describe the image either way.
 ## Not established
 
 - The other six settings bytes (`11 06 01 … 05 01` on every set seen) — service-menu semantics.
-- Audits: `+A0` … `+FF` holds counters that move, none identified.
+- Audits: `+5C` is a games-started counter (live on three generations, declared); `+A0` … `+F3` holds others that move, none identified. `+F4` … `+FF` is the last game's final display.
 - The 1979 firmware's current-player byte.
 - Coinage is on physical DIP switches, not in NVRAM.
