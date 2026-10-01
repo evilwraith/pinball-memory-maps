@@ -1,0 +1,208 @@
+{
+  "_notes": [
+    "Rowamet Heavy Metal: Taito do Brasil hardware with a Z80 in place of the 8080 and Rowamet's own sound board",
+    "(PinMAME machine rowamet, which imports the taito machine and its NVRAM handler). The firmware is Vortex's with a",
+    "few hundred bytes changed: the reset validation, the high-score and replay award code, the copy helpers and the ROM",
+    "defaults (same factory settings, same 600,000 high-score floor) are byte-identical, so this is vortex.map.json's",
+    "layout. Compiled 2026-10 by evilwraith from the ROM code only; no image or live capture yet.",
+    "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
+    "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
+    "restores all nine from ROM); its nine entries are identified from the Shock operator sheet (see adjustments).",
+    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
+    "marks the saved game over on load so a table starts in attract.",
+    "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score."
+  ],
+  "_fileformat": 0.8,
+  "_metadata": {
+    "version": 1,
+    "copyright": [
+      "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
+    ],
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
+    "platform": "taito",
+    "roms": [
+      "heavymtl"
+    ]
+  },
+  "game_state": {
+    "scores": [
+      {
+        "label": "Player 1",
+        "start": "0x4080",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 2",
+        "start": "0x4083",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 3",
+        "start": "0x4086",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 4",
+        "start": "0x4089",
+        "length": 3,
+        "encoding": "bcd"
+      }
+    ],
+    "current_ball": {
+      "label": "Current Ball",
+      "start": "0x408C",
+      "encoding": "int"
+    },
+    "player_count": {
+      "_notes": "Read by the reset path, which refuses to resume a game with a value of 5 or more; 1 throughout a live one-player game, 0 in attract.",
+      "label": "Players",
+      "start": "0x408F",
+      "encoding": "int"
+    },
+    "current_player": {
+      "_notes": "0 in attract, 1 during a one-player game; the reset path requires it non-zero to resume a game.",
+      "label": "Current Player",
+      "start": "0x409E",
+      "encoding": "int"
+    },
+    "credits": {
+      "_notes": "Stored value; the firmware keeps a display copy at 0x408D.",
+      "label": "Credits",
+      "start": "0x407F",
+      "encoding": "bcd"
+    },
+    "match": {
+      "_notes": "Match digit shown after the game; cycles 0-9 during play (the randomiser).",
+      "label": "Match",
+      "start": "0x408E",
+      "encoding": "int",
+      "mask": "0x0F"
+    },
+    "game_over": {
+      "_notes": "Bit 0 of the firmware's flags byte: set in attract and by its reset path when it declines to resume, clear during a game.",
+      "label": "Game Over",
+      "start": "0x409F",
+      "encoding": "bool",
+      "mask": "0x01"
+    },
+    "tilted": {
+      "_notes": "Bit 1 of the flags byte: set at a tilt on ball 1 and cleared when the next ball started (live on Vortex).",
+      "label": "Tilted",
+      "start": "0x409F",
+      "encoding": "bool",
+      "mask": "0x02"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "start": "0x4070",
+      "encoding": "bcd"
+    }
+  },
+  "high_scores": [
+    {
+      "label": "High Score",
+      "short_label": "HS",
+      "score": {
+        "_notes": "Most-significant byte first, unlike the display; the reset path reloads it from the ROM's minimum if it reads lower.",
+        "start": "0x4079",
+        "length": 3,
+        "encoding": "bcd",
+        "endian": "big"
+      }
+    }
+  ],
+  "adjustments": {
+    "Adjustments": {
+      "01": {
+        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets in backport/Manuals; byte positions and defaults match every image captured (Cosmic's default column is its image byte for byte).",
+        "label": "Balls Per Game",
+        "start": "0x4070",
+        "encoding": "bcd",
+        "min": 3,
+        "max": 5,
+        "default": 5
+      },
+      "02": {
+        "_notes": "'Fichas/Partida' (Cosmic: 'Credito/Partida'). A two-digit code, not a count: the sheets allow 11-14 and list 15 as a forbidden value that forces the default. What the digits mean is not stated on either sheet.",
+        "label": "Coinage (code)",
+        "start": "0x4071",
+        "encoding": "bcd",
+        "default": 11
+      },
+      "03": {
+        "_notes": "'Credito/Maximo'. The firmware clamps the stored credits to this value at boot.",
+        "label": "Maximum Credits",
+        "start": "0x4072",
+        "encoding": "bcd",
+        "min": 1,
+        "max": 9,
+        "default": 6
+      },
+      "04": {
+        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed.",
+        "label": "Incentive",
+        "start": "0x4073",
+        "encoding": "bcd",
+        "default": 1
+      },
+      "05": {
+        "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set. On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
+        "label": "Replay Level 1",
+        "start": "0x4074",
+        "encoding": "bcd",
+        "scale": 10000,
+        "min": 150000,
+        "max": 990000
+      },
+      "06": {
+        "_notes": "Shown x10,000. '2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it). On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
+        "label": "Replay Level 2",
+        "start": "0x4075",
+        "encoding": "bcd",
+        "scale": 10000,
+        "min": 150000,
+        "max": 990000
+      },
+      "07": {
+        "_notes": "Shown x10,000. 'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5. On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
+        "label": "Extra Ball Score",
+        "start": "0x4076",
+        "encoding": "bcd",
+        "scale": 10000,
+        "min": 150000,
+        "max": 990000
+      },
+      "08": {
+        "_notes": "'Especial/Jogo'.",
+        "label": "Specials Per Game",
+        "start": "0x4077",
+        "encoding": "bcd",
+        "min": 1,
+        "max": 5,
+        "default": 5
+      },
+      "09": {
+        "_notes": "'Credito/Record': credits awarded for beating the high score.",
+        "label": "Credits For High Score",
+        "start": "0x4078",
+        "encoding": "bcd",
+        "min": 1,
+        "max": 3,
+        "default": 2
+      }
+    }
+  },
+  "audits": {
+    "Audits": {
+      "01": {
+        "_notes": "Increments at game start (same poll as ball 0->1 and the credit consumed) on Vortex, Mr. Black and Drakor. BCD: the firmware's counter increment is ADD M / DAA / MOV M,A (Vortex 0x0DE5); only values below 10 have been seen.",
+        "label": "Games Played",
+        "start": "0x405C",
+        "encoding": "bcd"
+      }
+    }
+  }
+}

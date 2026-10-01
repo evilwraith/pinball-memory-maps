@@ -537,6 +537,7 @@
   "hd_l1": "maps/williams/wpc/hd_l3.map.json",
   "hd_l2": "maps/williams/wpc/hd_l3.map.json",
   "hd_l3": "maps/williams/wpc/hd_l3.map.json",
+  "heavymtl": "maps/rowamet/heavymtl.map.json",
   "hercules": "maps/atari/generic-gen2.map.json",
   "hglbtrtb": "maps/bally/as-2518-35/system-rom-35-7digit.map.json",
   "hglbtrtr": "maps/bally/as-2518-35/system-rom-35.map.json",
