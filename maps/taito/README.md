@@ -46,12 +46,16 @@ flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.
 | 1 | `+70` | balls per game | 03–05 | 05 |
 | 2 | `+71` | coinage code ("Fichas/Partida") — **coinage is here, not on DIPs**; the digits' meaning is not on either sheet | 11–14 | 11 |
 | 3 | `+72` | maximum credits (credits are clamped to it at boot) | 01–09 | 06 |
-| 4 | `+73` | incentive ("Incentivo"); the 1980 games hold 04, outside this set | 01, 11–14 | 01 |
-| 5 | `+74` | replay level 1, ×10,000 | 15–99 | 30 |
-| 6 | `+75` | replay level 2 — annulled if equal to 5 | 15–99 | 30 |
-| 7 | `+76` | **extra ball** score — annulled if equal to 5 | 15–99 | 30 |
+| 4 | `+73` | incentive ("Incentivo") | 01, 11–14 on the sheets | **01** on the 1981+ firmware, **04** on the 1980 firmware (drakor, meteort, fireact, obaoba, obaobao) |
+| 5 | `+74` | replay level 1, ×10,000 | 15–99 | per game: 17 (gemini1) to 50 (drakor) |
+| 6 | `+75` | replay level 2 — annulled if equal to 5 | 15–99 | same as 5 |
+| 7 | `+76` | **extra ball** score — annulled if equal to 5 | 15–99 | same as 5 |
 | 8 | `+77` | specials per game | 01–05 | 05 |
-| 9 | `+78` | credits for beating the high score | 01–03 | 02 |
+| 9 | `+78` | credits for beating the high score | 01–03 | **01** on the 1981+ sets and fireact, **02** on drakor, meteort, obaoba and shock |
+
+Defaults are each set's own factory table, read from its ROM — the ten bytes at `0x1FF4` (`0x1BF4` on
+the 1979-derived firmware) that the reset path copies in when a settings byte is not BCD; the
+tenth is the high score's leading byte. A map declares a default only where all its sets agree.
 
 The eight "Adjust" DIP switches (CH0–CH7 on the F6 page) are not settings: they are the BCD
 keypad for entering a value in the service menu (CH0–3 = first digit 1/2/4/8, CH4–7 = second),
@@ -69,6 +73,6 @@ describe the image either way.
 
 ## Not established
 
-- Adjustment 4 ("Incentivo") on the 1980 games, where it holds a value the sheet does not allow.
+- What "Incentivo" means, and why the 1980 firmware's factory value (04) is outside the set the two sheets allow.
 - Audits: `+5C` is a games-started counter (live on three generations, declared); `+A0` … `+F3` holds others that move, none identified. `+F4` … `+FF` is the last game's final display.
 - The 1979 firmware's current-player byte on the 1979 board itself (Oba-Oba's, at `+9E`, is live-verified).

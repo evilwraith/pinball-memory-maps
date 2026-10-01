@@ -16,7 +16,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -120,7 +120,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured.",
+        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd",
@@ -149,7 +149,7 @@
         "label": "Incentive",
         "start": "0x4073",
         "encoding": "bcd",
-        "default": 1
+        "default": 4
       },
       "05": {
         "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",

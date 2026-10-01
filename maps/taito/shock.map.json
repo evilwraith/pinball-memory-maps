@@ -13,7 +13,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -111,7 +111,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured.",
+        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
         "label": "Balls Per Game",
         "start": "0x10F0",
         "encoding": "bcd",
@@ -136,11 +136,10 @@
         "default": 6
       },
       "04": {
-        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed.",
+        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed. No default is declared: the factory value differs between the sets this map covers (obaobao 04, shock 01).",
         "label": "Incentive",
         "start": "0x10F3",
-        "encoding": "bcd",
-        "default": 1
+        "encoding": "bcd"
       },
       "05": {
         "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",

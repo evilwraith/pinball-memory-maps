@@ -14,7 +14,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -117,7 +117,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets in backport/Manuals; byte positions and defaults match every image captured (Cosmic's default column is its image byte for byte).",
+        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets in backport/Manuals; byte positions and defaults match every image captured (Cosmic's default column is its image byte for byte). Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd",
@@ -191,7 +191,7 @@
         "encoding": "bcd",
         "min": 1,
         "max": 3,
-        "default": 2
+        "default": 1
       }
     }
   },
