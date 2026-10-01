@@ -2,19 +2,21 @@
   "_notes": [
     "Taito do Brasil Oba-Oba (1980) on the later hardware: the 1979 firmware moved up to the 0x4000 window. It keeps",
     "the 1979 structure - credits display at 0x408F, player count at 0x408D - but puts settings, high score and stored",
-    "credits where the 1981-85 boards do (0x4070, 0x4079, 0x407F). Compiled 2026-10 by evilwraith from the ROM code",
-    "only (the LDA 407F / STA 408F credits copy, the settings DAA check over 0x4070-0x4079, the 0x4079 high-score",
-    "compare, the replay routine, the game-over write); no image or live capture yet. No current_player is declared:",
-    "the 1979 firmware's equivalent byte has not been identified.",
+    "credits where the 1981-85 boards do (0x4070, 0x4079, 0x407F). Compiled 2026-10 by evilwraith from the ROM code and",
+    "a live obaoba capture on an AtGames ALP4K (Visual Pinball Standalone): a full one-player game read back its final",
+    "score of 16,312 (held in 0x40F4 afterwards) and two credits, with 0x408D at 1 and 0x408F at 2 throughout, current",
+    "player 1 during play and 0 in attract, and the games-played counter ticking at game start. The game was tilted",
+    "on ball 5, which set bit 1 of the flags byte. obaoba1 - ROM code references every declared address identically.",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
     "restores all nine from ROM); balls per game is its first byte and the three replay levels its fifth to seventh.",
     "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
-    "marks the saved game over on load so a table starts in attract."
+    "marks the saved game over on load so a table starts in attract.",
+    "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -58,19 +60,25 @@
       "encoding": "int"
     },
     "player_count": {
-      "_notes": "1979-style: the reset path refuses to resume with 5 or more here. Code only; not yet seen live.",
+      "_notes": "1979-style position; 1 throughout a live one-player game, 0 in attract. The reset path refuses to resume with 5 or more here.",
       "label": "Players",
       "start": "0x408D",
       "encoding": "int"
     },
+    "current_player": {
+      "_notes": "0 in attract, 1 during a one-player game (live).",
+      "label": "Current Player",
+      "start": "0x409E",
+      "encoding": "int"
+    },
     "credits": {
-      "_notes": "Stored value; the firmware keeps a display copy at 0x408F.",
+      "_notes": "Stored value; the firmware keeps a display copy at 0x408F (1979-style), 2 in both during the live game.",
       "label": "Credits",
       "start": "0x407F",
       "encoding": "bcd"
     },
     "match": {
-      "_notes": "Match digit shown after the game; cycles 0-9 during play (the randomiser).",
+      "_notes": "Match digit shown after the game; cycles 0-9 during play (the randomiser). Reads 0xFF in attract before any game on this firmware.",
       "label": "Match",
       "start": "0x408E",
       "encoding": "int",
@@ -82,6 +90,13 @@
       "start": "0x409F",
       "encoding": "bool",
       "mask": "0x01"
+    },
+    "tilted": {
+      "_notes": "Bit 1 of the flags byte: set when the game was tilted on ball 5 (live), cleared when the game ended.",
+      "label": "Tilted",
+      "start": "0x409F",
+      "encoding": "bool",
+      "mask": "0x02"
     },
     "ball_count": {
       "label": "Balls Per Game",
@@ -127,6 +142,16 @@
         "start": "0x4076",
         "encoding": "bcd",
         "scale": 10000
+      }
+    }
+  },
+  "audits": {
+    "Audits": {
+      "01": {
+        "_notes": "Ticked at game start in the live capture. BCD per the firmware's ADD M / DAA increment; only values below 10 have been seen.",
+        "label": "Games Played",
+        "start": "0x405C",
+        "encoding": "bcd"
       }
     }
   }
