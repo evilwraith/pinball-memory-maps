@@ -13,7 +13,7 @@ Standalone.
 |---|---|---|---|
 | `vortex` | 1981–85 | 28 | live games on Vortex and Mr. Black; images of sharkt, cosmic, stest |
 | `drakor` | 1980 | 3 | live game on Drakor; image of meteort |
-| `obaoba` | 1979 code on 1980 hardware | 2 | ROM code only |
+| `obaoba` | 1979 code on 1980 hardware | 2 | live game on Oba-Oba |
 | `shock` | 1979 | 2 | live game and three images of Shock |
 
 Sets listed without an image are there because their ROM references every declared address the
@@ -35,6 +35,7 @@ compare loop, the credits-to-display copy, the replay routine and the game-over 
 | `+8E` | match digit; cycles 0–9 during play | live |
 | `+9E` | current player, 0 in attract | live; a reset-path resume gate (1981–85 only) |
 | `+9F` bit 0 | game over | live; written by the reset path when it declines to resume |
+| `+9F` bit 1 | tilt (declared on `obaoba` only — the one capture with a tilt) | live |
 
 The 1979 board: display `+00`, ball `+0C`, players `+0D`, match `+0E`, credits display `+0F`,
 flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.
@@ -50,5 +51,5 @@ describe the image either way.
 
 - The other six settings bytes (`11 06 01 … 05 01` on every set seen) — service-menu semantics.
 - Audits: `+5C` is a games-started counter (live on three generations, declared); `+A0` … `+F3` holds others that move, none identified. `+F4` … `+FF` is the last game's final display.
-- The 1979 firmware's current-player byte.
+- The 1979 firmware's current-player byte on the 1979 board itself (Oba-Oba's, at `+9E`, is live-verified).
 - Coinage is on physical DIP switches, not in NVRAM.

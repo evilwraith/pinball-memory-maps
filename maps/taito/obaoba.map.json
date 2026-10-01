@@ -92,7 +92,7 @@
       "mask": "0x01"
     },
     "tilted": {
-      "_notes": "Bit 1 of the flags byte: set when the game was tilted on ball 5 (live), cleared when the game ended.",
+      "_notes": "Bit 1 of the flags byte. Pulsed briefly once mid-ball with scoring continuing (the tilt warning), then set and held from the real tilt on ball 5 until the game ended (live).",
       "label": "Tilted",
       "start": "0x409F",
       "encoding": "bool",
