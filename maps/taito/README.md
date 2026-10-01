@@ -71,8 +71,22 @@ Cosmic operator sheets in `backport/Manuals/` and the VPForums Taito ball-count 
 PinMAME's `taito.c` marks the saved game over on load, so a table starts in attract; the maps
 describe the image either way.
 
+## Audits
+
+`+50` … `+5F` holds eight 16-bit little-endian **binary** counters, which the firmware's statistics
+display walks two bytes at a time (Vortex `0x08BB`). Identified from live captures on five games:
+
+| offset | counter | evidence |
+|---|---|---|
+| `+52` | play time, in ~64 s ticks | ticks only during a game; the statistics display divides it by games played |
+| `+54` | powered-on time, in ~64 s ticks | ticks in attract too (Vortex: 44, 108, 173, 237, 301 s) |
+| `+56` | coins | one tick per coin, on the poll the credit rose |
+| `+5C` | games played | ticks at game start |
+
+Not measured on the 1979 window (Shock).
+
 ## Not established
 
 - What "Incentivo" means, and why the 1980 firmware's factory value (04) is outside the set the two sheets allow.
-- Audits: `+5C` is a games-started counter (live on three generations, declared); `+A0` … `+F3` holds others that move, none identified. `+F4` … `+FF` is the last game's final display.
+- Audits `+50`, `+58`, `+5A`, `+5E`: they read zero in every capture, so nothing has incremented them yet (see below).
 - The 1979 firmware's current-player byte on the 1979 board itself (Oba-Oba's, at `+9E`, is live-verified).
