@@ -7,14 +7,14 @@
     "path differs (it clamps an out-of-range ball or credits digit rather than declaring game over).",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
-    "restores all nine from ROM); balls per game is its first byte and the three replay levels its fifth to seventh.",
+    "restores all nine from ROM); its nine entries are identified from the Shock operator sheet (see adjustments).",
     "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
     "marks the saved game over on load so a table starts in attract.",
     "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -119,28 +119,84 @@
   "adjustments": {
     "Adjustments": {
       "01": {
+        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured.",
         "label": "Balls Per Game",
         "start": "0x4070",
-        "encoding": "bcd"
+        "encoding": "bcd",
+        "min": 3,
+        "max": 5,
+        "default": 5
       },
       "02": {
+        "_notes": "'Fichas/Partida' (coins per game); the sheet allows 11-14 and lists 15 as a forbidden value that forces the default. Coinage is here, not on DIP switches.",
+        "label": "Coins Per Game",
+        "start": "0x4071",
+        "encoding": "bcd",
+        "default": 11
+      },
+      "03": {
+        "_notes": "'Credito/Maximo'. The firmware clamps the stored credits to this value at boot.",
+        "label": "Maximum Credits",
+        "start": "0x4072",
+        "encoding": "bcd",
+        "min": 1,
+        "max": 9,
+        "default": 6
+      },
+      "04": {
+        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed.",
+        "label": "Incentive",
+        "start": "0x4073",
+        "encoding": "bcd",
+        "default": 1
+      },
+      "05": {
+        "_notes": "'1o Score'. One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",
         "label": "Replay Level 1",
         "start": "0x4074",
         "encoding": "bcd",
         "scale": 10000,
-        "_notes": "One BCD byte compared against the two most-significant digits of the score (x10,000). A level equal to the one before it is skipped, so 30 30 30 is a single replay at 300,000. The same routine in every set."
+        "min": 15,
+        "max": 99,
+        "default": 30
       },
-      "03": {
+      "06": {
+        "_notes": "'2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it).",
         "label": "Replay Level 2",
         "start": "0x4075",
         "encoding": "bcd",
-        "scale": 10000
+        "scale": 10000,
+        "min": 15,
+        "max": 99,
+        "default": 30
       },
-      "04": {
-        "label": "Replay Level 3",
+      "07": {
+        "_notes": "'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5.",
+        "label": "Extra Ball Score",
         "start": "0x4076",
         "encoding": "bcd",
-        "scale": 10000
+        "scale": 10000,
+        "min": 15,
+        "max": 99,
+        "default": 30
+      },
+      "08": {
+        "_notes": "'Especial/Jogo'.",
+        "label": "Specials Per Game",
+        "start": "0x4077",
+        "encoding": "bcd",
+        "min": 1,
+        "max": 5,
+        "default": 5
+      },
+      "09": {
+        "_notes": "'Credito/Record': credits awarded for beating the high score.",
+        "label": "Credits For High Score",
+        "start": "0x4078",
+        "encoding": "bcd",
+        "min": 1,
+        "max": 3,
+        "default": 2
       }
     }
   },
