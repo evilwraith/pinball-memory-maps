@@ -1,0 +1,100 @@
+{
+  "_notes": [
+    "Taito do Brasil 1979 hardware (PinMAME taito_old). Compiled 2026-10 by evilwraith from the Shock ROM and three",
+    "saved images (attract, mid-game at ball 3, after the match sequence) on an AtGames ALP4K. The window is at 0x1000:",
+    "display at 0x1000, command DMA at 0x1010, settings 0x10F0-0x10F8 (same nine-byte BCD block as the later boards),",
+    "high score 0x10F9, credits 0x10FF with its display copy at 0x100F. Football is listed by PinMAME but its ROM is",
+    "lost; obaobao shares the hardware but has not been checked."
+  ],
+  "_fileformat": 0.8,
+  "_metadata": {
+    "version": 1,
+    "copyright": [
+      "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
+    ],
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
+    "platform": "taito-1979",
+    "roms": [
+      "shock"
+    ]
+  },
+  "game_state": {
+    "scores": [
+      {
+        "label": "Player 1",
+        "start": "0x1000",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 2",
+        "start": "0x1003",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 3",
+        "start": "0x1006",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 4",
+        "start": "0x1009",
+        "length": 3,
+        "encoding": "bcd"
+      }
+    ],
+    "current_ball": {
+      "label": "Current Ball",
+      "start": "0x100C",
+      "encoding": "int"
+    },
+    "player_count": {
+      "_notes": "1 in all three images; the reset path refuses to resume with 5 or more.",
+      "label": "Players",
+      "start": "0x100D",
+      "encoding": "int"
+    },
+    "credits": {
+      "_notes": "Stored value; 0x100F is its display copy and tracks it in every image.",
+      "label": "Credits",
+      "start": "0x10FF",
+      "encoding": "bcd"
+    },
+    "game_over": {
+      "_notes": "Bit 0 of the flags byte: 1 in attract and after the match sequence, 0 mid-game. Written by both reset-validation failure paths.",
+      "label": "Game Over",
+      "start": "0x101F",
+      "encoding": "bool",
+      "mask": "0x01"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "start": "0x10F0",
+      "encoding": "bcd"
+    }
+  },
+  "high_scores": [
+    {
+      "label": "High Score",
+      "short_label": "HS",
+      "score": {
+        "_notes": "Most-significant byte first; shown on the player 1 display in attract (470,000 in the attract image).",
+        "start": "0x10F9",
+        "length": 3,
+        "encoding": "bcd",
+        "endian": "big"
+      }
+    }
+  ],
+  "adjustments": {
+    "Adjustments": {
+      "01": {
+        "label": "Balls Per Game",
+        "start": "0x10F0",
+        "encoding": "bcd"
+      }
+    }
+  }
+}

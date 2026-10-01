@@ -1,0 +1,113 @@
+{
+  "_notes": [
+    "Taito do Brasil, 1981-82 firmware (four 2KB ROMs). Compiled 2026-10 by evilwraith from the Vortex ROM and live",
+    "NVRAM captures on an AtGames ALP4K (Visual Pinball Standalone); the other sets listed share Vortex's boot code",
+    "byte-for-byte and were checked against a saved image each (high score, settings block, display layout).",
+    "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
+    "display. The settings block 0x4070-0x4078 is nine BCD bytes edited from the service menu, validated at reset",
+    "(a non-BCD byte restores all nine from ROM); only balls-per-game is identified. 0x4074-0x4076 are the three",
+    "replay levels, one byte each, whose scale is not confirmed and so are not declared. No checksum.",
+    "A game in progress is deliberately resumed by the firmware at reset; PinMAME's taito driver (2026-10) marks",
+    "the saved game over on load so a table starts in attract."
+  ],
+  "_fileformat": 0.8,
+  "_metadata": {
+    "version": 1,
+    "copyright": [
+      "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
+    ],
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
+    "platform": "taito",
+    "roms": [
+      "vortex",
+      "sharkt",
+      "cosmic",
+      "stest"
+    ]
+  },
+  "game_state": {
+    "scores": [
+      {
+        "label": "Player 1",
+        "start": "0x4080",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 2",
+        "start": "0x4083",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 3",
+        "start": "0x4086",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 4",
+        "start": "0x4089",
+        "length": 3,
+        "encoding": "bcd"
+      }
+    ],
+    "current_ball": {
+      "label": "Current Ball",
+      "start": "0x408C",
+      "encoding": "int"
+    },
+    "player_count": {
+      "_notes": "Read by the reset path, which refuses to resume a game with a value of 5 or more.",
+      "label": "Players",
+      "start": "0x408F",
+      "encoding": "int"
+    },
+    "current_player": {
+      "_notes": "0 in attract, 1 during a one-player game; the reset path requires it non-zero to resume a game.",
+      "label": "Current Player",
+      "start": "0x409E",
+      "encoding": "int"
+    },
+    "credits": {
+      "_notes": "Stored value; the firmware copies it to the display at 0x408D at boot (LDA 407F / STA 408D).",
+      "label": "Credits",
+      "start": "0x407F",
+      "encoding": "bcd"
+    },
+    "game_over": {
+      "_notes": "Bit 0 of the firmware's flags byte: set in attract and by its reset path when it declines to resume, clear during a game.",
+      "label": "Game Over",
+      "start": "0x409F",
+      "encoding": "bool",
+      "mask": "0x01"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "start": "0x4070",
+      "encoding": "bcd"
+    }
+  },
+  "high_scores": [
+    {
+      "label": "High Score",
+      "short_label": "HS",
+      "score": {
+        "_notes": "Most-significant byte first, unlike the display; the reset path reloads it from the ROM's minimum if it reads lower.",
+        "start": "0x4079",
+        "length": 3,
+        "encoding": "bcd",
+        "endian": "big"
+      }
+    }
+  ],
+  "adjustments": {
+    "Adjustments": {
+      "01": {
+        "label": "Balls Per Game",
+        "start": "0x4070",
+        "encoding": "bcd"
+      }
+    }
+  }
+}
