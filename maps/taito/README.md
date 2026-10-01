@@ -25,8 +25,7 @@ compare loop, the credits-to-display copy, the replay routine and the game-over 
 
 | offset | holds | how it was established |
 |---|---|---|
-| `+70` … `+78` | nine operator settings, BCD; `+70` balls per game | the service menu steps an editor over them; ball-in-play is compared against `+70` |
-| `+74` … `+76` | replay levels 1–3, one BCD byte each, ×10,000 | compared against the two most-significant score digits; a level equal to the previous one is skipped |
+| `+70` … `+78` | nine operator settings, BCD — see below | the service menu steps an editor over them; the Shock operator sheet names them |
 | `+79` … `+7B` | high score, BCD, **most-significant first** | compare loop walks it MSB-first against the score; shown on the P1 display in attract |
 | `+7F` | credits, BCD | `LDA 407F / STA 408D` copies it to the display; counted coin by coin live |
 | `+80` … `+8B` | P1–P4 scores, 3 BCD bytes each, **least-significant first** | `segMap` in the driver; Drakor's display `00 00 67` beside its HSTD `67 00 00` |
@@ -40,6 +39,26 @@ compare loop, the credits-to-display copy, the replay routine and the game-over 
 The 1979 board: display `+00`, ball `+0C`, players `+0D`, match `+0E`, credits display `+0F`,
 flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.
 
+### The nine settings (Shock operator sheet; positions and defaults match every image)
+
+| # | offset | label | allowed | default |
+|---|---|---|---|---|
+| 1 | `+70` | balls per game | 03–05 | 05 |
+| 2 | `+71` | coins per game ("Fichas/Partida") — **coinage is here, not on DIPs** | 11–14 | 11 |
+| 3 | `+72` | maximum credits (credits are clamped to it at boot) | 01–09 | 06 |
+| 4 | `+73` | incentive ("Incentivo"); the 1980 games hold 04, outside this set | 01, 11–14 | 01 |
+| 5 | `+74` | replay level 1, ×10,000 | 15–99 | 30 |
+| 6 | `+75` | replay level 2 — annulled if equal to 5 | 15–99 | 30 |
+| 7 | `+76` | **extra ball** score — annulled if equal to 5 | 15–99 | 30 |
+| 8 | `+77` | specials per game | 01–05 | 05 |
+| 9 | `+78` | credits for beating the high score | 01–03 | 02 |
+
+The eight "Adjust" DIP switches (CH0–CH7 on the F6 page) are not settings: they are the BCD
+keypad for entering a value in the service menu (CH0–3 = first digit 1/2/4/8, CH4–7 = second),
+and left raised they select rule defaults. Sources: the Shock operator sheet
+(`backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg`) and the VPForums Taito ball-count
+procedure (tutorial 89), which uses the same menu on every table in the roster.
+
 **No checksum.** The integrity rule is BCD validity: at reset every settings byte goes through
 `DAA`, and one non-BCD byte restores all nine from ROM. Write adjustments as BCD.
 
@@ -49,7 +68,6 @@ describe the image either way.
 
 ## Not established
 
-- The other six settings bytes (`11 06 01 … 05 01` on every set seen) — service-menu semantics.
+- Adjustment 4 ("Incentivo") on the 1980 games, where it holds a value the sheet does not allow.
 - Audits: `+5C` is a games-started counter (live on three generations, declared); `+A0` … `+F3` holds others that move, none identified. `+F4` … `+FF` is the last game's final display.
 - The 1979 firmware's current-player byte on the 1979 board itself (Oba-Oba's, at `+9E`, is live-verified).
-- Coinage is on physical DIP switches, not in NVRAM.
