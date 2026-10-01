@@ -13,7 +13,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -81,6 +81,13 @@
       "start": "0x101F",
       "encoding": "bool",
       "mask": "0x01"
+    },
+    "tilted": {
+      "_notes": "Bit 1 of the flags byte: set at a tilt on ball 1 and cleared when the next ball started (live).",
+      "label": "Tilted",
+      "start": "0x101F",
+      "encoding": "bool",
+      "mask": "0x02"
     },
     "ball_count": {
       "label": "Balls Per Game",
