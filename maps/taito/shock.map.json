@@ -1,21 +1,27 @@
 {
   "_notes": [
-    "Taito do Brasil 1979 hardware (PinMAME taito_old). Compiled 2026-10 by evilwraith from the Shock ROM and three",
-    "saved images (attract, mid-game at ball 3, after the match sequence) on an AtGames ALP4K. The window is at 0x1000:",
-    "display at 0x1000, command DMA at 0x1010, settings 0x10F0-0x10F8 (same nine-byte BCD block as the later boards),",
-    "high score 0x10F9, credits 0x10FF with its display copy at 0x100F. Football is listed by PinMAME but its ROM is",
-    "lost; obaobao shares the hardware but has not been checked."
+    "Taito do Brasil 1979 hardware (PinMAME taito_old). Compiled 2026-10 by evilwraith from the Shock ROM, three saved",
+    "images (attract, mid-game at ball 3, after the match sequence) and a live Shock game on an AtGames ALP4K that",
+    "read back 50,551 and three credits through ScoreServer. The window is at 0x1000: display at 0x1000, command DMA",
+    "at 0x1010, settings 0x10F0-0x10F8, high score 0x10F9, credits 0x10FF with its display copy at 0x100F. obaobao",
+    "(Oba-Oba on this hardware) references every declared address identically; no image yet. Football's ROM is lost.",
+    "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
+    "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
+    "restores all nine from ROM); balls per game is its first byte and the three replay levels its fifth to seventh.",
+    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
+    "marks the saved game over on load so a table starts in attract."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "taito-1979",
     "roms": [
-      "shock"
+      "shock",
+      "obaobao"
     ]
   },
   "game_state": {
@@ -51,19 +57,26 @@
       "encoding": "int"
     },
     "player_count": {
-      "_notes": "1 in all three images; the reset path refuses to resume with 5 or more.",
+      "_notes": "1 in all three images and throughout the live game; the reset path refuses to resume with 5 or more.",
       "label": "Players",
       "start": "0x100D",
       "encoding": "int"
     },
     "credits": {
-      "_notes": "Stored value; 0x100F is its display copy and tracks it in every image.",
+      "_notes": "Stored value; the firmware keeps a display copy at 0x100F.",
       "label": "Credits",
       "start": "0x10FF",
       "encoding": "bcd"
     },
+    "match": {
+      "_notes": "Match digit shown after the game; cycles 0-9 during play (the randomiser).",
+      "label": "Match",
+      "start": "0x100E",
+      "encoding": "int",
+      "mask": "0x0F"
+    },
     "game_over": {
-      "_notes": "Bit 0 of the flags byte: 1 in attract and after the match sequence, 0 mid-game. Written by both reset-validation failure paths.",
+      "_notes": "Bit 0 of the firmware's flags byte: set in attract and by its reset path when it declines to resume, clear during a game.",
       "label": "Game Over",
       "start": "0x101F",
       "encoding": "bool",
@@ -80,7 +93,7 @@
       "label": "High Score",
       "short_label": "HS",
       "score": {
-        "_notes": "Most-significant byte first; shown on the player 1 display in attract (470,000 in the attract image).",
+        "_notes": "Most-significant byte first, unlike the display; the reset path reloads it from the ROM's minimum if it reads lower.",
         "start": "0x10F9",
         "length": 3,
         "encoding": "bcd",
@@ -94,6 +107,25 @@
         "label": "Balls Per Game",
         "start": "0x10F0",
         "encoding": "bcd"
+      },
+      "02": {
+        "label": "Replay Level 1",
+        "start": "0x10F4",
+        "encoding": "bcd",
+        "scale": 10000,
+        "_notes": "One BCD byte compared against the two most-significant digits of the score (x10,000). A level equal to the one before it is skipped, so 30 30 30 is a single replay at 300,000. The same routine in every set."
+      },
+      "03": {
+        "label": "Replay Level 2",
+        "start": "0x10F5",
+        "encoding": "bcd",
+        "scale": 10000
+      },
+      "04": {
+        "label": "Replay Level 3",
+        "start": "0x10F6",
+        "encoding": "bcd",
+        "scale": 10000
       }
     }
   }

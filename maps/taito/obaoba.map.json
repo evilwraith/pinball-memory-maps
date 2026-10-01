@@ -1,0 +1,133 @@
+{
+  "_notes": [
+    "Taito do Brasil Oba-Oba (1980) on the later hardware: the 1979 firmware moved up to the 0x4000 window. It keeps",
+    "the 1979 structure - credits display at 0x408F, player count at 0x408D - but puts settings, high score and stored",
+    "credits where the 1981-85 boards do (0x4070, 0x4079, 0x407F). Compiled 2026-10 by evilwraith from the ROM code",
+    "only (the LDA 407F / STA 408F credits copy, the settings DAA check over 0x4070-0x4079, the 0x4079 high-score",
+    "compare, the replay routine, the game-over write); no image or live capture yet. No current_player is declared:",
+    "the 1979 firmware's equivalent byte has not been identified.",
+    "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
+    "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
+    "restores all nine from ROM); balls per game is its first byte and the three replay levels its fifth to seventh.",
+    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
+    "marks the saved game over on load so a table starts in attract."
+  ],
+  "_fileformat": 0.8,
+  "_metadata": {
+    "version": 1,
+    "copyright": [
+      "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
+    ],
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
+    "platform": "taito",
+    "roms": [
+      "obaoba",
+      "obaoba1"
+    ]
+  },
+  "game_state": {
+    "scores": [
+      {
+        "label": "Player 1",
+        "start": "0x4080",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 2",
+        "start": "0x4083",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 3",
+        "start": "0x4086",
+        "length": 3,
+        "encoding": "bcd"
+      },
+      {
+        "label": "Player 4",
+        "start": "0x4089",
+        "length": 3,
+        "encoding": "bcd"
+      }
+    ],
+    "current_ball": {
+      "label": "Current Ball",
+      "start": "0x408C",
+      "encoding": "int"
+    },
+    "player_count": {
+      "_notes": "1979-style: the reset path refuses to resume with 5 or more here. Code only; not yet seen live.",
+      "label": "Players",
+      "start": "0x408D",
+      "encoding": "int"
+    },
+    "credits": {
+      "_notes": "Stored value; the firmware keeps a display copy at 0x408F.",
+      "label": "Credits",
+      "start": "0x407F",
+      "encoding": "bcd"
+    },
+    "match": {
+      "_notes": "Match digit shown after the game; cycles 0-9 during play (the randomiser).",
+      "label": "Match",
+      "start": "0x408E",
+      "encoding": "int",
+      "mask": "0x0F"
+    },
+    "game_over": {
+      "_notes": "Bit 0 of the firmware's flags byte: set in attract and by its reset path when it declines to resume, clear during a game.",
+      "label": "Game Over",
+      "start": "0x409F",
+      "encoding": "bool",
+      "mask": "0x01"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "start": "0x4070",
+      "encoding": "bcd"
+    }
+  },
+  "high_scores": [
+    {
+      "label": "High Score",
+      "short_label": "HS",
+      "score": {
+        "_notes": "Most-significant byte first, unlike the display; the reset path reloads it from the ROM's minimum if it reads lower.",
+        "start": "0x4079",
+        "length": 3,
+        "encoding": "bcd",
+        "endian": "big"
+      }
+    }
+  ],
+  "adjustments": {
+    "Adjustments": {
+      "01": {
+        "label": "Balls Per Game",
+        "start": "0x4070",
+        "encoding": "bcd"
+      },
+      "02": {
+        "label": "Replay Level 1",
+        "start": "0x4074",
+        "encoding": "bcd",
+        "scale": 10000,
+        "_notes": "One BCD byte compared against the two most-significant digits of the score (x10,000). A level equal to the one before it is skipped, so 30 30 30 is a single replay at 300,000. The same routine in every set."
+      },
+      "03": {
+        "label": "Replay Level 2",
+        "start": "0x4075",
+        "encoding": "bcd",
+        "scale": 10000
+      },
+      "04": {
+        "label": "Replay Level 3",
+        "start": "0x4076",
+        "encoding": "bcd",
+        "scale": 10000
+      }
+    }
+  }
+}

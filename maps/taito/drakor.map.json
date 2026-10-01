@@ -1,15 +1,19 @@
 {
   "_notes": [
-    "Taito do Brasil, 1980 firmware (three 2KB ROMs, the third mirrored). Compiled 2026-10 by evilwraith from the",
-    "Drakor ROM, saved images of Drakor and Meteor, and a live Drakor capture on an AtGames ALP4K (Visual Pinball",
-    "Standalone): a full game read back its final score of 30,671 and two credits exactly, with ball, player count,",
-    "current player and game-over behaving as on the 1981-85 boards. Same layout as vortex.map.json; the reset path",
-    "differs (it clamps an out-of-range ball or credits digit rather than declaring game over). 0x408E cycles 0-9",
-    "during play (match randomiser). obaoba / obaoba1 share the generation but have not been checked against an image."
+    "Taito do Brasil, 1980 firmware (three 2KB ROMs, the third mirrored; Fire Action is a four-ROM set on the same",
+    "code). Compiled 2026-10 by evilwraith from the Drakor ROM and a live Drakor capture on an AtGames ALP4K: a full",
+    "game read back its final score of 30,671 and two credits exactly. meteort - saved attract image; fireact - ROM",
+    "code references every declared address the same way, no image yet. Same layout as vortex.map.json; the reset",
+    "path differs (it clamps an out-of-range ball or credits digit rather than declaring game over).",
+    "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
+    "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
+    "restores all nine from ROM); balls per game is its first byte and the three replay levels its fifth to seventh.",
+    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
+    "marks the saved game over on load so a table starts in attract."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -17,7 +21,8 @@
     "platform": "taito",
     "roms": [
       "drakor",
-      "meteort"
+      "meteort",
+      "fireact"
     ]
   },
   "game_state": {
@@ -65,10 +70,17 @@
       "encoding": "int"
     },
     "credits": {
-      "_notes": "Stored value; the firmware copies it to the display at 0x408D at boot (LDA 407F / STA 408D).",
+      "_notes": "Stored value; the firmware keeps a display copy at 0x408D.",
       "label": "Credits",
       "start": "0x407F",
       "encoding": "bcd"
+    },
+    "match": {
+      "_notes": "Match digit shown after the game; cycles 0-9 during play (the randomiser).",
+      "label": "Match",
+      "start": "0x408E",
+      "encoding": "int",
+      "mask": "0x0F"
     },
     "game_over": {
       "_notes": "Bit 0 of the firmware's flags byte: set in attract and by its reset path when it declines to resume, clear during a game.",
@@ -102,6 +114,25 @@
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd"
+      },
+      "02": {
+        "label": "Replay Level 1",
+        "start": "0x4074",
+        "encoding": "bcd",
+        "scale": 10000,
+        "_notes": "One BCD byte compared against the two most-significant digits of the score (x10,000). A level equal to the one before it is skipped, so 30 30 30 is a single replay at 300,000. The same routine in every set."
+      },
+      "03": {
+        "label": "Replay Level 2",
+        "start": "0x4075",
+        "encoding": "bcd",
+        "scale": 10000
+      },
+      "04": {
+        "label": "Replay Level 3",
+        "start": "0x4076",
+        "encoding": "bcd",
+        "scale": 10000
       }
     }
   }

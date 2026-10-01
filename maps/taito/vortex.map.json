@@ -1,20 +1,20 @@
 {
   "_notes": [
-    "Taito do Brasil, 1981-85 firmware (four 2KB ROMs; Mr. Black has five). Compiled 2026-10 by evilwraith from the Vortex ROM and live",
-    "NVRAM captures on an AtGames ALP4K (Visual Pinball Standalone); the other sets listed share Vortex's boot code",
-    "byte-for-byte and were checked against a saved image each (high score, settings block, display layout).",
-    "Mr. Black (1984, 10KB ROM) was captured live too: a full game read back its final score and credits exactly.",
+    "Taito do Brasil, 1981-85 firmware (four 2KB ROMs; Mr. Black has five). Compiled 2026-10 by evilwraith from the",
+    "Vortex ROM and live NVRAM captures on an AtGames ALP4K (Visual Pinball Standalone).",
+    "Evidence per set: vortex and mrblack - a full live game each read back its final score and credits exactly;",
+    "sharkt, cosmic, stest - a saved attract image each (high score, settings, display); every other set listed -",
+    "its ROM code references every declared address in the same way (settings copy to 0x4070, high-score compare at",
+    "0x4079, credits copy 0x407F to 0x408D, the replay routine, the game-over write), with no image yet.",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
-    "display. The settings block 0x4070-0x4078 is nine BCD bytes edited from the service menu, validated at reset",
-    "(a non-BCD byte restores all nine from ROM); only balls-per-game is identified. 0x4074-0x4076 are the three",
-    "replay levels, one byte each, whose scale is not confirmed and so are not declared. No checksum.",
-    "A game in progress is deliberately resumed by the firmware at reset; PinMAME's taito driver (2026-10) marks",
-    "the saved game over on load so a table starts in attract.",
-    "mrblack1 (alternate set), sshuttle, polar, snake, gork, voleybal, fireactd and the sintevox games share the flag bytes in code but have not been checked against an image, so are not listed."
+    "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
+    "restores all nine from ROM); balls per game is its first byte and the three replay levels its fifth to seventh.",
+    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
+    "marks the saved game over on load so a table starts in attract."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -22,10 +22,31 @@
     "platform": "taito",
     "roms": [
       "vortex",
+      "mrblack",
       "sharkt",
       "cosmic",
       "stest",
-      "mrblack"
+      "cavnegro",
+      "cavnegr1",
+      "cavnegr2",
+      "fireactd",
+      "gork",
+      "hawkman",
+      "hawkman1",
+      "ladylukt",
+      "lunelle",
+      "mrblack1",
+      "polar",
+      "rally",
+      "snake",
+      "sshuttle",
+      "sshuttl1",
+      "titan",
+      "titan1",
+      "vegast",
+      "voleybal",
+      "zarza",
+      "zarza1"
     ]
   },
   "game_state": {
@@ -61,7 +82,7 @@
       "encoding": "int"
     },
     "player_count": {
-      "_notes": "Read by the reset path, which refuses to resume a game with a value of 5 or more.",
+      "_notes": "Read by the reset path, which refuses to resume a game with a value of 5 or more; 1 throughout a live one-player game, 0 in attract.",
       "label": "Players",
       "start": "0x408F",
       "encoding": "int"
@@ -73,10 +94,17 @@
       "encoding": "int"
     },
     "credits": {
-      "_notes": "Stored value; the firmware copies it to the display at 0x408D at boot (LDA 407F / STA 408D).",
+      "_notes": "Stored value; the firmware keeps a display copy at 0x408D.",
       "label": "Credits",
       "start": "0x407F",
       "encoding": "bcd"
+    },
+    "match": {
+      "_notes": "Match digit shown after the game; cycles 0-9 during play (the randomiser).",
+      "label": "Match",
+      "start": "0x408E",
+      "encoding": "int",
+      "mask": "0x0F"
     },
     "game_over": {
       "_notes": "Bit 0 of the firmware's flags byte: set in attract and by its reset path when it declines to resume, clear during a game.",
@@ -110,6 +138,25 @@
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd"
+      },
+      "02": {
+        "label": "Replay Level 1",
+        "start": "0x4074",
+        "encoding": "bcd",
+        "scale": 10000,
+        "_notes": "One BCD byte compared against the two most-significant digits of the score (x10,000). A level equal to the one before it is skipped, so 30 30 30 is a single replay at 300,000. The same routine in every set."
+      },
+      "03": {
+        "label": "Replay Level 2",
+        "start": "0x4075",
+        "encoding": "bcd",
+        "scale": 10000
+      },
+      "04": {
+        "label": "Replay Level 3",
+        "start": "0x4076",
+        "encoding": "bcd",
+        "scale": 10000
       }
     }
   }
