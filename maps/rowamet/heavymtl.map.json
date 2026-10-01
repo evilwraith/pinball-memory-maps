@@ -4,7 +4,7 @@
     "(PinMAME machine rowamet, which imports the taito machine and its NVRAM handler). The firmware is Vortex's with a",
     "few hundred bytes changed: the reset validation, the high-score and replay award code, the copy helpers and the ROM",
     "defaults (same factory settings, same 600,000 high-score floor) are byte-identical, so this is vortex.map.json's",
-    "layout. Compiled 2026-10 by evilwraith from the ROM code only; no image or live capture yet.",
+    "layout. Compiled 2026-10 by evilwraith from the ROM code and a live capture on an AtGames ALP4K (Visual Pinball Standalone): a one-player game read back 40,003 and two credits at a mid-game quit, with the tilt on ball 2 setting bit 1 of the flags byte and the games-played counter ticking at game start.",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
     "restores all nine from ROM); its nine entries are identified from the Shock operator sheet (see adjustments).",
@@ -14,7 +14,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -89,7 +89,7 @@
       "mask": "0x01"
     },
     "tilted": {
-      "_notes": "Bit 1 of the flags byte: set at a tilt on ball 1 and cleared when the next ball started (live on Vortex).",
+      "_notes": "Bit 1 of the flags byte: set at a tilt on ball 2 and cleared when the next ball started (live).",
       "label": "Tilted",
       "start": "0x409F",
       "encoding": "bool",
