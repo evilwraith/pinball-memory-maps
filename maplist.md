@@ -446,6 +446,7 @@
 * [Games, The][23] _thegames_
 * [Games, The (rev. 1)][23] _thegamsb_
 * [Games, The (rev. 2 MOD)][23] _thegamsc_
+* [Gemini 2000][84] _gemini_
 * [Genesis][160] _genesis_
 * [Genesis (Free Play)][160] _genesifp_
 * [Genesis (French Free Play)][160] _genesffp_
@@ -1326,6 +1327,7 @@
 * [Supersonic (/10 Scoring Free Play)][266] _sstd_
 * [Supersonic (7-digit conversion rev. 20)][211] _sstb_
 * [Supersonic (Free Play rev. 3)][266] _sstc_
+* [Sure Shot][84] _sureshot_
 * [Surf 'n Safari][352] _surfnsaf_
 * [Swords of Fury (L-2)][353] _swrds_l2_
 * [TRON: Legacy Limited Edition (V1.74)][354] _trn_174h_
