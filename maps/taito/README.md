@@ -35,7 +35,7 @@ compare loop, the credits-to-display copy, the replay routine and the game-over 
 | `+8E` | match digit; cycles 0–9 during play | live |
 | `+9E` | current player, 0 in attract | live; a reset-path resume gate (1981–85 only) |
 | `+9F` bit 0 | game over | live; written by the reset path when it declines to resume |
-| `+9F` bit 1 | tilt (declared on `obaoba` only — the one capture with a tilt) | live |
+| `+9F` bit 1 | tilt; set at the tilt, cleared when the next ball starts | live on all four families |
 
 The 1979 board: display `+00`, ball `+0C`, players `+0D`, match `+0E`, credits display `+0F`,
 flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.

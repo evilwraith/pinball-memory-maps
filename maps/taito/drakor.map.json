@@ -14,7 +14,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -89,6 +89,13 @@
       "start": "0x409F",
       "encoding": "bool",
       "mask": "0x01"
+    },
+    "tilted": {
+      "_notes": "Bit 1 of the flags byte: set at a tilt on ball 2 and cleared when the next ball started (live on Meteor).",
+      "label": "Tilted",
+      "start": "0x409F",
+      "encoding": "bool",
+      "mask": "0x02"
     },
     "ball_count": {
       "label": "Balls Per Game",
