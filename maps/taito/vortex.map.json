@@ -1,18 +1,20 @@
 {
   "_notes": [
-    "Taito do Brasil, 1981-82 firmware (four 2KB ROMs). Compiled 2026-10 by evilwraith from the Vortex ROM and live",
+    "Taito do Brasil, 1981-85 firmware (four 2KB ROMs; Mr. Black has five). Compiled 2026-10 by evilwraith from the Vortex ROM and live",
     "NVRAM captures on an AtGames ALP4K (Visual Pinball Standalone); the other sets listed share Vortex's boot code",
     "byte-for-byte and were checked against a saved image each (high score, settings block, display layout).",
+    "Mr. Black (1984, 10KB ROM) was captured live too: a full game read back its final score and credits exactly.",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The settings block 0x4070-0x4078 is nine BCD bytes edited from the service menu, validated at reset",
     "(a non-BCD byte restores all nine from ROM); only balls-per-game is identified. 0x4074-0x4076 are the three",
     "replay levels, one byte each, whose scale is not confirmed and so are not declared. No checksum.",
     "A game in progress is deliberately resumed by the firmware at reset; PinMAME's taito driver (2026-10) marks",
-    "the saved game over on load so a table starts in attract."
+    "the saved game over on load so a table starts in attract.",
+    "mrblack1 (alternate set), sshuttle, polar, snake, gork, voleybal, fireactd and the sintevox games share the flag bytes in code but have not been checked against an image, so are not listed."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -22,7 +24,8 @@
       "vortex",
       "sharkt",
       "cosmic",
-      "stest"
+      "stest",
+      "mrblack"
     ]
   },
   "game_state": {

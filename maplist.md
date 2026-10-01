@@ -846,6 +846,7 @@
 * [Mr. & Mrs. Pac-Man Pinball][39] _m_mpac_
 * [Mr. & Mrs. Pac-Man Pinball (Free Play)][40] _m_mpaca_
 * [Mr. & Mrs. Pac-Man Pinball (alternate version)][39] _m_mpacb_
+* [Mr. Black][100] _mrblack_
 * [Mystery Castle (R02)][249] _mystcast_
 * [Mystic][120] _mystic_
 * [Mystic (7-digit conversion)][121] _mysticb_
