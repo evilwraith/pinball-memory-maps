@@ -44,7 +44,7 @@ flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.
 | # | offset | label | allowed | default |
 |---|---|---|---|---|
 | 1 | `+70` | balls per game | 03–05 | 05 |
-| 2 | `+71` | coins per game ("Fichas/Partida") — **coinage is here, not on DIPs** | 11–14 | 11 |
+| 2 | `+71` | coinage code ("Fichas/Partida") — **coinage is here, not on DIPs**; the digits' meaning is not on either sheet | 11–14 | 11 |
 | 3 | `+72` | maximum credits (credits are clamped to it at boot) | 01–09 | 06 |
 | 4 | `+73` | incentive ("Incentivo"); the 1980 games hold 04, outside this set | 01, 11–14 | 01 |
 | 5 | `+74` | replay level 1, ×10,000 | 15–99 | 30 |

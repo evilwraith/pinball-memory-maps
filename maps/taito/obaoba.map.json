@@ -16,7 +16,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -129,8 +129,8 @@
         "default": 5
       },
       "02": {
-        "_notes": "'Fichas/Partida' (coins per game); the sheet allows 11-14 and lists 15 as a forbidden value that forces the default. Coinage is here, not on DIP switches.",
-        "label": "Coins Per Game",
+        "_notes": "'Fichas/Partida' (Cosmic: 'Credito/Partida'). A two-digit code, not a count: the sheets allow 11-14 and list 15 as a forbidden value that forces the default. What the digits mean is not stated on either sheet.",
+        "label": "Coinage (code)",
         "start": "0x4071",
         "encoding": "bcd",
         "default": 11
@@ -152,34 +152,31 @@
         "default": 1
       },
       "05": {
-        "_notes": "'1o Score'. One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",
+        "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",
         "label": "Replay Level 1",
         "start": "0x4074",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 15,
-        "max": 99,
-        "default": 30
+        "min": 150000,
+        "max": 990000
       },
       "06": {
-        "_notes": "'2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it).",
+        "_notes": "Shown x10,000. '2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it).",
         "label": "Replay Level 2",
         "start": "0x4075",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 15,
-        "max": 99,
-        "default": 30
+        "min": 150000,
+        "max": 990000
       },
       "07": {
-        "_notes": "'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5.",
+        "_notes": "Shown x10,000. 'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5.",
         "label": "Extra Ball Score",
         "start": "0x4076",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 15,
-        "max": 99,
-        "default": 30
+        "min": 150000,
+        "max": 990000
       },
       "08": {
         "_notes": "'Especial/Jogo'.",
