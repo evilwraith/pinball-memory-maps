@@ -39,7 +39,7 @@ compare loop, the credits-to-display copy, the replay routine and the game-over 
 The 1979 board: display `+00`, ball `+0C`, players `+0D`, match `+0E`, credits display `+0F`,
 flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.
 
-### The nine settings (Shock operator sheet; positions and defaults match every image)
+### The nine settings (Shock 1979 and Cosmic 1981 operator sheets; positions and defaults match every image)
 
 | # | offset | label | allowed | default |
 |---|---|---|---|---|
@@ -55,9 +55,10 @@ flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.
 
 The eight "Adjust" DIP switches (CH0–CH7 on the F6 page) are not settings: they are the BCD
 keypad for entering a value in the service menu (CH0–3 = first digit 1/2/4/8, CH4–7 = second),
-and left raised they select rule defaults. Sources: the Shock operator sheet
-(`backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg`) and the VPForums Taito ball-count
-procedure (tutorial 89), which uses the same menu on every table in the roster.
+and left raised they select rule defaults — on Cosmic, CODE 5–7 pick the replay level from a fixed
+table and the firmware writes it into settings 5–7 at every game start. Sources: the Shock and
+Cosmic operator sheets in `backport/Manuals/` and the VPForums Taito ball-count procedure
+(tutorial 89, saved beside them), which uses the same menu on every table in the roster.
 
 **No checksum.** The integrity rule is BCD validity: at reset every settings byte goes through
 `DAA`, and one non-BCD byte restores all nine from ROM. Write adjustments as BCD.

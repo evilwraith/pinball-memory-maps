@@ -15,7 +15,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -146,7 +146,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured.",
+        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets in backport/Manuals; byte positions and defaults match every image captured (Cosmic's default column is its image byte for byte).",
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd",
@@ -178,7 +178,7 @@
         "default": 1
       },
       "05": {
-        "_notes": "'1o Score'. One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",
+        "_notes": "'1o Score'. One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set. On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
         "label": "Replay Level 1",
         "start": "0x4074",
         "encoding": "bcd",
@@ -188,7 +188,7 @@
         "default": 30
       },
       "06": {
-        "_notes": "'2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it).",
+        "_notes": "'2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it). On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
         "label": "Replay Level 2",
         "start": "0x4075",
         "encoding": "bcd",
@@ -198,7 +198,7 @@
         "default": 30
       },
       "07": {
-        "_notes": "'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5.",
+        "_notes": "'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5. On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
         "label": "Extra Ball Score",
         "start": "0x4076",
         "encoding": "bcd",
