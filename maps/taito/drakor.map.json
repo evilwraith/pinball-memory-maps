@@ -1,14 +1,15 @@
 {
   "_notes": [
     "Taito do Brasil, 1980 firmware (three 2KB ROMs, the third mirrored). Compiled 2026-10 by evilwraith from the",
-    "Drakor ROM and saved images of Drakor and Meteor on AtGames cabinets (Visual Pinball Standalone). Same layout",
-    "as the 1981-82 maps; the reset path differs (it clamps an out-of-range ball or credit digit rather than",
-    "declaring game over) but every byte declared here was located in Drakor's code. No live game capture yet;",
-    "the player_count and current_player bytes are from code and attract images only."
+    "Drakor ROM, saved images of Drakor and Meteor, and a live Drakor capture on an AtGames ALP4K (Visual Pinball",
+    "Standalone): a full game read back its final score of 30,671 and two credits exactly, with ball, player count,",
+    "current player and game-over behaving as on the 1981-85 boards. Same layout as vortex.map.json; the reset path",
+    "differs (it clamps an out-of-range ball or credits digit rather than declaring game over). 0x408E cycles 0-9",
+    "during play (match randomiser). obaoba / obaoba1 share the generation but have not been checked against an image."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -52,7 +53,7 @@
       "encoding": "int"
     },
     "player_count": {
-      "_notes": "Read seven times by Drakor's code; 0 in both attract images.",
+      "_notes": "Read seven times by Drakor's code; 1 throughout a live one-player game, 0 in attract.",
       "label": "Players",
       "start": "0x408F",
       "encoding": "int"
