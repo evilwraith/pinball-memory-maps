@@ -88,6 +88,29 @@ display walks two bytes at a time (Vortex `0x08BB`). On Oba-Oba the counters con
 
 Not measured on the 1979 window (Shock).
 
+## Settings 5–7 are not adjustable on the 1981–85 firmware
+
+On every set in the Vortex map, on Heavy Metal and on Fire Action, a routine (Mr. Black `0x026F`,
+called at reset `0x0192` and again from `0x0861`) rewrites `+74..+76` from ROM: the three bytes at
+`0x1FF8-0x1FFA` plus a BCD offset picked by switches 76–78 (input `0x2806` bits 5–7, inverted and
+rotated into an index; 0 = no offset) from the table at `0x1FD8`. Live on Mr. Black: 15/25/20
+written through the adjustments page, 39/39/39 back within six seconds, three times.
+
+| | base | offsets (×10,000) by switch index 1–7 |
+|---|---|---|
+| vortex, heavymtl | 300,000 | 4 9 15 19 23 29 33 |
+| mrblack | 390,000 | 6 10 16 21 24 28 36 |
+| cosmic | 350,000 | 6 12 19 27 35 44 50 |
+| sharkt | 350,000 | 5 11 17 26 34 41 49 |
+| stest | 350,000 | 8 14 18 24 30 37 46 |
+| sshuttle | 450,000 | 5 10 15 20 25 30 35 |
+
+Other bases, read from `0x1FF8`: gemini1 170,000; ladylukt, vegast 260,000; titan 270,000; sureshot
+280,000; cavnegro 290,000; hawkman, rally, zarza1 300,000; gemini, gork 350,000; fireact 360,000;
+lunelle, polar, snake, voleybal, fireactd 390,000; hawkman1 410,000; zarza 450,000. The offsets only
+raise the level. So these maps do not declare settings 5–7; the Drakor, Oba-Oba and Shock maps,
+whose firmware has no such routine, do (set and played live on Oba-Oba, Drakor and Meteor).
+
 ## Setting 7 is a per-game hook
 
 The shared score-level routine (Vortex `0x0DBB`, Drakor `0x0E56`, Shock/Oba-Oba `0x0A5E`) treats

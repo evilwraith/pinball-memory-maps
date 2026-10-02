@@ -15,7 +15,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -149,38 +149,11 @@
         "default": 6
       },
       "04": {
-        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed.",
+        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed. Settings 05-07 (replay levels and the extra-ball score, 0x4074-0x4076) are not declared: this firmware rewrites all three at reset and at game over from a ROM constant (0x1FF8-0x1FFA) plus an offset chosen by switches 76-78 (input 0x2806 bits 5-7, table at 0x1FD8), so a value written there lasts seconds. Seen live on Mr. Black: 15/25/20 written, 39/39/39 back within six seconds.",
         "label": "Incentive",
         "start": "0x4073",
         "encoding": "bcd",
         "default": 1
-      },
-      "05": {
-        "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set. On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
-        "label": "Replay Level 1",
-        "start": "0x4074",
-        "encoding": "bcd",
-        "scale": 10000,
-        "min": 150000,
-        "max": 990000
-      },
-      "06": {
-        "_notes": "Shown x10,000. '2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it). On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
-        "label": "Replay Level 2",
-        "start": "0x4075",
-        "encoding": "bcd",
-        "scale": 10000,
-        "min": 150000,
-        "max": 990000
-      },
-      "07": {
-        "_notes": "Named from the Shock and Cosmic operator sheets. The firmware compares the score with this level and, unless it equals replay level 2, jumps to a per-game hook; returns immediately - the setting has no effect - on heavymtl. Read from each ROM's code.",
-        "label": "Extra Ball Score",
-        "start": "0x4076",
-        "encoding": "bcd",
-        "scale": 10000,
-        "min": 150000,
-        "max": 990000
       },
       "08": {
         "_notes": "'Especial/Jogo'.",
