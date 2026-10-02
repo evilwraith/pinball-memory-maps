@@ -13,7 +13,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -172,7 +172,7 @@
         "max": 990000
       },
       "07": {
-        "_notes": "Shown x10,000. 'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5.",
+        "_notes": "Named from the Shock and Cosmic operator sheets. The firmware compares the score with this level and, unless it equals replay level 2, jumps to a per-game hook; the hook does something game-specific on shock, obaobao. Read from each ROM's code.",
         "label": "Extra Ball Score",
         "start": "0x10F6",
         "encoding": "bcd",

@@ -49,7 +49,7 @@ flags `+1F`, settings `+F0`, high score `+F9`, credits `+FF`.
 | 4 | `+73` | incentive ("Incentivo") | 01, 11–14 on the sheets | **01** on the 1981+ firmware, **04** on the 1980 firmware (drakor, meteort, fireact, obaoba, obaobao) |
 | 5 | `+74` | replay level 1, ×10,000 | 15–99 | per game: 17 (gemini1) to 50 (drakor) |
 | 6 | `+75` | replay level 2 — annulled if equal to 5 | 15–99 | same as 5 |
-| 7 | `+76` | **extra ball** score — annulled if equal to 5 | 15–99 | same as 5 |
+| 7 | `+76` | **extra ball** score on the sheets — skipped if equal to **6**; what passing it does is per game, see below | 15–99 | same as 5 |
 | 8 | `+77` | specials per game | 01–05 | 05 |
 | 9 | `+78` | credits for beating the high score | 01–03 | **01** on the 1981+ sets and fireact, **02** on drakor, meteort, obaoba and shock |
 
@@ -87,6 +87,22 @@ display walks two bytes at a time (Vortex `0x08BB`). On Oba-Oba the counters con
 | `+64` | high-score credits awarded — **Oba-Oba only** | 0 → 2 across a 605,893 game against a 580,000 high score (setting 09 = 2). One before/after observation |
 
 Not measured on the 1979 window (Shock).
+
+## Setting 7 is a per-game hook
+
+The shared score-level routine (Vortex `0x0DBB`, Drakor `0x0E56`, Shock/Oba-Oba `0x0A5E`) treats
+setting 7 as a third threshold: skipped when it equals replay level 2, otherwise once per player
+per game it jumps through a vector (`0x1FCC`; `0x1BCC` on the 1979 code) into the game's own ROM.
+Read from every set on file:
+
+| hook | sets |
+|---|---|
+| returns immediately — the setting does nothing | vortex, heavymtl, cosmic, sharkt, stest, sureshot, gemini, gemini1, ladylukt, vegast, titan, titan1, zarza, zarza1, hawkman, hawkman1, lunelle, rally, snake, gork, voleybal, mrblack, mrblack1, fireactd, sshuttle, sshuttl1, polar |
+| starts a sound and returns | drakor (live: 427,232 with the level at 180,000, no extra ball) |
+| game-specific code | shock, obaoba, obaoba1, obaobao, meteort, fireact, cavnegro, cavnegr1, cavnegr2 |
+
+Cosmic is in the first row even though its own sheet names the setting. What the third row's hooks
+do has not been traced; an extra ball by score was seen on Oba-Oba.
 
 ## Not established
 

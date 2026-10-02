@@ -15,7 +15,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -174,7 +174,7 @@
         "max": 990000
       },
       "07": {
-        "_notes": "Shown x10,000. 'Bola Extra Score': awards an extra ball, not a replay (the award routine branches on this level's bit). Annulled when equal to adjustment 5. On Cosmic (and likely this generation) CODE switches 5-7 select the level from a fixed table and the firmware copies it into this byte at every game start, so an edit here does not outlast the next game while those switches are raised.",
+        "_notes": "Named from the Shock and Cosmic operator sheets. The firmware compares the score with this level and, unless it equals replay level 2, jumps to a per-game hook; returns immediately - the setting has no effect - on heavymtl. Read from each ROM's code.",
         "label": "Extra Ball Score",
         "start": "0x4076",
         "encoding": "bcd",
