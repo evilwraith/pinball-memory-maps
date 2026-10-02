@@ -82,11 +82,12 @@ display walks two bytes at a time (Vortex `0x08BB`). Identified from live captur
 | `+54` | powered-on time, in ~64 s ticks | ticks in attract too (Vortex: 44, 108, 173, 237, 301 s) |
 | `+56` | coins | one tick per coin, on the poll the credit rose |
 | `+5C` | games played | ticks at game start |
+| `+5E` | replays awarded — **Oba-Oba only** | three ticks at the configured levels (150,000 ×2, 400,000); the 1981–85 replay routine uses a different address, so not declared there |
 
 Not measured on the 1979 window (Shock).
 
 ## Not established
 
 - What "Incentivo" means, and why the 1980 firmware's factory value (04) is outside the set the two sheets allow.
-- Audits `+50`, `+58`, `+5A`, `+5E`: they read zero in every capture, so nothing has incremented them yet (see below).
+- Audits `+50`, `+58`, `+5A`: zero in every capture. Coins through chutes 2 and 3 ticked `+56`, and an extra-ball score equal to replay level 1 is annulled, so neither has been exercised.
 - The 1979 firmware's current-player byte on the 1979 board itself (Oba-Oba's, at `+9E`, is live-verified).

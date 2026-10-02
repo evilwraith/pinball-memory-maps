@@ -13,11 +13,11 @@
     "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
     "marks the saved game over on load so a table starts in attract.",
     "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score.",
-    "Audits are the eight 16-bit little-endian binary counters at +50..+5F that the firmware's statistics display walks two bytes at a time (Vortex 0x08BB). Four are identified from live captures; +50, +58, +5A and +5E read zero in every capture and are not declared."
+    "Audits are the eight 16-bit little-endian binary counters at +50..+5F that the firmware's statistics display walks two bytes at a time (Vortex 0x08BB). Four are identified from live captures; +50, +58 and +5A read zero in every capture and are not declared."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -216,7 +216,7 @@
         "encoding": "int"
       },
       "03": {
-        "_notes": "One tick per coin, on the same poll the credit rose, in all five live captures (2, 2, 3, 3 and 2 coins).",
+        "_notes": "One tick per coin, on the same poll the credit rose. In a second capture three coins - two of them entered through chutes 2 and 3 - all ticked this counter and no other, so it is either a total or the table routes every coin key to one switch.",
         "label": "Coins",
         "start": "0x4056",
         "length": 2,
@@ -226,6 +226,13 @@
         "_notes": "Ticks at game start, with ball 0->1 and the credit consumed, in all five live captures.",
         "label": "Games Played",
         "start": "0x405C",
+        "length": 2,
+        "encoding": "int"
+      },
+      "05": {
+        "_notes": "Ticks when a replay level is passed and the credit is awarded: three times in a live capture, at 150,987 and 150,363 (level 1 set to 150,000) and at 400,275 (level 2 set to 400,000). Measured on Oba-Oba only; the 1981-85 firmware's replay routine uses a different address.",
+        "label": "Replays Awarded",
+        "start": "0x405E",
         "length": 2,
         "encoding": "int"
       }
