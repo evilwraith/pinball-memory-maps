@@ -82,8 +82,8 @@ display walks two bytes at a time (Vortex `0x08BB`). On Oba-Oba the counters con
 | `+54` | powered-on time, in ~64 s ticks | ticks in attract too (Vortex: 44, 108, 173, 237, 301 s) |
 | `+56` | coins | one tick per coin, on the poll the credit rose |
 | `+5C` | games played | ticks at game start; once per player — a four-player start on Oba-Oba ticked it four times as credits went 4 → 0 |
-| `+5E` | credits awarded — **Oba-Oba only** | one tick per credit the game gives: replay levels (150,000/400,000 and 180,000/300,000 as configured), two mid-ball awards with the score unchanged, and the two credits for beating the high score. The 1981–85 replay routine uses a different address, so not declared there |
-| `+60` | replays awarded — **Oba-Oba only** | in step with `+5E` through nine awards during play; rose by 2 where `+5E` rose by 4 in the game that beat the high score |
+| `+5E` | credits awarded — **Oba-Oba, Drakor, Meteor, Fire Action** | one tick per credit the game gives: replay levels for whichever player is up (Oba-Oba, Meteor live), a won match (Drakor live), the credits for beating the high score (Oba-Oba live). The 1981–85 award routine uses a different address (Vortex `0x0F22` increments `+5A`; not measured), so not declared there |
+| `+60` | replays awarded — **Oba-Oba, Drakor, Meteor, Fire Action** | in step with `+5E` for every replay-level award (nine on Oba-Oba, six on Meteor); did not move for the match credit on Drakor or the high-score credits on Oba-Oba |
 | `+64` | high-score credits awarded — **Oba-Oba only** | 0 → 2 across a 605,893 game against a 580,000 high score (setting 09 = 2). One before/after observation |
 
 Not measured on the 1979 window (Shock).

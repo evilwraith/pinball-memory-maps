@@ -15,7 +15,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 11,
+    "version": 12,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -230,6 +230,20 @@
         "_notes": "Ticks at game start, with ball 0->1 and the credit consumed, in all five live captures.",
         "label": "Games Played",
         "start": "0x405C",
+        "length": 2,
+        "encoding": "int"
+      },
+      "05": {
+        "_notes": "Ticks once per credit the game awards. Live on Meteor: six replay credits, each on the poll the credit rose (levels set to 150,000 and 250,000). Live on Drakor: one credit for a won match, which ticked this and not Replays Awarded. The award routine increments it at 0x0612 on drakor, meteort and fireact.",
+        "label": "Credits Awarded",
+        "start": "0x405E",
+        "length": 2,
+        "encoding": "int"
+      },
+      "06": {
+        "_notes": "Ticks with Credits Awarded when a replay level is passed: six times on Meteor, at 150,705, 150,430, 250,948, 150,863 and twice for other players of a four-player game. Stayed put for the match credit on Drakor. The score-level check hands the award routine this address (0x0E6F on drakor, meteort and fireact).",
+        "label": "Replays Awarded",
+        "start": "0x4060",
         "length": 2,
         "encoding": "int"
       }
