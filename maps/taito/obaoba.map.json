@@ -17,7 +17,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -223,16 +223,30 @@
         "encoding": "int"
       },
       "04": {
-        "_notes": "Ticks at game start, with ball 0->1 and the credit consumed, in all five live captures.",
+        "_notes": "Ticks once per player started, as each credit is consumed: a four-player start took credits 4 to 0 and ticked this four times (live on Oba-Oba). One tick at game start in the five single-player captures.",
         "label": "Games Played",
         "start": "0x405C",
         "length": 2,
         "encoding": "int"
       },
       "05": {
-        "_notes": "Ticks when a replay level is passed and the credit is awarded: three times in a live capture, at 150,987 and 150,363 (level 1 set to 150,000) and at 400,275 (level 2 set to 400,000). Measured on Oba-Oba only; the 1981-85 firmware's replay routine uses a different address.",
-        "label": "Replays Awarded",
+        "_notes": "Ticks once per credit the game awards: at each replay level passed (live at 150,000/400,000 and at 180,000/300,000 as configured), at two awards made mid-ball with the score unchanged, and by the two credits given for beating the high score - a 605,893 game against 580,000 raised it by 4 (two replay levels, two high-score credits). Measured on Oba-Oba only; the 1981-85 firmware's replay routine uses a different address.",
+        "label": "Credits Awarded",
         "start": "0x405E",
+        "length": 2,
+        "encoding": "int"
+      },
+      "06": {
+        "_notes": "Moved in step with Credits Awarded through nine awards during play (replay levels and mid-ball awards), then by 2 where that rose by 4 in the game that beat the high score - so it excludes the high-score credits. Measured on Oba-Oba only.",
+        "label": "Replays Awarded",
+        "start": "0x4060",
+        "length": 2,
+        "encoding": "int"
+      },
+      "07": {
+        "_notes": "Zero until a game beat the high score (605,893 against 580,000), then 2 - the 'credits for high score' setting. One observation, from RAM before and after the game rather than a frame-by-frame capture. Measured on Oba-Oba only.",
+        "label": "High Score Credits Awarded",
+        "start": "0x4064",
         "length": 2,
         "encoding": "int"
       }
