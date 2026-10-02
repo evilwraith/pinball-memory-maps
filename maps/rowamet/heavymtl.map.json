@@ -15,7 +15,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -64,10 +64,16 @@
       "encoding": "int"
     },
     "current_player": {
-      "_notes": "0 in attract, 1 during a one-player game; the reset path requires it non-zero to resume a game.",
+      "_notes": "One bit per player - 1, 2, 4, 8 for players one to four, 0 in attract - which the values list turns into the player number. The firmware finds the number by rotating the byte right until the carry sets and compares it with the player count (0x0445, the same code as Vortex). Measured as 1 in a one-player game; the multi-player values are from the code.",
       "label": "Current Player",
       "start": "0x409E",
-      "encoding": "int"
+      "encoding": "bits",
+      "values": [
+        1,
+        2,
+        3,
+        4
+      ]
     },
     "credits": {
       "_notes": "Stored value; the firmware keeps a display copy at 0x408D.",

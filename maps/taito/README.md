@@ -32,7 +32,7 @@ compare loop, the credits-to-display copy, the replay routine and the game-over 
 | `+8C` | ball in play | live |
 | `+8D` / `+8F` | credits display / player count (swapped on the 1979-derived firmware) | live; the reset path refuses to resume with players ≥ 5 |
 | `+8E` | match digit; cycles 0–9 during play | live |
-| `+9E` | current player, 0 in attract | live; a reset-path resume gate (1981–85 only) |
+| `+9E` | current player, **one bit per player** (1, 2, 4, 8; 0 in attract) — `+1E` on the 1979 board | live in four-player games on Drakor and Oba-Oba; every generation's code rotates it right until carry to get the number (Vortex `0x0445`, Drakor `0x05C9`, Shock/Oba-Oba `0x0CBE`). Declared `bits` with values 1–4. A reset-path resume gate (1981–85 only) |
 | `+9F` bit 0 | game over | live; written by the reset path when it declines to resume |
 | `+9F` bit 1 | tilt; set at the tilt, cleared when the next ball starts | live on all four families |
 
@@ -92,4 +92,3 @@ Not measured on the 1979 window (Shock).
 
 - What "Incentivo" means, and why the 1980 firmware's factory value (04) is outside the set the two sheets allow.
 - Audits `+50`, `+58`, `+5A`: zero in every capture, including Oba-Oba sessions with coins through chutes 2 and 3, replays at both levels, an extra ball by score (200,000) and a beaten high score. `+62` and `+66` onward also stayed zero.
-- The 1979 firmware's current-player byte on the 1979 board itself (Oba-Oba's, at `+9E`, is live-verified).

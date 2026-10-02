@@ -13,7 +13,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 6,
+    "version": 7,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -61,6 +61,18 @@
       "label": "Players",
       "start": "0x100D",
       "encoding": "int"
+    },
+    "current_player": {
+      "_notes": "One bit per player - 1, 2, 4, 8 for players one to four, 0 in attract - which the values list turns into the player number. The firmware finds the number by rotating the byte right until the carry sets and compares it with the player count (Shock 0x0CBE). Reads 1 through a one-player Shock game (live); the multi-player values are from the code, and Oba-Oba runs the same routine against 0x409E and reads 1, 2, 4, 8 live.",
+      "label": "Current Player",
+      "start": "0x101E",
+      "encoding": "bits",
+      "values": [
+        1,
+        2,
+        3,
+        4
+      ]
     },
     "credits": {
       "_notes": "Stored value; the firmware keeps a display copy at 0x100F.",
