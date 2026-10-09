@@ -1,23 +1,23 @@
 {
   "_notes": [
     "Taito do Brasil Oba-Oba (1980) on the later hardware: the 1979 firmware moved up to the 0x4000 window. It keeps",
-    "the 1979 structure - credits display at 0x408F, player count at 0x408D - but puts settings, high score and stored",
-    "credits where the 1981-85 boards do (0x4070, 0x4079, 0x407F). Compiled 2026-10 by evilwraith from the ROM code and",
-    "a live obaoba capture on an AtGames ALP4K (Visual Pinball Standalone): a full one-player game read back its final",
-    "score of 16,312 (held in 0x40F4 afterwards) and two credits, with 0x408D at 1 and 0x408F at 2 throughout, current",
-    "player 1 during play and 0 in attract, and the games-played counter ticking at game start. The game was tilted",
-    "on ball 5, which set bit 1 of the flags byte. obaoba1 - ROM code references every declared address identically.",
+    "the 1979 structure - credits display at 0x408F, player count at 0x408D - but puts settings, high score and",
+    "stored credits where the 1981-85 boards do (0x4070, 0x4079, 0x407F). Compiled 2026-10 by evilwraith from the ROM",
+    "code and live obaoba captures on an AtGames ALP4K (Visual Pinball Standalone): a full one-player game read back",
+    "its final score of 16,312 (held in 0x40F4 afterwards) and two credits, with 0x408D at 1 and 0x408F at 2",
+    "throughout; later sessions added a four-player game, replays at both levels, extra balls and a beaten high",
+    "score. obaoba1 - ROM code references every declared address identically.",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
-    "restores all nine from ROM); its nine entries are identified from the Shock operator sheet (see adjustments).",
-    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
-    "marks the saved game over on load so a table starts in attract.",
+    "restores all nine from ROM); its entries are named from the Shock (1979) and Cosmic (1981) operator sheets.",
+    "No checksum or mirror. The firmware deliberately resumes a game in progress at reset, so an image saved mid-game",
+    "holds that game: game_over clear and a ball in play.",
     "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score.",
-    "Audits are the eight 16-bit little-endian binary counters at +50..+5F that the firmware's statistics display walks two bytes at a time (Vortex 0x08BB). Four are identified from live captures; +50, +58 and +5A read zero in every capture and are not declared."
+    "Audits are 16-bit little-endian binary counters from +50, which the statistics display walks two bytes at a time (Vortex 0x08BB). Seven are declared, two of them past +5F; +50, +58 and +5A read zero in every capture."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 11,
+    "version": 12,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -127,7 +127,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
+        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets; byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd",
@@ -152,38 +152,41 @@
         "default": 6
       },
       "04": {
-        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed.",
+        "_notes": "'Incentivo'; the sheets allow 01 and 11-14. The 1980 firmware (drakor, meteort, fireact and the Oba-Oba sets) holds 04 here, outside that set, so its meaning there is not confirmed.",
         "label": "Incentive",
         "start": "0x4073",
         "encoding": "bcd",
         "default": 4
       },
       "05": {
-        "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",
+        "_notes": "'1o Score' on the sheets, 15 to 99 on Shock's: one BCD byte in tens of thousands (scale), compared with the score's two most-significant digits by the same routine in every set. Set and played live at 150,000 and 180,000.",
         "label": "Replay Level 1",
         "start": "0x4074",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99,
+        "default": 40
       },
       "06": {
-        "_notes": "Shown x10,000. '2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it).",
+        "_notes": "'2o Score'. Skipped when equal to adjustment 5 (the Shock sheet says so, and the routine compares them).",
         "label": "Replay Level 2",
         "start": "0x4075",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99,
+        "default": 40
       },
       "07": {
-        "_notes": "Named from the Shock and Cosmic operator sheets. The firmware compares the score with this level and, unless it equals replay level 2, jumps to a per-game hook; the hook does something game-specific on obaoba, obaoba1. Read from each ROM's code.",
+        "_notes": "'Bola Extra Score' on the sheets. The firmware compares the score with this level and, unless it equals adjustment 6, jumps once per player per game into a per-game hook (vector 0x1BCC), which awards an extra ball: in live games every player who passed the level (five times, at 150,000 and 200,000, one of them player four of a four-player game) was served the same ball again after the drain. The ball number does not change.",
         "label": "Extra Ball Score",
         "start": "0x4076",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99,
+        "default": 40
       },
       "08": {
         "_notes": "'Especial/Jogo'.",
@@ -236,7 +239,7 @@
         "encoding": "int"
       },
       "05": {
-        "_notes": "Ticks once per credit the game awards: at each replay level passed, for whichever player is up (live at 150,000/400,000 and at 180,000/300,000 as configured, including player four of a four-player game), and by the two credits given for beating the high score - a 605,893 game against 580,000 raised it by 4 (two replay levels, two high-score credits). Measured on Oba-Oba; the 1981-85 firmware's replay routine uses a different address.",
+        "_notes": "Ticks once per credit the game awards: at each replay level passed, for whichever player is up (live at 150,000/400,000 and at 180,000/300,000 as configured, including player four of a four-player game), and by the two credits given for beating the high score - a 605,893 game against 580,000 raised it by 4 (two replay levels, two high-score credits). Measured on Oba-Oba.",
         "label": "Credits Awarded",
         "start": "0x405E",
         "length": 2,

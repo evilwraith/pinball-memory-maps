@@ -1,22 +1,31 @@
 {
   "_notes": [
     "Taito do Brasil, 1981-85 firmware (four 2KB ROMs; Mr. Black has five). Compiled 2026-10 by evilwraith from the",
-    "Vortex ROM and live NVRAM captures on an AtGames ALP4K (Visual Pinball Standalone).",
-    "Evidence per set: vortex and mrblack - a full live game each read back its final score and credits exactly;",
-    "sharkt, cosmic, stest - a saved attract image each (high score, settings, display); every other set listed -",
-    "its ROM code references every declared address in the same way (settings copy to 0x4070, high-score compare at",
-    "0x4079, credits copy 0x407F to 0x408D, the replay routine, the game-over write), with no image yet.",
+    "Vortex ROM and live NVRAM captures on an AtGames ALP4K (Visual Pinball Standalone). Evidence per set: vortex and",
+    "mrblack - a full live game each read back its final score and credits exactly, and mrblack two four-player",
+    "games; sharkt, cosmic, stest - a saved attract image each (high score, settings, display); every other set",
+    "listed - its ROM code references every declared address in the same way (settings copy to 0x4070, high-score",
+    "compare at 0x4079, credits copy 0x407F to 0x408D, the replay routine, the game-over write), with no image yet.",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
-    "restores all nine from ROM); its nine entries are identified from the Shock operator sheet (see adjustments).",
-    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
-    "marks the saved game over on load so a table starts in attract.",
+    "restores all nine from ROM); its entries are named from the Shock (1979) and Cosmic (1981) operator sheets.",
+    "No checksum or mirror. The firmware deliberately resumes a game in progress at reset, so an image saved mid-game",
+    "holds that game: game_over clear and a ball in play.",
+    "Settings 05-07 (the replay levels and extra-ball score at 0x4074-0x4076) are not declared: this firmware",
+    "rebuilds all three from ROM, so a written value does not last. The routine (Mr. Black 0x026F; present in every",
+    "set listed) adds a BCD offset to the base at 0x1FF8-0x1FFA; the offset comes from the table at 0x1FD8, indexed",
+    "by the CODE 5-7 switches of the 'Adjust' DIP bank (input 0x2806, which PinMAME maps to DIP bank 0; CODE 5 is the",
+    "low bit). The Cosmic sheet says the same in its own words - 5o-7o 'only fixed values', 'automatically set from",
+    "the switches at every game start, no more manual adjustment' - and its eight CODE 5-7 levels (350K to 850K) are",
+    "Cosmic's base plus its table exactly. On Mr. Black it runs at reset, at each step of the attract cycle (0x03E9",
+    "into the settings validation, which ends in the call at 0x0192) and when a player is added (0x0861): levels",
+    "written in attract were back at 39/39/39 within six seconds, three times.",
     "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score.",
-    "Audits are the eight 16-bit little-endian binary counters at +50..+5F that the firmware's statistics display walks two bytes at a time (Vortex 0x08BB). Four are identified from live captures; +50, +58, +5A and +5E read zero in every capture and are not declared."
+    "Audits are 16-bit little-endian binary counters from +50, which the statistics display walks two bytes at a time (Vortex 0x08BB). Four are declared; +50, +58, +5A, +5E and +60 read zero in every capture, none of which included a credit award on this firmware."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 15,
+    "version": 16,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -93,7 +102,7 @@
       "encoding": "int"
     },
     "current_player": {
-      "_notes": "One bit per player - 1, 2, 4, 8 for players one to four, 0 in attract - which the values list turns into the player number. The firmware finds the number by rotating the byte right until the carry sets and compares it with the player count (Vortex 0x0445). Measured as 1 in one-player games; the multi-player values are from the code.",
+      "_notes": "One bit per player - 1, 2, 4, 8 for players one to four, 0 in attract - which the values list turns into the player number. The firmware finds the number by rotating the byte right until the carry sets and compares it with the player count (Vortex 0x0445). Live in two four-player Mr. Black games: 1, 2, 4, 8.",
       "label": "Current Player",
       "start": "0x409E",
       "encoding": "bits",
@@ -153,7 +162,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets in backport/Manuals; byte positions and defaults match every image captured (Cosmic's default column is its image byte for byte). Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
+        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets; byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd",
@@ -178,7 +187,7 @@
         "default": 6
       },
       "04": {
-        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed. Settings 05-07 (replay levels and the extra-ball score, 0x4074-0x4076) are not declared: this firmware rewrites all three at reset and at game over from a ROM constant (0x1FF8-0x1FFA) plus an offset chosen by switches 76-78 (input 0x2806 bits 5-7, table at 0x1FD8), so a value written there lasts seconds. Seen live on Mr. Black: 15/25/20 written, 39/39/39 back within six seconds.",
+        "_notes": "'Incentivo'; the sheets allow 01 and 11-14.",
         "label": "Incentive",
         "start": "0x4073",
         "encoding": "bcd",
@@ -194,12 +203,12 @@
         "default": 5
       },
       "09": {
-        "_notes": "'Credito/Record': credits awarded for beating the high score.",
+        "_notes": "'Credito/Record': credits awarded for beating the high score. The Cosmic (1981) sheet allows 01 and 02; the Shock (1979) sheet 01 to 03.",
         "label": "Credits For High Score",
         "start": "0x4078",
         "encoding": "bcd",
         "min": 1,
-        "max": 3,
+        "max": 2,
         "default": 1
       }
     }
@@ -221,14 +230,14 @@
         "encoding": "int"
       },
       "03": {
-        "_notes": "One tick per coin, on the same poll the credit rose, in all five live captures (2, 2, 3, 3 and 2 coins).",
+        "_notes": "One tick per coin, on the same poll the credit rose, in every live capture.",
         "label": "Coins",
         "start": "0x4056",
         "length": 2,
         "encoding": "int"
       },
       "04": {
-        "_notes": "Ticks at game start, with ball 0->1 and the credit consumed, in all five live captures.",
+        "_notes": "Ticks once per player started, as each credit is consumed: four times for each four-player start on Mr. Black (live), once in one-player games.",
         "label": "Games Played",
         "start": "0x405C",
         "length": 2,

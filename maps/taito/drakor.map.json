@@ -1,21 +1,22 @@
 {
   "_notes": [
     "Taito do Brasil, 1980 firmware (three 2KB ROMs, the third mirrored; Fire Action is a four-ROM set on the same",
-    "code). Compiled 2026-10 by evilwraith from the Drakor ROM and a live Drakor capture on an AtGames ALP4K: a full",
-    "game read back its final score of 30,671 and two credits exactly. meteort - saved attract image; fireact - ROM",
-    "code references every declared address the same way, no image yet. Same layout as vortex.map.json; the reset",
-    "path differs (it clamps an out-of-range ball or credits digit rather than declaring game over).",
+    "code). Compiled 2026-10 by evilwraith from the Drakor ROM and live captures on an AtGames ALP4K (Visual Pinball",
+    "Standalone): a full Drakor game read back its final score of 30,671 and two credits exactly, and four-player",
+    "games on Drakor and Meteor gave the current-player, games and award counters. fireact - ROM code references",
+    "every declared address the same way, no image yet. Same layout as vortex.map.json; the reset path differs (it",
+    "clamps an out-of-range ball or credits digit rather than declaring game over).",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
-    "restores all nine from ROM); its nine entries are identified from the Shock operator sheet (see adjustments).",
-    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
-    "marks the saved game over on load so a table starts in attract.",
+    "restores all nine from ROM); its entries are named from the Shock (1979) and Cosmic (1981) operator sheets.",
+    "No checksum or mirror. The firmware deliberately resumes a game in progress at reset, so an image saved mid-game",
+    "holds that game: game_over clear and a ball in play.",
     "0x40F4-0x40FF holds the last game's final display (four scores, same encoding as 0x4080) once the game is over, while the attract alternates the live display between it and the high score.",
-    "Audits are the eight 16-bit little-endian binary counters at +50..+5F that the firmware's statistics display walks two bytes at a time (Vortex 0x08BB). Four are identified from live captures; +50, +58, +5A and +5E read zero in every capture and are not declared."
+    "Audits are 16-bit little-endian binary counters from +50, which the statistics display walks two bytes at a time (Vortex 0x08BB). Six are declared; +50, +58 and +5A read zero in every capture."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 13,
+    "version": 14,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -126,7 +127,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
+        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets; byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
         "label": "Balls Per Game",
         "start": "0x4070",
         "encoding": "bcd",
@@ -151,38 +152,38 @@
         "default": 6
       },
       "04": {
-        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed.",
+        "_notes": "'Incentivo'; the sheets allow 01 and 11-14. The 1980 firmware (drakor, meteort, fireact and the Oba-Oba sets) holds 04 here, outside that set, so its meaning there is not confirmed.",
         "label": "Incentive",
         "start": "0x4073",
         "encoding": "bcd",
         "default": 4
       },
       "05": {
-        "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set. Writable on drakor and meteort (set and played live). fireact carries the 1981-85 routine that reloads 0x4074-0x4076 from ROM plus a switch offset (inline at 0x00F7); whether a written value survives there has not been tested.",
+        "_notes": "'1o Score' on the sheets, 15 to 99 on Shock's: one BCD byte in tens of thousands (scale), compared with the score's two most-significant digits by the same routine in every set. Writable on drakor and meteort (set and played live). fireact's ROM rebuilds 0x4074-0x4076 from ROM plus the CODE 5-7 switches the way the 1981-85 firmware does (inline at 0x00F7, offset table at 0x1F00), so a written value is not expected to last there; not tested.",
         "label": "Replay Level 1",
         "start": "0x4074",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99
       },
       "06": {
-        "_notes": "Shown x10,000. '2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it).",
+        "_notes": "'2o Score'. Skipped when equal to adjustment 5 (the Shock sheet says so, and the routine compares them).",
         "label": "Replay Level 2",
         "start": "0x4075",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99
       },
       "07": {
-        "_notes": "Named from the Shock and Cosmic operator sheets. The firmware compares the score with this level and, unless it equals replay level 2, jumps to a per-game hook; the hook does something game-specific on meteort, fireact; only starts a sound on drakor (a 427,232 game on Drakor with this set to 180,000 gave no extra ball). Read from each ROM's code.",
+        "_notes": "'Bola Extra Score' on the sheets. The firmware compares the score with this level and, unless it equals adjustment 6, jumps once per player per game into a per-game hook (vector 0x1FCC). meteort - the hook awards an extra ball: in live games every player who passed the level was served the same ball again after the drain (three times), and the ball number does not change. drakor - the hook only starts a sound (code; a 427,232 game with the level at 180,000 gave no extra ball). fireact - not traced.",
         "label": "Extra Ball Score",
         "start": "0x4076",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99
       },
       "08": {
         "_notes": "'Especial/Jogo'.",
@@ -220,14 +221,14 @@
         "encoding": "int"
       },
       "03": {
-        "_notes": "One tick per coin, on the same poll the credit rose, in all five live captures (2, 2, 3, 3 and 2 coins).",
+        "_notes": "One tick per coin, on the same poll the credit rose, in every live capture.",
         "label": "Coins",
         "start": "0x4056",
         "length": 2,
         "encoding": "int"
       },
       "04": {
-        "_notes": "Ticks at game start, with ball 0->1 and the credit consumed, in all five live captures.",
+        "_notes": "Ticks once per player started, as each credit is consumed: four times for each four-player start on Drakor and Meteor (live), once in one-player games.",
         "label": "Games Played",
         "start": "0x405C",
         "length": 2,

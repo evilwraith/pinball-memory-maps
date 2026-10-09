@@ -1,19 +1,20 @@
 {
   "_notes": [
-    "Taito do Brasil 1979 hardware (PinMAME taito_old). Compiled 2026-10 by evilwraith from the Shock ROM, three saved",
-    "images (attract, mid-game at ball 3, after the match sequence) and a live Shock game on an AtGames ALP4K that",
-    "read back 50,551 and three credits through ScoreServer. The window is at 0x1000: display at 0x1000, command DMA",
-    "at 0x1010, settings 0x10F0-0x10F8, high score 0x10F9, credits 0x10FF with its display copy at 0x100F. obaobao",
-    "(Oba-Oba on this hardware) references every declared address identically; no image yet. Football's ROM is lost.",
+    "Taito do Brasil 1979 hardware (PinMAME taito_old). Compiled 2026-10 by evilwraith from the Shock ROM, three",
+    "saved images (attract, mid-game at ball 3, after the match sequence) and a live Shock game on an AtGames ALP4K",
+    "(Visual Pinball Standalone) whose final score of 50,551 and three credits decode from the image. The window is",
+    "at 0x1000: display at 0x1000, command DMA at 0x1010, settings 0x10F0-0x10F8, high score 0x10F9, credits 0x10FF",
+    "with its display copy at 0x100F. obaobao (Oba-Oba on this hardware) references every declared address",
+    "identically; no image yet. Football's ROM is lost.",
     "Display scores are three BCD bytes least-significant first (platform endian: little); 0xFF 0xFF 0xFF is a blank",
     "display. The nine-byte BCD settings block is edited from the service menu and validated at reset (a non-BCD byte",
-    "restores all nine from ROM); its nine entries are identified from the Shock operator sheet (see adjustments).",
-    "No checksum. The firmware deliberately resumes a game in progress at reset; PinMAME's taito driver (2026-10)",
-    "marks the saved game over on load so a table starts in attract."
+    "restores all nine from ROM); its entries are named from the Shock (1979) and Cosmic (1981) operator sheets.",
+    "No checksum or mirror. The firmware deliberately resumes a game in progress at reset, so an image saved mid-game",
+    "holds that game: game_over clear and a ball in play."
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "copyright": [
       "Copyright (C) 2026 by evilwraith <evilwraith@gmail.com>"
     ],
@@ -123,7 +124,7 @@
   "adjustments": {
     "Adjustments": {
       "01": {
-        "_notes": "Labels and ranges from the Shock operator sheet (backport/Manuals/Taito_Brazil_Shock_Dip_Switch_Info.jpg); byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
+        "_notes": "Labels and ranges from the Shock (1979) and Cosmic (1981) operator sheets; byte positions and defaults match every image captured. Defaults are each set's own factory table, read from its ROM (the ten bytes the reset path copies in when a settings byte is not BCD).",
         "label": "Balls Per Game",
         "start": "0x10F0",
         "encoding": "bcd",
@@ -148,37 +149,37 @@
         "default": 6
       },
       "04": {
-        "_notes": "'Incentivo'; the sheet allows 01 and 11-14. The 1980 games (drakor, meteort) hold 04 here, outside that set, so its meaning on those is not confirmed. No default is declared: the factory value differs between the sets this map covers (obaobao 04, shock 01).",
+        "_notes": "'Incentivo'; the sheets allow 01 and 11-14. The 1980 firmware (drakor, meteort, fireact and the Oba-Oba sets) holds 04 here, outside that set, so its meaning there is not confirmed. No default is declared: the factory value differs between the sets this map covers (obaobao 04, shock 01).",
         "label": "Incentive",
         "start": "0x10F3",
         "encoding": "bcd"
       },
       "05": {
-        "_notes": "'1o Score'. Shown x10,000 (the map's scale; min/max are in those units, as upstream does). One BCD byte compared against the two most-significant digits of the score (x10,000); the same routine in every set.",
+        "_notes": "'1o Score' on the sheets, 15 to 99 on Shock's: one BCD byte in tens of thousands (scale), compared with the score's two most-significant digits by the same routine in every set. The Shock sheet's CODE 5 and 6 switches change the factory value (250K, 350K, 400K) that a forced reset restores; not verified in the code.",
         "label": "Replay Level 1",
         "start": "0x10F4",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99
       },
       "06": {
-        "_notes": "Shown x10,000. '2o Score'. Annulled when equal to adjustment 5 (the sheet says so, and the routine skips it).",
+        "_notes": "'2o Score'. Skipped when equal to adjustment 5 (the Shock sheet says so, and the routine compares them).",
         "label": "Replay Level 2",
         "start": "0x10F5",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99
       },
       "07": {
-        "_notes": "Named from the Shock and Cosmic operator sheets. The firmware compares the score with this level and, unless it equals replay level 2, jumps to a per-game hook; the hook does something game-specific on shock, obaobao. Read from each ROM's code.",
+        "_notes": "'Bola Extra Score' on the sheets. The firmware compares the score with this level and, unless it equals adjustment 6, jumps once per player per game into a per-game hook (vector 0x1BCC). Not traced on shock or obaobao; obaoba's hook, from the same code base, awards an extra ball.",
         "label": "Extra Ball Score",
         "start": "0x10F6",
         "encoding": "bcd",
         "scale": 10000,
-        "min": 150000,
-        "max": 990000
+        "min": 15,
+        "max": 99
       },
       "08": {
         "_notes": "'Especial/Jogo'.",
