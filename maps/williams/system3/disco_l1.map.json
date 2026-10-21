@@ -4,7 +4,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 5,
+    "version": 6,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-system4-2prom",
@@ -81,8 +81,25 @@
       "encoding": "bool",
       "invert": true
     },
+    "tilted": {
+      "_notes": "from lamp matrix",
+      "label": "Tilted",
+      "start": "0x17",
+      "encoding": "bool",
+      "mask": "0x10"
+    },
+    "ignore_scores": {
+      "_notes": [
+        "HSTD lamp; 0x17 is column 8, bit 7 is row 8",
+        "only used during attract"
+      ],
+      "label": "Ignore Scores",
+      "start": "0x17",
+      "encoding": "bool",
+      "mask": "0x80"
+    },
     "game_over": {
-      "_notes": "repurpose player count (0=game over)",
+      "_notes": "game over lamp flashes so repurpose player count (0=game over)",
       "label": "Game Over",
       "start": "0x0F",
       "encoding": "bool",

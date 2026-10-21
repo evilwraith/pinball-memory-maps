@@ -7,7 +7,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 4,
+    "version": 5,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-system4-2prom",
@@ -83,6 +83,23 @@
       "length": 2,
       "encoding": "bool",
       "invert": true
+    },
+    "ignore_scores": {
+      "_notes": [
+        "HSTD lamp; 0x17 is column 8, bit 7 is row 8",
+        "only used during attract"
+      ],
+      "label": "Ignore Scores",
+      "start": "0x17",
+      "encoding": "bool",
+      "mask": "0x80"
+    },
+    "extra_balls": {
+      "_notes": "lamp col 8, row 7; read-only (cannot set)",
+      "label": "Extra Ball",
+      "start": "0x17",
+      "encoding": "bool",
+      "mask": "0x40"
     },
     "game_over": {
       "label": "Game Over",

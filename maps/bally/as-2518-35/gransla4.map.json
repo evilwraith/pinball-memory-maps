@@ -10,7 +10,7 @@
   ],
   "_fileformat": 0.8,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2024 by Francis De Brabandere <francisdb@gmail.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -190,6 +190,14 @@
         25,
         40
       ]
+    },
+    "ignore_scores": {
+      "_notes": "reading 'HSTD' lamp",
+      "label": "Ignore Scores",
+      "start": "0x20C",
+      "encoding": "bool",
+      "mask": "0x2",
+      "invert": true
     },
     "game_over": {
       "_notes": "reading 'game over' lamp",
