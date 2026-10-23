@@ -100,13 +100,6 @@
         "$ref": "#/$defs/old_checksum"
       }
     },
-    "checksum8_sum": {
-      "description": "Fork-local, pending ROM reads: regions whose checksum byte stores the low byte of the sum itself rather than its complement. Superseded by _metadata.validation.checksum with complement false; dropped from a map once that entry exists.",
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/old_checksum"
-      }
-    },
     "player_state": {
       "description": "Per-player state; structure is still free-form.",
       "type": "object"

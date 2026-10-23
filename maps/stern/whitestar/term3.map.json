@@ -35,13 +35,6 @@
       ]
     }
   },
-  "checksum8_sum": [
-    {
-      "start": "0x1E00",
-      "end": "0x1E7F",
-      "checksum": "0x1FBD"
-    }
-  ],
   "game_state": {
     "scores": [
       {
