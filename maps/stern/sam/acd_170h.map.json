@@ -40,14 +40,65 @@
     "with a complement check byte, which is what a 32-bit score would be compared against. The score",
     "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled."
   ],
-  "_fileformat": 0.7,
+  "_fileformat": 0.9,
   "_metadata": {
-    "version": 13,
+    "version": 15,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
       "acd_170h"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Free Play adjustment",
+          "start": "0x2102120",
+          "end": "0x2102124",
+          "complement": true
+        },
+        {
+          "label": "Balls Per Game adjustment",
+          "start": "0x2102108",
+          "end": "0x210210C",
+          "complement": true
+        },
+        {
+          "label": "Maximum Credits adjustment",
+          "start": "0x2102118",
+          "end": "0x210211C",
+          "complement": true
+        },
+        {
+          "label": "High Score #{#}",
+          "start": "0x021037FC",
+          "repeat": {
+            "count": 5,
+            "step": 36
+          },
+          "length": 34,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Mode Champ #{#}",
+          "start": "0x021038B0",
+          "repeat": {
+            "count": 14,
+            "step": 36
+          },
+          "length": 34,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Encore Champion",
+          "start": "0x02103ACC",
+          "length": 34,
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
   },
   "checksum8": [
     {
@@ -64,6 +115,108 @@
       "label": "Maximum Credits adjustment",
       "start": "0x02102118",
       "end": "0x0210211C"
+    }
+  ],
+  "checksum16": [
+    {
+      "label": "Grand Champion",
+      "start": "0x021037FC",
+      "length": 34
+    },
+    {
+      "label": "First Place",
+      "start": "0x02103820",
+      "length": 34
+    },
+    {
+      "label": "Second Place",
+      "start": "0x02103844",
+      "length": 34
+    },
+    {
+      "label": "Third Place",
+      "start": "0x02103868",
+      "length": 34
+    },
+    {
+      "label": "Fourth Place",
+      "start": "0x0210388C",
+      "length": 34
+    },
+    {
+      "label": "Combo Champion",
+      "start": "0x021038B0",
+      "length": 34
+    },
+    {
+      "label": "Back In Black Champion",
+      "start": "0x021038D4",
+      "length": 34
+    },
+    {
+      "label": "For Those About To Rock Champion",
+      "start": "0x021038F8",
+      "length": 34
+    },
+    {
+      "label": "Hell Aint A Bad Place To Be Champion",
+      "start": "0x0210391C",
+      "length": 34
+    },
+    {
+      "label": "Hells Bells Champion",
+      "start": "0x02103940",
+      "length": 34
+    },
+    {
+      "label": "Highway To Hell Champion",
+      "start": "0x02103964",
+      "length": 34
+    },
+    {
+      "label": "Let There Be Rock Champion",
+      "start": "0x02103988",
+      "length": 34
+    },
+    {
+      "label": "Rock N Roll Train Champion",
+      "start": "0x021039AC",
+      "length": 34
+    },
+    {
+      "label": "Thunderstruck Champion",
+      "start": "0x021039D0",
+      "length": 34
+    },
+    {
+      "label": "T.N.T. Champion",
+      "start": "0x021039F4",
+      "length": 34
+    },
+    {
+      "label": "War Machine Champion",
+      "start": "0x02103A18",
+      "length": 34
+    },
+    {
+      "label": "Whole Lotta Rosie Champion",
+      "start": "0x02103A3C",
+      "length": 34
+    },
+    {
+      "label": "You Shook Me All Night Long Champion",
+      "start": "0x02103A60",
+      "length": 34
+    },
+    {
+      "label": "Song Jackpot Champion",
+      "start": "0x02103A84",
+      "length": 34
+    },
+    {
+      "label": "Encore Champion",
+      "start": "0x02103ACC",
+      "length": 34
     }
   ],
   "game_state": {

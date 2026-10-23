@@ -12,9 +12,9 @@
     "open and re-derived from 0x1E04 on leaving it and at boot. Data East resets the machine when",
     "the operator menu is exited, so a change to 0x1E04 made from outside the menu takes effect at",
     "the next boot rather than immediately.",
-    "Adjustments 0x1E00-0x1E48 are protected by a plain 8-bit sum at 0x1EFE; see README.md in maps/dataeast."
+    "Adjustments 0x1E00-0x1E48 are protected by a plain 8-bit sum (complement false) at 0x1EFE; see README.md in maps/dataeast."
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
     "version": 10,
     "copyright": [
@@ -29,7 +29,18 @@
       "tmnt_104g",
       "tmnt_200",
       "tmnt_a07"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Adjustments",
+          "start": "0x1E00",
+          "length": 73,
+          "complement": false,
+          "checksum": "0x1EFE"
+        }
+      ]
+    }
   },
   "game_state": {
     "scores": [
@@ -185,14 +196,6 @@
         "start": "0x1DB4",
         "length": 4
       }
-    }
-  ],
-  "checksum8_sum": [
-    {
-      "label": "Adjustments",
-      "start": "0x1E00",
-      "end": "0x1E48",
-      "checksum": "0x1EFE"
     }
   ]
 }

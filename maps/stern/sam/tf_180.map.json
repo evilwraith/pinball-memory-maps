@@ -32,9 +32,9 @@
     "the Autobot and Decepticon tables declared above. The records look like the generic high-score",
     "table the ROM carries but does not use on this theme."
   ],
-  "_fileformat": 0.7,
+  "_fileformat": 0.9,
   "_metadata": {
-    "version": 12,
+    "version": 14,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -43,7 +43,57 @@
     "platform": "stern-sam",
     "roms": [
       "tf_180"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Free Play adjustment",
+          "start": "0x2102110",
+          "end": "0x2102114",
+          "complement": true
+        },
+        {
+          "label": "Balls Per Game adjustment",
+          "start": "0x21020F8",
+          "end": "0x21020FC",
+          "complement": true
+        },
+        {
+          "label": "Maximum Credits adjustment",
+          "start": "0x2102108",
+          "end": "0x210210C",
+          "complement": true
+        },
+        {
+          "label": "Master Volume",
+          "start": "0x2110250",
+          "end": "0x2110251",
+          "complement": true
+        },
+        {
+          "label": "High Score #{#}",
+          "start": "0x02102DC8",
+          "repeat": {
+            "count": 10,
+            "step": 32
+          },
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Mode Champ #{#}",
+          "start": "0x02102F08",
+          "repeat": {
+            "count": 2,
+            "step": 32
+          },
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
   },
   "checksum8": [
     {
@@ -65,6 +115,68 @@
       "label": "Master Volume",
       "start": "0x02110250",
       "end": "0x02110251"
+    }
+  ],
+  "checksum16": [
+    {
+      "label": "Autobot Grand Champion",
+      "start": "0x02102DC8",
+      "length": 30
+    },
+    {
+      "label": "Autobot #1",
+      "start": "0x02102DE8",
+      "length": 30
+    },
+    {
+      "label": "Autobot #2",
+      "start": "0x02102E08",
+      "length": 30
+    },
+    {
+      "label": "Autobot #3",
+      "start": "0x02102E28",
+      "length": 30
+    },
+    {
+      "label": "Autobot #4",
+      "start": "0x02102E48",
+      "length": 30
+    },
+    {
+      "label": "Decepticon Grand Champion",
+      "start": "0x02102E68",
+      "length": 30
+    },
+    {
+      "label": "Decepticon #1",
+      "start": "0x02102E88",
+      "length": 30
+    },
+    {
+      "label": "Decepticon #2",
+      "start": "0x02102EA8",
+      "length": 30
+    },
+    {
+      "label": "Decepticon #3",
+      "start": "0x02102EC8",
+      "length": 30
+    },
+    {
+      "label": "Decepticon #4",
+      "start": "0x02102EE8",
+      "length": 30
+    },
+    {
+      "label": "Combo",
+      "start": "0x02102F08",
+      "length": 30
+    },
+    {
+      "label": "Best Combo Champion",
+      "start": "0x02102F28",
+      "length": 30
     }
   ],
   "game_state": {

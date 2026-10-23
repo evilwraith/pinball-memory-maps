@@ -50,9 +50,9 @@
     "this ROM booted with after a factory reset. #64 is not in the manual and appears on this ROM",
     "only; 24 (twenty4_150) stops at #63. Ranges follow the Star Trek LE manual, pages 36-43."
   ],
-  "_fileformat": 0.7,
+  "_fileformat": 0.9,
   "_metadata": {
-    "version": 13,
+    "version": 14,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -62,7 +62,457 @@
     "roms": [
       "st_161h",
       "st_161hc"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Master Volume",
+          "start": "0x2110250",
+          "end": "0x2110251",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #01 Replay Type",
+          "start": "0x2102058",
+          "end": "0x210205C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #02 Replay Percentage",
+          "start": "0x2102060",
+          "end": "0x2102064",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #03 Replay Award",
+          "start": "0x2102068",
+          "end": "0x210206C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #04 Replay Levels",
+          "start": "0x2102070",
+          "end": "0x2102074",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #05 Auto Replay Start",
+          "start": "0x2102078",
+          "end": "0x210207C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #06 Dynamic Replay Start",
+          "start": "0x2102080",
+          "end": "0x2102084",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #07 Replay Level #1",
+          "start": "0x2102088",
+          "end": "0x210208C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #08 Replay Level #2",
+          "start": "0x2102090",
+          "end": "0x2102094",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #09 Replay Level #3",
+          "start": "0x2102098",
+          "end": "0x210209C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #10 Replay Level #4",
+          "start": "0x21020A0",
+          "end": "0x21020A4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #11 Replay Boost",
+          "start": "0x21020A8",
+          "end": "0x21020AC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #12 Special Limit",
+          "start": "0x21020B0",
+          "end": "0x21020B4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #13 Special Percentage",
+          "start": "0x21020C0",
+          "end": "0x21020C4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #14 Special Award",
+          "start": "0x21020B8",
+          "end": "0x21020BC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #15 Free Game Limit",
+          "start": "0x21020C8",
+          "end": "0x21020CC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #16 Extra Ball Limit",
+          "start": "0x21020D0",
+          "end": "0x21020D4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #17 Extra Ball Percentage",
+          "start": "0x21020D8",
+          "end": "0x21020DC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #18 Game Pricing",
+          "start": "0x21020E0",
+          "end": "0x21020E4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #19 Match Percentage",
+          "start": "0x21020F0",
+          "end": "0x21020F4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #20 Match Award",
+          "start": "0x21020E8",
+          "end": "0x21020EC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #21 Balls Per Game",
+          "start": "0x21020F8",
+          "end": "0x21020FC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #22 Tilt Warnings",
+          "start": "0x2102100",
+          "end": "0x2102104",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #23 Credit Limit",
+          "start": "0x2102108",
+          "end": "0x210210C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #24 Allow High Scores",
+          "start": "0x2102180",
+          "end": "0x2102184",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #25 High Score Award",
+          "start": "0x21021B0",
+          "end": "0x21021B4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #26 Grand Champion Awards",
+          "start": "0x21021B8",
+          "end": "0x21021BC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #27 High Score #1 Awards",
+          "start": "0x21021C0",
+          "end": "0x21021C4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #28 High Score #2 Awards",
+          "start": "0x21021C8",
+          "end": "0x21021CC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #29 High Score #3 Awards",
+          "start": "0x21021D0",
+          "end": "0x21021D4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #30 High Score #4 Awards",
+          "start": "0x21021D8",
+          "end": "0x21021DC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #31 Grand Champion Score",
+          "start": "0x2102188",
+          "end": "0x210218C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #32 High Score #1",
+          "start": "0x2102190",
+          "end": "0x2102194",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #33 High Score #2",
+          "start": "0x2102198",
+          "end": "0x210219C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #34 High Score #3",
+          "start": "0x21021A0",
+          "end": "0x21021A4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #35 High Score #4",
+          "start": "0x21021A8",
+          "end": "0x21021AC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #36 HSTD Initials",
+          "start": "0x21021E0",
+          "end": "0x21021E4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #37 HSTD Reset Count",
+          "start": "0x21021E8",
+          "end": "0x21021EC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #38 Free Play",
+          "start": "0x2102110",
+          "end": "0x2102114",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #39 Language",
+          "start": "0x2102050",
+          "end": "0x2102054",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #40 Player Language Select",
+          "start": "0x2102038",
+          "end": "0x210203C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #41 Custom Message",
+          "start": "0x2102010",
+          "end": "0x2102014",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #42 Flash Lamp Power",
+          "start": "0x2102028",
+          "end": "0x210202C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #43 Coil Pulse Power",
+          "start": "0x2102008",
+          "end": "0x210200C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #44 Knocker Volume",
+          "start": "0x2102118",
+          "end": "0x210211C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #45 Game Restart",
+          "start": "0x2102120",
+          "end": "0x2102124",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #46 Bill Validator",
+          "start": "0x2102128",
+          "end": "0x210212C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #47 Music Volume",
+          "start": "0x2102048",
+          "end": "0x210204C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #48 Ball Save Time",
+          "start": "0x2102130",
+          "end": "0x2102134",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #49 Timed Plunger",
+          "start": "0x2102138",
+          "end": "0x210213C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #50 Flipper Ball Launch",
+          "start": "0x2102140",
+          "end": "0x2102144",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #51 Coindoor Ball Saver",
+          "start": "0x2102148",
+          "end": "0x210214C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #52 Competition Mode",
+          "start": "0x2102150",
+          "end": "0x2102154",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #53 Consolation Ball",
+          "start": "0x2102158",
+          "end": "0x210215C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #54 Fast Boot",
+          "start": "0x2102020",
+          "end": "0x2102024",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #55 Q24 Option",
+          "start": "0x2102160",
+          "end": "0x2102164",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #56 Ticket Dispenser",
+          "start": "0x2102168",
+          "end": "0x210216C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #57 Player Competition",
+          "start": "0x2102170",
+          "end": "0x2102174",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #58 Team Scores",
+          "start": "0x2102178",
+          "end": "0x210217C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #59 Location ID",
+          "start": "0x2102040",
+          "end": "0x2102044",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #60 Game ID",
+          "start": "0x2102030",
+          "end": "0x2102034",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #61 Time Format",
+          "start": "0x2102018",
+          "end": "0x210201C",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #62 Coin Input Delay",
+          "start": "0x21021F0",
+          "end": "0x21021F4",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #63 Lost Ball Recovery",
+          "start": "0x21021F8",
+          "end": "0x21021FC",
+          "complement": true
+        },
+        {
+          "label": "Std Adj #64 Coin Door Disable Tilt",
+          "start": "0x2102200",
+          "end": "0x2102204",
+          "complement": true
+        },
+        {
+          "label": "Grand Champion",
+          "start": "0x2102E80",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #1",
+          "start": "0x2102EA0",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #2",
+          "start": "0x2102EC0",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #3",
+          "start": "0x2102EE0",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #4",
+          "start": "0x2102F00",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Combo Champion",
+          "start": "0x2102F20",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Warp Champion",
+          "start": "0x2102F40",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Medals Champion",
+          "start": "0x2102F60",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
   },
   "checksum8": [
     {

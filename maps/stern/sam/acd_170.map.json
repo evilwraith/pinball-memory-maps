@@ -21,9 +21,9 @@
     "with a complement check byte, which is what a 32-bit score would be compared against. The score",
     "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled."
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -31,7 +31,33 @@
     "platform": "stern-sam",
     "roms": [
       "acd_170"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "High Score #{#}",
+          "start": "0x0210372C",
+          "repeat": {
+            "count": 5,
+            "step": 36
+          },
+          "length": 34,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Mode Champ #{#}",
+          "start": "0x021037E0",
+          "repeat": {
+            "count": 15,
+            "step": 36
+          },
+          "length": 34,
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
   },
   "high_scores": [
     {
@@ -335,6 +361,108 @@
         "encoding": "int",
         "length": 8
       }
+    }
+  ],
+  "checksum16": [
+    {
+      "label": "Grand Champion",
+      "start": "0x0210372C",
+      "length": 34
+    },
+    {
+      "label": "First Place",
+      "start": "0x02103750",
+      "length": 34
+    },
+    {
+      "label": "Second Place",
+      "start": "0x02103774",
+      "length": 34
+    },
+    {
+      "label": "Third Place",
+      "start": "0x02103798",
+      "length": 34
+    },
+    {
+      "label": "Fourth Place",
+      "start": "0x021037BC",
+      "length": 34
+    },
+    {
+      "label": "Combo Champion",
+      "start": "0x021037E0",
+      "length": 34
+    },
+    {
+      "label": "Back In Black Champion",
+      "start": "0x02103804",
+      "length": 34
+    },
+    {
+      "label": "For Those About To Rock Champion",
+      "start": "0x02103828",
+      "length": 34
+    },
+    {
+      "label": "Hell Aint A Bad Place To Be Champion",
+      "start": "0x0210384C",
+      "length": 34
+    },
+    {
+      "label": "Hells Bells Champion",
+      "start": "0x02103870",
+      "length": 34
+    },
+    {
+      "label": "Highway To Hell Champion",
+      "start": "0x02103894",
+      "length": 34
+    },
+    {
+      "label": "Let There Be Rock Champion",
+      "start": "0x021038B8",
+      "length": 34
+    },
+    {
+      "label": "Rock N Roll Train Champion",
+      "start": "0x021038DC",
+      "length": 34
+    },
+    {
+      "label": "Thunderstruck Champion",
+      "start": "0x02103900",
+      "length": 34
+    },
+    {
+      "label": "T.N.T. Champion",
+      "start": "0x02103924",
+      "length": 34
+    },
+    {
+      "label": "War Machine Champion",
+      "start": "0x02103948",
+      "length": 34
+    },
+    {
+      "label": "Whole Lotta Rosie Champion",
+      "start": "0x0210396C",
+      "length": 34
+    },
+    {
+      "label": "You Shook Me All Night Long Champion",
+      "start": "0x02103990",
+      "length": 34
+    },
+    {
+      "label": "Song Jackpot Champion",
+      "start": "0x021039B4",
+      "length": 34
+    },
+    {
+      "label": "Encore Champion",
+      "start": "0x021039D8",
+      "length": 34
     }
   ]
 }

@@ -22,9 +22,9 @@
     "0x02102298 (stride 0x18: six 5,000,000, then 10,000,000, then 25,000,000), so the labels are the",
     "attract order read on the machine."
   ],
-  "_fileformat": 0.7,
+  "_fileformat": 0.9,
   "_metadata": {
-    "version": 3,
+    "version": 4,
     "copyright": [
       "Copyright (C) 2026 evilwraith <evilwraith@gmail.com>"
     ],
@@ -32,7 +32,126 @@
     "platform": "stern-sam",
     "roms": [
       "im_185ve"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Free Play adjustment",
+          "start": "0x2102120",
+          "end": "0x2102124",
+          "complement": true
+        },
+        {
+          "label": "Balls Per Game adjustment",
+          "start": "0x2102108",
+          "end": "0x210210C",
+          "complement": true
+        },
+        {
+          "label": "Maximum Credits adjustment",
+          "start": "0x2102118",
+          "end": "0x210211C",
+          "complement": true
+        },
+        {
+          "label": "Master Volume",
+          "start": "0x2110248",
+          "end": "0x2110249",
+          "complement": true
+        },
+        {
+          "label": "Grand Champion",
+          "start": "0x2102C08",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #1",
+          "start": "0x2102C28",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #2",
+          "start": "0x2102C48",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #3",
+          "start": "0x2102C68",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #4",
+          "start": "0x2102C88",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Bogey Champion",
+          "start": "0x2102CA8",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Iron Man Champion",
+          "start": "0x2102CC8",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "War Machine Champion",
+          "start": "0x2102CE8",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Iron Monger Champion",
+          "start": "0x2102D08",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Whiplash Champion",
+          "start": "0x2102D28",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Drones Champion",
+          "start": "0x2102D48",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Jericho Champion",
+          "start": "0x2102D68",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Do Or Die Multiball Champion",
+          "start": "0x2102D88",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
   },
   "game_state": {
     "player_count": {

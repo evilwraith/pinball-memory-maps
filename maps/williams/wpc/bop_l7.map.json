@@ -4,9 +4,9 @@
     "WPC 50002, SYS 2.46 REV 0.7",
     "2025-09-05 Tom Collins added automated audits"
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
-    "version": 5,
+    "version": 7,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
@@ -15,7 +15,103 @@
       "bop_l7",
       "bop_d8",
       "bop_l8"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Audits {#}",
+          "repeat": {
+            "count": 121,
+            "step": 6
+          },
+          "start": "0x1811",
+          "length": 6,
+          "complement": true
+        },
+        {
+          "label": "Adjustments",
+          "start": "0x1B77",
+          "end": "0x1C54",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Timestamps",
+          "start": "0x1C57",
+          "end": "0x1CBA",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Scores",
+          "start": "0x1CBB",
+          "end": "0x1CDC",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Grand Champion",
+          "start": "0x1CDD",
+          "end": "0x1CE6",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "HSTD Reset",
+          "start": "0x1CE7",
+          "end": "0x1CEC",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Credits",
+          "start": "0x1CED",
+          "end": "0x1CF5",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Volume",
+          "start": "0x1CF6",
+          "end": "0x1CF8",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "start": "0x1CF9",
+          "end": "0x1D03",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "start": "0x1D04",
+          "end": "0x1DD9",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Custom Message (3x32)",
+          "start": "0x1DDA",
+          "end": "0x1E9C",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Custom Message (2x32)",
+          "start": "0x1E9D",
+          "end": "0x1F20",
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Mode Champions",
+          "start": "0x1F21",
+          "end": "0x1FC2",
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
   },
   "last_played": {
     "start": 6144,
@@ -198,7 +294,7 @@
   ],
   "mode_champions": [
     {
-      "label": "Billionaire #1",
+      "label": "Billionaire #{#}",
       "initials": {
         "start": 7969,
         "encoding": "ch",
@@ -207,254 +303,12 @@
       "score": {
         "start": 7972,
         "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #2",
-      "initials": {
-        "start": 7977,
-        "encoding": "ch",
-        "length": 3
+        "length": 5,
+        "default": 1000000000
       },
-      "score": {
-        "start": 7980,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #3",
-      "initials": {
-        "start": 7985,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 7988,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #4",
-      "initials": {
-        "start": 7993,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 7996,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #5",
-      "initials": {
-        "start": 8001,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8004,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #6",
-      "initials": {
-        "start": 8009,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8012,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #7",
-      "initials": {
-        "start": 8017,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8020,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #8",
-      "initials": {
-        "start": 8025,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8028,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #9",
-      "initials": {
-        "start": 8033,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8036,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #10",
-      "initials": {
-        "start": 8041,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8044,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #11",
-      "initials": {
-        "start": 8049,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8052,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #12",
-      "initials": {
-        "start": 8057,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8060,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #13",
-      "initials": {
-        "start": 8065,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8068,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #14",
-      "initials": {
-        "start": 8073,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8076,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #15",
-      "initials": {
-        "start": 8081,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8084,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #16",
-      "initials": {
-        "start": 8089,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8092,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #17",
-      "initials": {
-        "start": 8097,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8100,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #18",
-      "initials": {
-        "start": 8105,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8108,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #19",
-      "initials": {
-        "start": 8113,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8116,
-        "encoding": "bcd",
-        "length": 5
-      }
-    },
-    {
-      "label": "Billionaire #20",
-      "initials": {
-        "start": 8121,
-        "encoding": "ch",
-        "length": 3
-      },
-      "score": {
-        "start": 8124,
-        "encoding": "bcd",
-        "length": 5
+      "repeat": {
+        "count": 20,
+        "step": 8
       }
     }
   ],

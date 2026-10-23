@@ -10,9 +10,9 @@
     "the operator menu is exited.",
     "The eight bytes 0x1E68-0x1E6F are the leading spaces of the custom message (0x20 x 8 = 256, invisible",
     "to an 8-bit sum), which is why a sum over 0x1E00-0x1E6F also validates; the block ends at 0x1E67.",
-    "Adjustments 0x1E00-0x1E67 are protected by a plain 8-bit sum at 0x1EDA; see README.md in maps/dataeast."
+    "Adjustments 0x1E00-0x1E67 are protected by a plain 8-bit sum (complement false) at 0x1EDA; see README.md in maps/dataeast."
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
     "version": 10,
     "copyright": [
@@ -30,7 +30,18 @@
       "hook_501",
       "hook_e406",
       "hook_f401"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Adjustments",
+          "start": "0x1E00",
+          "length": 104,
+          "complement": false,
+          "checksum": "0x1EDA"
+        }
+      ]
+    }
   },
   "game_state": {
     "scores": [
@@ -236,14 +247,6 @@
           "0x1CEB"
         ]
       }
-    }
-  ],
-  "checksum8_sum": [
-    {
-      "label": "Adjustments",
-      "start": "0x1E00",
-      "end": "0x1E67",
-      "checksum": "0x1EDA"
     }
   ]
 }

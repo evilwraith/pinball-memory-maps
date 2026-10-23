@@ -43,9 +43,9 @@
     "the factory defaults read JDB/75,000,000 and LFS/55,000,000, the set the rest of the SAM family",
     "ships."
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
-    "version": 10,
+    "version": 12,
     "copyright": [
       "Copyright (C) 2026 by Tom Collins <tom@scorbit.io>"
     ],
@@ -54,7 +54,57 @@
     "roms": [
       "twd_156",
       "twd_156c"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Free Play adjustment",
+          "start": "0x2102110",
+          "end": "0x2102114",
+          "complement": true
+        },
+        {
+          "label": "Balls Per Game adjustment",
+          "start": "0x21020F8",
+          "end": "0x21020FC",
+          "complement": true
+        },
+        {
+          "label": "Maximum Credits adjustment",
+          "start": "0x2102108",
+          "end": "0x210210C",
+          "complement": true
+        },
+        {
+          "label": "Master Volume",
+          "start": "0x2110250",
+          "end": "0x2110251",
+          "complement": true
+        },
+        {
+          "label": "High Score #{#}",
+          "start": "0x02103598",
+          "repeat": {
+            "count": 5,
+            "step": 32
+          },
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Mode Champ #{#}",
+          "start": "0x02103638",
+          "repeat": {
+            "count": 14,
+            "step": 32
+          },
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
   },
   "checksum8": [
     {
@@ -76,6 +126,103 @@
       "label": "Master Volume",
       "start": "0x02110250",
       "end": "0x02110251"
+    }
+  ],
+  "checksum16": [
+    {
+      "label": "Grand Champion",
+      "start": "0x02103598",
+      "length": 30
+    },
+    {
+      "label": "First Place",
+      "start": "0x021035B8",
+      "length": 30
+    },
+    {
+      "label": "Second Place",
+      "start": "0x021035D8",
+      "length": 30
+    },
+    {
+      "label": "Third Place",
+      "start": "0x021035F8",
+      "length": 30
+    },
+    {
+      "label": "Fourth Place",
+      "start": "0x02103618",
+      "length": 30
+    },
+    {
+      "label": "Walkers Killed Champion",
+      "start": "0x02103638",
+      "length": 30
+    },
+    {
+      "label": "Combo Champion",
+      "start": "0x02103658",
+      "length": 30
+    },
+    {
+      "label": "Bicycle Girl Champion",
+      "start": "0x02103678",
+      "length": 30
+    },
+    {
+      "label": "Barn Champion",
+      "start": "0x02103698",
+      "length": 30
+    },
+    {
+      "label": "CDC Champion",
+      "start": "0x021036B8",
+      "length": 30
+    },
+    {
+      "label": "Riot Champion",
+      "start": "0x021036D8",
+      "length": 30
+    },
+    {
+      "label": "Tunnel Champion",
+      "start": "0x021036F8",
+      "length": 30
+    },
+    {
+      "label": "Arena Champion",
+      "start": "0x02103718",
+      "length": 30
+    },
+    {
+      "label": "Terminus Champion",
+      "start": "0x02103738",
+      "length": 30
+    },
+    {
+      "label": "Blood Bath Champion",
+      "start": "0x02103758",
+      "length": 30
+    },
+    {
+      "label": "Crossbow Champion",
+      "start": "0x02103778",
+      "length": 30
+    },
+    {
+      "label": "X Champion",
+      "start": "0x02103798",
+      "length": 30
+    },
+    {
+      "label": "Horde Champion",
+      "start": "0x021037B8",
+      "length": 30
+    },
+    {
+      "label": "Last Man Standing Champion",
+      "start": "0x021037D8",
+      "length": 30
     }
   ],
   "game_state": {

@@ -6,9 +6,9 @@
     "the byte right after the custom-message text, followed by a change counter and the 0xFF fill. This",
     "block runs from 0x1E00 to the byte before the 0xFF fill. Verified against saved stwr_107 images (both cabinets), one",
     "writer must drop the write rather than repair it.",
-    "Adjustments 0x1E00-0x1E59 are protected by a plain 8-bit sum at 0x1FC0; see README.md in maps/dataeast."
+    "Adjustments 0x1E00-0x1E59 are protected by a plain 8-bit sum (complement false) at 0x1FC0; see README.md in maps/dataeast."
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
     "version": 10,
     "copyright": [
@@ -26,7 +26,18 @@
       "stwr_a046",
       "stwr_a14",
       "stwr_e12"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Adjustments",
+          "start": "0x1E00",
+          "length": 90,
+          "complement": false,
+          "checksum": "0x1FC0"
+        }
+      ]
+    }
   },
   "game_state": {
     "scores": [
@@ -232,14 +243,6 @@
           "0x1693"
         ]
       }
-    }
-  ],
-  "checksum8_sum": [
-    {
-      "label": "Adjustments",
-      "start": "0x1E00",
-      "end": "0x1E59",
-      "checksum": "0x1FC0"
     }
   ]
 }
