@@ -2,7 +2,7 @@
   "_notes": [
     "Compiled by Tom Collins",
     "Checksum for settings at 0x1FBD/0x1FBE?  Increases when settings increase.",
-    "Adjustments 0x1E00-0x1E7E are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in nfl_v101.cpu (nfl): LDAB #$7F / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
+    "Adjustments 0x1E00-0x1E7E are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in nfl_v101.cpu, sxcpua.100, sxcpua.102, sxcpue.101, sxcpuf.102, sxcpug.103, sxcpui.101, sxcpui.102, sxcpul.102: LDAB #$7F / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

@@ -1,7 +1,7 @@
 {
   "_notes": [
     "Compiled by Tom Collins, based on lotr.",
-    "Adjustments 0x1E00-0x1E62 are protected by a plain 8-bit sum (complement false) at 0x1FC1, read from the checksum routine in sopcpua.500 (sopranos): LDAB #$63 / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FC1."
+    "Adjustments 0x1E00-0x1E62 are protected by a plain 8-bit sum (complement false) at 0x1FC1, read from the checksum routine in sopcpua.204, sopcpua.300, sopcpua.400, sopcpua.500, sopcpuf.107, sopcpuf.300, sopcpuf.400, sopcpuf.500, sopcpug.107, sopcpug.300, sopcpug.400, sopcpug.500, sopcpui.107, sopcpui.300, sopcpui.400, sopcpui.500, sopcpul.107, sopcpul.300, sopcpul.400, sopcpul.500: LDAB #$63 / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FC1."
   ],
   "_fileformat": 0.9,
   "_metadata": {

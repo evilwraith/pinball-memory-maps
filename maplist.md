@@ -1147,7 +1147,7 @@
 * [Shaq Attaq (rev. 2)][8c129] _shaqatt2_
 * [Shaq Attaq (rev. 5)][8c129] _shaqattq_
 * [Shark (Taito)][797e4] _sharkt_
-* [Sharkey's Shootout (2.07)][45d36] _shrky207_
+* [Sharkey's Shootout (2.07)][2266b] _shrky207_
 * [Sharkey's Shootout (2.11 French)][45d36] _shrky_fr_
 * [Sharkey's Shootout (2.11 German)][45d36] _shrky_gr_
 * [Sharkey's Shootout (2.11 Italian)][45d36] _shrky_it_
@@ -1159,10 +1159,10 @@
 * [Silverball Mania (7-digit conversion)][d1254] _slbmanib_
 * [Silverball Mania (Horseshoe No Spotting MOD rev. 13)][2a9b7] _slbmanid_
 * [Silverball Mania (Horseshoe Spot MOD rev. 13)][2a9b7] _slbmanic_
-* [Simpsons Pinball Party, The (2.04 French)][e0ccf] _simp204f_
-* [Simpsons Pinball Party, The (2.04 Italian)][e0ccf] _simp204i_
-* [Simpsons Pinball Party, The (2.04 Spanish)][e0ccf] _simp204l_
-* [Simpsons Pinball Party, The (2.04)][e0ccf] _simp204_
+* [Simpsons Pinball Party, The (2.04 French)][f0711] _simp204f_
+* [Simpsons Pinball Party, The (2.04 Italian)][f0711] _simp204i_
+* [Simpsons Pinball Party, The (2.04 Spanish)][f0711] _simp204l_
+* [Simpsons Pinball Party, The (2.04)][f0711] _simp204_
 * [Simpsons Pinball Party, The (3.00 French)][e0ccf] _simp300f_
 * [Simpsons Pinball Party, The (3.00 Italian)][e0ccf] _simp300i_
 * [Simpsons Pinball Party, The (3.00 Spanish)][e0ccf] _simp300l_
@@ -1628,6 +1628,7 @@
 [1d953]: maps/bally/as-2518-35/blakpyra.map.json
 [1f1b2]: maps/sega/whitestar/startrp.map.json
 [2062d]: maps/williams/system11/bnzai_l3.map.json
+[2266b]: maps/stern/whitestar/shrky207.map.json
 [226ae]: maps/williams/system6/frpwr_l6.map.json
 [22e88]: maps/gottlieb/system3/silvslug.map.json
 [22fcb]: maps/williams/wpc/sc_10.map.json
@@ -1970,6 +1971,7 @@
 [ee0e9]: maps/stern/m200/m200-7digit-B.map.json
 [eeaad]: maps/bally/as-2518-35/smman-freeplay.map.json
 [ef564]: maps/dataeast/version3/jupk_513.map.json
+[f0711]: maps/stern/whitestar/simp204.map.json
 [f21af]: maps/gottlieb/system80b/80b-8digit-B-10KB.map.json
 [f2a6d]: maps/williams/wpc/nbaf_31.map.json
 [f3549]: maps/atari/time2000.map.json

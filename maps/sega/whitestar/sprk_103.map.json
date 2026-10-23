@@ -1,7 +1,7 @@
 {
   "_notes": [
     "Based on map for NFL/Striker Xtreme; verified by parsing ROM opcodes.",
-    "Adjustments 0x1E00-0x1E7D are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in spkcpu.103 (sprk_103): LDAB #$7E / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
+    "Adjustments 0x1E00-0x1E7D are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in spkcpu.090, spkcpu.096, spkcpu.103: LDAB #$7E / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

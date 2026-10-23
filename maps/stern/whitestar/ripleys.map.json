@@ -1,7 +1,7 @@
 {
   "_notes": [
     "Compiled by Tom Collins, based on Sopranos.",
-    "Adjustments 0x1E00-0x1E5E are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in ripcpu.320 (ripleys): LDAB #$5F / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
+    "Adjustments 0x1E00-0x1E5E are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in ripcpu.301, ripcpu.302, ripcpu.310, ripcpu.320: LDAB #$5F / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

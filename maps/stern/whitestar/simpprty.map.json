@@ -2,7 +2,8 @@
   "_notes": [
     "Compiled by Tom Collins, based on strikext.",
     "Same CPU ROM for simpprty, simpprtg, simpprtl, simpprtf, and simpprti.",
-    "Adjustments 0x1E00-0x1E5E are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in spp-cpu.500 (simpprty): LDAB #$5F / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
+    "simp204, simp204f, simp204i, simp204l moved to simp204.map.json: that firmware's adjustments checksum covers 0x5C bytes.",
+    "Adjustments 0x1E00-0x1E5E are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in spp-cpu.300, spp-cpu.400, spp-cpu.500: LDAB #$5F / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
@@ -13,10 +14,6 @@
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "whitestar",
     "roms": [
-      "simp204",
-      "simp204f",
-      "simp204i",
-      "simp204l",
       "simp300",
       "simp300f",
       "simp300i",

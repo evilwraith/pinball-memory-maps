@@ -2,7 +2,7 @@
   "_notes": [
     "Compiled by Tom Collins, based on simpprty.",
     "Stern Monopoly",
-    "Adjustments 0x1E00-0x1E77 are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in moncpu.320 (monopoly): LDAB #$78 / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
+    "Adjustments 0x1E00-0x1E77 are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in moncpu.301, moncpu.303, moncpu.320: LDAB #$78 / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
