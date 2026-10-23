@@ -1,9 +1,9 @@
 {
   "_notes": [
     "2025-11: initial map created by Tom Collins, mnfb_c27 w/o mode_champions.",
-    "2026-09: adjustment checksum added (evilwraith). ROM potob5.3-2 sums 126 bytes from 0x1F80 into B and compares at 0x1FFE (LDAA #$7E / LDX #$1F80 / ADDB 0,X / INX / DECA / BNE / CMPB $1FFE @0x2F52); the writer stores it the same way @0x31A3. A mismatch takes the branch into the factory reset, which is why an externally written adjustment did not survive."
+    "Adjustments 0x1F80-0x1FFD are protected by a plain 8-bit sum (complement false) at 0x1FFE, read from the ROM (potob5.3-2): the validator LDAA #$7E / LDX #$1F80 / CLRB / ADDB 0,X / INX / DECA / BNE, then CMPB $1FFE, and a matching writer that ends STAB $1FFE."
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
     "version": 5,
     "copyright": [
@@ -15,7 +15,18 @@
       "poto_a32",
       "poto_a31",
       "poto_a29"
-    ]
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Adjustments",
+          "start": "0x1F80",
+          "length": 126,
+          "complement": false,
+          "checksum": "0x1FFE"
+        }
+      ]
+    }
   },
   "game_state": {
     "scores": [
@@ -152,14 +163,6 @@
         "length": 4,
         "scale": 10
       }
-    }
-  ],
-  "checksum8_sum": [
-    {
-      "label": "Adjustments",
-      "start": "0x1F80",
-      "end": "0x1FFD",
-      "checksum": "0x1FFE"
     }
   ]
 }

@@ -101,10 +101,10 @@
       }
     },
     "checksum8_sum": {
-      "description": "Regions whose checksum byte stores the low byte of the sum itself rather than its complement.  Requires \"checksum\", as the byte lies outside the range it covers.",
+      "description": "Fork-local, pending ROM reads: regions whose checksum byte stores the low byte of the sum itself rather than its complement. Superseded by _metadata.validation.checksum with complement false; dropped from a map once that entry exists.",
       "type": "array",
       "items": {
-        "$ref": "#/$defs/checksum"
+        "$ref": "#/$defs/old_checksum"
       }
     },
     "player_state": {

@@ -1,9 +1,10 @@
 {
   "_notes": [
     "Compiled by Tom Collins, based on simpprty.",
-    "Stern Monopoly"
+    "Stern Monopoly",
+    "Adjustments 0x1E00-0x1E77 are protected by a plain 8-bit sum (complement false) at 0x1FBD, read from the checksum routine in moncpu.320 (monopoly): LDAB #$78 / LDX #$1E00 / ADDA ,X+ / DECB / BNE, then STAA $1FBD."
   ],
-  "_fileformat": 0.8,
+  "_fileformat": 0.9,
   "_metadata": {
     "version": 5,
     "copyright": [
@@ -19,15 +20,19 @@
       "monopoli",
       "monopoll",
       "monopoly"
-    ]
-  },
-  "checksum8_sum": [
-    {
-      "start": "0x1E00",
-      "end": "0x1E7F",
-      "checksum": "0x1FBD"
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Adjustments",
+          "start": "0x1E00",
+          "length": "0x78",
+          "complement": false,
+          "checksum": "0x1FBD"
+        }
+      ]
     }
-  ],
+  },
   "game_state": {
     "scores": [
       {
