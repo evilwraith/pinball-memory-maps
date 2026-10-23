@@ -733,16 +733,16 @@
 * [Lord of the Rings, The (10.00 Spanish)][41c0d] _lotr_sp_
 * [Lord of the Rings, The (10.00)][41c0d] _lotr_
 * [Lord of the Rings, The (10.02 Limited Edition)][41c0d] _lotr_le_
-* [Lord of the Rings, The (3.00)][963d6] _lotr3_
-* [Lord of the Rings, The (4.01 French)][963d6] _lotr_fr4_
-* [Lord of the Rings, The (4.01 German)][963d6] _lotr_gr4_
-* [Lord of the Rings, The (4.01 Italian)][963d6] _lotr_it4_
-* [Lord of the Rings, The (4.01 Spanish)][963d6] _lotr_sp4_
-* [Lord of the Rings, The (4.01)][963d6] _lotr4_
-* [Lord of the Rings, The (4.10 French)][963d6] _lotr_f41_
-* [Lord of the Rings, The (4.10 German)][963d6] _lotr_g41_
-* [Lord of the Rings, The (4.10 Italian)][963d6] _lotr_i41_
-* [Lord of the Rings, The (4.10)][963d6] _lotr41_
+* [Lord of the Rings, The (3.00)][0674d] _lotr3_
+* [Lord of the Rings, The (4.01 French)][0674d] _lotr_fr4_
+* [Lord of the Rings, The (4.01 German)][0674d] _lotr_gr4_
+* [Lord of the Rings, The (4.01 Italian)][0674d] _lotr_it4_
+* [Lord of the Rings, The (4.01 Spanish)][0674d] _lotr_sp4_
+* [Lord of the Rings, The (4.01)][0674d] _lotr4_
+* [Lord of the Rings, The (4.10 French)][0674d] _lotr_f41_
+* [Lord of the Rings, The (4.10 German)][0674d] _lotr_g41_
+* [Lord of the Rings, The (4.10 Italian)][0674d] _lotr_i41_
+* [Lord of the Rings, The (4.10)][0674d] _lotr41_
 * [Lord of the Rings, The (5.00 French)][963d6] _lotr_fr5_
 * [Lord of the Rings, The (5.00 German)][963d6] _lotr_gr5_
 * [Lord of the Rings, The (5.00 Italian)][963d6] _lotr_it5_
@@ -1597,6 +1597,7 @@
 [05118]: maps/williams/wpc/afm_11.map.json
 [055e6]: maps/williams/wpc/taf_l5.map.json
 [0592c]: maps/williams/wpc/ss_12.map.json
+[0674d]: maps/stern/whitestar/lotr41.map.json
 [07095]: maps/williams/system3/lucky_l1.map.json
 [070ac]: maps/williams/wpc/pop_lx5.map.json
 [07248]: maps/zaccaria/gen2/pinchamp.map.json
