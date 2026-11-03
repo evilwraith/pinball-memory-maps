@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
@@ -1176,7 +1176,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1319,6 +1319,336 @@
         "start": 7070,
         "encoding": "enum",
         "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "A-Mode Sound",
+        "start": 7182,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "02": {
+        "label": "A-Mode Music",
+        "start": 7184,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "03": {
+        "_notes": "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+        "label": "German Speech",
+        "start": 7186,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "04": {
+        "label": "Plyr Tournament",
+        "start": 7188,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "05": {
+        "label": "Ball Saves",
+        "start": 7189,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "06": {
+        "label": "Ball Save Time",
+        "start": 7191,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 15,
+        "default": 6
+      },
+      "07": {
+        "label": "Timed Plunger",
+        "start": 7193,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 240,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "08": {
+        "label": "Save After Ball1",
+        "start": 7196,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "09": {
+        "label": "Disable Motor",
+        "start": 7198,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "10": {
+        "label": "Disable Lft Ramp",
+        "start": 7200,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "11": {
+        "label": "Disable Rgt Ramp",
+        "start": 7202,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "12": {
+        "label": "Disable L Gofer",
+        "start": 7204,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "13": {
+        "label": "Disable R Gofer",
+        "start": 7206,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "14": {
+        "label": "Jets Diff.",
+        "start": 7208,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "15": {
+        "label": "H-In-1 Reset",
+        "start": 7210,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "16": {
+        "label": "Trap E.B. Mem.",
+        "start": 7212,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "17": {
+        "label": "Golf EB At Hole",
+        "start": 7213,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 6,
+        "default": 3,
+        "special_values": {
+          "3": "Auto %"
+        }
+      },
+      "18": {
+        "label": "Golf E.B. Mem.",
+        "start": 7216,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "19": {
+        "label": "Wheel E.B. Mem.",
+        "start": 7218,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "20": {
+        "label": "Cart E.B. Mem.",
+        "start": 7220,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "21": {
+        "label": "Kickback Diff.",
+        "start": 7222,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "22": {
+        "label": "K-I-C-K Starts",
+        "start": 7224,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "Blinking"
+        ]
+      },
+      "23": {
+        "label": "Stack Kickbacks",
+        "start": 7226,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "24": {
+        "label": "Max Kb Stack",
+        "start": 7227,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 8,
+        "default": 1
+      },
+      "25": {
+        "label": "First Cart Awd",
+        "start": 7229,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 7,
+        "default": 3
+      },
+      "26": {
+        "label": "Cart Award Intvl",
+        "start": 7231,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 15,
+        "default": 5
+      },
+      "27": {
+        "label": "Gofer Attitude",
+        "start": 7234,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Rude",
+          "Very Rude"
+        ]
+      },
+      "28": {
+        "label": "Jet Kickback",
+        "start": 7236,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "29": {
+        "label": "Volume Interlock",
+        "start": 7238,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "30": {
+        "label": "Cart Path Reset",
+        "start": 7240,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "31": {
+        "label": "Daily H.S. Cred",
+        "start": 7241,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 10,
+        "default": 0
+      },
+      "32": {
+        "label": "Kick Down Middle",
+        "start": 7244,
+        "encoding": "enum",
+        "default": 0,
         "values": [
           "No",
           "Yes"

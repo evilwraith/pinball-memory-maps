@@ -7,7 +7,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
@@ -1250,7 +1250,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1385,6 +1385,372 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Lock Timer",
+        "start": 7099,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 20,
+        "units": "seconds"
+      },
+      "02": {
+        "label": "Right Ramp Time",
+        "start": 7101,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 20,
+        "units": "seconds"
+      },
+      "03": {
+        "label": "Ramp Open Start",
+        "start": 7103,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 10,
+        "default": 2
+      },
+      "04": {
+        "label": "Ramp Open Max",
+        "start": 7105,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 20,
+        "default": 6
+      },
+      "05": {
+        "label": "Combo 1st Timer",
+        "start": 7107,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 5,
+        "units": "seconds"
+      },
+      "06": {
+        "label": "Combo 2nd Timer",
+        "start": 7109,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 5,
+        "units": "seconds"
+      },
+      "07": {
+        "label": "Reload Timer",
+        "start": 7111,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 20,
+        "units": "seconds"
+      },
+      "08": {
+        "label": "Mid. Ramp Timer",
+        "start": 7113,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 99,
+        "default": 6,
+        "units": "seconds"
+      },
+      "09": {
+        "label": "Extra Ball Pct",
+        "start": 7115,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 20,
+        "suffix": "%"
+      },
+      "10": {
+        "label": "Jackpot Lit Pct",
+        "start": 7117,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 15,
+        "suffix": "%"
+      },
+      "11": {
+        "label": "Random Award",
+        "start": 7120,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "12": {
+        "label": "Skill Shot",
+        "start": 7122,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "13": {
+        "label": "Hidden Treasure",
+        "start": 7124,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Always",
+          "Player",
+          "Game"
+        ]
+      },
+      "14": {
+        "label": "Jewel Reset",
+        "start": 7125,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 10,
+        "default": 6,
+        "suffix": " Jewels"
+      },
+      "15": {
+        "label": "Millions Timer",
+        "start": 7127,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 99,
+        "default": 30,
+        "units": "seconds"
+      },
+      "16": {
+        "label": "Enable Lock",
+        "start": 7130,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "17": {
+        "label": "Broadside Bonus",
+        "start": 7132,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "18": {
+        "label": "Can. Shots Reset.",
+        "start": 7134,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "19": {
+        "label": "Attract Sound",
+        "start": 7136,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "20": {
+        "label": "Special Pct",
+        "start": 7137,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 99,
+        "default": 7,
+        "suffix": "%"
+      },
+      "21": {
+        "label": "Special Lt. After",
+        "start": 7139,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 9,
+        "default": 2,
+        "suffix": " Shp Sunk"
+      },
+      "22": {
+        "_notes": "The value shows after the prefix \"LEVEL\".",
+        "label": "Swing Rig. Start",
+        "start": 7141,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1
+      },
+      "23": {
+        "_notes": "The value shows after the prefix \"LEVEL\".",
+        "label": "Walk Plank Start",
+        "start": 7143,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1
+      },
+      "24": {
+        "_notes": "The value shows after the prefix \"LEVEL\".",
+        "label": "Knife Thrw Start",
+        "start": 7145,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1
+      },
+      "25": {
+        "label": "Video Gm. Levels",
+        "start": 7148,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "26": {
+        "label": "Cannon Levels",
+        "start": 7150,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "27": {
+        "label": "Cannon Lev. Start",
+        "start": 7151,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 20,
+        "default": 1
+      },
+      "28": {
+        "label": "Double Brdsde. Tm.",
+        "start": 7153,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 99,
+        "default": 30,
+        "units": "seconds"
+      },
+      "29": {
+        "label": "Ball Saver",
+        "start": 7155,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 30,
+        "default": 7,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "30": {
+        "label": "Consl. Ramp/Ball",
+        "start": 7157,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 99,
+        "default": 60,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "31": {
+        "label": "Multiball Bonus",
+        "start": 7160,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "32": {
+        "label": "Sinkship Start",
+        "start": 7162,
+        "encoding": "enum",
+        "default": 4,
+        "values": [
+          "All Off",
+          "S",
+          "Si",
+          "Sin",
+          "Sink",
+          "Sink S",
+          "Sink Sh",
+          "Sink Shi",
+          "Sink Ship"
+        ]
+      },
+      "33": {
+        "label": "Ship Sunk Backup",
+        "start": 7163,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 20,
+        "default": 2
+      },
+      "34": {
+        "label": "Sinkship Letters",
+        "start": 7166,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "35": {
+        "label": "Vid. Mode Flipper",
+        "start": 7168,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
         ]
       }
     }

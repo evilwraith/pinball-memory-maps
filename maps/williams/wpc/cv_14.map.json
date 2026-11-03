@@ -6,12 +6,11 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
     "roms": [
-      "cv_13",
       "cv_14"
     ],
     "validation": {
@@ -1394,7 +1393,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1540,6 +1539,354 @@
         "values": [
           "No",
           "Yes"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Ball Saves",
+        "start": 7331,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "02": {
+        "label": "Timed Plunger",
+        "start": 7333,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "03": {
+        "label": "Ball Save Time",
+        "start": 7335,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 10,
+        "default": 4
+      },
+      "04": {
+        "label": "Mball. Ball Saver",
+        "start": 7337,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 15,
+        "default": 5
+      },
+      "05": {
+        "label": "R.Mstr. Ball Save",
+        "start": 7339,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 15,
+        "default": 5
+      },
+      "06": {
+        "label": "Arc Mball. Save",
+        "start": 7341,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 15,
+        "default": 5
+      },
+      "07": {
+        "label": "Jugle. Mball. Save",
+        "start": 7343,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 15,
+        "default": 5
+      },
+      "08": {
+        "label": "Neon M.B Saver",
+        "start": 7345,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 20,
+        "default": 8
+      },
+      "09": {
+        "label": "Rmaster. Ex.Ball",
+        "start": 7347,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 10,
+        "default": 3,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "10": {
+        "label": "\"Boom\" For E.B",
+        "start": 7349,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 25,
+        "default": 15
+      },
+      "11": {
+        "label": "Ramp Difficulty",
+        "start": 7352,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "12": {
+        "label": "\"Ring\" Memory",
+        "start": 7354,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "13": {
+        "label": "Side Show Lit",
+        "start": 7356,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "14": {
+        "label": "Super Jets Time",
+        "start": 7357,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 15,
+        "default": 10
+      },
+      "15": {
+        "label": "Popcorn Time",
+        "start": 7359,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 30,
+        "default": 20
+      },
+      "16": {
+        "label": "Roonie Timer",
+        "start": 7361,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 30,
+        "default": 20
+      },
+      "17": {
+        "label": "Hat-Trick Timer",
+        "start": 7363,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 30,
+        "default": 20
+      },
+      "18": {
+        "label": "Cannon Mode Time",
+        "start": 7365,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 15,
+        "default": 10
+      },
+      "19": {
+        "label": "M/B Stack Locks",
+        "start": 7367,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1
+      },
+      "20": {
+        "label": "Flprs. Abort Anim.",
+        "start": 7370,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Never",
+          "Delayed",
+          "Instant"
+        ]
+      },
+      "21": {
+        "label": "Plyr Tournament",
+        "start": 7372,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "22": {
+        "label": "Magnet Ball Save",
+        "start": 7374,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "23": {
+        "label": "A.Mode Music",
+        "start": 7375,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 120,
+        "default": 0,
+        "multiple_of": 5,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "24": {
+        "label": "A.Mode Sounds",
+        "start": 7377,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 60,
+        "default": 0,
+        "multiple_of": 5,
+        "units": "minutes",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "25": {
+        "label": "A.Mode Flpr. Snds.",
+        "start": 7380,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "26": {
+        "label": "Coin Start",
+        "start": 7382,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "27": {
+        "label": "Neon Off Time",
+        "start": 7383,
+        "length": 2,
+        "encoding": "int",
+        "min": 30,
+        "max": 180,
+        "default": 60,
+        "multiple_of": 30,
+        "units": "minutes"
+      },
+      "28": {
+        "label": "Neon On Time",
+        "start": 7385,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 60,
+        "default": 5,
+        "units": "minutes"
+      },
+      "29": {
+        "label": "Backbox",
+        "start": 7388,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "30": {
+        "label": "Ringmaster",
+        "start": 7390,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "31": {
+        "label": "Diverter",
+        "start": 7392,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "32": {
+        "_notes": "With Min. Vol. Override (A.1 28) at No, the menu offers 20-31. At Yes, it offers 0-31.",
+        "label": "\"Knocker\" Volume",
+        "start": 7393,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 31,
+        "default": 31
+      },
+      "33": {
+        "label": "Low Rm. Batle. Scr.",
+        "start": 7396,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "34": {
+        "label": "Gameover Kickout",
+        "start": 7398,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Never",
+          "Delayed",
+          "Instant"
         ]
       }
     }

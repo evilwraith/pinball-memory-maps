@@ -1,16 +1,16 @@
 {
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
-    "WPC 50031, SYS 3.17 REV 13.2 (wcs_p2)",
     "WPC 50031, SYS 3.20 REV 13.3 (wcs_p3)",
     "WPC 50031, SYS 3.21 REV 0.1 (wcs_l1, wcs_la1)",
     "WPC 50031, SYS 3.23 REV 0.2 (wcs_l2, wcs_la2)",
     "WPC 50031, SYS 3.23 REV 3.12 (wcs_l3c)",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Standard Adjustments on wcs_l3c: 26 Tournament Play has the factory value Yes. 28 Min. Vol. Override has the factory value Yes."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 11,
+    "version": 13,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
@@ -21,9 +21,7 @@
       "wcs_l3c",
       "wcs_la1",
       "wcs_la2",
-      "wcs_p2",
       "wcs_p3",
-      "wcs_p5",
       "wcs_p6"
     ],
     "validation": {
@@ -1345,7 +1343,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1482,6 +1480,391 @@
           "Slow",
           "Instantly"
         ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "_notes": "The menu does not offer Cred./Coin, Coin (from the ROM choice list).",
+        "label": "Buy Extra Ball",
+        "start": 7222,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "1 Credit",
+          "Cred./Coin",
+          "Coin"
+        ]
+      },
+      "02": {
+        "label": "Buy In Count",
+        "start": 7224,
+        "encoding": "enum",
+        "min": 1,
+        "max": 3,
+        "default": 3,
+        "values": [
+          "n/a",
+          "1 Buy In",
+          "2 Buy Ins",
+          "3 Buy Ins"
+        ]
+      },
+      "03": {
+        "label": "Starting Rank",
+        "start": 7225,
+        "length": 2,
+        "encoding": "int",
+        "min": 6,
+        "max": 16,
+        "default": 16
+      },
+      "04": {
+        "label": "Last Easy M. Ball",
+        "start": 7227,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "05": {
+        "label": "Last Easy Rel.",
+        "start": 7229,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 0
+      },
+      "06": {
+        "label": "Goals/No Rematch",
+        "start": 7231,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 3,
+        "default": 1
+      },
+      "07": {
+        "label": "Strikr. Awd. Goals",
+        "start": 7234,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "No",
+          "Yes",
+          "1st Award"
+        ]
+      },
+      "08": {
+        "label": "Free Striker Awd.",
+        "start": 7236,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "09": {
+        "label": "Striker Diff.",
+        "start": 7238,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "10": {
+        "label": "Striker E.B. Diff.",
+        "start": 7240,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "11": {
+        "label": "Free Cities",
+        "start": 7241,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 4,
+        "default": 0
+      },
+      "12": {
+        "label": "L.A. Tkt. In Order",
+        "start": 7243,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 2,
+        "default": 1
+      },
+      "13": {
+        "label": "Final Match Diff.",
+        "start": 7246,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "14": {
+        "label": "Final Match Chal.",
+        "start": 7248,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Challenger",
+          "France",
+          "Austrailia",
+          "Spain",
+          "Sweden",
+          "England",
+          "Italy",
+          "Holland",
+          "Canada",
+          "Austria",
+          "USA",
+          "Brazil",
+          "Argentina",
+          "Mexico",
+          "Switzerlnd.",
+          "Belgium",
+          "Netherlnds.",
+          "Japan",
+          "Chile",
+          "Finland",
+          "New Zeal.",
+          "Norway",
+          "Greece",
+          "Bolivia",
+          "Nigeria",
+          "Bulgaria",
+          "Romania",
+          "Cameroon",
+          "Columbia",
+          "Ireland"
+        ]
+      },
+      "15": {
+        "label": "Goal Lit / Ball",
+        "start": 7250,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes",
+          "1st Ball"
+        ]
+      },
+      "16": {
+        "label": "Free Tv Award",
+        "start": 7252,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "17": {
+        "label": "Rmps Spot Rlovr",
+        "start": 7253,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 2,
+        "default": 0,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "18": {
+        "label": "Max Kickbacks",
+        "start": 7255,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "19": {
+        "label": "Starting Kickbks",
+        "start": 7257,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1
+      },
+      "20": {
+        "label": "Kickback Memory",
+        "start": 7260,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Extra Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "21": {
+        "label": "Free Magnagoalie",
+        "start": 7262,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "22": {
+        "label": "Striker E.B. Mem.",
+        "start": 7264,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "23": {
+        "label": "Wash. D.C. E.B. Mem.",
+        "start": 7266,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "24": {
+        "label": "Special Memory",
+        "start": 7268,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "25": {
+        "label": "A-Mode Sound",
+        "start": 7270,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "26": {
+        "label": "A-Mode Music",
+        "start": 7272,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "27": {
+        "label": "Header Save",
+        "start": 7274,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "28": {
+        "label": "Endgame Lock Rel.",
+        "start": 7276,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "29": {
+        "label": "Spec. Challenge",
+        "start": 7278,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "30": {
+        "label": "Free Ride Time",
+        "start": 7279,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 10,
+        "default": 5,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "31": {
+        "label": "Lock Magnet Time",
+        "start": 7281,
+        "length": 2,
+        "encoding": "int",
+        "min": 60,
+        "max": 180,
+        "default": 90
+      },
+      "32": {
+        "label": "Disable Rollovrs",
+        "start": 7284,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "33": {
+        "_notes": "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+        "label": "Tor Speech",
+        "start": 7286,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "34": {
+        "label": "Goalie Cnt. Delay",
+        "start": 7287,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 80,
+        "default": 12
       }
     }
   },

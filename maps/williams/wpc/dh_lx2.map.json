@@ -7,7 +7,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 9,
+    "version": 10,
     "copyright": [
       "Copyright (C) 2022 https://github.com/horseyhorsey",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -1213,7 +1213,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1349,6 +1349,300 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "_notes": "The menu does not offer Cred./Coin (from the ROM choice list).",
+        "label": "Buy Extra Ball",
+        "start": 7230,
+        "encoding": "enum",
+        "default": 3,
+        "values": [
+          "Off",
+          "1/2 Cred.",
+          "Cred./Coin",
+          "1 Credit"
+        ]
+      },
+      "02": {
+        "label": "Buy In Count",
+        "start": 7231,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 7,
+        "default": 1,
+        "special_values": {
+          "7": "Unlimited"
+        }
+      },
+      "03": {
+        "label": "Ball Saves",
+        "start": 7233,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 2,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "04": {
+        "label": "Ball Save Time",
+        "start": 7235,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 15,
+        "default": 6
+      },
+      "05": {
+        "label": "Ex. Ball Percent",
+        "start": 7237,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 40,
+        "default": 20,
+        "special_values": {
+          "10": "Fixed"
+        }
+      },
+      "06": {
+        "label": "Extra Ball Level",
+        "start": 7239,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 10,
+        "default": 2
+      },
+      "07": {
+        "label": "Magazine EB Mem",
+        "start": 7242,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "08": {
+        "label": "Safehouse EB Mem",
+        "start": 7244,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "09": {
+        "label": "Feel Luck EB Mem",
+        "start": 7246,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "10": {
+        "label": "Contra EB Mem",
+        "start": 7248,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "11": {
+        "label": "A-Mode Music",
+        "start": 7250,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "12": {
+        "label": "Def. Aux Champ",
+        "start": 7251,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 50,
+        "default": 2
+      },
+      "13": {
+        "label": "Cred. Aux Champs",
+        "start": 7253,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1
+      },
+      "14": {
+        "label": "Hq Difficulty",
+        "start": 7256,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "15": {
+        "label": "Badge Difficulty",
+        "start": 7258,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "16": {
+        "label": "Rank Difficulty",
+        "start": 7260,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "17": {
+        "label": "Spot Bullets",
+        "start": 7262,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "18": {
+        "label": "Bull. Difficulty",
+        "start": 7264,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "19": {
+        "label": "Mag. Difficulty",
+        "start": 7266,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "20": {
+        "label": "Fl Difficulty",
+        "start": 7268,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "21": {
+        "label": "Special Mode",
+        "start": 7270,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "22": {
+        "label": "Timed Plunger",
+        "start": 7271,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "23": {
+        "label": "Flipper Plunger",
+        "start": 7274,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "24": {
+        "label": "Gun Disabled",
+        "start": 7276,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "25": {
+        "label": "Inst. Speech",
+        "start": 7278,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "26": {
+        "_notes": [
+          "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+          "BCD encoding is a guess from the digits of the ROM range."
+        ],
+        "label": "Backup Null Champ",
+        "start": 7279,
+        "length": 2,
+        "encoding": "bcd",
+        "min": 100,
+        "max": 100,
+        "default": 100
+      },
+      "27": {
+        "_notes": "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+        "label": "Gun Speed",
+        "start": 7282,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Auto",
+          "Slow",
+          "Fast"
         ]
       }
     }

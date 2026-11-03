@@ -1,8 +1,6 @@
 {
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
-    "WPC 50024, SYS 3.29 REV 0.2 (rs_lx2)",
-    "WPC 50024, SYS 3.29 REV 0.3 (rs_lx3)",
     "WPC 50024, SYS 3.30 REV 0.4 (rs_la4, rs_lx4)",
     "WPC 50024, SYS 3.34 REV 0.5 (rs_la5, rs_lx5)",
     "WPC 50024, SYS 3.49 REV 0.6 (rs_l6)",
@@ -13,26 +11,13 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 11,
+    "version": 13,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
     "roms": [
       "rs_70",
-      "rs_da4",
-      "rs_da5",
-      "rs_dx2",
-      "rs_dx3",
-      "rs_dx4",
-      "rs_dx5",
-      "rs_l6",
-      "rs_l6c",
-      "rs_la4",
-      "rs_la5",
-      "rs_lx2",
-      "rs_lx3",
-      "rs_lx4",
-      "rs_lx5"
+      "rs_l6"
     ],
     "validation": {
       "checksum": [
@@ -1266,7 +1251,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1399,6 +1384,291 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Blink Eyes",
+        "start": 7110,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "02": {
+        "label": "Special Percent",
+        "start": 7111,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 15,
+        "default": 8,
+        "suffix": "%"
+      },
+      "03": {
+        "label": "Extraball Percnt",
+        "start": 7113,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 35,
+        "default": 20,
+        "suffix": "%"
+      },
+      "04": {
+        "label": "Extraball Memory",
+        "start": 7116,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "05": {
+        "label": "Buy Extra Ball",
+        "start": 7118,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "1/2 Cred.",
+          "n/a",
+          "1 Credit"
+        ]
+      },
+      "06": {
+        "label": "Buy In Count",
+        "start": 7119,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 7,
+        "default": 4,
+        "special_values": {
+          "7": "Unlimited"
+        }
+      },
+      "07": {
+        "label": "Attract Sounds",
+        "start": 7122,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "08": {
+        "label": "Starting Day",
+        "start": 7124,
+        "encoding": "enum",
+        "min": 1,
+        "max": 5,
+        "default": 1,
+        "values": [
+          "n/a",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ]
+      },
+      "09": {
+        "label": "Weeks To Lock 2",
+        "start": 7126,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "0 Weeks",
+          "1 Week"
+        ]
+      },
+      "10": {
+        "label": "Br.Outs For Wheel",
+        "start": 7128,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "0 Bridges",
+          "1 Bridge"
+        ]
+      },
+      "11": {
+        "label": "Skill Shot Award",
+        "start": 7130,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Flying Lit",
+          "Start City",
+          "Souvenir"
+        ]
+      },
+      "12": {
+        "label": "Game Over Effect",
+        "start": 7132,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "13": {
+        "label": "Wheel Lamps Mem.",
+        "start": 7134,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "14": {
+        "label": "Wheel In Memory",
+        "start": 7136,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "15": {
+        "label": "M. Between Cities",
+        "start": 7138,
+        "encoding": "enum",
+        "default": 3,
+        "values": [
+          "100 Miles",
+          "200 Miles",
+          "300 Miles",
+          "400 Miles",
+          "500 Miles",
+          "600 Miles",
+          "700 Miles",
+          "800 Miles",
+          "900 Miles",
+          "1000 Miles"
+        ]
+      },
+      "16": {
+        "label": "Longer Path",
+        "start": 7140,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "17": {
+        "label": "Ball Save Timer",
+        "start": 7142,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "18": {
+        "label": "Outlane Serving",
+        "start": 7144,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "19": {
+        "label": "Default E.B. Blast",
+        "start": 7146,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "EB Blast 5",
+          "EB Blast 6",
+          "EB Blast 7",
+          "EB Blast 8",
+          "EB Blast 9"
+        ]
+      },
+      "20": {
+        "label": "Disable \"Ted\"",
+        "start": 7148,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "21": {
+        "label": "Disable \"Red\"",
+        "start": 7150,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "22": {
+        "label": "Dis. L. Ramp Div.",
+        "start": 7152,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "23": {
+        "label": "Dis. R. Ramp Div.",
+        "start": 7154,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "24": {
+        "label": "Dis. L. Lower Div.",
+        "start": 7156,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "25": {
+        "label": "Shaker Motor",
+        "start": 7158,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "Normal",
+          "Soft"
+        ]
+      },
+      "26": {
+        "label": "Buyin Aft. W.Coast",
+        "start": 7160,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
         ]
       }
     }

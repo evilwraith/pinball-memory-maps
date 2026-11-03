@@ -2,11 +2,12 @@
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
     "WPC 50026, SYS 3.50 REV 1.1",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Feature Adjustments on i500_10r: 21 Pit Stop Time has the minimum 15."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
@@ -1444,7 +1445,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1580,6 +1581,311 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Buy Extra Ball",
+        "start": 7290,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Off",
+          "1/2 Cred.",
+          "1 Credit"
+        ]
+      },
+      "02": {
+        "label": "Buy In Count",
+        "start": 7291,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 3,
+        "special_values": {
+          "4": "Unlimited"
+        }
+      },
+      "03": {
+        "label": "Attract Sounds",
+        "start": 7294,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "04": {
+        "label": "Flipper Sounds",
+        "start": 7296,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "05": {
+        "label": "Timed Plunger",
+        "start": 7297,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "06": {
+        "label": "Flipper Plunger",
+        "start": 7300,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "07": {
+        "label": "Ball Save Time",
+        "start": 7301,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 15,
+        "default": 6
+      },
+      "08": {
+        "label": "Ball Saves",
+        "start": 7303,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "09": {
+        "label": "Turbo Ball Save",
+        "start": 7305,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 15,
+        "default": 9,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "10": {
+        "label": "Boost Ball Save",
+        "start": 7307,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 15,
+        "default": 9,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "11": {
+        "label": "Pit Ball Save",
+        "start": 7309,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 15,
+        "default": 7,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "12": {
+        "label": "Ex. Ball Percent",
+        "start": 7311,
+        "length": 2,
+        "encoding": "int",
+        "min": 4,
+        "max": 35,
+        "default": 20,
+        "special_values": {
+          "4": "Off"
+        }
+      },
+      "13": {
+        "label": "Ramp E.B. Start",
+        "start": 7313,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 15,
+        "default": 8
+      },
+      "14": {
+        "label": "Ramp Ex. Ball 2",
+        "start": 7316,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "15": {
+        "label": "Autofire Locks",
+        "start": 7318,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "16": {
+        "label": "Race Difficulty",
+        "start": 7320,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Extra Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "17": {
+        "label": "Spdway EB Memory",
+        "start": 7322,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "18": {
+        "label": "Ramp EB Memory",
+        "start": 7324,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "19": {
+        "label": "Setup EB Memory",
+        "start": 7326,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "20": {
+        "label": "Liteup EB Memory",
+        "start": 7328,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "21": {
+        "label": "Pit Stop Time",
+        "start": 7329,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 45,
+        "default": 25
+      },
+      "22": {
+        "label": "Duel Mode Time",
+        "start": 7331,
+        "length": 2,
+        "encoding": "int",
+        "min": 15,
+        "max": 45,
+        "default": 30
+      },
+      "23": {
+        "label": "3X Mode Time",
+        "start": 7333,
+        "length": 2,
+        "encoding": "int",
+        "min": 15,
+        "max": 45,
+        "default": 30
+      },
+      "24": {
+        "label": "W. Turn Mode Time",
+        "start": 7335,
+        "length": 2,
+        "encoding": "int",
+        "min": 15,
+        "max": 45,
+        "default": 30
+      },
+      "25": {
+        "label": "Pole Mode Time",
+        "start": 7337,
+        "length": 2,
+        "encoding": "int",
+        "min": 15,
+        "max": 30,
+        "default": 20
+      },
+      "26": {
+        "label": "Gas Alley Time",
+        "start": 7339,
+        "length": 2,
+        "encoding": "int",
+        "min": 15,
+        "max": 45,
+        "default": 30
+      },
+      "27": {
+        "label": "Change Set. Time",
+        "start": 7341,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 8,
+        "default": 5
+      },
+      "28": {
+        "label": "Plyr Tournament",
+        "start": 7344,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "29": {
+        "_notes": "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+        "label": "German Speech",
+        "start": 7346,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
         ]
       }
     }

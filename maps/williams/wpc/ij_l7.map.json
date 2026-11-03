@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 9,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
@@ -1519,7 +1519,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1654,6 +1654,382 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Timed Plunger",
+        "start": 7389,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 120,
+        "default": 0,
+        "multiple_of": 5,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "02": {
+        "label": "Flipper Plunger",
+        "start": 7392,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "03": {
+        "label": "Loop Lit Timer",
+        "start": 7393,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 120,
+        "default": 10,
+        "units": "seconds"
+      },
+      "04": {
+        "label": "Ramp Lit Timer",
+        "start": 7395,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 120,
+        "default": 8,
+        "units": "seconds"
+      },
+      "05": {
+        "label": "Ball Save Timer",
+        "start": 7397,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 60,
+        "default": 5,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "06": {
+        "label": "Ball Save 3multi",
+        "start": 7399,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 60,
+        "default": 10,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "07": {
+        "label": "Ball Save 2multi",
+        "start": 7401,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 60,
+        "default": 3,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "08": {
+        "label": "Capt. Multi Start",
+        "start": 7403,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 25,
+        "default": 3,
+        "suffix": " Hits"
+      },
+      "09": {
+        "label": "Captive Multi Tm.",
+        "start": 7405,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 20,
+        "units": "seconds"
+      },
+      "10": {
+        "label": "Get The Idol Tm.",
+        "start": 7407,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "11": {
+        "label": "Streets/Cairo Tm.",
+        "start": 7409,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "12": {
+        "label": "Monkey Brains Tm.",
+        "start": 7411,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "13": {
+        "label": "Steal/Stones Tm.",
+        "start": 7413,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "14": {
+        "label": "Rope Bridge Tm.",
+        "start": 7415,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "15": {
+        "label": "Castle Grnwld Tm.",
+        "start": 7417,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "16": {
+        "label": "Tank Chase Tm.",
+        "start": 7419,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "17": {
+        "label": "3 Challenges Tm.",
+        "start": 7421,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 30,
+        "units": "seconds"
+      },
+      "18": {
+        "_notes": "The value shows after the prefix \"LEVEL\".",
+        "label": "Raven Bar Level",
+        "start": 7423,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1
+      },
+      "19": {
+        "_notes": "The value shows after the prefix \"LEVEL\".",
+        "label": "Choose Wise Lev.",
+        "start": 7425,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 2,
+        "default": 1
+      },
+      "20": {
+        "label": "Jackpot Mult. Tmr.",
+        "start": 7427,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 120,
+        "default": 10,
+        "units": "seconds"
+      },
+      "21": {
+        "label": "Path Start Level",
+        "start": 7429,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1
+      },
+      "22": {
+        "label": "Adv. Continue. Tmr.",
+        "start": 7431,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 60,
+        "default": 15,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "23": {
+        "label": "Path Ex.Ball-Pit",
+        "start": 7434,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "24": {
+        "label": "Lower Ex.Ball Hld.",
+        "start": 7436,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "25": {
+        "label": "Super Jet Start",
+        "start": 7437,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 255,
+        "default": 75,
+        "suffix": " Hits"
+      },
+      "26": {
+        "label": "Hand/Fate Diff.",
+        "start": 7440,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "27": {
+        "label": "Hand/Fate Timer",
+        "start": 7441,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 120,
+        "default": 10,
+        "units": "seconds",
+        "special_values": {
+          "0": "Stays On"
+        }
+      },
+      "28": {
+        "label": "Hold Idol Locks",
+        "start": 7444,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "29": {
+        "label": "Attract Music",
+        "start": 7446,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "30": {
+        "label": "Attract Sound",
+        "start": 7448,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "31": {
+        "_notes": "The menu does not offer Cred./Coin (from the ROM choice list).",
+        "label": "Buy Extra Ball",
+        "start": 7450,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "1 Credit",
+          "Cred./Coin"
+        ]
+      },
+      "32": {
+        "label": "Buy-In Bl.Save Tm.",
+        "start": 7451,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 60,
+        "default": 10,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "33": {
+        "label": "Gun Trig. Buy In",
+        "start": 7454,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Super Ball",
+          "Cancel",
+          "Nothing"
+        ]
+      },
+      "34": {
+        "label": "Outlane Bl. Save",
+        "start": 7456,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "35": {
+        "label": "Jackpot Diffclty.",
+        "start": 7458,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Hard"
         ]
       }
     }

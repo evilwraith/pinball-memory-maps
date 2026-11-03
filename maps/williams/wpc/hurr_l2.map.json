@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
@@ -1115,7 +1115,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1239,6 +1239,230 @@
         "values": [
           "No",
           "Yes"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Pct. Extra Balls",
+        "start": 7091,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 50,
+        "default": 25,
+        "suffix": "%"
+      },
+      "02": {
+        "label": "Pct. Special",
+        "start": 7093,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 20,
+        "default": 4,
+        "suffix": "%"
+      },
+      "03": {
+        "_notes": "The value shows after the prefix \"BONUS\".",
+        "label": "E.B. Lights At",
+        "start": 7095,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 6,
+        "default": 3,
+        "suffix": "X",
+        "special_values": {
+          "1": "Disabled"
+        }
+      },
+      "04": {
+        "label": "Sp. Lights At",
+        "start": 7097,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 6,
+        "default": 3,
+        "suffix": " M. Balls",
+        "special_values": {
+          "0": "Disabled"
+        }
+      },
+      "05": {
+        "label": "Multiball Diff.",
+        "start": 7100,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Medium"
+        ]
+      },
+      "06": {
+        "label": "Ferris Diff.",
+        "start": 7102,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "07": {
+        "label": "Dummy Timer",
+        "start": 7103,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 40,
+        "default": 18,
+        "units": "seconds"
+      },
+      "08": {
+        "label": "Hurricane Diff.",
+        "start": 7106,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "09": {
+        "label": "Hurricane Timer",
+        "start": 7107,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 40,
+        "default": 13,
+        "units": "seconds"
+      },
+      "10": {
+        "label": "Hurricane Mill.",
+        "start": 7109,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 13,
+        "default": 3,
+        "suffix": " Ramps"
+      },
+      "11": {
+        "label": "Comet Diff.",
+        "start": 7112,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "12": {
+        "label": "Comet Timer",
+        "start": 7113,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 40,
+        "default": 10,
+        "units": "seconds"
+      },
+      "13": {
+        "label": "Comet Start",
+        "start": 7116,
+        "encoding": "enum",
+        "min": 1,
+        "max": 4,
+        "default": 2,
+        "values": [
+          "n/a",
+          "25,000",
+          "50,000",
+          "100,000",
+          "200,000"
+        ]
+      },
+      "14": {
+        "label": "Palace Timer",
+        "start": 7117,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 40,
+        "default": 8,
+        "units": "seconds"
+      },
+      "15": {
+        "label": "Palace Start",
+        "start": 7120,
+        "encoding": "enum",
+        "default": 3,
+        "values": [
+          "None",
+          "P",
+          "Pa",
+          "Pal",
+          "Pala",
+          "Palac"
+        ]
+      },
+      "16": {
+        "label": "Palace Lights",
+        "start": 7122,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Always",
+          "Player",
+          "Game"
+        ]
+      },
+      "17": {
+        "label": "Jackpot Timer",
+        "start": 7124,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Slow",
+          "Fast"
+        ]
+      },
+      "18": {
+        "label": "Clown Lights",
+        "start": 7126,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Always",
+          "Player",
+          "Game"
+        ]
+      },
+      "19": {
+        "label": "Family Mode",
+        "start": 7128,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "20": {
+        "label": "Match Effect",
+        "start": 7130,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Short",
+          "Long"
         ]
       }
     }

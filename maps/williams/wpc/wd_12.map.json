@@ -5,11 +5,12 @@
     "WPC 50044, SYS 3.49 REV 1.0 (wd_10f, wd_10g, wd_10r)",
     "WPC 50044, SYS 3.49 REV 1.1 (wd_11)",
     "WPC 50044, SYS 3.49 REV 1.2 (wd_12, wd_12g, wd_12gp, wd_12p)",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Feature Adjustments on wd_048r: 11 Amode Bong Snds has the factory value Sparse."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 9,
+    "version": 11,
     "copyright": [
       "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2026 by Andre Santana <herrmirto@proton.me>"
@@ -1379,7 +1380,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1515,6 +1516,199 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Buy Extra Ball",
+        "start": 7230,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Off",
+          "1/2 Cred.",
+          "1 Credit"
+        ]
+      },
+      "02": {
+        "label": "Buy In Count",
+        "start": 7231,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 3,
+        "special_values": {
+          "4": "Unlimited"
+        }
+      },
+      "03": {
+        "label": "Ball Saves",
+        "start": 7233,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "04": {
+        "label": "Ball Save Time",
+        "start": 7235,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 15,
+        "default": 6
+      },
+      "05": {
+        "label": "Timed Plunger",
+        "start": 7237,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "06": {
+        "label": "Flipper Plunger",
+        "start": 7240,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "07": {
+        "label": "Novice Mode",
+        "start": 7242,
+        "encoding": "enum",
+        "default": 3,
+        "values": [
+          "Off",
+          "1 Minute",
+          "1 1/2 Mins",
+          "2 Minutes",
+          "2 1/2 Mins",
+          "3 Minutes"
+        ]
+      },
+      "08": {
+        "label": "Special Mode",
+        "start": 7244,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "09": {
+        "label": "Plyr Tournament",
+        "start": 7246,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "10": {
+        "label": "Staged Ball",
+        "start": 7248,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "11": {
+        "label": "Amode Bong Snds",
+        "start": 7250,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "Sparse",
+          "On"
+        ]
+      },
+      "12": {
+        "label": "Extraball Percnt",
+        "start": 7251,
+        "length": 2,
+        "encoding": "int",
+        "min": 25,
+        "max": 45,
+        "default": 35,
+        "multiple_of": 5
+      },
+      "13": {
+        "label": "Multiball Percnt",
+        "start": 7253,
+        "length": 2,
+        "encoding": "int",
+        "min": 25,
+        "max": 45,
+        "default": 35,
+        "multiple_of": 5
+      },
+      "14": {
+        "label": "Extraball Memory",
+        "start": 7256,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "15": {
+        "label": "Roof Champ Hard",
+        "start": 7258,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "16": {
+        "label": "Disable Slots",
+        "start": 7260,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "17": {
+        "label": "Disable Ramp",
+        "start": 7262,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "18": {
+        "label": "Disable 3 Bank",
+        "start": 7264,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
         ]
       }
     }

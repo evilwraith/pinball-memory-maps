@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 7,
+    "version": 8,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
@@ -1195,7 +1195,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1338,6 +1338,331 @@
         "start": 7010,
         "encoding": "enum",
         "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Ball Saves",
+        "start": 7121,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 0,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "02": {
+        "_notes": "Shown in the menu only when Ball Saves (A.2 01) is not Off.",
+        "label": "Ball Save Time",
+        "start": 7123,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 15,
+        "default": 3
+      },
+      "03": {
+        "label": "Ex. Ball Percnt.",
+        "start": 7125,
+        "length": 2,
+        "encoding": "int",
+        "min": 14,
+        "max": 45,
+        "default": 30,
+        "special_values": {
+          "14": "Fixed"
+        }
+      },
+      "04": {
+        "label": "Creature Timer",
+        "start": 7127,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 30,
+        "default": 20
+      },
+      "05": {
+        "label": "Ball/Chain Timer",
+        "start": 7129,
+        "length": 2,
+        "encoding": "int",
+        "min": 20,
+        "max": 40,
+        "default": 30
+      },
+      "06": {
+        "label": "Frank. B.P. Spot/B.S.",
+        "start": 7132,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "07": {
+        "label": "Mayhem Timer",
+        "start": 7133,
+        "length": 2,
+        "encoding": "int",
+        "min": 30,
+        "max": 60,
+        "default": 45
+      },
+      "08": {
+        "label": "Drac. Letters",
+        "start": 7135,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 6,
+        "default": 3
+      },
+      "09": {
+        "label": "Drac-Atk. Timer",
+        "start": 7137,
+        "length": 2,
+        "encoding": "int",
+        "min": 20,
+        "max": 40,
+        "default": 30
+      },
+      "10": {
+        "label": "Monsters Ex. Ball",
+        "start": 7139,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 6,
+        "default": 3,
+        "special_values": {
+          "0": "No Ex. Ball"
+        }
+      },
+      "11": {
+        "label": "Instr. Spec.",
+        "start": 7141,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 6,
+        "default": 4,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "12": {
+        "label": "Max. Instr. Spec.",
+        "start": 7143,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1,
+        "special_values": {
+          "4": "Unlimited"
+        }
+      },
+      "13": {
+        "label": "C. Loop Ex. Ball 1",
+        "start": 7145,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 15,
+        "default": 12,
+        "multiple_of": 3,
+        "special_values": {
+          "0": "No Ex. Ball"
+        }
+      },
+      "14": {
+        "label": "C. Loop Ex. Ball 2",
+        "start": 7147,
+        "length": 2,
+        "encoding": "int",
+        "min": 21,
+        "max": 36,
+        "default": 30,
+        "multiple_of": 3,
+        "special_values": {
+          "21": "No Ex. Ball"
+        }
+      },
+      "15": {
+        "label": "Special Memory",
+        "start": 7150,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "16": {
+        "label": "Knocker Sound",
+        "start": 7152,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "17": {
+        "label": "Plyr Tournament",
+        "start": 7154,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "18": {
+        "label": "Family Mode",
+        "start": 7156,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "19": {
+        "label": "Attract Music",
+        "start": 7158,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "20": {
+        "label": "Attract Sounds",
+        "start": 7160,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "21": {
+        "label": "Timed Plunger",
+        "start": 7161,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "22": {
+        "label": "Flipper Plunger",
+        "start": 7164,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "23": {
+        "label": "Disbale P-Flip",
+        "start": 7166,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "24": {
+        "label": "Disable Bride",
+        "start": 7168,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "25": {
+        "label": "Disable U/D Bnk.",
+        "start": 7170,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "26": {
+        "label": "Disable Frank.",
+        "start": 7172,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "27": {
+        "label": "Disable Rmp. Lok.",
+        "start": 7174,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "29": {
+        "label": "Disable Mummy",
+        "start": 7178,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "30": {
+        "label": "Disable L. Gate",
+        "start": 7180,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "31": {
+        "label": "Disable R. Gate",
+        "start": 7182,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "32": {
+        "label": "Disable Dracula",
+        "start": 7184,
+        "encoding": "enum",
+        "default": 0,
         "values": [
           "No",
           "Yes"

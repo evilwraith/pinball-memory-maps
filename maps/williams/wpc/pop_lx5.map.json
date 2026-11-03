@@ -2,11 +2,12 @@
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
     "WPC 50022, SYS 3.14 REV 0.5",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Standard Adjustments on pop_la4, pop_lx4: 13 Replay Boost has the minimum 15."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
@@ -1219,7 +1220,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1356,6 +1357,153 @@
           "Slow",
           "Instantly"
         ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Ex. Ball Percent",
+        "start": 7101,
+        "length": 2,
+        "encoding": "int",
+        "min": 14,
+        "max": 40,
+        "default": 25
+      },
+      "02": {
+        "label": "Ramp Ex. Ball 1",
+        "start": 7103,
+        "length": 2,
+        "encoding": "int",
+        "min": 4,
+        "max": 15,
+        "default": 8
+      },
+      "03": {
+        "label": "Ramp Ex. Ball 2",
+        "start": 7106,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "04": {
+        "label": "Ramp Ex.B. Memory",
+        "start": 7108,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "05": {
+        "label": "Escal. Ex.B. Memory",
+        "start": 7110,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "06": {
+        "label": "Special Memory",
+        "start": 7112,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "07": {
+        "label": "Mode Difficulty",
+        "start": 7114,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Extra Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "08": {
+        "_notes": "Minimum from the ROM table: not seen on screen.",
+        "label": "Hurry Up Start",
+        "start": 7115,
+        "length": 2,
+        "encoding": "bcd",
+        "min": 20,
+        "max": 60,
+        "default": 40,
+        "scale": 1000000
+      },
+      "09": {
+        "label": "Escal. Award Time",
+        "start": 7117,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 7,
+        "default": 4
+      },
+      "10": {
+        "_notes": "The menu does not offer Cred./Coin, Coin (from the ROM choice list).",
+        "label": "Buy Extra Ball",
+        "start": 7120,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "1 Credit",
+          "Cred./Coin",
+          "Coin"
+        ]
+      },
+      "11": {
+        "label": "Ball Save Time",
+        "start": 7121,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 10,
+        "default": 2,
+        "special_values": {
+          "2": "Off"
+        }
+      },
+      "12": {
+        "label": "Attract Sounds",
+        "start": 7124,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "13": {
+        "label": "Flipper Sounds",
+        "start": 7126,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "14": {
+        "label": "Loop Record",
+        "start": 7127,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 7,
+        "default": 2
       }
     }
   },

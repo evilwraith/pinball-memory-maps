@@ -6,16 +6,14 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
     "roms": [
       "tz_92",
       "tz_93",
-      "tz_h7",
       "tz_h8",
-      "tz_i7",
       "tz_i8",
       "tz_la9"
     ],
@@ -1264,7 +1262,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1400,6 +1398,402 @@
           "Slow",
           "Instantly"
         ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Buy Extra Ball",
+        "start": 7302,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "1 Credit"
+        ]
+      },
+      "02": {
+        "label": "Ex. Ball Percent",
+        "start": 7303,
+        "length": 2,
+        "encoding": "int",
+        "min": 14,
+        "max": 40,
+        "default": 20,
+        "special_values": {
+          "14": "Fixed"
+        }
+      },
+      "03": {
+        "label": "1st Ex.Ball Ramps",
+        "start": 7305,
+        "length": 2,
+        "encoding": "int",
+        "min": 4,
+        "max": 12,
+        "default": 9
+      },
+      "04": {
+        "label": "2nd Ex.Ball Ramps",
+        "start": 7307,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 70,
+        "default": 45,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "05": {
+        "label": "Ramp E.B. Memory",
+        "start": 7310,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "06": {
+        "label": "Dead Ends For E.B.",
+        "start": 7311,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 7,
+        "default": 3
+      },
+      "07": {
+        "label": "Dead End E.B. Mem.",
+        "start": 7314,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "08": {
+        "label": "Spiral E.B. Memory",
+        "start": 7316,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "09": {
+        "label": "Door E.B. Memory",
+        "start": 7318,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "10": {
+        "label": "1st Hard Lock",
+        "start": 7319,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 3,
+        "default": 2
+      },
+      "11": {
+        "_notes": "Address not confirmed by a single change: it follows the spacing of the other items.",
+        "label": "1st Hard Release",
+        "start": 7321,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 5,
+        "default": 3
+      },
+      "12": {
+        "label": "Last Rmp. Release",
+        "start": 7323,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1
+      },
+      "13": {
+        "label": "Last Easy Rel.",
+        "start": 7325,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1
+      },
+      "14": {
+        "label": "Door Spots",
+        "start": 7327,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1
+      },
+      "15": {
+        "label": "Piano Difficulty",
+        "start": 7330,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "16": {
+        "_notes": "Address not confirmed by a single change: it follows the spacing of the other items.",
+        "label": "Slot Difficulty",
+        "start": 7332,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "17": {
+        "label": "Spiral Start",
+        "start": 7334,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "18": {
+        "label": "1st Hard Spiral",
+        "start": 7335,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 6,
+        "default": 1
+      },
+      "19": {
+        "label": "Spiral Lane Mem.",
+        "start": 7338,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "20": {
+        "label": "Ramps For Camera",
+        "start": 7339,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 15,
+        "default": 10,
+        "suffix": " Ramps",
+        "special_values": {
+          "5": "Off"
+        }
+      },
+      "21": {
+        "label": "Camera Memory",
+        "start": 7342,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "22": {
+        "_notes": "Address not confirmed by a single change: it follows the spacing of the other items.",
+        "label": "Power At Start",
+        "start": 7344,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "23": {
+        "label": "Outlane Diff.",
+        "start": 7346,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "24": {
+        "label": "Disable Gumball",
+        "start": 7348,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "25": {
+        "label": "Disable Clock",
+        "start": 7350,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "26": {
+        "label": "No Powerball",
+        "start": 7352,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "27": {
+        "label": "Free Ride Time",
+        "start": 7353,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 15,
+        "default": 5,
+        "special_values": {
+          "5": "Off"
+        }
+      },
+      "28": {
+        "label": "Buy-In Free Time",
+        "start": 7355,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 30,
+        "default": 10,
+        "special_values": {
+          "5": "Off"
+        }
+      },
+      "29": {
+        "label": "Low Line",
+        "start": 7358,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "30": {
+        "label": "A-Mode Sound",
+        "start": 7360,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "31": {
+        "label": "A-Mode Music",
+        "start": 7362,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "32": {
+        "_notes": [
+          "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+          "BCD encoding is a guess from the digits of the ROM range."
+        ],
+        "label": "Backup L.I.Z. Champ",
+        "start": 7363,
+        "length": 2,
+        "encoding": "bcd",
+        "min": 200,
+        "max": 600,
+        "default": 300
+      },
+      "33": {
+        "label": "Cred. Champ. Zone",
+        "start": 7365,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1
+      },
+      "34": {
+        "label": "A.Mode Clock Time",
+        "start": 7368,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "35": {
+        "label": "Balls In Gumball",
+        "start": 7369,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 4,
+        "default": 3
+      },
+      "36": {
+        "_notes": "The value shows after the prefix \"BALL\".",
+        "label": "Last Free Ride",
+        "start": 7371,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 5,
+        "default": 1
+      },
+      "37": {
+        "_notes": "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+        "label": "Freeplay Message",
+        "start": 7374,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "38": {
+        "_notes": "Not shown in the game menu: label, address, range and values come from the ROM adjustment table only.",
+        "label": "Buy In Count",
+        "start": 7375,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1
       }
     }
   },

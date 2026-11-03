@@ -2,11 +2,13 @@
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
     "WPC 50066, SYS 3.76 REV 1.3",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Standard Adjustments on cc_10: 07 Replay Start has the factory value 35. 09 Replay Level 1 has the factory value 35. 13 Replay Boost has the factory value 5.",
+    "Standard Adjustments on cc_104: 28 Min. Vol. Override has the factory value Yes."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
@@ -1319,7 +1321,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1460,6 +1462,222 @@
       "34": {
         "label": "Allow Chase Ball",
         "start": 7130,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Plyr Tournament",
+        "start": 7242,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "02": {
+        "label": "Ball Saves",
+        "start": 7243,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "03": {
+        "label": "Ball Save Time",
+        "start": 7245,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 8,
+        "default": 4
+      },
+      "04": {
+        "label": "A-Mode Music",
+        "start": 7248,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "05": {
+        "label": "Timed Plunger",
+        "start": 7249,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "06": {
+        "label": "Flipper Plunger",
+        "start": 7252,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "07": {
+        "label": "Q.Draw Difficulty",
+        "start": 7254,
+        "encoding": "enum",
+        "min": 1,
+        "max": 5,
+        "default": 1,
+        "values": [
+          "n/a",
+          "Ex. Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Ex. Hard"
+        ]
+      },
+      "08": {
+        "label": "Light Q.Drw Diff.",
+        "start": 7256,
+        "encoding": "enum",
+        "min": 1,
+        "max": 3,
+        "default": 1,
+        "values": [
+          "n/a",
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "09": {
+        "label": "Q.Draws At Start",
+        "start": 7257,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      "10": {
+        "label": "Q.Draws For EB",
+        "start": 7259,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 6,
+        "default": 4,
+        "special_values": {
+          "2": "Off"
+        }
+      },
+      "11": {
+        "label": "Starting Rank",
+        "start": 7262,
+        "encoding": "enum",
+        "min": 1,
+        "max": 3,
+        "default": 1,
+        "values": [
+          "n/a",
+          "Stranger",
+          "Partner",
+          "Deputy"
+        ]
+      },
+      "12": {
+        "label": "Combos For Star",
+        "start": 7263,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 20,
+        "default": 10
+      },
+      "13": {
+        "label": "Num Bart Bros.",
+        "start": 7265,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 7,
+        "default": 3
+      },
+      "14": {
+        "label": "Train Mechanism",
+        "start": 7268,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Disabled",
+          "Enabled"
+        ]
+      },
+      "15": {
+        "label": "Polly EB Avail.",
+        "start": 7270,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "16": {
+        "label": "Polly Awd. Shots",
+        "start": 7271,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 9,
+        "default": 5
+      },
+      "17": {
+        "label": "Gunft. Time (Sec)",
+        "start": 7273,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 10,
+        "default": 6
+      },
+      "18": {
+        "label": "Bounty Lit Ball1",
+        "start": 7276,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "19": {
+        "label": "Special Carry",
+        "start": 7278,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "20": {
+        "label": "L Outlane Carry",
+        "start": 7280,
         "encoding": "enum",
         "default": 1,
         "values": [

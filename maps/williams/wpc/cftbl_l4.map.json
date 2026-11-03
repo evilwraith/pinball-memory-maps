@@ -3,22 +3,20 @@
     "Compiled by Tom Collins using template-wpc.json.",
     "WPC 20018, SYS 2.50 REV 0.3 (cftbl_l3)",
     "WPC 20018, SYS 2.52 REV 0.4 (cftbl_l4)",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Standard Adjustments on cftbl_l3: 07 Replay Start has the factory value 300. 09 Replay Level 1 has the factory value 300. 21 Language has the values English, Deutsch, Francais."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 9,
+    "version": 11,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
     "roms": [
-      "cftbl_d2",
       "cftbl_d3",
       "cftbl_d4",
-      "cftbl_l2",
       "cftbl_l3",
-      "cftbl_l4",
-      "cftbl_l4c"
+      "cftbl_l4"
     ],
     "validation": {
       "checksum": [
@@ -1195,7 +1193,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1329,6 +1327,183 @@
           "Slow",
           "Instantly"
         ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Special",
+        "start": 7173,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 5,
+        "default": 3,
+        "suffix": "%"
+      },
+      "02": {
+        "label": "Lite Special",
+        "start": 7175,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 5,
+        "default": 3,
+        "suffix": "%"
+      },
+      "03": {
+        "label": "Multiball",
+        "start": 7177,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 50,
+        "default": 20,
+        "suffix": "%"
+      },
+      "04": {
+        "label": "Extra Ball",
+        "start": 7179,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 20,
+        "default": 13,
+        "suffix": "%"
+      },
+      "05": {
+        "label": "Attract Sounds",
+        "start": 7182,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "06": {
+        "label": "Sup. Jack. Cnt",
+        "start": 7183,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 30,
+        "default": 20
+      },
+      "07": {
+        "label": "Ball Save Time",
+        "start": 7185,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 8,
+        "default": 6
+      },
+      "08": {
+        "label": "Mega Menu Timer",
+        "start": 7187,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 30,
+        "default": 20
+      },
+      "09": {
+        "_notes": [
+          "Address not confirmed by a single change: it follows the spacing of the other items.",
+          "Only the factory screen was read: the range comes from the ROM table."
+        ],
+        "label": "Restart M.Ball",
+        "start": 7189,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 15,
+        "default": 12
+      },
+      "10": {
+        "label": "Spot Targets",
+        "start": 7192,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "11": {
+        "label": "Big Mill. Timer",
+        "start": 7193,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 30,
+        "default": 12
+      },
+      "12": {
+        "label": "Big Mill. Limit",
+        "start": 7195,
+        "length": 2,
+        "encoding": "int",
+        "min": 20,
+        "max": 60,
+        "default": 20
+      },
+      "13": {
+        "label": "Video Mode Timer",
+        "start": 7197,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 17,
+        "default": 12
+      },
+      "14": {
+        "label": "Video K.O. Cnt",
+        "start": 7199,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 20,
+        "default": 17
+      },
+      "15": {
+        "label": "Reset Kiss",
+        "start": 7202,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "16": {
+        "label": "Rotate Lamps",
+        "start": 7204,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "17": {
+        "label": "Family Mode",
+        "start": 7206,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "18": {
+        "label": "Rmp Strt Mde Cnt",
+        "start": 7207,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 5,
+        "default": 4
       }
     }
   },

@@ -6,7 +6,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 7,
+    "version": 9,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
@@ -15,9 +15,7 @@
       "t2_d8",
       "t2_l8",
       "t2_l81",
-      "t2_l82",
-      "t2_l83",
-      "t2_l84"
+      "t2_l82"
     ],
     "validation": {
       "checksum": [
@@ -1206,7 +1204,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1341,6 +1339,231 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Special Percent",
+        "start": 7099,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 10,
+        "default": 3,
+        "suffix": "%",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "02": {
+        "label": "Extraball Percnt",
+        "start": 7101,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 35,
+        "default": 10,
+        "suffix": "%",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "03": {
+        "label": "Extraball Memory",
+        "start": 7104,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "04": {
+        "label": "Consolation Ball",
+        "start": 7106,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "05": {
+        "label": "Drop Targt Count",
+        "start": 7107,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 1
+      },
+      "06": {
+        "label": "Three Bank Count",
+        "start": 7109,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 4,
+        "default": 2
+      },
+      "07": {
+        "label": "Kickback Setting",
+        "start": 7112,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Extra Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "08": {
+        "label": "Skill Shot Timer",
+        "start": 7114,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Extra Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "09": {
+        "label": "Drop Targt Timer",
+        "start": 7115,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 99,
+        "default": 11,
+        "units": "seconds"
+      },
+      "10": {
+        "label": "Three Bank Timer",
+        "start": 7117,
+        "length": 2,
+        "encoding": "int",
+        "min": 5,
+        "max": 99,
+        "default": 15,
+        "units": "seconds"
+      },
+      "11": {
+        "label": "Hurry Up Timer",
+        "start": 7119,
+        "length": 2,
+        "encoding": "int",
+        "min": 7,
+        "max": 99,
+        "default": 15,
+        "units": "seconds"
+      },
+      "12": {
+        "label": "Payback Timer",
+        "start": 7121,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 99,
+        "default": 20,
+        "units": "seconds"
+      },
+      "13": {
+        "label": "Jackpot Timer",
+        "start": 7123,
+        "length": 2,
+        "encoding": "int",
+        "min": 8,
+        "max": 99,
+        "default": 12,
+        "units": "seconds"
+      },
+      "14": {
+        "label": "Millions Plus",
+        "start": 7126,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "15": {
+        "label": "Timed Plunger",
+        "start": 7127,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 120,
+        "default": 0,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "16": {
+        "label": "Attract Sounds",
+        "start": 7130,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "17": {
+        "label": "Drp Tgt Autofire",
+        "start": 7132,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "18": {
+        "label": "T2 Fan Club",
+        "start": 7134,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "19": {
+        "label": "Flipper Trigger",
+        "start": 7136,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "20": {
+        "label": "Drop Trgt. Broken",
+        "start": 7138,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "21": {
+        "label": "Drptrgt Dwn Mlti",
+        "start": 7140,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
         ]
       }
     }

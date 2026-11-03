@@ -2,11 +2,13 @@
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
     "WPC 50004, SYS 2.46 REV 0.5",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Feature Adjustments on gw_l5c: 13 Multiball Percnt has the minimum 0.",
+    "Standard Adjustments on gw_l5c: 28 Min. Vol. Override has the factory value Yes."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
@@ -1238,7 +1240,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1373,6 +1375,200 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Attract Sounds",
+        "start": 7100,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "02": {
+        "label": "Special Percent",
+        "start": 7101,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 10,
+        "default": 3,
+        "suffix": "%",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "03": {
+        "label": "Extraball Percnt",
+        "start": 7103,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 35,
+        "default": 12,
+        "suffix": "%",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "04": {
+        "label": "Timed Plunger",
+        "start": 7105,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 120,
+        "default": 0,
+        "units": "seconds",
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "05": {
+        "label": "Flipper Plunger",
+        "start": 7108,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "06": {
+        "label": "Kickback Setting",
+        "start": 7110,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Extra Easy",
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "07": {
+        "label": "Extraball Memory",
+        "start": 7112,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "08": {
+        "label": "Consolation Ball",
+        "start": 7114,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "09": {
+        "label": "Getaway Timer",
+        "start": 7115,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 99,
+        "default": 20,
+        "units": "seconds"
+      },
+      "10": {
+        "label": "Video Mode Timer",
+        "start": 7117,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 30,
+        "default": 14,
+        "units": "seconds"
+      },
+      "11": {
+        "label": "Freeway Timer",
+        "start": 7119,
+        "length": 2,
+        "encoding": "int",
+        "min": 6,
+        "max": 20,
+        "default": 8,
+        "units": "seconds"
+      },
+      "12": {
+        "label": "Photo Shoot",
+        "start": 7122,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "13": {
+        "label": "Multiball Percnt",
+        "start": 7123,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 50,
+        "default": 20,
+        "suffix": "%"
+      },
+      "14": {
+        "label": "S. Charger Timer",
+        "start": 7125,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 99,
+        "default": 20,
+        "units": "seconds"
+      },
+      "15": {
+        "label": "Divertor Broken",
+        "start": 7128,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "16": {
+        "label": "Up/Dn Ramp Broke",
+        "start": 7130,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "17": {
+        "label": "Spot L. On S. Ramp",
+        "start": 7132,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "18": {
+        "label": "Use Mars Lamp",
+        "start": 7134,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
         ]
       }
     }

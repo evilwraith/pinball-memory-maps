@@ -8,7 +8,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 11,
+    "version": 12,
     "copyright": [
       "Copyright (C) 2016 by Dave Horsepin <horse@horsesoft.uk>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -1352,7 +1352,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1488,6 +1488,290 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Buy Extra Ball",
+        "start": 7230,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Off",
+          "1/2 Cred.",
+          "1 Credit"
+        ]
+      },
+      "02": {
+        "label": "Buy In Count",
+        "start": 7231,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 3,
+        "special_values": {
+          "4": "Unlimited"
+        }
+      },
+      "03": {
+        "label": "Ball Saves",
+        "start": 7233,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 1,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "04": {
+        "label": "Ball Save Time",
+        "start": 7235,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 15,
+        "default": 6
+      },
+      "05": {
+        "label": "Timed Plunger",
+        "start": 7237,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "06": {
+        "label": "Kickback Memory",
+        "start": 7240,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard",
+          "Extra Hard"
+        ]
+      },
+      "07": {
+        "label": "Kickback Relight",
+        "start": 7242,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "08": {
+        "label": "Raceway Holdover",
+        "start": 7244,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Hard"
+        ]
+      },
+      "09": {
+        "label": "Raceway E.B. Mem.",
+        "start": 7246,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "10": {
+        "label": "First Raceway",
+        "start": 7247,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 3,
+        "default": 3,
+        "special_values": {
+          "3": "Auto"
+        }
+      },
+      "11": {
+        "label": "Cliff Award At",
+        "start": 7249,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 10,
+        "default": 4
+      },
+      "12": {
+        "label": "Cliff Memory",
+        "start": 7252,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "13": {
+        "label": "First Payback",
+        "start": 7254,
+        "encoding": "enum",
+        "default": 2,
+        "values": [
+          "Left",
+          "Right",
+          "Both"
+        ]
+      },
+      "14": {
+        "label": "Payback Memory",
+        "start": 7256,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "15": {
+        "label": "Lock Difficulty",
+        "start": 7258,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "16": {
+        "label": "Inst. Speech",
+        "start": 7260,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "17": {
+        "label": "A-Mode Music",
+        "start": 7262,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "18": {
+        "label": "Staged Ball",
+        "start": 7264,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "19": {
+        "label": "Flipper Plunger",
+        "start": 7266,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "20": {
+        "label": "Disable Jaw",
+        "start": 7268,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "21": {
+        "label": "Disable L. Magnt.",
+        "start": 7270,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "22": {
+        "label": "Disable C. Magnt.",
+        "start": 7272,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "23": {
+        "label": "Disable R. Magnt.",
+        "start": 7274,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "24": {
+        "label": "Accel. Difficulty",
+        "start": 7276,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "25": {
+        "label": "Mk3 Codes Shown",
+        "start": 7278,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "26": {
+        "label": "Attr. Mode Sounds",
+        "start": 7280,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "27": {
+        "label": "Dice Match",
+        "start": 7282,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
         ]
       }
     }

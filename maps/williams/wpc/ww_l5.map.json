@@ -1,8 +1,6 @@
 {
   "_notes": [
     "Original map compiled by Mike Metzger.",
-    "WPC 50018, SYS 2.43 REV 13.8 (ww_p8)",
-    "WPC 50018, SYS 2.48 REV 0.2 (ww_l2)",
     "WPC 50018, SYS 2.50 REV 0.3 (ww_l3)",
     "WPC 50018, SYS 2.50 REV 0.4 (ww_l4)",
     "WPC 50018, SYS 2.62 REV 0.5 (ww_l5)",
@@ -10,7 +8,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 9,
+    "version": 11,
     "copyright": [
       "Copyright (C) 2017 by Mike Metzger <mike@flexiblecreations.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -18,16 +16,12 @@
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-8K",
     "roms": [
-      "ww_d2",
       "ww_d3",
       "ww_d4",
       "ww_d5",
-      "ww_l2",
       "ww_l3",
       "ww_l4",
-      "ww_l5",
-      "ww_p8",
-      "ww_p9"
+      "ww_l5"
     ],
     "validation": {
       "checksum": [
@@ -1253,7 +1247,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1388,6 +1382,158 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Ex. Ball Percent",
+        "start": 7101,
+        "length": 2,
+        "encoding": "int",
+        "min": 14,
+        "max": 40,
+        "default": 25,
+        "special_values": {
+          "14": "Off"
+        }
+      },
+      "02": {
+        "label": "Ramp Ex. Ball 1",
+        "start": 7103,
+        "length": 2,
+        "encoding": "int",
+        "min": 10,
+        "max": 15,
+        "default": 12
+      },
+      "03": {
+        "label": "Ramp Ex. Ball 2",
+        "start": 7106,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "04": {
+        "label": "Bldr. Ex.B. Memory",
+        "start": 7108,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "05": {
+        "label": "Ramp Ex. B. Memory",
+        "start": 7110,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "06": {
+        "label": "Mystery E.B.Memory",
+        "start": 7112,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "07": {
+        "label": "Hurry Up Start",
+        "start": 7113,
+        "length": 2,
+        "encoding": "bcd",
+        "min": 10,
+        "max": 30,
+        "default": 20,
+        "scale": 1000000
+      },
+      "08": {
+        "label": "Hot Foot Percent",
+        "start": 7115,
+        "length": 2,
+        "encoding": "int",
+        "min": 14,
+        "max": 40,
+        "default": 25,
+        "special_values": {
+          "14": "Off"
+        }
+      },
+      "09": {
+        "label": "Hot Foot Count",
+        "start": 7117,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 33,
+        "default": 4
+      },
+      "10": {
+        "label": "Kickback Memory",
+        "start": 7120,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "11": {
+        "label": "Insanity Record",
+        "start": 7121,
+        "length": 2,
+        "encoding": "int",
+        "min": 3,
+        "max": 30,
+        "default": 12
+      },
+      "12": {
+        "label": "Percent Special",
+        "start": 7123,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 50,
+        "default": 5
+      },
+      "13": {
+        "label": "Disable Bigfoot",
+        "start": 7126,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "14": {
+        "label": "Attract Sounds",
+        "start": 7128,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "15": {
+        "label": "Flipper Sounds",
+        "start": 7130,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
         ]
       }
     }

@@ -2,19 +2,18 @@
   "_notes": [
     "Compiled by Tom Collins using template-wpc.json.",
     "WPC 50052, SYS 3.67 REV 1.2",
-    "2025-07-07 Tom Collins added automated audits"
+    "2025-07-07 Tom Collins added automated audits",
+    "Standard Adjustments on jy_11: 21 Language has the values English, Deutsch, Francais, Espanol."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 8,
+    "version": 10,
     "copyright": "Copyright (C) 2025 by Tom Collins <tom@tomlogic.com>",
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-wpc-12K",
     "roms": [
-      "jy_03",
       "jy_11",
-      "jy_12",
-      "jy_12c"
+      "jy_12"
     ],
     "validation": {
       "checksum": [
@@ -1306,7 +1305,7 @@
         "default": 1,
         "values": [
           "Off",
-          "ON"
+          "On"
         ]
       },
       "21": {
@@ -1439,6 +1438,189 @@
           "Never",
           "Slow",
           "Instantly"
+        ]
+      }
+    },
+    "A.2 Feature Adjustments": {
+      "01": {
+        "label": "Buy Extra Ball",
+        "start": 7240,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "1/2 Cred.",
+          "1 Credit"
+        ]
+      },
+      "02": {
+        "label": "Buy In Count",
+        "start": 7241,
+        "length": 2,
+        "encoding": "int",
+        "min": 1,
+        "max": 4,
+        "default": 1,
+        "special_values": {
+          "4": "Unlimited"
+        }
+      },
+      "03": {
+        "label": "Ball Saves",
+        "start": 7243,
+        "length": 2,
+        "encoding": "int",
+        "min": 0,
+        "max": 5,
+        "default": 0,
+        "special_values": {
+          "0": "Off"
+        }
+      },
+      "04": {
+        "_notes": "Shown in the menu only when Ball Saves (A.2 03) is not Off.",
+        "label": "Ball Save Time",
+        "start": 7245,
+        "length": 2,
+        "encoding": "int",
+        "min": 2,
+        "max": 15,
+        "default": 6
+      },
+      "05": {
+        "label": "Timed Plunger",
+        "start": 7247,
+        "length": 2,
+        "encoding": "int",
+        "min": 29,
+        "max": 90,
+        "default": 29,
+        "special_values": {
+          "29": "Off"
+        }
+      },
+      "06": {
+        "label": "Flipper Plunger",
+        "start": 7250,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "07": {
+        "label": "Staged Ball",
+        "start": 7252,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "08": {
+        "label": "Special Mode",
+        "start": 7254,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "09": {
+        "label": "Amode Bong Snds",
+        "start": 7256,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "Sparse",
+          "On"
+        ]
+      },
+      "10": {
+        "label": "Extraball Percnt",
+        "start": 7257,
+        "length": 2,
+        "encoding": "int",
+        "min": 25,
+        "max": 45,
+        "default": 35,
+        "multiple_of": 5
+      },
+      "11": {
+        "label": "Multiball Percnt",
+        "start": 7259,
+        "length": 2,
+        "encoding": "int",
+        "min": 25,
+        "max": 45,
+        "default": 35,
+        "multiple_of": 5
+      },
+      "12": {
+        "label": "Recycle Diffclty",
+        "start": 7262,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      "13": {
+        "label": "Euro Time Machne",
+        "start": 7264,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "14": {
+        "label": "Window Awards",
+        "start": 7266,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Normal",
+          "No Ex Ball",
+          "No Game",
+          "No Both"
+        ]
+      },
+      "15": {
+        "label": "Family Mode",
+        "start": 7268,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "No",
+          "Yes"
+        ]
+      },
+      "16": {
+        "label": "Disable Crane",
+        "start": 7270,
+        "encoding": "enum",
+        "default": 0,
+        "values": [
+          "Off",
+          "On"
+        ]
+      },
+      "17": {
+        "label": "Plyr Tournament",
+        "start": 7272,
+        "encoding": "enum",
+        "default": 1,
+        "values": [
+          "No",
+          "Yes"
         ]
       }
     }
