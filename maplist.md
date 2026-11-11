@@ -1238,6 +1238,7 @@
 * [Speakeasy (4 Players)][7f20b] _speakes4_
 * [Spectrum (rev. 4)][a26fb] _spectru4_
 * [Speed Test][797e4] _stest_
+* [Spider-Man (V2.61)][0b947] _sman_261_
 * [Spider-Man Vault Edition (V1.0)][491d9] _smanve_100_
 * [Spider-Man Vault Edition (V1.01)][491d9] _smanve_101_
 * [Spider-Man Vault Edition (V1.01) (Colored MOD)][491d9] _smanve_101c_
@@ -1620,6 +1621,7 @@
 [0834d]: maps/williams/wpc/sttng_x8.map.json
 [098e2]: maps/williams/system11/pool_l7.map.json
 [0a691]: maps/williams/wpc/rs_lx4.map.json
+[0b947]: maps/stern/sam/sman_261.map.json
 [0cb63]: maps/sega/whitestar/harl_a40.map.json
 [0d071]: maps/sega/whitestar/godzilla.map.json
 [0d40b]: maps/capcom/bsv102.map.json
