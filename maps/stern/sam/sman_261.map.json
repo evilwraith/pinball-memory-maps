@@ -17,12 +17,16 @@
     "Status byte 0x00036606 (player + 0x32): 01 in attract, 13 with a ball in play, 15 from each tilt to",
     "the next ball -- the variant that keeps bit 0x01 in play, as on st_161h. game_over is any bit",
     "above 0x01 (mask 0xFE inverted); tilted is an enum over mask 0x1F with only 21 (0x15) true.",
+    "Confirmed on an ALP4K cabinet (2026-11-11): a two-player game tilted on P1's ball 1. ScoreServer",
+    "decoded both final scores exactly (2,081,890 and 1,757,670), all twelve champion records, and ended",
+    "the game on game_over when the status byte returned to 01 after P2's last ball, which the headless",
+    "run never reached. The status byte read 15 only for the tilted ball; no other in-game value appeared.",
     "Scores are 4 bytes on 8-byte centres from 0x02110A24.",
     "Master Volume 0x02110250, 0-63, factory 40, complement check byte after it."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
