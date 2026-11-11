@@ -62,7 +62,7 @@ order with the tap running) gave this mapping from menu number to record index:
 Two array layouts exist, and which one a game uses is a property of the ROM revision
 rather than of the game. On the *offset-0* family Free Play is record 33 and the
 mapping above applies directly: avr_200, avs_170, bbh_170, bdk_294, csi_240,
-fg_1200af, nba_802, st_161h, tf_180, trn_174h, twd_156, twenty4_150, wpt_140a, xmn_151h. On the
+fg_1200af, nba_802, potc_600as, st_161h, tf_180, trn_174h, twd_156, twenty4_150, wpt_140a, xmn_151h. On the
 *+2* family two records are inserted somewhere before record 30 and everything
 measured sits exactly two later -- Free Play 35, Balls Per Game 32, Credit Limit 34,
 Ball Save Time 39: acd_170h, im_185ve, im_186, im_186ve, mtl_170h, mtl_180, mtl_180h,
@@ -80,7 +80,7 @@ are named in the maps.
 
 Master volume is *not* an adjustment record. It is a single byte (0–63, factory 40)
 with a complement check byte immediately after it, at a per-ROM address:
-`0x02110250` on most games, `0x0211024C` on NBA and World Poker Tour, `0x02110248` on Iron Man,
+`0x02110250` on most games, `0x0211024C` on NBA, Pirates of the Caribbean and World Poker Tour, `0x02110248` on Iron Man,
 `0x02110204` on The Walking Dead LE (`twd_156` uses `0x02110250`). Adjustment #47
 Music Volume (1–15) is a different setting.
 
@@ -115,7 +115,7 @@ another:
 | slot address | spacing | games |
 |---|---|---|
 | `0x021109E4` | 4 | avs_170, im_185ve, im_186, im_186ve, mtl_170h, smanve_101, st_162, tf_180, trn_174h, twd_156, xmn_151h |
-| `0x021109E4` | 8 | avr_200, bbh_170, fg_1200af, nba_802, twenty4_150 |
+| `0x021109E4` | 8 | avr_200, bbh_170, fg_1200af, nba_802, potc_600as, twenty4_150 |
 | `0x021109F0` | 8 | bdk_294, csi_240 |
 | `0x02110A0C` | 4 | st_161h, st_162h |
 | `0x02110A24` | 8 | acd_170h, mtl_180, mtl_180h |

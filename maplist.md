@@ -954,6 +954,10 @@
 * [Pink Panther][dbe48] _pnkpnthr_
 * [Pink Panther (7-digit conversion)][5bc8d] _pnkpntr7_
 * [Pink Panther (sound correction fix)][dbe48] _pnkpntrs_
+* [Pirates of the Caribbean (V6.0 English, French)][71a91] _potc_600af_
+* [Pirates of the Caribbean (V6.0 English, Italian)][71a91] _potc_600ai_
+* [Pirates of the Caribbean (V6.0 English, Spanish)][71a91] _potc_600as_
+* [Pirates of the Caribbean (V6.0 German, French)][71a91] _potc_600gf_
 * [Pistol Poker (R02)][c2bf9] _pstlpkr_
 * [Playboy][b62f3] _playboy_
 * [Playboy (/10 Scoring Free Play)][561af] _playboyd_
@@ -1777,6 +1781,7 @@
 [708c3]: maps/williams/wpc/cftbl_l2.map.json
 [70e78]: maps/bally/as-2518-35/newwave.map.json
 [71470]: maps/gottlieb/system3/clas1812.map.json
+[71a91]: maps/stern/sam/potc_600as.map.json
 [71afe]: maps/williams/wpc/gi_l6.map.json
 [72274]: maps/stern/whitestar/rip300.map.json
 [72d1a]: maps/williams/system7/generic-10KB.map.json
