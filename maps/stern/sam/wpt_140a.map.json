@@ -1,0 +1,266 @@
+{
+  "_notes": [
+    "World Poker Tour V1.40, all nine language sets. Upstream had no map for any WPT set.",
+    "NVRAM fields were read from the ROM image by backport tools/samrom/samrom.py (adjustment ID n",
+    "at 0x02102000 + 8n, the high-score descriptor table, the Master Volume setter, the score",
+    "array literal), the rules validated on the mapped SAM games. All nine V1.40 images give",
+    "identical addresses; V1.12 and earlier do not match the rules and are not claimed.",
+    "Free Play is adjustment ID 34, Balls Per Game 31, Credit Limit 33: the offset-0 layout.",
+    "current_player, current_ball and the status byte come from a headless libpinmame run of",
+    "wpt_140a (two players, three balls, two tilts, 4 Hz samples of CPU RAM 0x30000-0x3FFFF and",
+    "NVRAM): player and ball at 0x00033D0C/0x00033D0D, the only candidate the ROM offers and the",
+    "only one the run found.",
+    "Status byte 0x00033D38 (player + 0x2C, as on fg_1200af and potc_600af): 00 before the ROM",
+    "initialises, 01 in attract and after the game, 12 with a ball in play, 14 from the tilt to",
+    "the next ball, at both tilts. game_over is any value of 0 or 1; tilted is bit 0x04.",
+    "Scores are 4 bytes on 8-byte centres from 0x02110A2C; bytes +4..+7 stayed zero after NVRAM",
+    "initialisation. The champion records are the 32-byte form (checksum16 at +28), so the",
+    "high scores are 4 bytes as well. No mode champions: the ROM's descriptor table lists GC and",
+    "HS1-HS4 only.",
+    "Master Volume 0x0211024C, 0-63, factory 40, complement check byte after it."
+  ],
+  "_fileformat": 0.9,
+  "_metadata": {
+    "version": 1,
+    "license": "Open Data Commons Open Database License (ODbL) v1.0",
+    "copyright": [
+      "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
+    ],
+    "platform": "stern-sam",
+    "roms": [
+      "wpt_140a",
+      "wpt_140af",
+      "wpt_140ai",
+      "wpt_140al",
+      "wpt_140f",
+      "wpt_140g",
+      "wpt_140gf",
+      "wpt_140i",
+      "wpt_140l"
+    ],
+    "validation": {
+      "checksum": [
+        {
+          "label": "Free Play adjustment",
+          "start": "0x02102110",
+          "end": "0x02102114",
+          "complement": true
+        },
+        {
+          "label": "Balls Per Game adjustment",
+          "start": "0x021020F8",
+          "end": "0x021020FC",
+          "complement": true
+        },
+        {
+          "label": "Maximum Credits adjustment",
+          "start": "0x02102108",
+          "end": "0x0210210C",
+          "complement": true
+        },
+        {
+          "label": "Master Volume",
+          "start": "0x0211024C",
+          "end": "0x0211024D",
+          "complement": true
+        },
+        {
+          "label": "Grand Champion",
+          "start": "0x021031E0",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #1",
+          "start": "0x02103200",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #2",
+          "start": "0x02103220",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #3",
+          "start": "0x02103240",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #4",
+          "start": "0x02103260",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        }
+      ]
+    }
+  },
+  "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "encoding": "int",
+      "start": "0x02110900"
+    },
+    "free_play": {
+      "label": "Free Play",
+      "encoding": "bool",
+      "start": "0x02102110"
+    },
+    "credits": {
+      "label": "Credits",
+      "encoding": "int",
+      "start": "0x0211100C"
+    },
+    "max_credits": {
+      "label": "Maximum Credits",
+      "encoding": "int",
+      "start": "0x02102108"
+    },
+    "ball_count": {
+      "label": "Balls Per Game",
+      "encoding": "int",
+      "start": "0x021020F8"
+    },
+    "current_player": {
+      "label": "Player",
+      "encoding": "int",
+      "start": "0x00033D0C"
+    },
+    "current_ball": {
+      "label": "Ball",
+      "encoding": "int",
+      "start": "0x00033D0D"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00033D38",
+      "mask": "0xFE",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "bool",
+      "start": "0x00033D38",
+      "mask": "0x04"
+    },
+    "volume": {
+      "label": "Master Volume",
+      "encoding": "int",
+      "start": "0x0211024C",
+      "min": 0,
+      "max": 63,
+      "default": 40
+    },
+    "scores": [
+      {
+        "label": "Player 1",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A2C"
+      },
+      {
+        "label": "Player 2",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A34"
+      },
+      {
+        "label": "Player 3",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A3C"
+      },
+      {
+        "label": "Player 4",
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02110A44"
+      }
+    ]
+  },
+  "high_scores": [
+    {
+      "label": "Grand Champion",
+      "short_label": "GC",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x021031E0"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x021031F8"
+      }
+    },
+    {
+      "label": "High Score #1",
+      "short_label": "HS1",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103200"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103218"
+      }
+    },
+    {
+      "label": "High Score #2",
+      "short_label": "HS2",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103220"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103238"
+      }
+    },
+    {
+      "label": "High Score #3",
+      "short_label": "HS3",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103240"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103258"
+      }
+    },
+    {
+      "label": "High Score #4",
+      "short_label": "HS4",
+      "initials": {
+        "encoding": "ch",
+        "null": "terminate",
+        "length": 11,
+        "start": "0x02103260"
+      },
+      "score": {
+        "encoding": "int",
+        "length": 4,
+        "start": "0x02103278"
+      }
+    }
+  ]
+}

@@ -1573,6 +1573,15 @@
 * [World Cup Soccer (PA-5 LED Ghost Fix)][ba38e] _wcs_p5_
 * [World Cup Soccer (PX-3 Prototype)][7f582] _wcs_p3_
 * [World Cup Soccer (PX-6 LED Ghost Fix)][7f582] _wcs_p6_
+* [World Poker Tour (V14.0 English, French)][0594c] _wpt_140af_
+* [World Poker Tour (V14.0 English, Italian)][0594c] _wpt_140ai_
+* [World Poker Tour (V14.0 English, Spanish)][0594c] _wpt_140al_
+* [World Poker Tour (V14.0 French)][0594c] _wpt_140f_
+* [World Poker Tour (V14.0 German)][0594c] _wpt_140g_
+* [World Poker Tour (V14.0 German, French)][0594c] _wpt_140gf_
+* [World Poker Tour (V14.0 Italian)][0594c] _wpt_140i_
+* [World Poker Tour (V14.0 Spanish)][0594c] _wpt_140l_
+* [World Poker Tour (V14.0)][0594c] _wpt_140a_
 * [X's & O's][913b3] _xsandos_
 * [X's & O's (Free Play)][07ad3] _xsandosa_
 * [X-Files, The (2.00)][f915c] _xfiles20_
@@ -1597,6 +1606,7 @@
 [05118]: maps/williams/wpc/afm_11.map.json
 [055e6]: maps/williams/wpc/taf_l5.map.json
 [0592c]: maps/williams/wpc/ss_12.map.json
+[0594c]: maps/stern/sam/wpt_140a.map.json
 [0674d]: maps/stern/whitestar/lotr41.map.json
 [07095]: maps/williams/system3/lucky_l1.map.json
 [070ac]: maps/williams/wpc/pop_lx5.map.json
