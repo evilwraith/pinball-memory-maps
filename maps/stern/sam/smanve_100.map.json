@@ -15,11 +15,16 @@
     "check bytes. Player and ball are at 0x000325B4/0x000325B5 (the ROM's only candidate outside the",
     "round addresses that have never been real), the status byte at 0x000325E6 = player + 0x32:",
     "01 in attract, 13 in play, 15 from each tilt to the next ball, as on sman_261. game_over is any",
-    "bit above 0x01 (mask 0xFE inverted); tilted is an enum over mask 0x1F with only 21 (0x15) true."
+    "bit above 0x01 (mask 0xFE inverted); tilted is an enum over mask 0x1F with only 21 (0x15) true.",
+    "Confirmed on an ALP4K cabinet (2026-11-11): a two-player game on smanve_100 from factory NVRAM,",
+    "tilted on P1's ball 1. ScoreServer decoded both final scores exactly (2,447,960 and 426,460), the",
+    "factory high-score table and all seven champions as whole records, and ended the game on game_over",
+    "when the status byte returned to 01 after P2's last ball. The status byte read 15 only for the",
+    "tilted ball and one more in-game value, 6A, for about 20 s of P1's ball 2 (10 under mask 0x1F)."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
