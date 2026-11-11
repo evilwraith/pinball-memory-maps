@@ -1239,7 +1239,7 @@
 * [Spectrum (rev. 4)][a26fb] _spectru4_
 * [Speed Test][797e4] _stest_
 * [Spider-Man (V2.61)][0b947] _sman_261_
-* [Spider-Man Vault Edition (V1.0)][491d9] _smanve_100_
+* [Spider-Man Vault Edition (V1.0)][6fae7] _smanve_100_
 * [Spider-Man Vault Edition (V1.01)][491d9] _smanve_101_
 * [Spider-Man Vault Edition (V1.01) (Colored MOD)][491d9] _smanve_101c_
 * [Spirit][aa641] _spirit0_
@@ -1778,6 +1778,7 @@
 [6b630]: maps/taito/shock.map.json
 [6ed11]: maps/williams/wpc/ft_l4.map.json
 [6ee5e]: maps/dataeast/version2/poto_a32.map.json
+[6fae7]: maps/stern/sam/smanve_100.map.json
 [6fea2]: maps/williams/system6/flash_l1.map.json
 [7015d]: maps/sega/whitestar/twst_405.map.json
 [708c3]: maps/williams/wpc/cftbl_l2.map.json

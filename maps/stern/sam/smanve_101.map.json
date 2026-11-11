@@ -15,15 +15,15 @@
     "and the end of the tilted ball, during which player 1's score sat frozen at 138,820. game_over",
     "(mask 0x12, inverted) is correct in all 1,099 frames; tilted is bit 0x04.",
     "credits at 0x0211100C, the sixteenth SAM game at that address: rose to 9 with the coins (capped",
-    "by the Maximum Credits just set) and fell to 8 at game start."
+    "by the Maximum Credits just set) and fell to 8 at game start.",
+    "smanve_100 is not this layout (offset-0 adjustments, records 0x10 lower); it has its own map, smanve_100.map.json."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 13,
+    "version": 14,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "stern-sam",
     "roms": [
-      "smanve_100",
       "smanve_101",
       "smanve_101c"
     ],
