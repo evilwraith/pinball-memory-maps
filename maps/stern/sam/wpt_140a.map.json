@@ -5,7 +5,7 @@
     "at 0x02102000 + 8n, the high-score descriptor table, the Master Volume setter, the score",
     "array literal), the rules validated on the mapped SAM games. All nine V1.40 images give",
     "identical addresses; V1.12 and earlier do not match the rules and are not claimed.",
-    "Free Play is adjustment ID 34, Balls Per Game 31, Credit Limit 33: the offset-0 layout.",
+    "Free Play is record 33 (ROM adjustment ID 34), Balls Per Game 30, Credit Limit 32: the offset-0 layout.",
     "current_player, current_ball and the status byte come from a headless libpinmame run of",
     "wpt_140a (two players, three balls, two tilts, 4 Hz samples of CPU RAM 0x30000-0x3FFFF and",
     "NVRAM): player and ball at 0x00033D0C/0x00033D0D, the only candidate the ROM offers and the",
