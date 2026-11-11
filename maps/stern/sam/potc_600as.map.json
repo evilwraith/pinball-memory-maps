@@ -19,12 +19,17 @@
     "ball in play, 43 while a ball is held, 14 from each tilt to the next ball. game_over is any",
     "value of 0 or 1 (mask 0xFE inverted); tilted is an enum over mask 0x1F with only 20 (0x14) true,",
     "as on wpt_140a, where bit 0x04 also appears in play.",
+    "Confirmed on an ALP4K cabinet (2026-11-11): a two-player game on potc_600as, tilted on P1's ball 1.",
+    "ScoreServer decoded both final scores exactly (1,411,270 and 14,564,820) and ended the game on",
+    "game_over when the status byte returned to 01 after P2's last ball, which the headless run never",
+    "reached. The status byte read 14 only for the tilted ball, 43 while balls were held, and one more",
+    "in-game value, 39, for about 40 s of P2's ball 2; 39 reads 25 under mask 0x1F and is not a tilt.",
     "Scores are 4 bytes on 8-byte centres from 0x021109E4.",
     "Master Volume 0x0211024C, 0-63, factory 40, complement check byte after it."
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "copyright": [
       "Copyright (C) 2026 by Wes Smith <evilwraith@gmail.com>"
