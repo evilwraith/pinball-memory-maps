@@ -45,7 +45,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 15,
+    "version": 16,
     "copyright": [
       "Copyright (C)2024 by Tom Collins <tom@tomlogic.com>",
       "Copyright (C) 2025 by Tom Collins <tom@scorbit.io>"
@@ -806,6 +806,68 @@
         {
           "label": "Medals Champion",
           "start": "0x2102F60",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Master Volume",
+          "start": "0x02110250",
+          "end": "0x02110251",
+          "complement": true
+        },
+        {
+          "label": "Grand Champion",
+          "start": "0x02102E80",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #1",
+          "start": "0x02102EA0",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #2",
+          "start": "0x02102EC0",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #3",
+          "start": "0x02102EE0",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "High Score #4",
+          "start": "0x02102F00",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Combo Champion",
+          "start": "0x02102F20",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Warp Champion",
+          "start": "0x02102F40",
+          "length": 30,
+          "bits": 16,
+          "complement": true
+        },
+        {
+          "label": "Medals Champion",
+          "start": "0x02102F60",
           "length": 30,
           "bits": 16,
           "complement": true

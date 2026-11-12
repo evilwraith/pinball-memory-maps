@@ -4,16 +4,22 @@
 
 Stern SAM games (2006–2014: Spider-Man through The Walking Dead) run an ARM AT91 CPU
 with 128 KB of battery-backed NVRAM mapped at `0x02100000`. PinMAME exposes an 80 MB
-CPU image, but everything a map needs sits in two windows: NVRAM, and the 64 KB of
-working RAM at `0x00030000`–`0x0003FFFF` (the rest of the image is constant across a
-game). The platform file's *Main RAM* entry is 1 MB so that maps may read the working
+CPU image, but everything a map needs sits in two windows: NVRAM, and the working
+RAM around `0x00030000` (`0x00030000`–`0x0003FFFF` on most games; Wheel of Fortune,
+The Rolling Stones and AC/DC Pro keep player and status just below it, at `0x0002C59C`,
+`0x0002F988` and `0x0002EEC0`). The platform file's *Main RAM* entry is 1 MB so that maps may read the working
 RAM; widening it permits reads and changes nothing about how any field decodes.
 
 Everything in these maps that is not attributed to a disassembly was measured live:
 a 2 Hz tap of CPU RAM and NVRAM recorded on a cabinet across an operator-menu
 session, coins, and at least one full game with a mid-ball tilt, then each
-declaration was checked against every sample of its recording. Per-map `_notes`
-record what is specific to that game; this file holds what the games share.
+declaration was checked against every sample of its recording. Since November 2026
+most of the NVRAM side is read from the ROM image instead (adjustments, high-score and
+champion records, scores), and the working-RAM fields of the games no cabinet recorded
+come from headless libpinmame games of the same ROM (coins, a two-player game, two
+tilts), whose status values every map's `game_over` and `tilted` were also checked
+against. Per-map `_notes` record what is specific to that game and how it was found;
+this file holds what the games share.
 
 Two things move between games and must never be copied from one map to another:
 the score slots and the CPU-side counters (player, ball, status). Two things are
@@ -79,8 +85,8 @@ Select swapped; the ROM and a cabinet's menu put Language at record 6, ID 7.)
 
 #### Adjustments from the ROM
 
-The ROM describes every adjustment, so `adjustments` can be generated rather than swept
-(wpt_140a, potc_600as, sman_261, smanve_100, st_161h so far):
+The ROM describes every adjustment, so `adjustments` can be generated rather than swept.
+Every SAM map has its A.1 and A.2 sections from the ROM:
 
 - A descriptor table, 32 bytes per adjustment ID: record address, base default, min, max,
   step, a pointer to the name, and a display type. The ID is the entry's position. Most
@@ -98,14 +104,28 @@ The ROM describes every adjustment, so `adjustments` can be generated rather tha
 
 A factory reset applies an install preset after the base defaults (Player Language
 Select becomes YES; Spider-Man's replay levels and high-score defaults rise), so the
-defaults in the maps are a factory-fresh NVRAM's. A few game-specific displays are game
-code and were read off the menu instead (noted in the maps).
+defaults in the maps are a factory-fresh NVRAM's. Game-specific displays are game code
+that the boot copies to RAM at `0x010xxxxx`; their formatters were read from a RAM dump
+of the booted game, which gives the values they print as words (Locks From Plunger 0
+NONE, 4 UNLIMITED). Values such a formatter prints through SAM's own format strings
+(`%u%P1/ST/ND/RD/TH/% MULTIBALL`) stay plain numbers. Best Combo Champion stores its
+N-way count in the record's high half (`0x00050001` shows 5-WAY), so it is declared as
+the two bytes at +2.
 
-Master volume is *not* an adjustment record. It is a single byte (0–63, factory 40)
-with a complement check byte immediately after it, at a per-ROM address:
-`0x02110250` on most games, `0x0211024C` on NBA, Pirates of the Caribbean and World Poker Tour, `0x02110248` on Iron Man,
-`0x02110204` on The Walking Dead LE (`twd_156` uses `0x02110250`). Adjustment #47
-Music Volume (1–15) is a different setting.
+Master volume is *not* an adjustment record. It is a single byte (0–63, factory 40;
+52 on AC/DC LE) with a complement check byte immediately after it, at a per-ROM
+address. Each address below was measured by pressing volume up in attract (libpinmame)
+and diffing the NVRAM: the byte and its check byte moved and nothing else did. The
+ROM's volume setter (`cmp rN, #63 ; movcs rN, #63`, then the address from the literal
+pool) gives the same address on every one of them. Adjustment #47 Music Volume (1–15)
+is a different setting.
+
+| address | games |
+|---|---|
+| `0x02110204` | mtl_180, mtl_180h, twd_160h |
+| `0x02110248` | acd_170, acd_170h, im_185ve, im_186, im_186ve, st_162, st_162h |
+| `0x0211024C` | bdk_294, csi_240, fg_1200af, ij4_210, nba_802, potc_600as, shr_141, sman_210–sman_240, twenty4_150, wof_500, wpt_140a |
+| `0x02110250` | avr_200, avs_170, avs_170h, bbh_170, mt_145h, mtl_170h, rsn_110h, sman_261, smanve_100, smanve_101, st_161h, tf_180, trn_174h, twd_156, xmn_151h |
 
 ### Audits
 
@@ -137,20 +157,21 @@ another:
 
 | slot address | spacing | games |
 |---|---|---|
-| `0x021109E4` | 4 | avs_170, im_185ve, im_186, im_186ve, mtl_170h, smanve_101, st_162, tf_180, trn_174h, twd_156, xmn_151h |
-| `0x021109E4` | 8 | avr_200, bbh_170, fg_1200af, nba_802, potc_600as, twenty4_150 |
+| `0x021109E4` | 4 | avs_170, avs_170h, im_185ve, im_186, im_186ve, mtl_170h, smanve_100, smanve_101, st_162, tf_180, trn_174h, twd_156, xmn_151h |
+| `0x021109E4` | 8 | avr_200, bbh_170, fg_1200af, ij4_210, nba_802, potc_600as, rsn_110h, shr_141, sman_210–sman_240, twenty4_150 |
 | `0x021109F0` | 8 | bdk_294, csi_240 |
-| `0x02110A0C` | 4 | st_161h, st_162h |
-| `0x02110A24` | 8 | acd_170h, mtl_180, mtl_180h, sman_261 |
-| `0x02110A2C` | 8 | wpt_140a |
+| `0x02110A0C` | 4 | mt_145h, st_161h, st_162h |
+| `0x02110A24` | 8 | acd_170, acd_170h, mtl_180, mtl_180h, sman_261 |
+| `0x02110A2C` | 8 | wof_500, wpt_140a |
 | `0x02110A9C` | 8 | twd_160h |
 
 Eight-byte spacing does not by itself mean an eight-byte score: several of the games
 above pair it with a 32-byte champion record, whose score cannot be wider than four
 bytes, so the extra four bytes are padding there. The games whose champion records do
 carry a 64-bit score (see below) are all in the 8-byte group, which is suggestive but
-not proof -- a live slot's width has not been measured on any game, and the slots are
-declared as four bytes throughout.
+not proof -- a live slot's width has not been measured on any game. The slots are
+declared as four bytes except on the games with 36-byte champion records (below),
+which declare eight.
 
 A recurring false positive when searching for score slots is a *scaled set* in CPU
 RAM: four values each roughly a quarter of the previous one, which is display scratch,
@@ -244,43 +265,45 @@ the status byte below, and a new game is the ball wrapping down to 1.
 
 ### Status bitfield
 
-On most games the byte 0x31 past the ball counter is a status bitfield: it reads 1
-through attract and other values through a game, and the value while tilted differs
-from the value in play by one bit for exactly the samples between the tilt and the end
-of the tilted ball, during which the player's score is frozen. 17 of the
-23 games with a `game_over` declaration use that byte:
+On almost every game one byte near the ball counter is a status byte (player + 0x32 on
+most, + 0x2C on Family Guy, Pirates and World Poker Tour, + 0x34 on Spider-Man 2.10
+and 2.20, + 0x18 on Shrek, + 0x48 on Wheel of Fortune). It reads `01` through attract;
+in a game it reads a base value (`12`, `13` or `14` by game) and, while modes, ball
+serves and animations run, other values (`26`, `28`, `40`, `45`, `61`, `6B`, `72`,
+`B5`, ...); from the tilt to the next ball served it reads the base value plus 2 (`14`,
+`15` or `16`).
+
+Several maps used to test single bits of it (`game_over` as mask 0x12 or 0x14
+inverted, `tilted` as bit 0x04 or 0x02). The mode values carry those bits, so on a
+full game those tests misread: Avatar's `40` and `45`, Avengers' `61`, TRON's `4D` and
+X-Men's `28` read as game over in the middle of a game, and Big Buck Hunter's
+`34`/`3F`/`56`/`6F`, Iron Man's `72` and the like read as tilted. They were found by
+running each game's ROM headless through a two-player game with two tilts and
+decoding every declaration over every sample; Transformers' own recording had already
+seen `40` for the first seconds of a game. The maps now use what holds on every sample
+of every game:
+
+- `game_over`: no bit above 0x01 set (mask 0xFE, inverted), i.e. the byte is `00` or `01`.
+- `tilted`: the tilt value alone, as an enum over mask 0x1F (0x3F on Mustang, whose
+  `B5` equals its `15` under 0x1F; 0x7F on X-Men and The Rolling Stones, whose `55`
+  does).
 
 | games | game_over | tilted |
 |---|---|---|
-| avr_200, avs_170, bbh_170, bdk_294, smanve_101, trn_174h, xmn_151h | mask 0x12 inverted | mask 0x04 |
-| im_185ve, im_186, im_186ve | mask 0x14 inverted | mask 0x02 |
+| acd_170, avr_200, avs_170, avs_170h, mt_145h, nba_802, potc_600as, rsn_110h, shr_141, sman_210–sman_261, smanve_100, st_161h, tf_180, trn_174h, twd_156, wof_500, wpt_140a, xmn_151h | mask 0xFE inverted | enum, tilt value only |
+| acd_170h, bbh_170, fg_1200af, im_185ve, im_186, im_186ve | as before (it held on every sample) | enum, tilt value only |
+| bdk_294, mtl_170h, smanve_101, twd_160h | as before | as before (bit 0x04 or 0x02: no mode value carried it) |
 | mtl_180, mtl_180h | mask 0x30 inverted | enum over mask 0x06 |
-| csi_240 | mask 0x12 inverted | mask 0x02 at 0x000390BC (tilt-warning counter) |
-| mtl_170h | mask 0x38 inverted | mask 0x04 |
-| st_161h | mask 0xFE inverted | enum over mask 0x1F, value 21 only |
-| tf_180 | mask 0xFE inverted | mask 0x04 |
-| twd_160h | mask 0xFE inverted | mask 0x02 |
+| csi_240, twenty4_150 | as before | tilt-warning counter (below) |
 
-No single bit is common to every in-play value across games, and the tilt bit is `0x04`
-on some ROMs and `0x02` on others, so each map declares the narrowest expression that
-holds on every sample of its own recording rather than a shared decoding. The values
-actually observed for a game -- what it reads in attract, at game start, at ball start,
-in play and while tilted -- are recorded in that map's `_notes`, along with the size of
-the recording they came from.
+Star Trek Pro and LE (`st_162`, `st_162h`) do not keep a status byte of this kind:
+`game_over` there is a byte that reads `00` in attract and `02` from the first ball to
+the end of the game (`0x00032652`, `0x000344E6`), and `tilted` a flag set from shortly
+after the tilt to the end of the tilted ball (`0x00031211` bit 0x02, `0x0003310B`).
 
-The remaining games do not use that byte and keep game over, tilt, or both elsewhere:
-
-| game | game_over | tilted |
-|---|---|---|
-| acd_170h | `0x00034C7E`, whole byte | whole byte, inverted at 0x00038D24 |
-| fg_1200af | `0x00032E04`, whole byte | not present |
-| nba_802 | `0x0003FF83`, whole byte | whole byte at 0x0003FF6B |
-| st_162h | `0x0003BA3E`, whole byte | whole byte at 0x0003310B |
-| twd_156 | `0x00035E48`, whole byte | not present |
-| twenty4_150 | `0x02102A3C`, whole byte, inverted | mask 0x02 at 0x0003893C (tilt-warning counter) |
-
-Contributions that decode the individual bits are welcome; the recordings behind each
-row are described in the maps' notes.
+The ball counter is the dependable signal for a new game (it wraps to 1), and the
+status byte for its end; consumers that need more than these two states should read
+the map's `_notes`, which list the values each game was seen to take.
 
 ### Tilt warnings
 
