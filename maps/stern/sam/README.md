@@ -57,7 +57,7 @@ order with the tap running) gave this mapping from menu number to record index:
 | #25–#30, #36 | 53–59 |
 | #37 HSTD Reset Count | 60 |
 | #62–#64 | 61–63 |
-| system group #43, #41, #61, #54, #42, #60, #40, #59, #47, #39 | 0–9 |
+| system group #43, #41, #61, #54, #42, #60, #39, #59, #47, #40 | 0–9 |
 
 Two array layouts exist, and which one a game uses is a property of the ROM revision
 rather than of the game. On the *offset-0* family Free Play is record 33 and the
@@ -73,10 +73,33 @@ families Balls Per Game is three records below Free Play and Credit Limit one be
 which is how `ball_count` and `max_credits` were placed on games where only Free Play
 was toggled; on every game where the menu was later exercised the rule held.
 
-Multi-option adjustments store an option code, and the display order is not the
-numeric order: Replay Type on Star Trek is NONE=0, FIXED=1, DYNAMIC=2, AUTO=3 while
-the menu lists AUTO first. Only codes that were stepped through with the tap running
-are named in the maps.
+Multi-option adjustments store an option code: Replay Type is NONE=0, FIXED=1,
+DYNAMIC=2, AUTO=3. (The sweep table above had #39 Language and #40 Player Language
+Select swapped; the ROM and a cabinet's menu put Language at record 6, ID 7.)
+
+#### Adjustments from the ROM
+
+The ROM describes every adjustment, so `adjustments` can be generated rather than swept
+(wpt_140a, potc_600as, sman_261, smanve_100, st_161h so far):
+
+- A descriptor table, 32 bytes per adjustment ID: record address, base default, min, max,
+  step, a pointer to the name, and a display type. The ID is the entry's position. Most
+  ROMs keep the records from `0x02102008`; early World Poker Tour (before 1.40) and Pirates
+  of the Caribbean (before 3.00) keep them from `0x02100BC4`.
+- A display-type table: per type, the option names (as message IDs) and the formatter
+  that prints the values some settings show as words (Ball Save Time 0 is NO BALL SAVES
+  and 16 AUTO, Match Percentage 11 is OFF, ...). Game Pricing's names are the run of
+  pricing messages from AUSTRALIA 1, with CUSTOM at its maximum.
+- The A.1 menu order as a list of IDs. The newest ROMs leave IDs 11 and 12 (the two
+  records of the *+2* family) out of it.
+- A.2 is not a list in the ROM, and the menu hides some IDs (Star Trek: Fixture On and
+  Off; Spider-Man VE 1.00: IDs 114-117; Pirates: 78-80), so the A.2 items in the maps are
+  the IDs the service menu showed when it was walked in libpinmame.
+
+A factory reset applies an install preset after the base defaults (Player Language
+Select becomes YES; Spider-Man's replay levels and high-score defaults rise), so the
+defaults in the maps are a factory-fresh NVRAM's. A few game-specific displays are game
+code and were read off the menu instead (noted in the maps).
 
 Master volume is *not* an adjustment record. It is a single byte (0–63, factory 40)
 with a complement check byte immediately after it, at a per-ROM address:
