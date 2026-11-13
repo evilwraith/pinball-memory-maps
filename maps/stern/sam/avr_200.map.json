@@ -38,7 +38,9 @@
     "headless game read 40/45/6B in modes, which mask 0x12 took for game over and bit 0x04 (45) for a",
     "tilt.",
     "2026-11: Master Volume and the A.1 (64) and A.2 (26) adjustments added from the ROM image",
-    "(README, 'Adjustments from the ROM')."
+    "(README, 'Adjustments from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,814,640 /",
+    "2,098,870, the records and the status byte (01, 13 play, 15 tilted) matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
