@@ -31,7 +31,8 @@
     "deliberately not mapped: none of those initials appears in this game's attract, which shows only",
     "the Autobot and Decepticon tables declared above. The records look like the generic high-score",
     "table the ROM carries but does not use on this theme.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x0003246A as 01 in attract, 13 in play, 28/5D/61/65/69 in modes, 15 tilted. tilted was bit 0x04, set in 5D, 65 and 69 (200 samples away from any tilt): it is now the value 0x15 (mask 0x1F)."
+    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x0003246A as 01 in attract, 13 in play, 28/5D/61/65/69 in modes, 15 tilted. tilted was bit 0x04, set in 5D, 65 and 69 (200 samples away from any tilt): it is now the value 0x15 (mask 0x1F).",
+    "Confirmed on a cabinet (ALP4K, 2026-11-13, Transformers Pro Marcade Mod table): a two-player game tilted on P1 ball 1. The status byte 0x0003246A read 01 in attract, 28 at each ball served, 13 in play, 15 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over and the tilted enum (0x15 under mask 0x1F) were right on every sample; the earlier bit test (0x04) would also have held on this game, the enum is for the values the headless run saw. Final scores 2,470,730 / 1,341,010, free play, the Autobot and Decepticon Grand Champions and High Scores #1-#4, and the Combo and Best Combo champions (20 combos, 5-way) read as the DMD showed them; all 115 declared checksums validate on the cabinet's NVRAM after the game."
   ],
   "_fileformat": 0.9,
   "_metadata": {
