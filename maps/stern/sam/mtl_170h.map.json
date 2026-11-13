@@ -31,7 +31,10 @@
     "tilted is bit 0x04, which 41 does not carry, so that reading survives here.",
     "credits at 0x0211100C, the eleventh SAM game at that address.",
     "2026-11: Master Volume and the A.1 (64) and A.2 (136) adjustments added from the ROM image",
-    "(README, 'Adjustments from the ROM')."
+    "(README, 'Adjustments from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K, vpx-metallicapremium switched to mtl_170h; two",
+    "players, tilt on P1 ball 1): 1,268,690 / 1,212,840, the records and the status byte (01, 29 ball",
+    "served, 13 play, 15 tilted) matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
