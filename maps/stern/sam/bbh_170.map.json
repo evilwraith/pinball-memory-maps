@@ -26,7 +26,8 @@
     "(mask 0x12, inverted) is correct in all 803 frames; tilted is bit 0x04.",
     "credits at 0x0211100C, the eighth SAM game at that address. It read 9 -- the Maximum Credits",
     "just set, so the credit count was capped -- and fell to 8 at game start.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00031FFE as 01 in attract, 13 in play, 34/3F/56/6F in modes, 15 tilted. tilted was bit 0x04, set in 34, 3F, 56 and 6F (1078 samples away from any tilt): it is now the value 0x15 (mask 0x1F)."
+    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00031FFE as 01 in attract, 13 in play, 34/3F/56/6F in modes, 15 tilted. tilted was bit 0x04, set in 34, 3F, 56 and 6F (1078 samples away from any tilt): it is now the value 0x15 (mask 0x1F).",
+    "Confirmed on a cabinet (ALP4K, 2026-11-13, Big Buck Hunter Pro table): a two-player game tilted on P1 ball 1. The status byte 0x00031FFE read 01 in attract, 13 in play, 15 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over (no bit of 0x12) and the tilted enum (0x15 under mask 0x1F) were right on every sample. Final scores 829,480 / 778,500, free play, the factory Grand Champion and High Scores #1-#4 and the Open Season Champion read as the DMD showed them; all 104 declared checksums validate on the cabinet's NVRAM after the game."
   ],
   "_fileformat": 0.9,
   "_metadata": {
