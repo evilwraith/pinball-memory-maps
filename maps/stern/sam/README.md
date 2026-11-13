@@ -300,7 +300,7 @@ worse on a cabinet, and were replaced by the status byte:
 | st_162 | `game_over` `0x00032652` | stays 02 after the game ends |
 | st_162h | `game_over` `0x0003BA3E` | 0 after power-up until a game has ended |
 | st_162h | `tilted` `0x0003310B` | also set for a moment at each tilt warning |
-| twd_156 | `game_over` `0x00035E48` | 00 throughout (headless) |
+| twd_156 | `game_over` `0x00035E48` | 0 after power-up until a game has ended |
 | twenty4_150 | `game_over` `0x02102A3C` (NVRAM) | keeps 1 when a game is cut off by power-off |
 
 ### Tilt warnings

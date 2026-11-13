@@ -43,10 +43,12 @@
     "the factory defaults read JDB/75,000,000 and LFS/55,000,000, the set the rest of the SAM family",
     "ships.",
     "2026-11: game_over and tilted (added) read the status byte 0x000329E6 (player + 0x32; 01",
-    "attract, 13 play, 28/7F modes, 15 tilted); the previous game_over 0x00035E48 read 00 throughout",
-    "a headless game.",
+    "attract, 28 ball served, 13 play, 7F modes, 15 tilted). The previous game_over 0x00035E48 reads",
+    "0 after power-up until a game has ended (it went to 1 at the end of a cabinet game).",
     "2026-11: The A.1 (64) and A.2 (150) adjustments added from the ROM image (README, 'Adjustments",
-    "from the ROM')."
+    "from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K, twd_156c; two players, tilt on P1 ball 1): 1,027,080 /",
+    "845,400, the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
