@@ -48,7 +48,10 @@
     "with a complement check byte, which is what a 32-bit score would be compared against. The score",
     "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled.",
     "2026-11: Master Volume and the A.1 (64) and A.2 (131) adjustments added from the ROM image",
-    "(README, 'Adjustments from the ROM')."
+    "(README, 'Adjustments from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 2,002,800 /",
+    "1,251,560, the records and the status byte (01, 2A ball served, 14 play, 16 tilted) matched the",
+    "DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
