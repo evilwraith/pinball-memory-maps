@@ -36,7 +36,8 @@
     "ball -- during which player 1's score sat frozen at 40,360, the same corroboration that",
     "confirmed st_162h's tilt flag. So tilted is bit 0x04 of that byte, and game_over's mask 0x12",
     "decode stays correct in all 1,070 frames of this recording on top of the 925 that set it.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x000381AE as 01 in attract, 13 in play, 4D in modes, 15 tilted. game_over was mask 0x12 inverted, which reads 4D as game over (256 in-play samples), and tilted bit 0x04 is set in 4D: game_over is now any bit above 0x01 and tilted the value 0x15 (mask 0x1F)."
+    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x000381AE as 01 in attract, 13 in play, 4D in modes, 15 tilted. game_over was mask 0x12 inverted, which reads 4D as game over (256 in-play samples), and tilted bit 0x04 is set in 4D: game_over is now any bit above 0x01 and tilted the value 0x15 (mask 0x1F).",
+    "Confirmed on a cabinet (ALP4K, 2026-11-13, Disney TRON Legacy LE table): a two-player game tilted on P1 ball 1. The status byte 0x000381AE read 01 in attract, 13 in play, 5F for four seconds as the tilt warnings came in, 15 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over (mask 0xFE) and the tilted enum (0x15 under mask 0x1F) were right on every sample; the earlier bit test (0x04) would have read 5F as a tilt four seconds early. Final scores 930,050 / 890,720, free play, the Grand Champion and High Score #1 read as the DMD showed them (the table closed before the attract cycle reached High Scores #2-#4); all 97 declared checksums validate on the cabinet's NVRAM after the game."
   ],
   "_fileformat": 0.9,
   "_metadata": {
