@@ -19,7 +19,9 @@
     "2026-11: tilted is the value 0x16 (mask 0x1F) on 0x00037746: bit 0x02 is set in 72, a mode value",
     "a headless game read.",
     "2026-11: The A.1 (64) and A.2 (52) adjustments added from the ROM image (README, 'Adjustments",
-    "from the ROM')."
+    "from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,008,280 /",
+    "1,659,970, the records and the status byte (01, 14 play, 16 tilted) matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
