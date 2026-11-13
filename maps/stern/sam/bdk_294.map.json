@@ -22,7 +22,8 @@
     "frozen at 275,210. The same declaration as those games -- game_over mask 0x12 inverted, tilted",
     "bit 0x04 -- decodes correctly in all 453 frames across both games.",
     "credits at 0x0211100C, the seventh SAM game measured at that address: rose to 2 with the coins,",
-    "then fell once at each of the two game starts."
+    "then fell once at each of the two game starts.",
+    "Confirmed on a cabinet (ALP4K, 2026-11-13, Batman The Dark Knight table): a two-player game tilted on P1 ball 1. The status byte 0x000348EA read 01 in attract, 12 in play, 14 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over (no bit of 0x12) and tilted (bit 0x04) were right on every sample. Final scores 2,346,930 / 3,192,210, free play, the Grand Champion, High Scores #1-#4 (the map's First to Fourth Place) and the Batmobile Hurry-Up, Bat Signal Challenge and Gotham City champions read as the DMD showed them; all 107 declared checksums validate on the cabinet's NVRAM after the game."
   ],
   "_fileformat": 0.9,
   "_metadata": {
