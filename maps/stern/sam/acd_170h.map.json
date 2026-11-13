@@ -39,7 +39,8 @@
     "but this game's champion-threshold table at 0x021024F8 stores its thresholds as 4-byte values",
     "with a complement check byte, which is what a 32-bit score would be compared against. The score",
     "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x0003009E (player + 0x32) as 01 in attract, 14 in play, 43 in a mode, 16 from each tilt to the next ball. The previous tilted (0x00038D24 == 0) read true for 70 samples away from any tilt; it is now the status value 0x16 (mask 0x1F)."
+    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x0003009E (player + 0x32) as 01 in attract, 14 in play, 43 in a mode, 16 from each tilt to the next ball. The previous tilted (0x00038D24 == 0) read true for 70 samples away from any tilt; it is now the status value 0x16 (mask 0x1F).",
+    "game_over moved to the status byte 0x0003009E, which tilted already used, after two cabinet games (ALP4K, 2026-11-13, AC/DC LUCI Premium table, two players, tilted on P1 ball 1, watched with 4kpNVRAMWatch). 0x0003009E read 01 in attract, 43 at the ball served, 14 and 4F in play, 16 from the tilt to the next ball and nowhere else, and 01 the moment the game ended: game_over is no bit above 0x01, tilted 0x16 under mask 0x1F. The first game_over, 0x00034C7E, flipped between 64 and 00 about every three seconds during play: ScoreServer ended the first game during P2's first ball and reported four false game ends in the second. The first tilted, 0x00038D24 inverted, read 0 (tilted) in attract after power-up, then 0 from the tilt to the next ball served. Final scores 1,837,460 / 1,238,110, free play, the Grand Champion, High Scores #1-#4 and the song champions read as the DMD showed them; all 219 declared checksums validate on the cabinet's NVRAM after the game."
   ],
   "_fileformat": 0.9,
   "_metadata": {
@@ -1555,7 +1556,9 @@
     "game_over": {
       "label": "Game Over",
       "encoding": "bool",
-      "start": "0x00034C7E"
+      "start": "0x0003009E",
+      "mask": "0xFE",
+      "invert": true
     },
     "tilted": {
       "label": "Tilted",
