@@ -4,7 +4,10 @@
     "2026-11: compiled from the ROM image (README, 'Adjustments from the ROM').",
     "current_player/current_ball 0x000317D8/+1 and the status byte 0x0003180A (player + 0x32) from a",
     "headless game: 01 attract, 93/98/B5 play, 15 tilted; B5 equals 15 under 0x1F, so tilted is an",
-    "enum over mask 0x3F."
+    "enum over mask 0x3F.",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,048,160 /",
+    "1,221,190, the records and the status byte (01, 98 ball served, 93/B5 play, 15 tilted) matched",
+    "the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
