@@ -28,7 +28,8 @@
     "style flag drop at the tilt. The only trace of the tilt is a display event code at 0x00037720",
     "(8 resting, 68 at ball start, 64 at the warning, 20 for the duration of the tilt); it shares",
     "bits with the other events, so no mask isolates it and it is not declared.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00033B18 (player + 0x2C) as 01 in attract, 12 in play, 60/79 in modes, 14 from each tilt to the next ball. tilted (not declared before) is that value 0x14 (mask 0x1F)."
+    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00033B18 (player + 0x2C) as 01 in attract, 12 in play, 60/79 in modes, 14 from each tilt to the next ball. tilted (not declared before) is that value 0x14 (mask 0x1F).",
+    "Confirmed on a cabinet (ALP4K, 2026-11-13, Family Guy table): a two-player game tilted on P1 ball 1. game_over (0x00032E04) read 05 in attract and 00 through the game, back to 05 the moment it ended; the status byte 0x00033B18 (tilted, watched with 4kpNVRAMWatch) read 01 in attract, 12 in play, 14 from the tilt to the next ball and nowhere else, and 01 at the game end, so both were right on every sample. Final scores 455,290 / 504,540 (the table's DMD window crops the display edges; every digit visible agrees), free play, and the factory Grand Champion and High Scores #1-#4 read as the DMD showed them; all 103 declared checksums validate on the cabinet's NVRAM after the game."
   ],
   "_fileformat": 0.9,
   "_metadata": {
