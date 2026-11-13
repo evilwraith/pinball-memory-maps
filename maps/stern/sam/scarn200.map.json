@@ -1,12 +1,15 @@
 {
   "_notes": [
-    "The Simpsons Kooky Carnival V2.0 (scarn200), a Stern SAM redemption game (coin-op, tickets; no players, balls or flippers). Upstream had no map for it.",
-    "Read from the ROM image by backport tools/samrom: this ROM keeps its message, adjustment descriptor and display-type tables in the data the boot code copies to RAM at its own image offset, so their pointers are raw offsets (descriptors from 0x1CF0C, 26 IDs, records at 0x02100000 + 8n with the usual check byte; display types at 0x1CC00). Defaults are a factory-fresh NVRAM's (libpinmame) and equal the ROM's; every declared checksum validates on it.",
-    "A.1 is the ROM's standard list (0x26B68, nine IDs); A.2 the fourteen IDs (13-26) the Feature Adjustments menu showed when walked in libpinmame, values on the DMD equal to the fresh records. IDs 10-12 (PLAYER LANGUAGE SELECT, TICKET DISPENSER, COIN METER) are in neither menu and are not declared. AWARD TYPE prints through game code: stepped through in the menu it shows VARIABLE at 0 and 'n TICKET(S) FIXED' for 1-40.",
-    "Master Volume was measured: pressing volume up three times in attract (libpinmame) moved this byte and its complement check byte (40 to 42), and nothing else of that kind.",
-    "Left out, with the evidence: the game has no Free Play, Game Pricing, Balls Per Game or high-score records in its ROM (COIN VALUE, 25 cents, prices a play; a play took four coins headless). The shared SAM player count (0x02110900) read 0 and the shared credits word (0x0211100C) 0xFFFFFFFF throughout three headless plays, so neither is declared. The score-array literal the SAM rule finds (0x02110A58) is a running ticket total, not a per-play score: it went 15 -> 30 -> 31 across awards of 15 and 1 tickets with the ticket dispenser off. No RAM byte held the per-play award, and the one byte that rose with a play (0x0002B066: 2 from the first coin to the award) also changed on switch hits in attract, so no game_over/score field is declared.",
-    "Headless notes: a play is paid with coins on switch 66 (dedicated COIN SLOT) and decided by one target switch (2-28, e.g. 5 FISSION HOLE, 13 SCRATCHY); with the dispenser on and nothing pulsing TICKET NOTCH (switch 83) the game shows CALL ATTENDANT / OUT OF TICKETS.",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, maps from the table folder via ScoreServerNvramMapsPath): LiveUI Machine Adjustments showed Master Volume 61 and the A.1 (9) and A.2 (14) sections with the values the cabinet NVRAM holds, which differ from factory in Show Points/Tickets = POINTS and Ticket Alarm = NO (LiveUI shows Award Type 0 as a number: its sliders do not apply special_values). Three volume-up presses in attract moved Master Volume 61 -> 63 in LiveUI and three volume-down presses back to 61. All 24 declared checksums validate on the cabinet NVRAM. A play was not run: the map declares no game-state fields."
+    "The Simpsons Kooky Carnival V2.0 (scarn200), a SAM redemption game: coins and tickets, no",
+    "players, balls or records. Upstream had no map for it.",
+    "2026-11: compiled from the ROM image. Its tables are in data the boot copies to RAM, with",
+    "raw-offset pointers (descriptors 0x1CF0C, display types 0x1CC00). A.1 is the nine standard IDs,",
+    "A.2 IDs 13-26 as the Feature Adjustments menu shows them; IDs 10-12 are in neither menu. Award",
+    "Type 0 prints VARIABLE, 1-40 'n TICKET(S) FIXED'.",
+    "No game-state fields: the shared player count and credits read 0 and 0xFFFFFFFF in play, the",
+    "score-rule address 0x02110A58 is a running ticket total, and no RAM byte held a per-play award.",
+    "Checked on a cabinet 2026-11-13 (ALP4K): LiveUI showed Master Volume and A.1/A.2 as the NVRAM",
+    "holds them; the volume buttons moved Master Volume 61 -> 63 -> 61."
   ],
   "_fileformat": 0.9,
   "_metadata": {

@@ -19,8 +19,13 @@
     "credits at 0x0211100C, the fifth SAM game measured at that address.",
     "The byte briefly reads 0 late in the recording where the operator reset NVRAM; that decodes as",
     "game over, which is correct for that moment, and does not affect the mask.",
-    "A headless libpinmame game of the same ROM (backport tools/samrom/samrun.py --closed 49,50,51: with the Loki lock optos open the game reports LOKI LOCKUP DEVICE MALFUNCTION and will not start) read the status byte 0x00030A2E as 01 in attract, 13 in play, 61/6B/70 in modes and ball serves, 15 from each tilt to the next ball, and 01 again after the game. game_over was mask 0x12 inverted, which reads 61 as game over (110 in-play samples): it is now any bit above 0x01, and tilted the value 0x15 (mask 0x1F). current_player 0x000309FC was found again by the same run.",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, The Avengers Pro table): a two-player game tilted on P1 ball 1. The status byte 0x00030A2E read 01 in attract, 13 in play, 15 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over (mask 0xFE) and the tilted enum (0x15 under mask 0x1F) were right on every sample; the 61 seen headless, which the earlier mask 0x12 read as game over, did not occur in this game. Final scores 796,850 / 1,187,920, free play, and the factory Grand Champion and High Scores #1-#4 (the map's First to Fourth Place) read as the DMD showed them; all 127 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: game_over is mask 0xFE inverted and tilted the value 0x15 (mask 0x1F) on 0x00030A2E: a",
+    "headless game read 61/6B/70 in modes and ball serves, and mask 0x12 took 61 for game over.",
+    "Headless, the Loki lock optos (switches 49-51) must read closed or the game will not start.",
+    "2026-11: Master Volume and the A.1 (64) and A.2 (54) adjustments added from the ROM image",
+    "(README, 'Adjustments from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 796,850 / 1,187,920,",
+    "the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

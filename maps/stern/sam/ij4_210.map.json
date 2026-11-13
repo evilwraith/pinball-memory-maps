@@ -1,10 +1,14 @@
 {
   "_notes": [
-    "Indiana Jones (Stern) V2.10 (ij4_210 and ij4_210f, whose images give identical results). Upstream had no map for any Stern Indiana Jones set.",
-    "Read from the ROM image by backport tools/samrom (sammap.py): the adjustment records, ranges, defaults and option names from the ROM's adjustment descriptor and display-type tables, the high-score and champion records from its descriptor table, scores from the score array literal. Defaults are a factory-fresh NVRAM's (libpinmame); every declared checksum validates on it.",
-    "A.1 is the ROM's own menu list; A.2 is IDs 64-79 in ID order, read off the service menu in libpinmame (FEATURE ADJUSTMENT #1 RAIDERS DIFFICULTY to #16 SHAKER MOTOR, then #1 again).",
-    "Master Volume was measured: pressing volume up three times in attract (libpinmame) moved this byte and its complement check byte, and nothing else of that kind.",
-    "current_player/current_ball 0x00032518/+1 and the status byte 0x00032530 (player + 0x18) from two cabinet games (ALP4K, 2026-11-13): 01 attract, 30 ball served, 26 play, 96 modes, 14 tilted. Confirmed: 1,666,200 / 1,508,250 and the status trace matched the DMD."
+    "Indiana Jones (Stern) V2.10 (ij4_210, ij4_210f). Upstream had no map for a Stern Indiana Jones",
+    "set.",
+    "2026-11: compiled from the ROM image (README, 'Adjustments from the ROM').",
+    "A.2 is IDs 64-79 in ID order.",
+    "current_player/current_ball 0x00032518/+1 and the status byte 0x00032530 (player + 0x18) from",
+    "cabinet games (the game does not start headless): 01 attract, 30 ball served, 26 play, 96 modes,",
+    "14 tilted.",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,666,200 /",
+    "1,508,250, the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

@@ -42,7 +42,11 @@
     "Grand Champion's score was reported against the first-place player's initials. Framed correctly",
     "the factory defaults read JDB/75,000,000 and LFS/55,000,000, the set the rest of the SAM family",
     "ships.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x000329E6 (player + 0x32) as 01 in attract, 13 in play, 28/7F in modes, 15 tilted. The previous game_over (0x00035E48) read 00 throughout and never reported attract; game_over is now any bit above 0x01 of the status byte, and tilted (not declared before) its value 0x15."
+    "2026-11: game_over and tilted (added) read the status byte 0x000329E6 (player + 0x32; 01",
+    "attract, 13 play, 28/7F modes, 15 tilted); the previous game_over 0x00035E48 read 00 throughout",
+    "a headless game.",
+    "2026-11: The A.1 (64) and A.2 (150) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {

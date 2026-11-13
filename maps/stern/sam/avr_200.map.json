@@ -34,7 +34,11 @@
     "shape recurs but cannot be assumed.",
     "credits at 0x0211100C, the fifth SAM game measured at that same address: rose to 2 with six",
     "coins at three a credit, fell to 1 at game start.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x000384DA as 01 in attract, 13 in play, 40/45/6B in modes and ball serves, 15 tilted. game_over was mask 0x12 inverted, which reads 40 and 45 as game over (232 in-play samples), and tilted bit 0x04 is set in 45: game_over is now any bit above 0x01 and tilted the value 0x15 (mask 0x1F)."
+    "2026-11: game_over is mask 0xFE inverted and tilted the value 0x15 (mask 0x1F) on 0x000384DA: a",
+    "headless game read 40/45/6B in modes, which mask 0x12 took for game over and bit 0x04 (45) for a",
+    "tilt.",
+    "2026-11: Master Volume and the A.1 (64) and A.2 (26) adjustments added from the ROM image",
+    "(README, 'Adjustments from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {

@@ -20,9 +20,15 @@
     "but this game's champion-threshold table at 0x021024F8 stores its thresholds as 4-byte values",
     "with a complement check byte, which is what a 32-bit score would be compared against. The score",
     "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled.",
-    "game_state, Master Volume, the Encore record and the A.1/A.2 adjustments added from the ROM (backport tools/samrom/sammap.py; defaults from a factory-fresh NVRAM, every checksum validated on it and on a cabinet's saved NVRAM). current_player/current_ball 0x0002EEC0/+1 and the status byte 0x0002EEF2 (player + 0x32) come from a headless libpinmame game sampling all of RAM (samrun.py --wide: two players, three balls, two tilts): 01 in attract, 14 in play, 43 in a mode, 16 from each tilt to the next ball, the scheme acd_170h uses at 0x0003009E. game_over is any bit above 0x01; tilted is the value 0x16 (mask 0x1F). Master Volume was measured by pressing volume up in attract. A.2 is the 118 IDs the service menu shows.",
-    "The champion at 0x021039D8 was labelled Encore Champion; the ROM's high-score descriptor table names it LIVE SONG JACKPOT CHAMPION and the next one, 0x021039FC, ENCORE, the order acd_170h keeps (Song Jackpot, Live Song Jackpot, Encore). Their factory values match acd_170h's too (30,000,000 and 150,000,000), so they are now Live Song Jackpot Champion and Encore Champion, as on acd_170h. Neither is shown in attract, so the DMD cannot confirm them.",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, AC/DC Pro Vault table): a two-player game tilted on P1 ball 1. The status byte 0x0002EEF2 read 01 in attract, 43 at each ball served, 14 in play, 16 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over and the tilted enum were right on every sample. Final scores 1,281,340 / 2,278,840, free play, the Grand Champion, High Scores #1-#4, the thirteen song champions and the Song Jackpot Champion read as the DMD showed them; all 204 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: current_player/current_ball 0x0002EEC0/+1 and the status byte 0x0002EEF2 (player +",
+    "0x32; 01 attract, 43 ball served, 14 play, 16 tilted) added from a headless game.",
+    "2026-11: Master Volume and the A.1 (64) and A.2 (118) adjustments and the Encore Champion record",
+    "added from the ROM image (README, 'Adjustments from the ROM').",
+    "Champion 0x021039D8 is the ROM's LIVE SONG JACKPOT CHAMPION (was labelled Encore Champion) and",
+    "0x021039FC its ENCORE: acd_170h's order and factory values (30M, 150M). Neither shows in",
+    "attract.",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,281,340 /",
+    "2,278,840, the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

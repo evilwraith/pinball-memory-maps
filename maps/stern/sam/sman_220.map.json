@@ -1,11 +1,13 @@
 {
   "_notes": [
-    "Spider-Man V2.20 (sman_220). sman_210 to sman_240 share the NVRAM layout but each version moves its working RAM, so each has its own map. Upstream had no map for it.",
-    "Read from the ROM image by backport tools/samrom (sammap.py): the adjustment records, ranges, defaults and option names from the ROM's adjustment descriptor and display-type tables, the high-score and champion records from its descriptor table, scores from the score array literal. Defaults are a factory-fresh NVRAM's (libpinmame); every declared checksum validates on it.",
-    "A.1 is the ROM's own menu list; A.2 the IDs the service menu showed when walked in libpinmame (sammenu.py --menu-ids). Option names a game formatter prints as words (NONE, UNLIMITED, ...) were read from that formatter in a RAM dump; values it prints through a format string stay numbers.",
-    "Master Volume was measured: pressing volume up three times in attract (libpinmame) moved this byte and its complement check byte, and nothing else of that kind.",
-    "current_player/current_ball 0x34408/+1 and the status byte 0x3443C were found in a headless libpinmame game (samrun.py: two players, three balls, two tilts; samfind.py): status (player + 0x34) 01 in attract, 12 in play, 7E in a mode, 14 from each tilt to the next ball. game_over is any bit above 0x01 of the status byte; tilted is its tilt value (enum over mask 0x1F).",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, the Spider-Man Classic table switched to sman_220 from a factory NVRAM): a two-player game tilted on P1 ball 1. The status byte read 12, 14 from the tilt to P2's first ball, 12 again, and 01 after P2 ball 3, where the game end was taken from game_over. Final scores 2,033,670 / 3,152,030 and Credits 1 as the DMD showed them; the Grand Champion, High Scores #1-#4 and all seven champions read as the DMD's attract shows them; all 125 declared checksums validate on the cabinet's NVRAM after the game."
+    "Spider-Man V2.20 (sman_220). sman_210 to sman_240 share the NVRAM layout but each moves its",
+    "working RAM. Upstream had no map for it.",
+    "2026-11: compiled from the ROM image (README, 'Adjustments from the ROM').",
+    "current_player/current_ball 0x00034408/+1 and the status byte 0x0003443C (player + 0x34) from a",
+    "headless game: 01 attract, 12 play, 14 tilted.",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K, vpx-sman07classic switched to this set from a factory",
+    "NVRAM; two players, tilt on P1 ball 1): 2,033,670 / 3,152,030, the records and the status byte",
+    "matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

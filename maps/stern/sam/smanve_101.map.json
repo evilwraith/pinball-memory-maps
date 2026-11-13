@@ -16,8 +16,12 @@
     "(mask 0x12, inverted) is correct in all 1,099 frames; tilted is bit 0x04.",
     "credits at 0x0211100C, the sixteenth SAM game at that address: rose to 9 with the coins (capped",
     "by the Maximum Credits just set) and fell to 8 at game start.",
-    "smanve_100 is not this layout (offset-0 adjustments, records 0x10 lower); it has its own map, smanve_100.map.json.",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, the Spider-Man Vault Edition table switched to smanve_101): a two-player game tilted on P1 ball 1. The status byte read 13, 15 from the tilt to P2's first ball, 13 again, and 01 after P2 ball 3, where the game end was taken from game_over. Final scores 2,318,440 / 1,847,610 and FREE PLAY as the DMD showed them; the Grand Champion, the four high scores and all seven champions read as the DMD's attract shows them; all 142 declared checksums validate on the cabinet's NVRAM after the game."
+    "smanve_100 is not claimed: V1.00 keeps the offset-0 adjustment layout and its records and CPU",
+    "counters elsewhere; it has its own map, smanve_100.map.json.",
+    "2026-11: The A.1 (64) and A.2 (49) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 2,318,440 /",
+    "1,847,610, the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

@@ -41,7 +41,13 @@
     "tilt itself.",
     "Only one tilt was observed, so this is one event corroborated by the score rather than a repeated",
     "pattern.",
-    "game_over and tilted moved to the status byte 0x00034156 after cabinet games (ALP4K, 2026-11-13, st_162h on the Star Trek LE table, two two-player games tilted on P1 ball 1, every candidate watched with 4kpNVRAMWatch at ScoreServer's 250 ms poll). 0x00034156 read 01 in attract from power-up, 7B / 99 / 8C / 14 in play, 16 from the tilt to the next ball and nowhere else, and 01 again the moment the game ended: game_over is no bit above 0x01, tilted is 0x16 under mask 0x1F. 0x0003BA3E (the first game_over) read 00 in attract after power-up and through the whole game, and went to 01 two seconds after the first game ended, so it is a 'last game ended' flag that reads 'game in progress' until a game has been played since power-up. 0x000344E6 (a headless replacement) went 00 -> 01 -> 02 at the first ball and stayed 02 after the game ended, so it never reported the end. 0x0003310B (the first tilted) was set for one poll at each of the two tilt warnings as well as from the tilt to the next ball, so every warning read as a tilt. Final scores 784,350 / 1,127,220 and 1,003,230 / 1,612,600, the Credits, the Grand Champion, High Scores #1-#4 and the Combo, Warp and Medals champions read as the DMD showed them; all 125 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: game_over and tilted read the status byte 0x00034156 (01 attract, 7B/99/8C/14 play, 16",
+    "tilted). 0x0003BA3E reads 0 after power-up until a game has ended, and 0x0003310B is also set",
+    "for a moment at each tilt warning.",
+    "2026-11: Master Volume and the A.1 (64) and A.2 (51) adjustments added from the ROM image",
+    "(README, 'Adjustments from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two games, tilt on P1 ball 1): 784,350 / 1,127,220 and",
+    "1,003,230 / 1,612,600, the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

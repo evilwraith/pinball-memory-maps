@@ -1,8 +1,14 @@
 {
   "_notes": [
     "Compiled by Tom Collins, based on st_162h by HorsePin",
-    "player_count, credits, current_player/current_ball (0x00032290/+1), game_over, tilted and Master Volume added. A headless libpinmame game (backport tools/samrom/samrun.py: two players, three balls, two tilts) found the player/ball pair, the status byte 0x000322C2 (player + 0x32, as on the other SAM games), and bit 0x02 of 0x00031211, set from shortly after each tilt to the end of the tilted ball and nowhere else (tilted). Master Volume was measured by pressing volume up in attract.",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, st_162 on the Star Trek LE table), which moved game_over: in two two-player games tilted on P1 ball 1, 0x00032652 (the first map's game_over) went 00 -> 01 -> 02 at the first ball and stayed 02 after the game ended (the DMD showed GAME OVER; ScoreServer never saw the end, so the first game's driver played on for 20 minutes). In the headless run it went back to 00 only at the end of the recording, where 0x000322C2 shows the game had not ended. 0x000322C2, watched with 4kpNVRAMWatch, read 01 in attract, 7B / 7E / A9 / 14 in play, 16 from the tilt to the next ball, and 01 again the moment the game ended, so game_over is that byte with no bit above 0x01. tilted (bit 0x02 of 0x00031211) was set from the tilt to the end of the tilted ball and nowhere else. Final scores 914,340 / 1,197,820 and 1,235,530 / 1,416,730, the Credits, the Grand Champion, High Scores #1-#4 and the Combo, Warp and Medals champions read as the DMD showed them; all 133 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: player_count, credits, Master Volume, current_player/current_ball 0x00032290/+1,",
+    "game_over on the status byte 0x000322C2 (player + 0x32; 01 attract, 7B/7E/A9/14 play, 16 tilted)",
+    "and tilted (bit 0x02 of 0x00031211) added.",
+    "2026-11: The A.1 (64) and A.2 (49) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two games, tilt on P1 ball 1): 914,340 / 1,197,820 and",
+    "1,235,530 / 1,416,730 and the records matched the DMD. 0x00032652, game_over from the first",
+    "headless run, stayed 02 after a game."
   ],
   "_fileformat": 0.9,
   "_metadata": {

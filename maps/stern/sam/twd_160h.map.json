@@ -32,7 +32,10 @@
     "but this game's champion-threshold table at 0x021024F8 stores its thresholds as 4-byte values",
     "with a complement check byte, which is what a 32-bit score would be compared against. The score",
     "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled.",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, The Walking Dead LE table): a two-player game tilted on P1 ball 1. The status byte 0x00036166 read 01 in attract, 29 at each ball served, 14 in play, 16 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over (mask 0xFE) and tilted (bit 0x02) were right on every sample. Final scores 1,122,950 / 2,508,130, free play, the Grand Champion, High Scores #1-#4 and the Walkers Killed (25), Combo, Bicycle Girl, Barn, CDC, Riot, Tunnel, Arena and Terminus champions read as the DMD showed them (the table closed before the attract cycle reached the last five champions); all 257 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: The A.1 (64) and A.2 (169) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,122,950 /",
+    "2,508,130, the records and the status byte matched the DMD (29 at each ball served)."
   ],
   "_fileformat": 0.9,
   "_metadata": {

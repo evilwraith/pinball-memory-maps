@@ -1,10 +1,11 @@
 {
   "_notes": [
-    "The Rolling Stones Limited Edition V1.10 (rsn_110h). Upstream had no map for any Rolling Stones set.",
-    "Read from the ROM image by backport tools/samrom (sammap.py): the adjustment records, ranges, defaults and option names from the ROM's adjustment descriptor and display-type tables, the high-score and champion records from its descriptor table, scores from the score array literal. Defaults are a factory-fresh NVRAM's (libpinmame); every declared checksum validates on it.",
-    "A.1 is the ROM's own menu list; A.2 the IDs the service menu showed when walked in libpinmame (sammenu.py --menu-ids). Option names a game formatter prints as words (NONE, UNLIMITED, ...) were read from that formatter in a RAM dump; values it prints through a format string stay numbers.",
-    "Master Volume was measured: pressing volume up three times in attract (libpinmame) moved this byte and its complement check byte, and nothing else of that kind.",
-    "current_player/current_ball 0x0002F988/+1 and the status byte 0x0002F9BA (player + 0x32) were found in a headless libpinmame game sampling all of RAM (samrun.py --wide: two players, three balls, two tilts); both sit below 0x30000. Status 01 in attract, 13/55/5A/8E in play, 15 from each tilt to the next ball. game_over is any bit above 0x01; tilted is the value 0x15 over mask 0x7F (55 equals it under 0x1F). Not yet confirmed on a cabinet."
+    "The Rolling Stones Limited Edition V1.10 (rsn_110h). Upstream had no map for a Rolling Stones",
+    "set.",
+    "2026-11: compiled from the ROM image (README, 'Adjustments from the ROM').",
+    "current_player/current_ball 0x0002F988/+1 and the status byte 0x0002F9BA (player + 0x32) from a",
+    "headless game: 01 attract, 13/55/5A/8E play, 15 tilted; 55 equals 15 under 0x1F, so tilted is an",
+    "enum over mask 0x7F."
   ],
   "_fileformat": 0.9,
   "_metadata": {

@@ -16,7 +16,10 @@
     "Mode champion labels are the attract order (Bogey, Iron Man, War Machine, Iron Monger, Whiplash,",
     "Drones, Jericho, Do Or Die Multiball); the record order matches the default-threshold table.",
     "Names are declared 11 bytes null-terminated: with Standard Adjustment #36 set to 10 LETTER NAME and the high scores reset, this ROM wrote factory names of up to nine characters (ROTHARMEL, BANGERJAY) into the records, verified on a saved image.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00037746 as 01 in attract, 14 in play, 72 in modes, 16 tilted. tilted was bit 0x02, set in 72 (186 samples away from any tilt): it is now the value 0x16 (mask 0x1F)."
+    "2026-11: tilted is the value 0x16 (mask 0x1F) on 0x00037746: bit 0x02 is set in 72, a mode value",
+    "a headless game read.",
+    "2026-11: The A.1 (64) and A.2 (52) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {

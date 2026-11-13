@@ -30,7 +30,11 @@
     "recording. Any non-zero value is tilted.",
     "credits at 0x0211100C, the fourteenth SAM game at that address: rose to 9 with the coins (capped",
     "by the Maximum Credits just set) and fell to 8 at game start.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00033052 (player + 0x32) as 01 in attract, 12 in play, 26/66 in modes, 14 tilted. The previous game_over (0x0003FF83) read game over in 43 in-play samples and tilted (0x0003FF6B) never changed: both now read that status byte."
+    "2026-11: game_over and tilted read the status byte 0x00033052 (player + 0x32; 01 attract, 12",
+    "play, 26/66 modes, 14 tilted). In a headless game the previous game_over 0x0003FF83 read game",
+    "over mid-game and tilted 0x0003FF6B never changed.",
+    "2026-11: The A.1 (63) and A.2 (33) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {

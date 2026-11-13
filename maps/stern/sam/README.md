@@ -267,50 +267,55 @@ The ball never returns to 0 after a game: it parks at the last value through att
 and drops to 1 when the next game starts. Consumers detecting a game's end must use
 the status byte below, and a new game is the ball wrapping down to 1.
 
-### Status bitfield
+### Status byte
 
-On almost every game one byte near the ball counter is a status byte (player + 0x32 on
-most, + 0x2C on Family Guy, Pirates and World Poker Tour, + 0x34 on Spider-Man 2.10
-and 2.20, + 0x18 on Shrek, + 0x48 on Wheel of Fortune). It reads `01` through attract;
-in a game it reads a base value (`12`, `13` or `14` by game) and, while modes, ball
-serves and animations run, other values (`26`, `28`, `40`, `45`, `61`, `6B`, `72`,
-`B5`, ...); from the tilt to the next ball served it reads the base value plus 2 (`14`,
-`15` or `16`).
-
-Several maps used to test single bits of it (`game_over` as mask 0x12 or 0x14
-inverted, `tilted` as bit 0x04 or 0x02). The mode values carry those bits, so on a
-full game those tests misread: Avatar's `40` and `45`, Avengers' `61`, TRON's `4D` and
-X-Men's `28` read as game over in the middle of a game, and Big Buck Hunter's
-`34`/`3F`/`56`/`6F`, Iron Man's `72` and the like read as tilted. They were found by
-running each game's ROM headless through a two-player game with two tilts and
-decoding every declaration over every sample; Transformers' own recording had already
-seen `40` for the first seconds of a game. The maps now use what holds on every sample
-of every game:
+On every game measured one byte near the ball counter is a status byte: player + 0x32
+on most, + 0x2C on Family Guy, World Poker Tour and Pirates, + 0x18 on Shrek and Indiana
+Jones, + 0x34 on Spider-Man 2.10 and 2.20, + 0x48 on Wheel of Fortune. It reads `01` in attract from
+power-up; in a game a base value (`12`, `13` or `14` by game) and, while ball serves,
+modes and animations run, other values (`26`, `28`, `40`, `43`, `4C`, `5F`, `61`, `7B`,
+...); from the tilt to the next ball served the base value plus 2 (`14`, `15` or `16`);
+and `01` again at the moment the game ends. The maps decode it as:
 
 - `game_over`: no bit above 0x01 set (mask 0xFE, inverted), i.e. the byte is `00` or `01`.
-- `tilted`: the tilt value alone, as an enum over mask 0x1F (0x3F on Mustang, whose
-  `B5` equals its `15` under 0x1F; 0x7F on X-Men and The Rolling Stones, whose `55`
-  does).
+- `tilted`: the tilt value alone, an enum over mask 0x1F (0x3F on Mustang, whose `B5`
+  equals `15` under 0x1F; 0x7F on X-Men and Rolling Stones, `55`).
 
-| games | game_over | tilted |
+A few maps keep a narrower bit test that held on every sample of their recording and
+of a cabinet game (bdk_294, mtl_*, smanve_101, twd_160h: `tilted` bit 0x04 or 0x02;
+bbh_170, bdk_294, csi_240, im_*, mtl_*: `game_over` mask 0x12, 0x14, 0x30 or 0x38).
+Family Guy's `game_over` is a separate byte (`0x00032E04`: 05 in attract, 00 in a game).
+
+Single bits of the status byte misread a full game, because mode values carry them:
+Avatar's `40`/`45`, Avengers' `61`, TRON's `4D` and X-Men's `28` read as game over under
+mask 0x12, and Big Buck Hunter's `34`/`3F`/`56`/`6F`, Iron Man's `72` and TRON's `5F`
+(while tilt warnings come in) as tilted under bit 0x04 or 0x02. Bytes elsewhere did
+worse on a cabinet, and were replaced by the status byte:
+
+| game | old field | on a cabinet |
 |---|---|---|
-| acd_170, avr_200, avs_170, avs_170h, mt_145h, nba_802, potc_600as, rsn_110h, shr_141, sman_210–sman_261, smanve_100, st_161h, tf_180, trn_174h, twd_156, wof_500, wpt_140a, xmn_151h | mask 0xFE inverted | enum, tilt value only |
-| acd_170h, bbh_170, fg_1200af, im_185ve, im_186, im_186ve | as before (it held on every sample) | enum, tilt value only |
-| bdk_294, mtl_170h, smanve_101, twd_160h | as before | as before (bit 0x04 or 0x02: no mode value carried it) |
-| mtl_180, mtl_180h | mask 0x30 inverted | enum over mask 0x06 |
-| csi_240, twenty4_150 | as before | tilt-warning counter (below) |
-
-Star Trek Pro and LE (`st_162`, `st_162h`) do not keep a status byte of this kind:
-`game_over` there is a byte that reads `00` in attract and `02` from the first ball to
-the end of the game (`0x00032652`, `0x000344E6`), and `tilted` a flag set from shortly
-after the tilt to the end of the tilted ball (`0x00031211` bit 0x02, `0x0003310B`).
-
-The ball counter is the dependable signal for a new game (it wraps to 1), and the
-status byte for its end; consumers that need more than these two states should read
-the map's `_notes`, which list the values each game was seen to take.
+| acd_170h | `game_over` `0x00034C7E` | flips 64/00 every few seconds in play |
+| acd_170h | `tilted` `0x00038D24` inverted | reads tilted in attract after power-up |
+| nba_802 | `game_over` `0x0003FF83`, `tilted` `0x0003FF6B` | game over mid-game; never changed (headless) |
+| st_162 | `game_over` `0x00032652` | stays 02 after the game ends |
+| st_162h | `game_over` `0x0003BA3E` | 0 after power-up until a game has ended |
+| st_162h | `tilted` `0x0003310B` | also set for a moment at each tilt warning |
+| twd_156 | `game_over` `0x00035E48` | 00 throughout (headless) |
+| twenty4_150 | `game_over` `0x02102A3C` (NVRAM) | keeps 1 when a game is cut off by power-off |
 
 ### Tilt warnings
 
-Where mapped, the tilt-warning counter is a CPU RAM byte that counts plumb-bob
-closures within a ball (`0x0003893C` on 24, `0x000390BC` on CSI); with the factory
-setting of two warnings, tilted is that counter reaching 2.
+The tilt-warning counter (`0x0003893C` on 24, `0x000390BC` on CSI, declared as
+`tilt_warnings`) counts warnings within a ball and clears at the next ball. It is not a
+tilt flag: with the factory setting of two warnings the counter reaches 2 at the second
+warning and the third hit tilts, so the ball is still live at 2.
+
+### How the game state was checked
+
+Each `game_over` and `tilted` comes from a headless libpinmame game of the ROM (two
+players, three balls, two tilts, RAM sampled throughout) and, where the map says so, a
+cabinet game: two players, a mechanical tilt on player 1's first ball, flippers until the
+game ends, with the declared fields and any candidate bytes logged at every change and
+the final scores and records compared with the DMD. Headless runs miss values (a game
+that never ends headless never shows the return to `01`), and an NVRAM byte survives a
+game cut off by power-off, so a field is trusted only after a full game on a cabinet.

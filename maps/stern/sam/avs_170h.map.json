@@ -1,11 +1,13 @@
 {
   "_notes": [
     "The Avengers Limited Edition V1.70 (avs_170h). Upstream maps only avs_170 (Pro).",
-    "Read from the ROM image by backport tools/samrom (sammap.py): the adjustment records, ranges, defaults and option names from the ROM's adjustment descriptor and display-type tables, the high-score and champion records from its descriptor table, scores from the score array literal. Defaults are a factory-fresh NVRAM's (libpinmame); every declared checksum validates on it and on a cabinet's saved avs_170h NVRAM.",
-    "A.1 is the ROM's own menu list; A.2 the IDs the service menu showed when walked in libpinmame (sammenu.py --menu-ids: all but Fixture On/Off, IDs 65-66). Option names a game formatter prints as words were read from that formatter in a RAM dump; values it prints through a format string stay numbers.",
-    "Master Volume was measured: pressing volume up three times in attract (libpinmame) moved this byte and its complement check byte, and nothing else of that kind.",
-    "current_player/current_ball 0x00030B04/+1 and the status byte 0x00030B36 (player + 0x32) come from a headless libpinmame game sampling all of RAM (samrun.py --wide --closed 49,50,51: the Loki lock optos must read closed or the game reports LOKI LOCKUP DEVICE MALFUNCTION and will not start; two players, three balls, two tilts). Status 01 in attract, 13 in play, 49/61/66/6B in modes and ball serves, 15 from each tilt to the next ball. game_over is any bit above 0x01; tilted is the value 0x15 (enum over mask 0x1F). The layout is avs_170's moved by 0x108.",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, JP's The Avengers table): a two-player game tilted on P1 ball 1. The status byte 0x00030B36 read 01 in attract, 13 in play, 15 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over (mask 0xFE) and the tilted enum (0x15 under mask 0x1F) were right on every sample. Final scores 1,281,020 / 901,410, free play, and the factory Grand Champion and High Scores #1-#4 read as the DMD showed them; all 129 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: compiled from the ROM image (README, 'Adjustments from the ROM').",
+    "A.2 omits Fixture On/Off (IDs 65-66).",
+    "current_player/current_ball 0x00030B04/+1 and the status byte 0x00030B36 (player + 0x32) from a",
+    "headless game: 01 attract, 13 play, 49/61/66/6B modes and ball serves, 15 tilted; avs_170's",
+    "layout moved by 0x108.",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,281,020 / 901,410,",
+    "the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

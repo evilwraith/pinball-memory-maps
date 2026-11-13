@@ -47,8 +47,13 @@
     "volume at 0x02110250, set from 60 to 58 in the operator menu with its complement check byte",
     "following; declared as checksum8. credits at 0x0211100C, the twentieth SAM game at that",
     "address, stepping up with each coin and down once at game start.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00030B16 as 01 in attract, 13 in play, 28/43/4B/4F/55/59/67 in modes, 15 tilted. game_over was mask 0x12 inverted, which reads 28 as game over (166 in-play samples), and tilted bit 0x04 is set in 4F, 55 and 67: game_over is now any bit above 0x01 and tilted the value 0x15 over mask 0x7F (0x55 equals it under 0x1F).",
-    "Confirmed on a cabinet (ALP4K, 2026-11-13, X-Men Wolverine LE table): a two-player game tilted on P1 ball 1. The status byte 0x00030B16 read 01 in attract, 13 in play, 15 from the tilt to the next ball and nowhere else, and 01 the moment the game ended, so game_over (mask 0xFE) and the tilted enum (0x15 under mask 0x7F) were right on every sample; the 28 seen headless, which the earlier mask 0x12 read as game over, did not occur in this game. Final scores 538,320 / 667,290, free play, the factory Grand Champion and High Scores #1-#4 and the Combo Champion (YAN, 15 combos) read as the DMD showed them; all 128 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: game_over is mask 0xFE inverted and tilted the value 0x15 over mask 0x7F on 0x00030B16:",
+    "mask 0x12 took the mode value 28 for game over, bit 0x04 is set in 4F/55/67, and 55 equals 15",
+    "under 0x1F.",
+    "2026-11: The A.1 (64) and A.2 (47) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 538,320 / 667,290,",
+    "the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

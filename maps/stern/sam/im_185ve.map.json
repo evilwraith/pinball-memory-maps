@@ -21,7 +21,10 @@
     "the factory ABC; their order matches the attract display and the default-threshold table at",
     "0x02102298 (stride 0x18: six 5,000,000, then 10,000,000, then 25,000,000), so the labels are the",
     "attract order read on the machine.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00034DEA as 01 in attract, 14 in play, 45/72 in modes, 16 tilted. tilted was bit 0x02, set in 72 (407 samples away from any tilt): it is now the value 0x16 (mask 0x1F)."
+    "2026-11: tilted is the value 0x16 (mask 0x1F) on 0x00034DEA: bit 0x02 is set in 72, a mode value",
+    "a headless game read.",
+    "2026-11: The A.1 (64) and A.2 (50) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {

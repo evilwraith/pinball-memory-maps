@@ -46,7 +46,9 @@
     "and their purpose is not established: they are consistent with the upper half of a 64-bit score,",
     "but this game's champion-threshold table at 0x021024F8 stores its thresholds as 4-byte values",
     "with a complement check byte, which is what a 32-bit score would be compared against. The score",
-    "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled."
+    "is therefore declared as 4 bytes until a value above 2^32 is observed or the ROM is disassembled.",
+    "2026-11: Master Volume and the A.1 (64) and A.2 (131) adjustments added from the ROM image",
+    "(README, 'Adjustments from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {

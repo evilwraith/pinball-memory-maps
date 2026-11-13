@@ -29,7 +29,9 @@
     "siblings shares no bit with 41 and would read every ball's start as game over; mask 0x38 covers",
     "all three in-play values and excludes attract, and is correct in every one of the 1,088 frames.",
     "tilted is bit 0x04, which 41 does not carry, so that reading survives here.",
-    "credits at 0x0211100C, the eleventh SAM game at that address."
+    "credits at 0x0211100C, the eleventh SAM game at that address.",
+    "2026-11: Master Volume and the A.1 (64) and A.2 (136) adjustments added from the ROM image",
+    "(README, 'Adjustments from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {

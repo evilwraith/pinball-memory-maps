@@ -27,7 +27,13 @@
     "setting; the raw counter is mapped for anyone who changes that.",
     "credits at 0x0211100C, the ninth SAM game at that address: rose to 2 with the coins, fell to 1",
     "at game start.",
-    "tilted moved to the status byte 0x0003446E (game_over's byte, current player + 0x32) after two cabinet games (ALP4K, 2026-11-13, CSI table, tilted on P1 ball 1, factory Tilt Warnings 2, watched with 4kpNVRAMWatch). The first tilted, bit 0x02 of the warning counter 0x000390BC (kept as tilt_warnings), went 0 -> 1 at the first warning and 1 -> 2 at the second, about 2.7 s before the status byte showed the tilt; with two warnings allowed the tilt is the third hit and the counter stays at 2, so the bit read tilted from the second warning on. 0x0003446E read 01 in attract, 26 at each ball served, 12 in play, 14 from the tilt to the next ball and nowhere else, and 01 the moment the game ended: tilted is 0x14 under mask 0x1F, game_over (no bit of 0x12) was right on every sample. The ROM took only one player in both games (a second Start 1.5 s and 6 s after the first was ignored), so player 2's score slot was not exercised. Final scores 1,087,250 and 789,500 (one player each), free play, and the factory Grand Champion and High Scores #1-#4 read as the DMD showed them; all 96 declared checksums validate on the cabinet's NVRAM after the game."
+    "2026-11: tilted reads the status byte 0x0003446E (0x14, mask 0x1F). The warning counter",
+    "0x000390BC (still tilt_warnings) reaches 2 at the second warning, before the tilt.",
+    "2026-11: Master Volume and the A.1 (63) and A.2 (19) adjustments added from the ROM image",
+    "(README, 'Adjustments from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two games, tilt on P1 ball 1): the ROM took one player",
+    "each time; 1,087,250 and 789,500, the records and the status byte (01, 26 ball served, 12, 14",
+    "tilted) matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {

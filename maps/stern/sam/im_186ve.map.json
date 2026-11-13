@@ -17,7 +17,10 @@
     "The non-Vault im_186 does NOT share this map: its NVRAM side (scores, credits, volume, adjustment",
     "records, champion records) matches, but the CPU-side ball, player and status bytes live elsewhere;",
     "see im_186.map.json.",
-    "A headless libpinmame run of the same ROM (backport tools/samrom/samrun.py: coins, a two-player three-ball game, momentary playfield switches, two tilts) read the status byte 0x00034DEA as 01 in attract, 14 in play, 72 in modes, 16 tilted. tilted was bit 0x02, set in 72 (363 samples away from any tilt): it is now the value 0x16 (mask 0x1F)."
+    "2026-11: tilted is the value 0x16 (mask 0x1F) on 0x00034DEA: bit 0x02 is set in 72, a mode value",
+    "a headless game read.",
+    "2026-11: The A.1 (64) and A.2 (52) adjustments added from the ROM image (README, 'Adjustments",
+    "from the ROM')."
   ],
   "_fileformat": 0.9,
   "_metadata": {
