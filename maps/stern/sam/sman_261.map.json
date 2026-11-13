@@ -8,7 +8,10 @@
     "current_player/current_ball 0x000365D4/+1 and the status byte 0x00036606 (player + 0x32) from a",
     "headless game: 01 attract, 13 play, 15 tilted.",
     "Confirmed on a cabinet 2026-11-11 (ALP4K; two players, tilt on P1 ball 1): 2,081,890 / 1,757,670",
-    "and all twelve records matched the DMD."
+    "and all twelve records matched the DMD.",
+    "Confirmed again on a cabinet 2026-11-13 with the adjustments (ALP4K, vpx-sman07classic switched",
+    "to sman_261; two players, tilt on P1 ball 1): 3,467,960 / 2,281,870, the records and the status",
+    "byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
