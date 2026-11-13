@@ -296,7 +296,8 @@ worse on a cabinet, and were replaced by the status byte:
 |---|---|---|
 | acd_170h | `game_over` `0x00034C7E` | flips 64/00 every few seconds in play |
 | acd_170h | `tilted` `0x00038D24` inverted | reads tilted in attract after power-up |
-| nba_802 | `game_over` `0x0003FF83`, `tilted` `0x0003FF6B` | game over mid-game; never changed (headless) |
+| nba_802 | `game_over` `0x0003FF83` | game over for 6 s after a tilted ball drained |
+| nba_802 | `tilted` `0x0003FF6B` | set at each ball launch, never at the tilt |
 | st_162 | `game_over` `0x00032652` | stays 02 after the game ends |
 | st_162h | `game_over` `0x0003BA3E` | 0 after power-up until a game has ended |
 | st_162h | `tilted` `0x0003310B` | also set for a moment at each tilt warning |

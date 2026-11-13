@@ -30,11 +30,14 @@
     "recording. Any non-zero value is tilted.",
     "credits at 0x0211100C, the fourteenth SAM game at that address: rose to 9 with the coins (capped",
     "by the Maximum Credits just set) and fell to 8 at game start.",
-    "2026-11: game_over and tilted read the status byte 0x00033052 (player + 0x32; 01 attract, 12",
-    "play, 26/66 modes, 14 tilted). In a headless game the previous game_over 0x0003FF83 read game",
-    "over mid-game and tilted 0x0003FF6B never changed.",
+    "2026-11: game_over and tilted read the status byte 0x00033052 (player + 0x32; 01 attract, 26",
+    "ball served, 12 play, 2F/66 modes, 14 tilted). On a cabinet the previous game_over 0x0003FF83",
+    "read game over for 6 s after the tilted ball drained, and tilted 0x0003FF6B went to 4 at each",
+    "ball launch, never at the tilt.",
     "2026-11: The A.1 (63) and A.2 (33) adjustments added from the ROM image (README, 'Adjustments",
-    "from the ROM')."
+    "from the ROM').",
+    "Confirmed on a cabinet 2026-11-13 (ALP4K; two players, tilt on P1 ball 1): 1,219,840 /",
+    "1,045,260, the records and the status byte matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
