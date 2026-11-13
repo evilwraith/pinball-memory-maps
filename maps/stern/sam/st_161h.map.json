@@ -41,7 +41,8 @@
     "This replaces the A.1 placed by the earlier menu sweep and corrects three of its entries:",
     "Language and Player Language Select were swapped (Language is record 7 at 0x02102038),",
     "Flipper Ball Launch 4 is BOTH FLIPPERS (not OFF), and Game Pricing 63 is USA 11 (not USA 10).",
-    "A.2 hides Fixture On and Fixture Off (IDs 65 and 66), so it starts at Disable Laser Motor."
+    "A.2 hides Fixture On and Fixture Off (IDs 65 and 66), so it starts at Disable Laser Motor.",
+    "Confirmed on a cabinet (ALP4K, 2026-11-13, st_161hc): a two-player game tilted on P1 ball 1. The status byte read 7A at game start, A8, 15 from the tilt to P2's first ball, then 13 / 7A / A8 / CB in play on every later ball (none of them a tilt under the 0x1F enum), and 01 after P2 ball 3, where the game end was taken from game_over. Final scores 849,390 / 1,324,710 and FREE PLAY as the DMD showed them; the Grand Champion, High Scores #1-#4 and the Combo, Warp and Medals champions read as the DMD's attract shows them; all 133 declared checksums validate on the cabinet's NVRAM after the game."
   ],
   "_fileformat": 0.9,
   "_metadata": {
