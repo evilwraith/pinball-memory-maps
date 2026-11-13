@@ -4,7 +4,7 @@
     "Read from the ROM image by backport tools/samrom (sammap.py): the adjustment records, ranges, defaults and option names from the ROM's adjustment descriptor and display-type tables, the high-score and champion records from its descriptor table, scores from the score array literal. Defaults are a factory-fresh NVRAM's (libpinmame); every declared checksum validates on it.",
     "A.1 is the ROM's own menu list; A.2 is IDs 64-79 in ID order, read off the service menu in libpinmame (FEATURE ADJUSTMENT #1 RAIDERS DIFFICULTY to #16 SHAKER MOTOR, then #1 again).",
     "Master Volume was measured: pressing volume up three times in attract (libpinmame) moved this byte and its complement check byte, and nothing else of that kind.",
-    "No working-RAM fields: the game never started headless (credits stayed at 3 after Start; PinMAME's idol and other mechanisms are not driven), so current player, ball, game_over and tilted were not found. Scores and the records are NVRAM and come from the ROM rules validated on the mapped SAM games."
+    "current_player/current_ball 0x00032518/+1 and the status byte 0x00032530 (player + 0x18) from two cabinet games (ALP4K, 2026-11-13): 01 attract, 30 ball served, 26 play, 96 modes, 14 tilted. Confirmed: 1,666,200 / 1,508,250 and the status trace matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
@@ -563,6 +563,63 @@
       "label": "Balls Per Game",
       "encoding": "int",
       "start": "0x021020F8"
+    },
+    "current_player": {
+      "label": "Player",
+      "encoding": "int",
+      "start": "0x00032518"
+    },
+    "current_ball": {
+      "label": "Ball",
+      "encoding": "int",
+      "start": "0x00032519"
+    },
+    "game_over": {
+      "label": "Game Over",
+      "encoding": "bool",
+      "start": "0x00032530",
+      "mask": "0xFE",
+      "invert": true
+    },
+    "tilted": {
+      "label": "Tilted",
+      "encoding": "enum",
+      "start": "0x00032530",
+      "mask": "0x1F",
+      "values": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     },
     "volume": {
       "label": "Master Volume",
