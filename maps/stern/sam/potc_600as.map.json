@@ -9,7 +9,10 @@
     "headless game: 01 attract, 12 play, 43 ball held, 14 tilted; a cabinet game also read 39.",
     "Confirmed on a cabinet 2026-11-11 (ALP4K; two players, tilt on P1 ball 1): 1,411,270 /",
     "14,564,820 and the records matched the DMD. A saved cabinet NVRAM validates every record,",
-    "including a Grand Champion earned there (CWP, 137,367,130)."
+    "including a Grand Champion earned there (CWP, 137,367,130).",
+    "Confirmed again on a cabinet 2026-11-13 with the adjustments (ALP4K; two players, tilt on P1",
+    "ball 1): 4,565,070 / 2,938,650, the records and the status byte (01, 12 play, 43 ball held, 14",
+    "tilted) matched the DMD."
   ],
   "_fileformat": 0.9,
   "_metadata": {
