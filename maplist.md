@@ -1037,6 +1037,8 @@
 * [Red and Ted's Road Show (LX-5)][0a691] _rs_lx5_
 * [Red and Ted's Road Show (PA-2 Prototype)][78ce5] _rs_pa2_
 * [Rescue 911 (rev. 1)][b5673] _rescu911_
+* [Revenge From Mars (1.60)][ef980] _rfm_160_
+* [Revenge From Mars (2.60)][02b70] _rfm_260_
 * [Ripley's Believe It or Not! (3.00 French)][72274] _rip300f_
 * [Ripley's Believe It or Not! (3.00 German)][72274] _rip300g_
 * [Ripley's Believe It or Not! (3.00 Italian)][72274] _rip300i_
@@ -1626,6 +1628,7 @@
 [015f1]: maps/capcom/bsv102r.map.json
 [01de8]: maps/stern/whitestar/austin.map.json
 [028d3]: maps/zaccaria/strike.map.json
+[02b70]: maps/williams/pinball2000/rfm_260.map.json
 [02cfa]: maps/williams/wpc/fs_lx2.map.json
 [040d9]: maps/bally/as-2518-35/suprbowl.map.json
 [05118]: maps/williams/wpc/afm_11.map.json
@@ -2049,6 +2052,7 @@
 [ee8fd]: maps/stern/sam/avs_170h.map.json
 [eeaad]: maps/bally/as-2518-35/smman-freeplay.map.json
 [ef564]: maps/dataeast/version3/jupk_513.map.json
+[ef980]: maps/williams/pinball2000/rfm_160.map.json
 [f0711]: maps/stern/whitestar/simp204.map.json
 [f21af]: maps/gottlieb/system80b/80b-8digit-B-10KB.map.json
 [f2a6d]: maps/williams/wpc/nbaf_31.map.json
