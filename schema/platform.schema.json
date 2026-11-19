@@ -24,39 +24,6 @@
         "$ref": "#/$defs/memoryArea"
       },
       "minItems": 1
-    },
-    "tag_directory": {
-      "description": "Records addressed by name (Pinball 2000 CMOS): a table of fixed-size entries starting at `start`, each holding a tag, its record's size and its record's address. Map fields on such a platform carry `tag`.",
-      "type": "object",
-      "properties": {
-        "start": {
-          "$ref": "#/$defs/intOrHex"
-        },
-        "entry_size": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "tag_length": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "size_offset": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "address_offset": {
-          "type": "integer",
-          "minimum": 0
-        }
-      },
-      "required": [
-        "start",
-        "entry_size",
-        "tag_length",
-        "size_offset",
-        "address_offset"
-      ],
-      "additionalProperties": false
     }
   },
   "required": [

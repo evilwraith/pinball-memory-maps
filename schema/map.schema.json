@@ -262,11 +262,6 @@
       "type": "object",
       "$ref": "#/$defs/baseObject",
       "properties": {
-        "tag": {
-          "description": "name of the record this field lives in, on a platform with a tag_directory; `start` is then the offset inside that record",
-          "type": "string",
-          "minLength": 1
-        },
         "start": {
           "$ref": "#/$defs/intOrHex"
         },

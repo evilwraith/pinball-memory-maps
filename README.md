@@ -139,12 +139,6 @@ The platform file has the following properties:
   big-endian, and 0x50 0x34 0x12 if little-endian.
 - **memory_layout**: An array of dictionaries describing RAM regions for the
   given hardware.
-- **tag_directory**: Optional, for hardware whose game OS keeps its records
-  by name at addresses that differ from machine to machine (Williams/Bally
-  Pinball 2000).  A table of fixed-size entries at `start`, each
-  `entry_size` bytes: the record's name in the first `tag_length` bytes, its
-  size as a 32-bit value at `size_offset` and its address at
-  `address_offset`.  Fields in maps for such a platform carry `tag`.
 
 #### Memory Layout Entries
 - **label**: Optional description of the memory for human reference.
@@ -322,10 +316,6 @@ Entries cannot have both an `end` and `length`.
   reference any memory region in the platform file's `memory_layout`
   section.  Default behavior is to use that single byte/nibble unless the
   `end` or `length` keys are present.
-- **tag**: On a platform with a `tag_directory`, the name of the record
-  this field is in.  `start` is then the offset inside that record, and a
-  reader looks the record's address up in the directory first.  A record
-  the machine has not created yet is not readable.
 - **end**: Address of the last byte/nibble to interpret.  Its value
   must be greater than or equal to `start`.
 - **length**: Number of bytes/nibbles to interpret, must be at least 1
