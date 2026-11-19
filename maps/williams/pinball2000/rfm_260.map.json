@@ -7,7 +7,7 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 1,
+    "version": 2,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-pinball2000",
     "roms": [
@@ -1379,14 +1379,14 @@
         "length": 8
       },
       "147": {
-        "label": "Replay Boost",
+        "label": "Replay Boost (Fixed)",
         "tag": "ADRplyFB",
         "start": "0x0",
         "encoding": "int",
         "length": 8
       },
       "148": {
-        "label": "Replay Boost",
+        "label": "Replay Boost (Auto)",
         "tag": "ADRplyAB",
         "start": "0x0",
         "encoding": "int",
@@ -2098,56 +2098,56 @@
         "length": 4
       },
       "070": {
-        "label": "Recent Slot 1",
+        "label": "Rolling Slot 1",
         "tag": "BDE_CTl1",
         "start": "0x0",
         "encoding": "int",
         "length": 4
       },
       "071": {
-        "label": "Recent Slot 2",
+        "label": "Rolling Slot 2",
         "tag": "BDE_CTl2",
         "start": "0x0",
         "encoding": "int",
         "length": 4
       },
       "072": {
-        "label": "Recent Slot 3",
+        "label": "Rolling Slot 3",
         "tag": "BDE_CTl3",
         "start": "0x0",
         "encoding": "int",
         "length": 4
       },
       "073": {
-        "label": "Recent Slot 4",
+        "label": "Rolling Slot 4",
         "tag": "BDE_CTl4",
         "start": "0x0",
         "encoding": "int",
         "length": 4
       },
       "074": {
-        "label": "Recent Slot 5",
+        "label": "Rolling Slot 5",
         "tag": "BDE_CTl5",
         "start": "0x0",
         "encoding": "int",
         "length": 4
       },
       "075": {
-        "label": "Recent Slot 6",
+        "label": "Rolling Slot 6",
         "tag": "BDE_CTl6",
         "start": "0x0",
         "encoding": "int",
         "length": 4
       },
       "076": {
-        "label": "Recent Slot 7",
+        "label": "Rolling Slot 7",
         "tag": "BDE_CTl7",
         "start": "0x0",
         "encoding": "int",
         "length": 4
       },
       "077": {
-        "label": "Recent Slot 8",
+        "label": "Rolling Slot 8",
         "tag": "BDE_CTl8",
         "start": "0x0",
         "encoding": "int",
@@ -2273,7 +2273,7 @@
         "length": 4
       },
       "095": {
-        "label": "HSTD Reset Count",
+        "label": "Plays Until H.S.T.D. Reset",
         "tag": "BDHSTDco",
         "start": "0x0",
         "encoding": "int",
@@ -2329,11 +2329,12 @@
         "length": 4
       },
       "103": {
-        "label": "Avg. Game Time",
+        "label": "Total Game Time",
         "tag": "BDGTmTmr",
         "start": "0x0",
         "encoding": "int",
-        "length": 4
+        "length": 4,
+        "units": "seconds"
       },
       "104": {
         "label": "Balls Played",
@@ -2343,11 +2344,12 @@
         "length": 4
       },
       "105": {
-        "label": "Avg. Ball Time",
+        "label": "Total Ball Time",
         "tag": "BDBTmTmr",
         "start": "0x0",
         "encoding": "int",
-        "length": 4
+        "length": 4,
+        "units": "seconds"
       },
       "106": {
         "label": "Extra Balls",
@@ -2567,18 +2569,20 @@
         "length": 4
       },
       "137": {
-        "label": "VDAI Power ON (s)",
+        "label": "VDAI Power ON",
         "tag": "BDVDAIPO",
         "start": "0x0",
         "encoding": "int",
-        "length": 4
+        "length": 4,
+        "units": "seconds"
       },
       "138": {
-        "label": "VDAI Game Play (s)",
+        "label": "VDAI Game Play",
         "tag": "BDVDAIGP",
         "start": "0x0",
         "encoding": "int",
-        "length": 4
+        "length": 4,
+        "units": "seconds"
       },
       "139": {
         "label": "HTTP Connections",
