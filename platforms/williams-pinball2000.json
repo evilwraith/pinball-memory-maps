@@ -9,11 +9,24 @@
     "addresses on different machines: map fields name their record with 'tag', and their 'start' is",
     "the offset inside the record. A reader resolves the tag first; a record the machine has not",
     "created yet is not readable. The records' check words are not described here, so these maps",
-    "are not written back."
+    "are not written back.",
+    "game_state reads the Game object in main RAM, at fixed addresses per game version (PinMAME reads it through the driver, core_readMemoryHook)."
   ],
   "cpu": "MediaGX",
   "endian": "little",
   "memory_layout": [
+    {
+      "label": "Main RAM",
+      "address": "0x00000000",
+      "size": "0xA0000",
+      "type": "ram"
+    },
+    {
+      "label": "Main RAM (extended)",
+      "address": "0x00100000",
+      "size": "0xFF00000",
+      "type": "ram"
+    },
     {
       "label": "CMOS",
       "address": "0x11000000",

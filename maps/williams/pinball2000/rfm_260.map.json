@@ -7,11 +7,76 @@
   ],
   "_fileformat": 0.9,
   "_metadata": {
-    "version": 2,
+    "version": 3,
     "license": "Open Data Commons Open Database License (ODbL) v1.0",
     "platform": "williams-pinball2000",
     "roms": [
       "rfm_260"
+    ]
+  },
+  "game_state": {
+    "player_count": {
+      "label": "Player Count",
+      "start": "0x315F7C",
+      "encoding": "int",
+      "length": 4
+    },
+    "current_player": {
+      "label": "Current Player",
+      "start": "0x315F80",
+      "encoding": "int",
+      "length": 4,
+      "offset": 1
+    },
+    "current_ball": {
+      "label": "Current Ball",
+      "start": "0x315F84",
+      "encoding": "int",
+      "length": 4
+    },
+    "ball_count": {
+      "label": "Ball Count",
+      "start": "0x315F88",
+      "encoding": "int",
+      "length": 4
+    },
+    "game_over": {
+      "label": "Game Over",
+      "start": "0x315F38",
+      "encoding": "bool",
+      "length": 4
+    },
+    "tilted": {
+      "label": "Tilted",
+      "start": "0x315F2C",
+      "encoding": "bool",
+      "length": 4
+    },
+    "scores": [
+      {
+        "label": "Player 1",
+        "start": "0x315F98",
+        "encoding": "int",
+        "length": 8
+      },
+      {
+        "label": "Player 2",
+        "start": "0x3160C4",
+        "encoding": "int",
+        "length": 8
+      },
+      {
+        "label": "Player 3",
+        "start": "0x3161F0",
+        "encoding": "int",
+        "length": 8
+      },
+      {
+        "label": "Player 4",
+        "start": "0x31631C",
+        "encoding": "int",
+        "length": 8
+      }
     ]
   },
   "high_scores": [
