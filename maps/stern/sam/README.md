@@ -38,14 +38,11 @@ From `0x02102008` NVRAM holds an array of 8-byte adjustment records:
 +5  0xFF 0xFF 0xFF
 ```
 
-The redemption game The Simpsons Kooky Carnival (`scarn200`) keeps the same records from
-`0x02100008` (ID n at `0x02100000 + 8n`, 26 IDs); it has no players, balls or tilt, so its
-map declares only the adjustments and Master Volume.
-
 Every record in every image examined satisfies the check byte. A write that changes
 the value without updating the check byte is silently discarded when the ROM next
-reads its adjustments, so the maps declare each written record as `checksum8` with
-`end` on the check byte (the checksum is adjacent, so the standard tail form applies).
+reads its adjustments, so the maps declare the records as one repeating checksum entry
+(`length` 5, `repeat` step 8) over every ID the ROM's descriptor table lists, menu-hidden
+IDs included; all of them validate in every image examined.
 
 The array is in the ROM's own order, not the service-menu order. A full sweep of the
 Standard Adjustments on `st_161hc` (every visible adjustment changed once in menu
@@ -100,6 +97,16 @@ Every SAM map has its A.1 and A.2 sections from the ROM:
   that prints the values some settings show as words (Ball Save Time 0 is NO BALL SAVES
   and 16 AUTO, Match Percentage 11 is OFF, ...). Game Pricing's names are the run of
   pricing messages from AUSTRALIA 1, with CUSTOM at its maximum.
+  Option lists become `enum` fields (NO/YES too); a list two or more fields use is shared
+  through `_metadata.values` (`no_yes`, `credit_ticket_token`, ...). Custom Message has no
+  CHANGE: choosing it opens the message editor, and the record holds 1 (ON) once the
+  message is set (acd_170, libpinmame). Ticket Dispenser's names come from the dispenser
+  name table (24-byte entries, entry 0 INVALID), with 0 as NONE.
+- The descriptor's step is the menu's increment and is declared as `multiple_of` when the
+  minimum and maximum are multiples of it (replay levels 1,000,000, mode champions
+  100,000 on AC/DC). A value the ROM prints as M:SS (Ball Save Time) or through its
+  `%u SECOND%P1//S/%` message (`10 SECONDS` on the DMD: AC/DC's autofire timers) has
+  `units` seconds; other timers print a bare number and stay without units.
 - The A.1 menu order as a list of IDs. The newest ROMs leave IDs 11 and 12 (the two
   records of the *+2* family) out of it.
 - A.2 is not a list in the ROM, and the menu hides some IDs (Star Trek: Fixture On and
@@ -128,7 +135,7 @@ is a different setting.
 |---|---|
 | `0x02110204` | mtl_180, mtl_180h, twd_160h |
 | `0x02110248` | acd_170, acd_170h, im_185ve, im_186, im_186ve, st_162, st_162h |
-| `0x0211024C` | bdk_294, csi_240, fg_1200af, ij4_210, nba_802, potc_600as, scarn200, shr_141, sman_210–sman_240, twenty4_150, wof_500, wpt_140a |
+| `0x0211024C` | bdk_294, csi_240, fg_1200af, ij4_210, nba_802, potc_600as, shr_141, sman_210–sman_240, twenty4_150, wof_500, wpt_140a |
 | `0x02110250` | avr_200, avs_170, avs_170h, bbh_170, mt_145h, mtl_170h, rsn_110h, sman_261, smanve_100, smanve_101, st_161h, tf_180, trn_174h, twd_156, xmn_151h |
 
 ### Audits
@@ -278,8 +285,9 @@ modes and animations run, other values (`26`, `28`, `40`, `43`, `4C`, `5F`, `61`
 and `01` again at the moment the game ends. The maps decode it as:
 
 - `game_over`: no bit above 0x01 set (mask 0xFE, inverted), i.e. the byte is `00` or `01`.
-- `tilted`: the tilt value alone, an enum over mask 0x1F (0x3F on Mustang, whose `B5`
-  equals `15` under 0x1F; 0x7F on X-Men and Rolling Stones, `55`).
+- `tilted`: the tilt value alone under mask 0x1F (0x3F on Mustang, whose `B5`
+  equals `15` under 0x1F; 0x7F on X-Men and Rolling Stones, `55`), written as `bool` with
+  `offset` minus the tilt value and `invert`, so only that value reads true.
 
 A few maps keep a narrower bit test that held on every sample of their recording and
 of a cabinet game (bdk_294, mtl_*, smanve_101, twd_160h: `tilted` bit 0x04 or 0x02;
